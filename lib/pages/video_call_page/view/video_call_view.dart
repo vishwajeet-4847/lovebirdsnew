@@ -773,6 +773,22 @@ class VideoCallView extends StatelessWidget {
                                     },
                                   ),
                                   GetBuilder<VideoCallController>(
+                                      builder: (logic) {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        GiftBottomSheetWidget.show(
+                                          context: Get.context!,
+                                          callback: () => logic.onSendGift(),
+                                          isChat: false,
+                                        );
+
+                                        logic.update();
+                                      },
+                                      child: Image.asset(AppAsset.icGift,
+                                          height: 34),
+                                    );
+                                  }),
+                                  GetBuilder<VideoCallController>(
                                     id: AppConstant.idToggleVideo,
                                     builder: (logic) {
                                       return GestureDetector(
@@ -785,23 +801,7 @@ class VideoCallView extends StatelessWidget {
                                       );
                                     },
                                   ),
-                                  GetBuilder<VideoCallController>(
-                                    builder: (logic) {
-                                      return GestureDetector(
-                                        onTap: () {
-                                          GiftBottomSheetWidget.show(
-                                            context: Get.context!,
-                                            callback: () => logic.onSendGift(),
-                                            isChat: false,
-                                          );
 
-                                          logic.update();
-                                        },
-                                        child: Image.asset(AppAsset.icGift,
-                                            height: 34),
-                                      );
-                                    },
-                                  ),
                                   GetBuilder<VideoCallController>(
                                     id: AppConstant.idToggleCamera,
                                     builder: (logic) {

@@ -450,6 +450,7 @@ class VideoCallController extends GetxController {
   bool isRotedCamera = false;
   bool isVideoOn = true;
   int? get remoteUid => _remoteUid;
+  bool isLocalVideoEnlarged = false;
 
   bool onUserMuteVideo = true;
   bool onUserMuteAudio = true;
@@ -698,6 +699,11 @@ class VideoCallController extends GetxController {
     print("📷 toggleCamera called. New state: $isRotedCamera");
     engine?.switchCamera();
     update([AppConstant.idToggleCamera, AppConstant.idOnVideoCall]);
+  }
+
+  void toggleVideoView() {
+    isLocalVideoEnlarged = !isLocalVideoEnlarged;
+    update([AppConstant.idOnVideoCall]);
   }
 
   void toggleVideo() {
