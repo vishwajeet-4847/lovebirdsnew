@@ -1,0 +1,2 @@
+D:/projects/main_projects/figgy/android/app/.cxx/RelWithDebInfo/28474y4k/x86_64/CMakeFiles/edit_cache.dir
+D:/projects/main_projects/figgy/android/app/.cxx/RelWithDebInfo/28474y4k/x86_64/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,44 @@
+class AppRoutes {
+  static const String splashScreenPage = '/splash_screen_page';
+  static const String loginView = '/login_view';
+  static const String bottomBar = '/bottom_bar';
+  static const String hostBottomBar = '/host_bottom_bar';
+  static const String randomPage = '/random_page';
+  static const String profilePage = '/profile_page';
+  static const String topUpPage = '/topUp_page';
+  static const String messagePage = '/message_page';
+  static const String discoverHostForUserPage = '/discoverHostForUserPage';
+  static const String hostLiveStreamPage = '/host_live_stream_page';
+  static const String goLiveStreamPage = '/go_live_stream_page';
+  static const String appLanguagePage = '/app_language_page';
+  static const String appSettingPage = '/app_setting_page';
+  static const String vipPage = '/vip_page';
+  static const String chatPage = '/chat_page';
+  static const String blockPage = '/block_page';
+  static const String hostDetailPage = '/host_detail_page';
+  static const String editProfilePage = '/edit_profile_page';
+  static const String followPage = '/follow_page';
+  static const String matchingPage = '/matching_page';
+  static const String inAnswerJoin = '/answer.json';
+
+  static const String hostRequestPage = '/host_request_page';
+  static const String hostLivePage = '/host_live_page';
+  static const String incomingAudioCallPage = '/incoming_audio_call_page';
+  static const String videoCallPage = '/video_call_page';
+  static const String withdrawPage = '/withdraw_page';
+  static const String verificationPage = '/verification_page';
+  static const String fillProfile = '/fill_profile';
+  static const String outGoingAudioCallPage = '/outGoingAudioCallPage';
+  static const String fakeLivePage = '/fake_live_page';
+  static const String hostEditProfilePage = '/host_edit_profile_page';
+  static const String paymentPage = '/payment_page';
+  static const String hostWithdrawHistory = '/hostWithdrawHistory';
+  static const String historyView = '/historyView';
+  static const String privacyPolicy = '/privacyPolicy';
+  static const String termsAndConditionView = '/termsAndConditionView';
+  static const String incomingHostCall = '/incomingHostCall';
+  static const String hostVideoCall = '/hostVideoCall';
+  static const String outgoingHostCall = '/outgoingHostCall';
+  static const String liveEndPage = '/liveEndPage';
+  static const String audioPlayerPage = '/audioPlayerPage';
+}

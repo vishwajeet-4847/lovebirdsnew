@@ -1,0 +1,2 @@
+C:/projects/figgy-flutter/android/app/.cxx/Debug/5a2t5a6q/x86_64/CMakeFiles/edit_cache.dir
+C:/projects/figgy-flutter/android/app/.cxx/Debug/5a2t5a6q/x86_64/CMakeFiles/rebuild_cache.dir

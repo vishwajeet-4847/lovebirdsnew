@@ -1,0 +1,2 @@
+D:/flutter/figgy-fultter/android/app/.cxx/Debug/714g6i5k/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/flutter/figgy-fultter/android/app/.cxx/Debug/714g6i5k/armeabi-v7a/CMakeFiles/rebuild_cache.dir

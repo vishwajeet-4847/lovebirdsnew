@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "276451904837",
+    "project_id": "lovebirds-9e66b",
+    "storage_bucket": "lovebirds-9e66b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276451904837:android:c11164a418f73c7b6a822c",
+        "android_client_info": {
+          "package_name": "com.lovebirds.videocalling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276451904837-0qs0qf88erj49j3r2lnn0u3oi7qbqfjk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lovebirds.videocalling",
+            "certificate_hash": "769e47605e7887118a54f1e9f93f85415f046e5f"
+          }
+        },
+        {
+          "client_id": "276451904837-an5jtej90vmge4derns10gr2lb1k8uka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkwUyqX1ZjfG8SwP900VCg9WFPiAa7GqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276451904837-an5jtej90vmge4derns10gr2lb1k8uka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276451904837:android:91f9cd200bf47f176a822c",
+        "android_client_info": {
+          "package_name": "com.lovebirds.videocalling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276451904837-an5jtej90vmge4derns10gr2lb1k8uka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkwUyqX1ZjfG8SwP900VCg9WFPiAa7GqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276451904837-an5jtej90vmge4derns10gr2lb1k8uka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

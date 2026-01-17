@@ -1,0 +1,2 @@
+D:/darshan-flutter/figgy/android/app/.cxx/Debug/3s2g4i6j/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/darshan-flutter/figgy/android/app/.cxx/Debug/3s2g4i6j/armeabi-v7a/CMakeFiles/rebuild_cache.dir
