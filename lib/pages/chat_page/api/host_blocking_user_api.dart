@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/chat_page/model/host_block_user_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/chat_page/model/host_block_user_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class HostBlockingUserApi {
@@ -29,7 +29,8 @@ class HostBlockingUserApi {
 
     try {
       final response = await http.post(uri, headers: headers);
-      Utils.showLog("Host Block User Api Status Code => ${response.statusCode}");
+      Utils.showLog(
+          "Host Block User Api Status Code => ${response.statusCode}");
       Utils.showLog("Host Block User Api Response => ${response.body}");
 
       final jsonResponse = json.decode(response.body);

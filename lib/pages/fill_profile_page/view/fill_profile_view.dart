@@ -1,18 +1,18 @@
 import 'dart:io';
 
-import 'package:figgy/custom/app_button/custom_gradient_button.dart';
-import 'package:figgy/custom/app_title/custom_title.dart';
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/custom/cupertino_date_picker/date_picker.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/text_field/custom_text_field.dart';
-import 'package:figgy/pages/fill_profile_page/controller/fill_profile_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_button/custom_gradient_button.dart';
+import 'package:LoveBirds/custom/app_title/custom_title.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/date_picker.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/text_field/custom_text_field.dart';
+import 'package:LoveBirds/pages/fill_profile_page/controller/fill_profile_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +41,8 @@ class FillProfileView extends GetView<FillProfileController> {
               children: [
                 Container(
                   height: MediaQuery.of(context).viewPadding.top + 60,
-                  padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).viewPadding.top),
                   alignment: Alignment.center,
                   width: Get.width,
                   decoration: BoxDecoration(
@@ -77,7 +78,8 @@ class FillProfileView extends GetView<FillProfileController> {
                                   ClipOval(
                                     child: logic.pickImage.isEmpty == true
                                         ? Container(
-                                            color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                            color: AppColors.colorTextGrey
+                                                .withValues(alpha: 0.22),
                                             height: 150,
                                             width: 150,
                                             child: CustomImage(
@@ -99,11 +101,13 @@ class FillProfileView extends GetView<FillProfileController> {
                                       width: 30,
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
-                                        border: Border.all(color: AppColors.whiteColor),
+                                        border: Border.all(
+                                            color: AppColors.whiteColor),
                                         shape: BoxShape.circle,
                                         color: Colors.transparent,
                                       ),
-                                      child: Image.asset(AppAsset.icEdit, width: 30),
+                                      child: Image.asset(AppAsset.icEdit,
+                                          width: 30),
                                     ),
                                   ),
                                 ],
@@ -124,7 +128,8 @@ class FillProfileView extends GetView<FillProfileController> {
                               return CustomTextField(
                                 filled: true,
                                 controller: logic.nameController,
-                                fillColor: AppColors.whiteColor.withValues(alpha: 0.2),
+                                fillColor:
+                                    AppColors.whiteColor.withValues(alpha: 0.2),
                                 cursorColor: AppColors.whiteColor,
                                 hintText: EnumLocale.txtEnterUserName.name.tr,
                                 hintTextSize: 16,
@@ -142,16 +147,20 @@ class FillProfileView extends GetView<FillProfileController> {
                               return logic.loginType == 3
                                   ? const SizedBox()
                                   : Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        CustomTitle(title: EnumLocale.txtEmail.name.tr),
+                                        CustomTitle(
+                                            title: EnumLocale.txtEmail.name.tr),
                                         CustomTextField(
                                           enabled: false,
                                           filled: true,
                                           controller: logic.emailController,
-                                          fillColor: AppColors.whiteColor.withValues(alpha: 0.2),
+                                          fillColor: AppColors.whiteColor
+                                              .withValues(alpha: 0.2),
                                           cursorColor: AppColors.whiteColor,
-                                          hintText: EnumLocale.txtEnterEmail.name.tr,
+                                          hintText:
+                                              EnumLocale.txtEnterEmail.name.tr,
                                           hintTextSize: 16,
                                           hintTextColor: AppColors.colorGry,
                                           fontColor: AppColors.whiteColor,
@@ -176,12 +185,16 @@ class FillProfileView extends GetView<FillProfileController> {
                                   height: 55,
                                   width: Get.width,
                                   alignment: Alignment.centerLeft,
-                                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                                  decoration:
-                                      BoxDecoration(color: AppColors.whiteColor.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12)),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15),
+                                  decoration: BoxDecoration(
+                                      color: AppColors.whiteColor
+                                          .withValues(alpha: 0.2),
+                                      borderRadius: BorderRadius.circular(12)),
                                   child: Text(
                                     logic.date.split(" ")[0],
-                                    style: AppFontStyle.styleW400(AppColors.whiteColor, 16),
+                                    style: AppFontStyle.styleW400(
+                                        AppColors.whiteColor, 16),
                                   ),
                                 ),
                               );
@@ -201,23 +214,27 @@ class FillProfileView extends GetView<FillProfileController> {
                                   width: Get.width,
                                   padding: const EdgeInsets.only(left: 20),
                                   decoration: BoxDecoration(
-                                    color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                    color: AppColors.whiteColor
+                                        .withValues(alpha: 0.2),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Row(
                                     children: [
                                       Text(
                                         logic.flagController.text,
-                                        style: AppFontStyle.styleW500(AppColors.whiteColor, 20),
+                                        style: AppFontStyle.styleW500(
+                                            AppColors.whiteColor, 20),
                                       ),
                                       10.width,
                                       Text(
                                         logic.countryController.text,
-                                        style: AppFontStyle.styleW600(AppColors.whiteColor, 15),
+                                        style: AppFontStyle.styleW600(
+                                            AppColors.whiteColor, 15),
                                       ),
                                       const Spacer(),
                                       Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 8),
                                         child: Icon(
                                           Icons.keyboard_arrow_down,
                                           color: AppColors.whiteColor,
@@ -231,13 +248,16 @@ class FillProfileView extends GetView<FillProfileController> {
                             },
                           ),
                           20.height,
-                          CustomTitle(title: "${EnumLocale.txtBio.name.tr} (${EnumLocale.txtOptional.name.tr})"),
+                          CustomTitle(
+                              title:
+                                  "${EnumLocale.txtBio.name.tr} (${EnumLocale.txtOptional.name.tr})"),
                           GetBuilder<FillProfileController>(
                             builder: (logic) {
                               return CustomTextField(
                                 filled: true,
                                 controller: logic.bioDetailsController,
-                                fillColor: AppColors.whiteColor.withValues(alpha: 0.2),
+                                fillColor:
+                                    AppColors.whiteColor.withValues(alpha: 0.2),
                                 cursorColor: AppColors.whiteColor,
                                 hintText: EnumLocale.txtEnterBio.name.tr,
                                 hintTextSize: 16,

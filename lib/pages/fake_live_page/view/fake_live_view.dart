@@ -1,10 +1,10 @@
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/pages/fake_live_page/controller/fake_live_controller.dart';
-import 'package:figgy/pages/fake_live_page/widget/fake_live_widget.dart';
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/pages/fake_live_page/controller/fake_live_controller.dart';
+import 'package:LoveBirds/pages/fake_live_page/widget/fake_live_widget.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

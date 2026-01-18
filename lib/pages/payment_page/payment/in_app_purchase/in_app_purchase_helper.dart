@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:figgy/main.dart';
+import 'package:LoveBirds/main.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
@@ -18,7 +18,8 @@ import 'iap_callback.dart';
 import 'iap_receipt_data.dart';
 
 class InAppPurchaseHelper {
-  static final InAppPurchaseHelper _inAppPurchaseHelper = InAppPurchaseHelper._internal();
+  static final InAppPurchaseHelper _inAppPurchaseHelper =
+      InAppPurchaseHelper._internal();
 
   InAppPurchaseHelper._internal();
 
@@ -93,7 +94,8 @@ class InAppPurchaseHelper {
     if (!isAvailable) return;
 
     Set<String> productIds = productId.toSet();
-    ProductDetailsResponse response = await _connection.queryProductDetails(productIds);
+    ProductDetailsResponse response =
+        await _connection.queryProductDetails(productIds);
 
     log("Query error: ${response.error}");
     log("Products found: ${response.productDetails.length}");
@@ -110,11 +112,13 @@ class InAppPurchaseHelper {
 
   getAlreadyPurchaseItems(IAPCallback iapCallback) {
     _iapCallback = iapCallback;
-    final Stream<List<PurchaseDetails>> purchaseUpdated = _connection.purchaseStream;
+    final Stream<List<PurchaseDetails>> purchaseUpdated =
+        _connection.purchaseStream;
     _subscription = purchaseUpdated.listen(
         (purchaseDetailsList) {
           if (purchaseDetailsList.isNotEmpty) {
-            purchaseDetailsList.sort((a, b) => a.transactionDate!.compareTo(b.transactionDate!));
+            purchaseDetailsList.sort(
+                (a, b) => a.transactionDate!.compareTo(b.transactionDate!));
 
             if (purchaseDetailsList[0].status == PurchaseStatus.restored) {
               getPastPurchases(purchaseDetailsList);
@@ -146,7 +150,8 @@ class InAppPurchaseHelper {
     // Fixed: Convert List to Set properly
     Set<String> productIds = productId.toSet();
 
-    ProductDetailsResponse productDetailResponse = await _connection.queryProductDetails(productIds);
+    ProductDetailsResponse productDetailResponse =
+        await _connection.queryProductDetails(productIds);
 
     if (productDetailResponse.error != null) {
       _products = [];
@@ -170,14 +175,16 @@ class InAppPurchaseHelper {
   }
 
   Future<void> getPastPurchases(List<PurchaseDetails> verifiedPurchases) async {
-    verifiedPurchases.sort((a, b) => a.transactionDate!.compareTo(b.transactionDate!));
+    verifiedPurchases
+        .sort((a, b) => a.transactionDate!.compareTo(b.transactionDate!));
 
     if (Platform.isIOS) {
       if (verifiedPurchases.isNotEmpty) {
         await _verifyProductReceipts(verifiedPurchases);
       } else {
         log("You have not Purchased :::::::::::::::::::=>");
-        _iapCallback?.onBillingError("You haven't purchase our product, so we can't restore.");
+        _iapCallback?.onBillingError(
+            "You haven't purchase our product, so we can't restore.");
       }
     }
 
@@ -191,7 +198,8 @@ class InAppPurchaseHelper {
       }
     } else {
       log("You have not Purchased :::::::::::::::::::=>");
-      _iapCallback?.onBillingError("You haven't purchase our product, so we can't restore.");
+      _iapCallback?.onBillingError(
+          "You haven't purchase our product, so we can't restore.");
     }
   }
 
@@ -204,14 +212,17 @@ class InAppPurchaseHelper {
     );
 
     Map<String, String> data = {};
-    data.putIfAbsent("receipt-data", () => verifiedPurchases[0].verificationData.localVerificationData);
+    data.putIfAbsent("receipt-data",
+        () => verifiedPurchases[0].verificationData.localVerificationData);
 
     try {
       // Step 1: Always start with production URL
       String productionUrl = 'https://buy.itunes.apple.com/verifyReceipt';
 
-      final productionResponse = await dio.post<String>(productionUrl, data: data);
-      Map<String, dynamic> productionProfile = jsonDecode(productionResponse.data!);
+      final productionResponse =
+          await dio.post<String>(productionUrl, data: data);
+      Map<String, dynamic> productionProfile =
+          jsonDecode(productionResponse.data!);
 
       // Check if we got error 21007 (sandbox receipt sent to production)
       if (productionProfile['status'] == 21007) {
@@ -238,7 +249,8 @@ class InAppPurchaseHelper {
     }
   }
 
-  Future<void> _processReceiptData(Map<String, dynamic> profile, List<PurchaseDetails> verifiedPurchases) async {
+  Future<void> _processReceiptData(Map<String, dynamic> profile,
+      List<PurchaseDetails> verifiedPurchases) async {
     var receiptData = IapReceiptData.fromJson(profile);
 
     // Check receipt status
@@ -248,11 +260,14 @@ class InAppPurchaseHelper {
       return;
     }
 
-    if (receiptData.latestReceiptInfo != null && receiptData.latestReceiptInfo!.isNotEmpty) {
-      receiptData.latestReceiptInfo!.sort((a, b) => b.expiresDateMs!.compareTo(a.expiresDateMs!));
+    if (receiptData.latestReceiptInfo != null &&
+        receiptData.latestReceiptInfo!.isNotEmpty) {
+      receiptData.latestReceiptInfo!
+          .sort((a, b) => b.expiresDateMs!.compareTo(a.expiresDateMs!));
 
       // Check if subscription is still valid
-      if (int.parse(receiptData.latestReceiptInfo![0].expiresDateMs!) > DateTime.now().millisecondsSinceEpoch) {
+      if (int.parse(receiptData.latestReceiptInfo![0].expiresDateMs!) >
+          DateTime.now().millisecondsSinceEpoch) {
         for (PurchaseDetails data in verifiedPurchases) {
           if (data.productID == receiptData.latestReceiptInfo![0].productId) {
             _purchases.clear();
@@ -317,7 +332,8 @@ class InAppPurchaseHelper {
   }
 
   Map<String, PurchaseDetails> getPurchases() {
-    Map<String, PurchaseDetails> purchases = Map.fromEntries(_purchases.map((PurchaseDetails purchase) {
+    Map<String, PurchaseDetails> purchases =
+        Map.fromEntries(_purchases.map((PurchaseDetails purchase) {
       if (purchase.pendingCompletePurchase) {
         _connection.completePurchase(purchase);
       }
@@ -333,10 +349,12 @@ class InAppPurchaseHelper {
       if (transactions.isNotEmpty) {
         for (final transaction in transactions) {
           try {
-            if (transaction.transactionState != SKPaymentTransactionStateWrapper.purchasing) {
+            if (transaction.transactionState !=
+                SKPaymentTransactionStateWrapper.purchasing) {
               await SKPaymentQueueWrapper().finishTransaction(transaction);
               if (transaction.originalTransaction != null) {
-                await SKPaymentQueueWrapper().finishTransaction(transaction.originalTransaction!);
+                await SKPaymentQueueWrapper()
+                    .finishTransaction(transaction.originalTransaction!);
               }
             }
           } catch (e) {
@@ -348,7 +366,8 @@ class InAppPurchaseHelper {
     }
   }
 
-  buySubscription(ProductDetails productDetails, Map<String, PurchaseDetails> purchases) async {
+  buySubscription(ProductDetails productDetails,
+      Map<String, PurchaseDetails> purchases) async {
     // Clear any pending iOS transactions first
     if (Platform.isIOS) {
       await clearTransactions();
@@ -374,7 +393,9 @@ class InAppPurchaseHelper {
       );
     }
 
-    _connection.buyConsumable(purchaseParam: purchaseParam).catchError((error) async {
+    _connection
+        .buyConsumable(purchaseParam: purchaseParam)
+        .catchError((error) async {
       handleError(error);
       log("Purchase error: $error");
       return error;
@@ -386,10 +407,12 @@ class InAppPurchaseHelper {
       final transactions = await SKPaymentQueueWrapper().transactions();
       for (final transaction in transactions) {
         try {
-          if (transaction.transactionState != SKPaymentTransactionStateWrapper.purchasing) {
+          if (transaction.transactionState !=
+              SKPaymentTransactionStateWrapper.purchasing) {
             await SKPaymentQueueWrapper().finishTransaction(transaction);
             if (transaction.originalTransaction != null) {
-              await SKPaymentQueueWrapper().finishTransaction(transaction.originalTransaction!);
+              await SKPaymentQueueWrapper()
+                  .finishTransaction(transaction.originalTransaction!);
             }
           }
         } catch (e) {
@@ -424,7 +447,8 @@ class InAppPurchaseHelper {
     log("Invalid purchase: ${purchaseDetails.productID}");
   }
 
-  Future<void> _listenToPurchaseUpdated(List<PurchaseDetails> purchaseDetailsList) async {
+  Future<void> _listenToPurchaseUpdated(
+      List<PurchaseDetails> purchaseDetailsList) async {
     for (PurchaseDetails detailsPurchase in purchaseDetailsList) {
       if (detailsPurchase.status == PurchaseStatus.pending) {
         _iapCallback?.onPending(detailsPurchase);
@@ -455,7 +479,8 @@ class InAppPurchaseHelper {
     await clearTransactions();
   }
 
-  GooglePlayPurchaseDetails? _getOldSubscription(ProductDetails productDetails, Map<String, PurchaseDetails> purchases) {
+  GooglePlayPurchaseDetails? _getOldSubscription(
+      ProductDetails productDetails, Map<String, PurchaseDetails> purchases) {
     return purchases[productDetails.id] as GooglePlayPurchaseDetails?;
   }
 }

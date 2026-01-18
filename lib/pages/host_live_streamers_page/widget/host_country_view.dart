@@ -1,9 +1,9 @@
-import 'package:figgy/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +40,8 @@ class HostCountryView extends StatelessWidget {
                               children: [
                                 Text(
                                   logic.filterCountry,
-                                  style: AppFontStyle.styleW600(AppColors.whiteColor, 12),
+                                  style: AppFontStyle.styleW600(
+                                      AppColors.whiteColor, 12),
                                 ),
                                 3.width,
                                 Image.asset(
@@ -59,7 +60,9 @@ class HostCountryView extends StatelessWidget {
                   itemCount: logic.userCountry.length,
                   itemBuilder: (context, index) {
                     final indexData = logic.userCountry[index];
-                    final bool isSelected = logic.selectedCountry.trim().toLowerCase() == indexData.trim().toLowerCase();
+                    final bool isSelected =
+                        logic.selectedCountry.trim().toLowerCase() ==
+                            indexData.trim().toLowerCase();
 
                     return isSelected
                         ? GestureDetector(
@@ -69,9 +72,11 @@ class HostCountryView extends StatelessWidget {
                               // padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(20)),
                                   // color:AppColors.colorTextGrey.withValues(alpha: 0.22),
-                                  border: Border.all(color: AppColors.whiteColor),
+                                  border:
+                                      Border.all(color: AppColors.whiteColor),
                                   gradient: AppColors.hostNextButton),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +94,11 @@ class HostCountryView extends StatelessWidget {
                                     child: index == 0
                                         ? const Offstage()
                                         : Container(
-                                            decoration: BoxDecoration(border: Border.all(color: AppColors.whiteColor), shape: BoxShape.circle),
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color:
+                                                        AppColors.whiteColor),
+                                                shape: BoxShape.circle),
                                             child: Image.asset(
                                               logic.userCountryFlag[index],
                                               width: 18,
@@ -99,10 +108,12 @@ class HostCountryView extends StatelessWidget {
                                   ),
                                   index == 0 ? const SizedBox() : 7.width,
                                   Padding(
-                                    padding: EdgeInsets.only(right: index == 0 ? 16 : 9),
+                                    padding: EdgeInsets.only(
+                                        right: index == 0 ? 16 : 9),
                                     child: Text(
                                       logic.userCountry[index],
-                                      style: AppFontStyle.styleW600(AppColors.whiteColor, 12),
+                                      style: AppFontStyle.styleW600(
+                                          AppColors.whiteColor, 12),
                                     ),
                                   ),
                                 ],
@@ -116,8 +127,10 @@ class HostCountryView extends StatelessWidget {
                               // padding: const EdgeInsets.only(left: 16, bottom: 8, right: 16),
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.all(Radius.circular(20)),
-                                color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(20)),
+                                color: AppColors.colorTextGrey
+                                    .withValues(alpha: 0.22),
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -130,7 +143,11 @@ class HostCountryView extends StatelessWidget {
                                     child: index == 0
                                         ? const Offstage()
                                         : Container(
-                                            decoration: BoxDecoration(border: Border.all(color: AppColors.whiteColor), shape: BoxShape.circle),
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color:
+                                                        AppColors.whiteColor),
+                                                shape: BoxShape.circle),
                                             child: Image.asset(
                                               logic.userCountryFlag[index],
                                               width: 18,
@@ -140,10 +157,12 @@ class HostCountryView extends StatelessWidget {
                                   ),
                                   index == 0 ? const SizedBox() : 7.width,
                                   Padding(
-                                    padding: EdgeInsets.only(right: index == 0 ? 16 : 9),
+                                    padding: EdgeInsets.only(
+                                        right: index == 0 ? 16 : 9),
                                     child: Text(
                                       logic.userCountry[index],
-                                      style: AppFontStyle.styleW600(AppColors.whiteColor, 12),
+                                      style: AppFontStyle.styleW600(
+                                          AppColors.whiteColor, 12),
                                     ),
                                   ),
                                 ],
@@ -161,7 +180,13 @@ class HostCountryView extends StatelessWidget {
                   width: Get.width * 0.13,
                   decoration: const BoxDecoration(
                       color: AppColors.globalColor,
-                      boxShadow: [BoxShadow(color: AppColors.globalColor, spreadRadius: 10, blurRadius: 10, offset: Offset(0, 0))]),
+                      boxShadow: [
+                        BoxShadow(
+                            color: AppColors.globalColor,
+                            spreadRadius: 10,
+                            blurRadius: 10,
+                            offset: Offset(0, 0))
+                      ]),
                   child: Center(
                     child: Image.asset(
                       AppAsset.globalIcon,

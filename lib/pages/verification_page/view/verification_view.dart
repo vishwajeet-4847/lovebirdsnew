@@ -1,14 +1,14 @@
 import 'package:dotted_line/dotted_line.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/verification_page/controller/verification_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/verification_page/controller/verification_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,7 +44,8 @@ class VerificationView extends StatelessWidget {
                       children: [
                         Container(
                           height: MediaQuery.of(context).viewPadding.top + 72,
-                          padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).viewPadding.top),
                           alignment: Alignment.center,
                           width: Get.width,
                           decoration: BoxDecoration(
@@ -55,7 +56,8 @@ class VerificationView extends StatelessWidget {
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.blackColor.withValues(alpha: 0.40),
+                                color: AppColors.blackColor
+                                    .withValues(alpha: 0.40),
                                 offset: const Offset(0, -6),
                                 blurRadius: 34,
                                 spreadRadius: 0,
@@ -67,7 +69,9 @@ class VerificationView extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Database.isVerification ? Get.back() : Get.close(2);
+                                  Database.isVerification
+                                      ? Get.back()
+                                      : Get.close(2);
                                 },
                                 child: Container(
                                   height: 45,
@@ -84,7 +88,8 @@ class VerificationView extends StatelessWidget {
                               ),
                               Text(
                                 EnumLocale.txtVerificationDetails.name.tr,
-                                style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                                style: AppFontStyle.styleW700(
+                                    AppColors.whiteColor, 20),
                               ),
                               45.width,
                             ],
@@ -105,7 +110,8 @@ class VerificationView extends StatelessWidget {
                                 : logic.fetchHostRequestStatusModel?.data == 2
                                     ? EnumLocale.txtRequestAccepted.name.tr
                                     : EnumLocale.txtRequestDecline.name.tr,
-                            style: AppFontStyle.styleW900(AppColors.whiteColor, 30),
+                            style: AppFontStyle.styleW900(
+                                AppColors.whiteColor, 30),
                           ),
                         ),
                         30.height,
@@ -131,7 +137,8 @@ class VerificationView extends StatelessWidget {
                                       width: 66,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                        color: AppColors.colorTextGrey
+                                            .withValues(alpha: 0.22),
                                       ),
                                       clipBehavior: Clip.hardEdge,
                                       child: CustomImage(
@@ -143,19 +150,24 @@ class VerificationView extends StatelessWidget {
                                   ),
                                   15.width,
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         Database.userName,
-                                        style: AppFontStyle.styleW800(AppColors.whiteColor, 20),
+                                        style: AppFontStyle.styleW800(
+                                            AppColors.whiteColor, 20),
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             Database.uniqueId,
                                             maxLines: 1,
-                                            style: AppFontStyle.styleW600(AppColors.verificationTxtColor, 15),
+                                            style: AppFontStyle.styleW600(
+                                                AppColors.verificationTxtColor,
+                                                15),
                                           ),
                                           5.width,
                                           GestureDetector(
@@ -168,7 +180,8 @@ class VerificationView extends StatelessWidget {
                                                 AppAsset.copy,
                                                 height: 20,
                                                 width: 20,
-                                                color: AppColors.verificationTxtColor,
+                                                color: AppColors
+                                                    .verificationTxtColor,
                                               ),
                                             ),
                                           ),
@@ -185,7 +198,8 @@ class VerificationView extends StatelessWidget {
                                 lineLength: double.infinity,
                                 lineThickness: 1.0,
                                 dashLength: 4.0,
-                                dashColor: AppColors.whiteColor.withValues(alpha: 0.22),
+                                dashColor: AppColors.whiteColor
+                                    .withValues(alpha: 0.22),
                                 dashRadius: 0.0,
                                 dashGapLength: 4.0,
                                 dashGapColor: Colors.transparent,
@@ -193,50 +207,63 @@ class VerificationView extends StatelessWidget {
                               ),
                               20.height,
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "${EnumLocale.txtName.name.tr} : ",
-                                    style: AppFontStyle.styleW600(AppColors.verificationTxtColor1, 16),
+                                    style: AppFontStyle.styleW600(
+                                        AppColors.verificationTxtColor1, 16),
                                   ),
                                   Text(
                                     Database.userName,
-                                    style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
+                                    style: AppFontStyle.styleW700(
+                                        AppColors.whiteColor, 16),
                                   )
                                 ],
                               ),
                               20.height,
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "${EnumLocale.txtRequestId.name.tr} : ",
-                                    style: AppFontStyle.styleW600(AppColors.verificationTxtColor1, 16),
+                                    style: AppFontStyle.styleW600(
+                                        AppColors.verificationTxtColor1, 16),
                                   ),
                                   Text(
                                     Database.uniqueId,
-                                    style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
+                                    style: AppFontStyle.styleW700(
+                                        AppColors.whiteColor, 16),
                                   )
                                 ],
                               ),
                               20.height,
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "${EnumLocale.txtStatus.name.tr} : ",
-                                    style: AppFontStyle.styleW600(AppColors.verificationTxtColor1, 16),
+                                    style: AppFontStyle.styleW600(
+                                        AppColors.verificationTxtColor1, 16),
                                   ),
                                   Text(
                                     logic.fetchHostRequestStatusModel?.data == 1
                                         ? EnumLocale.txtPending.name.tr
-                                        : logic.fetchHostRequestStatusModel?.data == 2
+                                        : logic.fetchHostRequestStatusModel
+                                                    ?.data ==
+                                                2
                                             ? EnumLocale.txtAccepted.name.tr
                                             : EnumLocale.txtDecline.name.tr,
                                     style: AppFontStyle.styleW700(
-                                      logic.fetchHostRequestStatusModel?.data == 1
+                                      logic.fetchHostRequestStatusModel?.data ==
+                                              1
                                           ? AppColors.whiteColor
-                                          : logic.fetchHostRequestStatusModel?.data == 2
+                                          : logic.fetchHostRequestStatusModel
+                                                      ?.data ==
+                                                  2
                                               ? AppColors.darkGreenColor
                                               : AppColors.redColor2,
                                       16,

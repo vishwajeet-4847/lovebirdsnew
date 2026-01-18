@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:figgy/pages/random_match_page/model/get_available_host_model.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/random_match_page/model/get_available_host_model.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 
 class MatchingController extends GetxController {

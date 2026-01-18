@@ -1,12 +1,12 @@
 import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
-import 'package:figgy/pages/chat_page/controller/chat_controller.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/chat_page/controller/chat_controller.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,10 +24,12 @@ class ReceiverAudioMessageWidget extends StatefulWidget {
   });
 
   @override
-  State<ReceiverAudioMessageWidget> createState() => _ReceiverAudioMessageWidgetState();
+  State<ReceiverAudioMessageWidget> createState() =>
+      _ReceiverAudioMessageWidgetState();
 }
 
-class _ReceiverAudioMessageWidgetState extends State<ReceiverAudioMessageWidget> {
+class _ReceiverAudioMessageWidgetState
+    extends State<ReceiverAudioMessageWidget> {
   final AudioPlayer player = AudioPlayer();
   bool isPlaying = false;
   Duration duration = Duration.zero;
@@ -125,7 +127,12 @@ class _ReceiverAudioMessageWidgetState extends State<ReceiverAudioMessageWidget>
                         children: [
                           GestureDetector(
                             onTap: () => onPlayAudio(),
-                            child: Image.asset(isPlaying ? AppAsset.icPause1 : AppAsset.icPlay1, color: AppColors.pinkMessageColor, width: 24),
+                            child: Image.asset(
+                                isPlaying
+                                    ? AppAsset.icPause1
+                                    : AppAsset.icPlay1,
+                                color: AppColors.pinkMessageColor,
+                                width: 24),
                           ),
                           5.width,
                           Expanded(
@@ -134,14 +141,19 @@ class _ReceiverAudioMessageWidgetState extends State<ReceiverAudioMessageWidget>
                                 overlayShape: SliderComponentShape.noOverlay,
                                 activeTrackColor: AppColors.primaryColor,
                                 thumbColor: AppColors.primaryColor,
-                                thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10),
+                                thumbShape: const RoundSliderThumbShape(
+                                    enabledThumbRadius: 10),
                                 trackHeight: 5,
                               ),
                               child: Slider(
                                 activeColor: AppColors.pinkMessageColor,
                                 min: 0,
-                                max: duration.inSeconds.toDouble() > 0 ? duration.inSeconds.toDouble() : 1,
-                                value: position.inSeconds.toDouble().clamp(0, duration.inSeconds.toDouble()),
+                                max: duration.inSeconds.toDouble() > 0
+                                    ? duration.inSeconds.toDouble()
+                                    : 1,
+                                value: position.inSeconds
+                                    .toDouble()
+                                    .clamp(0, duration.inSeconds.toDouble()),
                                 onChanged: (value) {
                                   player.seek(Duration(seconds: value.toInt()));
                                 },
@@ -153,7 +165,9 @@ class _ReceiverAudioMessageWidgetState extends State<ReceiverAudioMessageWidget>
                             height: 44,
                             width: 44,
                             alignment: Alignment.center,
-                            decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.pinkMessageColor),
+                            decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.pinkMessageColor),
                             child: Image.asset(
                               AppAsset.icMicrophone,
                               width: 20,
@@ -168,7 +182,8 @@ class _ReceiverAudioMessageWidgetState extends State<ReceiverAudioMessageWidget>
                       right: 70,
                       child: Text(
                         formatTime(position),
-                        style: AppFontStyle.styleW600(AppColors.pinkMessageColor, 9),
+                        style: AppFontStyle.styleW600(
+                            AppColors.pinkMessageColor, 9),
                       ),
                     ),
                   ],

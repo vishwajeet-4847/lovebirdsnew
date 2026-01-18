@@ -1,10 +1,10 @@
-// import 'package:figgy/custom/custom_image/custom_image.dart';
-// import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-// import 'package:figgy/routes/app_routes.dart';
-// import 'package:figgy/utils/api.dart';
-// import 'package:figgy/utils/asset.dart';
-// import 'package:figgy/utils/colors_utils.dart';
-// import 'package:figgy/utils/database.dart';
+// import 'package:LoveBirds/custom/custom_image/custom_image.dart';
+// import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+// import 'package:LoveBirds/routes/app_routes.dart';
+// import 'package:LoveBirds/utils/api.dart';
+// import 'package:LoveBirds/utils/asset.dart';
+// import 'package:LoveBirds/utils/colors_utils.dart';
+// import 'package:LoveBirds/utils/database.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 //
@@ -90,12 +90,12 @@
 //   }
 // }
 
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,15 +1,15 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/dialog/unblock_dialog.dart';
-import 'package:figgy/custom/no_data_found/no_data_found.dart';
-import 'package:figgy/pages/block_list_page/api/get_blocked_user_api.dart';
-import 'package:figgy/pages/block_list_page/controller/block_list_controller.dart';
-import 'package:figgy/shimmer/block_list_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/dialog/unblock_dialog.dart';
+import 'package:LoveBirds/custom/no_data_found/no_data_found.dart';
+import 'package:LoveBirds/pages/block_list_page/api/get_blocked_user_api.dart';
+import 'package:LoveBirds/pages/block_list_page/controller/block_list_controller.dart';
+import 'package:LoveBirds/shimmer/block_list_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +31,8 @@ class HostBlockView extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).viewPadding.top + 72,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -111,7 +112,8 @@ class HostBlockListView extends StatelessWidget {
                                   shrinkWrap: true,
                                   itemBuilder: (context, index) {
                                     return Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 8),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 11, vertical: 8),
                                       width: Get.width,
                                       decoration: BoxDecoration(
                                         color: AppColors.settingColor,
@@ -126,7 +128,8 @@ class HostBlockListView extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                color: AppColors.whiteColor.withValues(alpha: 0.70),
+                                                color: AppColors.whiteColor
+                                                    .withValues(alpha: 0.70),
                                               ),
                                             ),
                                             child: Container(
@@ -134,41 +137,77 @@ class HostBlockListView extends StatelessWidget {
                                               width: 48,
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
-                                                color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                                color: AppColors.colorTextGrey
+                                                    .withValues(alpha: 0.22),
                                               ),
                                               clipBehavior: Clip.hardEdge,
                                               child: CustomImage(
                                                 padding: 8,
-                                                image: logic.userBlockList[index].userId?.image ?? "",
+                                                image: logic
+                                                        .userBlockList[index]
+                                                        .userId
+                                                        ?.image ??
+                                                    "",
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
                                           ),
                                           16.width,
                                           Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                logic.userBlockList[index].userId?.name ?? "",
-                                                style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                                                logic.userBlockList[index]
+                                                        .userId?.name ??
+                                                    "",
+                                                style: AppFontStyle.styleW700(
+                                                    AppColors.whiteColor, 20),
                                               ),
                                               1.height,
                                               Row(
                                                 children: [
-                                                  (logic.userBlockList[index].userId?.countryFlagImage?.startsWith("http") == true)
+                                                  (logic
+                                                              .userBlockList[
+                                                                  index]
+                                                              .userId
+                                                              ?.countryFlagImage
+                                                              ?.startsWith(
+                                                                  "http") ==
+                                                          true)
                                                       ? Image.network(
-                                                          logic.userBlockList[index].userId?.countryFlagImage ?? "",
+                                                          logic
+                                                                  .userBlockList[
+                                                                      index]
+                                                                  .userId
+                                                                  ?.countryFlagImage ??
+                                                              "",
                                                           height: 10,
                                                         )
                                                       : Text(
-                                                          logic.userBlockList[index].userId?.countryFlagImage ?? "",
-                                                          style: AppFontStyle.styleW400(AppColors.colorGry, 19),
+                                                          logic
+                                                                  .userBlockList[
+                                                                      index]
+                                                                  .userId
+                                                                  ?.countryFlagImage ??
+                                                              "",
+                                                          style: AppFontStyle
+                                                              .styleW400(
+                                                                  AppColors
+                                                                      .colorGry,
+                                                                  19),
                                                         ),
                                                   8.width,
                                                   Text(
-                                                    logic.userBlockList[index].userId?.country ?? "",
-                                                    style: AppFontStyle.styleW400(AppColors.colorGry, 14),
+                                                    logic.userBlockList[index]
+                                                            .userId?.country ??
+                                                        "",
+                                                    style:
+                                                        AppFontStyle.styleW400(
+                                                            AppColors.colorGry,
+                                                            14),
                                                   ),
                                                 ],
                                               ),
@@ -180,26 +219,47 @@ class HostBlockListView extends StatelessWidget {
                                               return GestureDetector(
                                                 onTap: () {
                                                   Get.dialog(
-                                                    barrierColor: AppColors.blackColor.withValues(alpha: 0.8),
+                                                    barrierColor: AppColors
+                                                        .blackColor
+                                                        .withValues(alpha: 0.8),
                                                     Dialog(
-                                                      backgroundColor: AppColors.transparent,
-                                                      shadowColor: Colors.transparent,
-                                                      surfaceTintColor: Colors.transparent,
+                                                      backgroundColor:
+                                                          AppColors.transparent,
+                                                      shadowColor:
+                                                          Colors.transparent,
+                                                      surfaceTintColor:
+                                                          Colors.transparent,
                                                       elevation: 0,
                                                       child: UnblockDialog(
-                                                        hostId: logic.userBlockList[index].userId?.id ?? "",
+                                                        hostId: logic
+                                                                .userBlockList[
+                                                                    index]
+                                                                .userId
+                                                                ?.id ??
+                                                            "",
                                                         isHost: false,
-                                                        userId: logic.userBlockList[index].userId?.id ?? "",
+                                                        userId: logic
+                                                                .userBlockList[
+                                                                    index]
+                                                                .userId
+                                                                ?.id ??
+                                                            "",
                                                       ),
                                                     ),
                                                   );
                                                 },
                                                 child: Container(
                                                   alignment: Alignment.center,
-                                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-                                                  decoration: const BoxDecoration(
-                                                    color: AppColors.unBlockColor,
-                                                    borderRadius: BorderRadius.all(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 10,
+                                                      vertical: 8),
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                    color:
+                                                        AppColors.unBlockColor,
+                                                    borderRadius:
+                                                        BorderRadius.all(
                                                       Radius.circular(30),
                                                     ),
                                                   ),
@@ -209,11 +269,17 @@ class HostBlockListView extends StatelessWidget {
                                                         AppAsset.unBlockIcon2,
                                                         width: 18,
                                                         height: 18,
-                                                        color: AppColors.whiteColor,
+                                                        color: AppColors
+                                                            .whiteColor,
                                                       ),
                                                       Text(
-                                                        EnumLocale.txtUnblock.name.tr,
-                                                        style: AppFontStyle.styleW700(AppColors.whiteColor, 15),
+                                                        EnumLocale
+                                                            .txtUnblock.name.tr,
+                                                        style: AppFontStyle
+                                                            .styleW700(
+                                                                AppColors
+                                                                    .whiteColor,
+                                                                15),
                                                       ),
                                                     ],
                                                   ),

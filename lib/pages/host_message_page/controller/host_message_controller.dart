@@ -1,8 +1,8 @@
-// import 'package:figgy/firebase/firebase_access_token.dart';
-// import 'package:figgy/firebase/firebase_uid.dart';
-// import 'package:figgy/pages/host_message_page/api/get_chat_thumb_list_host.dart';
-// import 'package:figgy/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
-// import 'package:figgy/utils/database.dart';
+// import 'package:LoveBirds/firebase/firebase_access_token.dart';
+// import 'package:LoveBirds/firebase/firebase_uid.dart';
+// import 'package:LoveBirds/pages/host_message_page/api/get_chat_thumb_list_host.dart';
+// import 'package:LoveBirds/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
+// import 'package:LoveBirds/utils/database.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 //
@@ -77,12 +77,12 @@
 //   }
 // }
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/host_message_page/api/get_chat_thumb_list_host.dart';
-import 'package:figgy/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/host_message_page/api/get_chat_thumb_list_host.dart';
+import 'package:LoveBirds/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -107,9 +107,11 @@ class HostMessageController extends GetxController {
         getHostMessage();
         scrollController.addListener(onPagination);
 
-        Utils.showLog('Database.isApiCall+++++-++-+-+-+ ${Database.isHostMessageApiCall}');
+        Utils.showLog(
+            'Database.isApiCall+++++-++-+-+-+ ${Database.isHostMessageApiCall}');
         Database.onSetIsHostMessageApiCall(false);
-        Utils.showLog('Database.isApiCall0202202220 ${Database.isHostMessageApiCall}');
+        Utils.showLog(
+            'Database.isApiCall0202202220 ${Database.isHostMessageApiCall}');
       } else {
         Utils.showLog("Enter in else live stream controller");
       }
@@ -126,13 +128,17 @@ class HostMessageController extends GetxController {
   }
 
   void onPagination() {
-    if (!isPaginationLoading && hasMoreData && scrollController.position.pixels >= scrollController.position.maxScrollExtent - 100) {
+    if (!isPaginationLoading &&
+        hasMoreData &&
+        scrollController.position.pixels >=
+            scrollController.position.maxScrollExtent - 100) {
       GetChatThumbListHostApi.startPagination++;
       getHostMessage(isPagination: true);
     }
   }
 
-  Future<void> getHostMessage({bool isPagination = false, bool isLoadingThen = false}) async {
+  Future<void> getHostMessage(
+      {bool isPagination = false, bool isLoadingThen = false}) async {
     if (!isPagination) {
       hostThumbList.clear();
       GetChatThumbListHostApi.startPagination = 1;

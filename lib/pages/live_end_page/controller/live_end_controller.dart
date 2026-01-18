@@ -1,4 +1,4 @@
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 
 class LiveEndController extends GetxController {

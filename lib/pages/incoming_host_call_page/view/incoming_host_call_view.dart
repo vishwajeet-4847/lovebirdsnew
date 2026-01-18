@@ -1,11 +1,11 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/incoming_host_call_page/controller/incoming_host_call_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/incoming_host_call_page/controller/incoming_host_call_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -45,9 +45,12 @@ class IncomingHostCallView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          logic.callType == "audio" ? EnumLocale.txtAudioCalling.name.tr : EnumLocale.txtVideoCalling.name.tr,
+                          logic.callType == "audio"
+                              ? EnumLocale.txtAudioCalling.name.tr
+                              : EnumLocale.txtVideoCalling.name.tr,
                           maxLines: 1,
-                          style: AppFontStyle.styleW500(AppColors.whiteColor, 20),
+                          style:
+                              AppFontStyle.styleW500(AppColors.whiteColor, 20),
                         ),
                         Lottie.asset(
                           AppAsset.lottieLoading,

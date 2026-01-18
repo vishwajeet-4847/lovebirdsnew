@@ -1,18 +1,18 @@
 import 'dart:io';
 
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/custom/cupertino_date_picker/date_picker.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/text_field/custom_text_field.dart';
-import 'package:figgy/pages/edit_profile_page/controller/edit_profile_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/date_picker.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/text_field/custom_text_field.dart';
+import 'package:LoveBirds/pages/edit_profile_page/controller/edit_profile_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +40,8 @@ class EditProfileView extends StatelessWidget {
                   children: [
                     Container(
                       height: MediaQuery.of(context).viewPadding.top + 72,
-                      padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).viewPadding.top),
                       alignment: Alignment.center,
                       width: Get.width,
                       decoration: BoxDecoration(
@@ -67,12 +68,14 @@ class EditProfileView extends StatelessWidget {
                               height: 45,
                               width: 45,
                               alignment: Alignment.center,
-                              child: Image.asset(AppAsset.icLeftArrow, width: 10),
+                              child:
+                                  Image.asset(AppAsset.icLeftArrow, width: 10),
                             ),
                           ),
                           Text(
                             EnumLocale.txtEnterYourDetails.name.tr,
-                            style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                            style: AppFontStyle.styleW700(
+                                AppColors.whiteColor, 20),
                           ),
                           const SizedBox(width: 45),
                         ],
@@ -80,7 +83,8 @@ class EditProfileView extends StatelessWidget {
                     ),
                     Expanded(
                       child: SingleChildScrollView(
-                        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -99,39 +103,46 @@ class EditProfileView extends StatelessWidget {
                                       child: Stack(
                                         children: [
                                           ClipOval(
-                                            child: logic.pickImages.isEmpty == true
-                                                ? GetBuilder<EditProfileController>(
-                                                    builder: (controller) {
-                                                      return SizedBox(
+                                            child:
+                                                logic.pickImages.isEmpty == true
+                                                    ? GetBuilder<
+                                                        EditProfileController>(
+                                                        builder: (controller) {
+                                                          return SizedBox(
+                                                            height: 140,
+                                                            width: 140,
+                                                            child: CustomImage(
+                                                              padding: 20,
+                                                              image: logic
+                                                                  .profileImage,
+                                                            ),
+                                                          );
+                                                        },
+                                                      )
+                                                    : Image.file(
+                                                        File(logic.pickImages),
                                                         height: 140,
                                                         width: 140,
-                                                        child: CustomImage(
-                                                          padding: 20,
-                                                          image: logic.profileImage,
-                                                        ),
-                                                      );
-                                                    },
-                                                  )
-                                                : Image.file(
-                                                    File(logic.pickImages),
-                                                    height: 140,
-                                                    width: 140,
-                                                    fit: BoxFit.cover,
-                                                  ),
+                                                        fit: BoxFit.cover,
+                                                      ),
                                           ),
                                           Positioned(
                                             right: 0,
                                             bottom: 5,
                                             child: Container(
                                               padding: const EdgeInsets.all(2),
-                                              decoration: BoxDecoration(color: AppColors.profileBorderColor, shape: BoxShape.circle),
+                                              decoration: BoxDecoration(
+                                                  color: AppColors
+                                                      .profileBorderColor,
+                                                  shape: BoxShape.circle),
                                               child: Container(
                                                 height: 36,
                                                 width: 36,
                                                 alignment: Alignment.center,
                                                 decoration: BoxDecoration(
                                                   shape: BoxShape.circle,
-                                                  gradient: AppColors.gradientButtonColor,
+                                                  gradient: AppColors
+                                                      .gradientButtonColor,
                                                 ),
                                                 child: Center(
                                                     child: Image.asset(
@@ -152,7 +163,8 @@ class EditProfileView extends StatelessWidget {
                             30.height,
                             Text(
                               EnumLocale.txtEditProfileDetails.name.tr,
-                              style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                              style: AppFontStyle.styleW700(
+                                  AppColors.whiteColor, 18),
                             ),
                             20.height,
                             customLabel(EnumLocale.txtName.name.tr),
@@ -171,8 +183,12 @@ class EditProfileView extends StatelessWidget {
                                 keyboardType: TextInputType.name,
                               ),
                             ),
-                            Database.loginType == 3 ? const SizedBox() : 20.height,
-                            Database.loginType == 3 ? const SizedBox() : customLabel(EnumLocale.txtEmail.name.tr),
+                            Database.loginType == 3
+                                ? const SizedBox()
+                                : 20.height,
+                            Database.loginType == 3
+                                ? const SizedBox()
+                                : customLabel(EnumLocale.txtEmail.name.tr),
                             Database.loginType == 3
                                 ? const SizedBox()
                                 : GetBuilder<EditProfileController>(
@@ -183,7 +199,8 @@ class EditProfileView extends StatelessWidget {
                                       keyboardType: TextInputType.emailAddress,
                                       fillColor: AppColors.settingColor,
                                       cursorColor: AppColors.whiteColor,
-                                      hintText: EnumLocale.txtEnterEmail.name.tr,
+                                      hintText:
+                                          EnumLocale.txtEnterEmail.name.tr,
                                       hintTextSize: 16,
                                       hintTextColor: AppColors.colorGry,
                                       fontColor: AppColors.whiteColor,
@@ -197,12 +214,14 @@ class EditProfileView extends StatelessWidget {
                               id: AppConstant.idUpdateDate,
                               builder: (logic) {
                                 return GestureDetector(
-                                  onTap: () => showCupertinoDatePicker(context: context),
+                                  onTap: () =>
+                                      showCupertinoDatePicker(context: context),
                                   child: Container(
                                     height: 55,
                                     width: Get.width,
                                     alignment: Alignment.centerLeft,
-                                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15),
                                     decoration: BoxDecoration(
                                       color: AppColors.settingColor,
                                       borderRadius: BorderRadius.circular(12),
@@ -210,7 +229,8 @@ class EditProfileView extends StatelessWidget {
                                     child: Text(
                                       logic.selectedDateString,
                                       overflow: TextOverflow.ellipsis,
-                                      style: AppFontStyle.styleW400(AppColors.whiteColor, 16),
+                                      style: AppFontStyle.styleW400(
+                                          AppColors.whiteColor, 16),
                                     ),
                                   ),
                                 );
@@ -237,16 +257,19 @@ class EditProfileView extends StatelessWidget {
                                       children: [
                                         Text(
                                           logic.flagController.text,
-                                          style: AppFontStyle.styleW500(AppColors.whiteColor, 20),
+                                          style: AppFontStyle.styleW500(
+                                              AppColors.whiteColor, 20),
                                         ),
                                         10.width,
                                         Text(
                                           logic.countryController.text,
-                                          style: AppFontStyle.styleW600(AppColors.whiteColor, 15),
+                                          style: AppFontStyle.styleW600(
+                                              AppColors.whiteColor, 15),
                                         ),
                                         const Spacer(),
                                         Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8),
                                           child: Icon(
                                             Icons.keyboard_arrow_down,
                                             color: AppColors.whiteColor,
@@ -260,7 +283,8 @@ class EditProfileView extends StatelessWidget {
                               },
                             ),
                             20.height,
-                            customLabel("${EnumLocale.txtBio.name.tr} (${EnumLocale.txtOptional.name.tr})"),
+                            customLabel(
+                                "${EnumLocale.txtBio.name.tr} (${EnumLocale.txtOptional.name.tr})"),
                             GetBuilder<EditProfileController>(
                               builder: (logic) => CustomTextField(
                                 filled: true,
@@ -289,7 +313,8 @@ class EditProfileView extends StatelessWidget {
                           child: Container(
                             height: 56,
                             width: Get.width,
-                            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 15),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               gradient: AppColors.hostNextButton,
@@ -297,7 +322,8 @@ class EditProfileView extends StatelessWidget {
                             ),
                             child: Text(
                               EnumLocale.txtNext.name.tr,
-                              style: AppFontStyle.styleW400(AppColors.whiteColor, 19),
+                              style: AppFontStyle.styleW400(
+                                  AppColors.whiteColor, 19),
                             ),
                           ),
                         );

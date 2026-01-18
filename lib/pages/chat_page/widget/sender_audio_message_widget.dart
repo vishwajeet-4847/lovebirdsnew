@@ -1,11 +1,11 @@
 import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -30,7 +30,8 @@ class SenderAudioMessageWidget extends StatefulWidget {
   });
 
   @override
-  State<SenderAudioMessageWidget> createState() => _SenderAudioMessageWidgetState();
+  State<SenderAudioMessageWidget> createState() =>
+      _SenderAudioMessageWidgetState();
 }
 
 class _SenderAudioMessageWidgetState extends State<SenderAudioMessageWidget> {
@@ -145,12 +146,21 @@ class _SenderAudioMessageWidgetState extends State<SenderAudioMessageWidget> {
                                         )
                                       : GestureDetector(
                                           onTap: () => onPlayAudio(),
-                                          child:
-                                              Image.asset(isPlaying ? AppAsset.icPause1 : AppAsset.icPlay1, color: AppColors.messageColor, width: 24),
+                                          child: Image.asset(
+                                              isPlaying
+                                                  ? AppAsset.icPause1
+                                                  : AppAsset.icPlay1,
+                                              color: AppColors.messageColor,
+                                              width: 24),
                                         )
                                   : GestureDetector(
                                       onTap: () => onPlayAudio(),
-                                      child: Image.asset(isPlaying ? AppAsset.icPause1 : AppAsset.icPlay1, color: AppColors.messageColor, width: 24),
+                                      child: Image.asset(
+                                          isPlaying
+                                              ? AppAsset.icPause1
+                                              : AppAsset.icPlay1,
+                                          color: AppColors.messageColor,
+                                          width: 24),
                                     );
                             },
                           ),
@@ -161,14 +171,19 @@ class _SenderAudioMessageWidgetState extends State<SenderAudioMessageWidget> {
                                 overlayShape: SliderComponentShape.noOverlay,
                                 activeTrackColor: AppColors.primaryColor,
                                 thumbColor: AppColors.primaryColor,
-                                thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10),
+                                thumbShape: const RoundSliderThumbShape(
+                                    enabledThumbRadius: 10),
                                 trackHeight: 5,
                               ),
                               child: Slider(
                                 activeColor: AppColors.messageColor,
                                 min: 0,
-                                max: duration.inSeconds.toDouble() > 0 ? duration.inSeconds.toDouble() : 1,
-                                value: position.inSeconds.toDouble().clamp(0, duration.inSeconds.toDouble()),
+                                max: duration.inSeconds.toDouble() > 0
+                                    ? duration.inSeconds.toDouble()
+                                    : 1,
+                                value: position.inSeconds
+                                    .toDouble()
+                                    .clamp(0, duration.inSeconds.toDouble()),
                                 onChanged: (value) {
                                   player.seek(Duration(seconds: value.toInt()));
                                 },
@@ -180,7 +195,9 @@ class _SenderAudioMessageWidgetState extends State<SenderAudioMessageWidget> {
                             height: 44,
                             width: 44,
                             alignment: Alignment.center,
-                            decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.messageColor),
+                            decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.messageColor),
                             child: Image.asset(
                               AppAsset.icMicrophone,
                               width: 20,
@@ -195,7 +212,8 @@ class _SenderAudioMessageWidgetState extends State<SenderAudioMessageWidget> {
                       right: 70,
                       child: Text(
                         formatTime(position),
-                        style: AppFontStyle.styleW600(AppColors.messageColor, 9),
+                        style:
+                            AppFontStyle.styleW600(AppColors.messageColor, 9),
                       ),
                     ),
                   ],

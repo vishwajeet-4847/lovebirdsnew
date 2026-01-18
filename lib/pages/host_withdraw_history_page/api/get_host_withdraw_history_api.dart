@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/host_withdraw_history_page/model/get_host_withdraw_history_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_withdraw_history_page/model/get_host_withdraw_history_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class GeHostWithdrawHistoryApi {
@@ -27,17 +27,21 @@ class GeHostWithdrawHistoryApi {
 
     try {
       final response = await http.get(uri, headers: headers);
-      Utils.showLog("Get Host Withdraw History Api Response => ${response.headers}");
+      Utils.showLog(
+          "Get Host Withdraw History Api Response => ${response.headers}");
 
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
-        Utils.showLog("Get Host Withdraw History Api Response => ${response.body}");
+        Utils.showLog(
+            "Get Host Withdraw History Api Response => ${response.body}");
 
-        getHostWithdrawHistoryModel = GetHostWithdrawHistoryModel.fromJson(jsonResponse);
+        getHostWithdrawHistoryModel =
+            GetHostWithdrawHistoryModel.fromJson(jsonResponse);
         return getHostWithdrawHistoryModel;
       } else {
         final jsonResponse = json.decode(response.body);
-        Utils.showLog("Get Host Withdraw History Api Response Error => $jsonResponse");
+        Utils.showLog(
+            "Get Host Withdraw History Api Response Error => $jsonResponse");
         return null;
       }
     } catch (e) {

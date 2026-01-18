@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:get/get.dart';
 import 'package:proximity_screen_lock/proximity_screen_lock.dart';
@@ -48,10 +48,12 @@ class IncomingHostCallController extends GetxController {
     callType = data['callType'];
 
     if (callType == "audio") {
-      isProximitySupported = await ProximityScreenLock.isProximityLockSupported();
+      isProximitySupported =
+          await ProximityScreenLock.isProximityLockSupported();
       if (isProximitySupported) {
         await ProximityScreenLock.setActive(true);
-        subsProximity = ProximityScreenLock.proximityStates.listen((objectDetected) {
+        subsProximity =
+            ProximityScreenLock.proximityStates.listen((objectDetected) {
           isObjectNear = objectDetected;
           Utils.showLog("Proximity object detected: $isObjectNear");
         });

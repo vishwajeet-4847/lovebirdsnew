@@ -1,6 +1,6 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -31,14 +31,16 @@ void showBlockedUserDialog({required int coin}) {
                   const SizedBox(height: 100),
                   Text(
                     "Congratulation.!",
-                    style: AppFontStyle.styleW700(AppColors.rewardColor, 28).copyWith(
+                    style: AppFontStyle.styleW700(AppColors.rewardColor, 28)
+                        .copyWith(
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     "You Earned",
-                    style: AppFontStyle.styleW900(AppColors.rewardColor, 40).copyWith(
+                    style: AppFontStyle.styleW900(AppColors.rewardColor, 40)
+                        .copyWith(
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -48,11 +50,13 @@ void showBlockedUserDialog({required int coin}) {
                     children: [
                       Text(
                         coin.toString(),
-                        style: AppFontStyle.styleW800(AppColors.rewardColor, 34),
+                        style:
+                            AppFontStyle.styleW800(AppColors.rewardColor, 34),
                       ),
                       Text(
                         " Coins",
-                        style: AppFontStyle.styleW700(AppColors.rewardColor, 26).copyWith(
+                        style: AppFontStyle.styleW700(AppColors.rewardColor, 26)
+                            .copyWith(
                           fontStyle: FontStyle.italic,
                         ),
                       ),
@@ -74,7 +78,8 @@ void showBlockedUserDialog({required int coin}) {
                       child: Center(
                         child: Text(
                           "Done",
-                          style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 20),
                         ),
                       ),
                     ),

@@ -1,8 +1,13 @@
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 
 class GradiantBorderContainer extends StatelessWidget {
-  const GradiantBorderContainer({super.key, required this.height, this.width, required this.radius, this.child});
+  const GradiantBorderContainer(
+      {super.key,
+      required this.height,
+      this.width,
+      required this.radius,
+      this.child});
 
   final double height;
   final double? width;

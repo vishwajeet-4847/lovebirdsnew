@@ -1,4 +1,4 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> swKE = {
   EnumLocale.txtLetsStart.name: "Hebu Tuanze",
@@ -9,7 +9,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtUseAgreement.name: "Tumia Makubaliano",
   EnumLocale.txtCoinRechargeSuccess.name: "Coin Recharge Mafanikio",
   EnumLocale.txtSomeThingWentWrong.name: "Hitilafu fulani imetokea",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "Bonyeza kwa Muda Mrefu Ili kuwezesha Kurekodi Sauti",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "Bonyeza kwa Muda Mrefu Ili kuwezesha Kurekodi Sauti",
   EnumLocale.txtPleaseAllowPermission.name: "Tafadhali Ruhusu Ruhusa",
   EnumLocale.txtTypeSomething.name: "Sema Kitu...",
   EnumLocale.txtRandomMatch.name: "Mechi ya Nasibu",
@@ -18,10 +19,13 @@ final Map<String, String> swKE = {
   EnumLocale.txtRecharge.name: "Chaji upya",
   EnumLocale.txtMyGems.name: "Vito vyangu",
   EnumLocale.txtPleaseEnterWithdrawCoin.name: "Tafadhali Weka Sarafu ya Kutoa",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "Sarafu Iliyoombwa Kutoa Lazima Iwe Kubwa Kuliko Ilivyobainishwa na Msimamizi",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "Tafadhali Chagua Njia ya Kuondoa",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "Tafadhali Weka Maelezo Yote ya Malipo",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "Tafadhali Chagua Njia ya Kuondoa",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "Tafadhali Weka Maelezo Yote ya Malipo",
   EnumLocale.txtSelectPaymentGateway.name: "Chagua Njia ya Malipo",
   EnumLocale.txtAvailableCoin.name: "Sarafu Inayopatikana",
   EnumLocale.txtWithdraw.name: "Ondoa",
@@ -74,7 +78,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtVerificationDetails.name: "Maelezo ya Uthibitishaji",
   EnumLocale.txtVerificationRequestText.name:
       "Maelezo yote uliyowasilisha yamepokelewa na Sisi. Tutakuangalia na kukuarifu kuhusu hili pindi tu tutakapokuwa na sasisho lako.\n\nItachukua takriban siku 3 hadi 4 za kazi ili kuangalia na kuthibitisha wasifu wako.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "Mtumiaji Hana Pesa za Kutosha Kufanya Uondoaji",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "Mtumiaji Hana Pesa za Kutosha Kufanya Uondoaji",
   EnumLocale.txtIncomingVideoCall.name: "Hangout ya Video inayoingia...",
   EnumLocale.txtIncomingAudioCall.name: "Simu ya sauti inayoingia...",
   EnumLocale.txtUploadYourImages.name: "Pakia Picha Zako",
@@ -108,7 +113,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtPleaseEnterYourName.name: "Tafadhali Weka Jina Lako",
   EnumLocale.txtPleaseEnterYourDOB.name: "Tafadhali weka DOB yako",
   EnumLocale.txtPleaseEnterYourBio.name: "Tafadhali weka Wasifu wako",
-  EnumLocale.txtUploadFrontSideId.name: "Pakia Kitambulisho cha Upande wa Mbele",
+  EnumLocale.txtUploadFrontSideId.name:
+      "Pakia Kitambulisho cha Upande wa Mbele",
   EnumLocale.txtPersonalPhotos.name: "Picha za Kibinafsi",
   EnumLocale.txtUploadBackSideId.name: "Pakia Kitambulisho cha Upande wa Nyuma",
   EnumLocale.txtClearPhotos.name: "Futa Picha",
@@ -124,7 +130,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtUnblock.name: "Ondoa kizuizi",
   EnumLocale.txtApplealDetails.name:
       "Malalamiko yako yatakubaliwa haraka iwezekanavyo, tafadhali wasilisha maelezo ya kina ya malalamiko yako iwezekanavyo",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "Tafadhali chagua sababu ambayo ungependa kuripoti",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "Tafadhali chagua sababu ambayo ungependa kuripoti",
   EnumLocale.txtCancel.name: "Ghairi",
   EnumLocale.txtSave.name: "Hifadhi",
   EnumLocale.txtCheckIn.name: "Ingia",
@@ -132,7 +139,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtNoInternetConnection.name: "Hakuna Muunganisho wa Mtandao",
   EnumLocale.txtGifts.name: "Zawadi",
   EnumLocale.txtSend.name: "Tuma",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "Je, ungependa kuhakikisha\n kuondoka kwenye Programu hii?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "Je, ungependa kuhakikisha\n kuondoka kwenye Programu hii?",
   EnumLocale.txtPay.name: "Lipa",
   EnumLocale.txtTotal.name: "Jumla",
   EnumLocale.txtPayNow.name: "Lipa Sasa",
@@ -143,8 +151,10 @@ final Map<String, String> swKE = {
   EnumLocale.txtGallery.name: "Matunzio",
   EnumLocale.txtTakePhoto.name: "Piga Picha",
   EnumLocale.txtWaitingForRemoteUser.name: "Inasubiri mtumiaji wa mbali...",
-  EnumLocale.txtPleaseSelectADocumentType.name: "Tafadhali chagua aina ya hati.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "Tafadhali angalia muunganisho wako wa intaneti.",
+  EnumLocale.txtPleaseSelectADocumentType.name:
+      "Tafadhali chagua aina ya hati.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "Tafadhali angalia muunganisho wako wa intaneti.",
   EnumLocale.txtLiveHost.name: "Mpangishi wa Moja kwa Moja",
   EnumLocale.txtEnterBio.name: "Weka wasifu wako",
   EnumLocale.txtUploadId.name: "Pakia Picha Zako",
@@ -163,7 +173,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtPleaseSelectFontImages.name: "Tafadhali Chagua Picha za Fonti",
   EnumLocale.txtAudioCallDiscount.name: "Punguzo la Simu ya Sauti",
   EnumLocale.txtVideoCallDiscount.name: "Punguzo la Simu ya Video",
-  EnumLocale.txtRandomMatchCallDiscount.name: "Punguzo la Simu ya Kulinganisha Nasibu",
+  EnumLocale.txtRandomMatchCallDiscount.name:
+      "Punguzo la Simu ya Kulinganisha Nasibu",
   EnumLocale.txtTopUpCoinBonus.name: "Bonasi ya Sarafu ya Juu",
   EnumLocale.txtFreeMessages.name: "Ujumbe wa Bure",
   EnumLocale.txtGemsGift.name: "Zawadi ya Vito",
@@ -195,7 +206,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtVipDescription.name:
       "Kumbuka: VIP si malipo ya kiotomatiki ya usajili na haitasasishwa kiotomatiki baada ya muda wake kuisha. Baada ya kuwezesha VIP, unaweza kupokea zawadi moja kwa moja, na mapendeleo mengine yanaweza kufurahia katika kipindi chote cha uhalali wa VIP.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP FURAHIA MAPENZI",
-  EnumLocale.txtDailyCheckInDescription.name: "Ingia baada ya kuchaji kiasi chochote ili upate almasi kila wiki",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "Ingia baada ya kuchaji kiasi chochote ili upate almasi kila wiki",
   EnumLocale.txtDay.name: "Siku",
   EnumLocale.txtSelectPaymentOption.name: "Chagua Chaguo la Malipo",
   EnumLocale.txtVerificationText.name:
@@ -212,12 +224,16 @@ final Map<String, String> swKE = {
   EnumLocale.txtPayment.name: "Malipo",
   EnumLocale.txtBlockHost.name: "Zuia Mwenyeji",
   EnumLocale.txtBlockUser.name: "Zuia Mtumiaji",
-  EnumLocale.txtBlockDetailsHost.name: "Je, una uhakika unataka kumzuia mwenyeji huyu?",
-  EnumLocale.txtBlockDetailsUser.name: "Je, una uhakika unataka kumzuia mtumiaji huyu?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "Je, una uhakika unataka kumzuia mwenyeji huyu?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "Je, una uhakika unataka kumzuia mtumiaji huyu?",
   EnumLocale.txtUnBlockHost.name: "Ondoa kizuizi kwa Mwenyeji",
   EnumLocale.txtUnBlockUser.name: "Ondoa kizuizi kwa Mtumiaji",
-  EnumLocale.txtUnBlockDetailsHost.name: "Je, una uhakika unataka kumfungulia mwenyeji huyu?",
-  EnumLocale.txtUnBlockDetailsUser.name: "Je, una uhakika unataka kumfungulia mtumiaji huyu?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "Je, una uhakika unataka kumfungulia mwenyeji huyu?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "Je, una uhakika unataka kumfungulia mtumiaji huyu?",
   EnumLocale.txtWithdrawHistory.name: "Ondoa Historia",
   EnumLocale.txtWalletHistory.name: "Historia ya Wallet",
   EnumLocale.txtDeclineRequest.name:
@@ -245,7 +261,8 @@ final Map<String, String> swKE = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "Tafadhali chagua zawadi kwanza",
   EnumLocale.txtTermsAndConditions.name: "Vigezo na Masharti",
   EnumLocale.txtUnderMaintenance.name: 'Programu hii iko chini ya Matengenezo',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'Urekebishaji wa mfumo unaendelea: tafadhali jaribu tena baadaye.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'Urekebishaji wa mfumo unaendelea: tafadhali jaribu tena baadaye.',
   EnumLocale.txtCloseAPP.name: 'Funga Programu',
   EnumLocale.txtSearchCountry.name: 'Tafuta Nchi',
   EnumLocale.txtCoins.name: 'Sarafu',

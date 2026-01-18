@@ -1,11 +1,11 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/live_end_page/controller/live_end_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/live_end_page/controller/live_end_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -65,9 +65,11 @@ class LiveEndScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(56),
                                   border: Border.all(
-                                    color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                    color: AppColors.whiteColor
+                                        .withValues(alpha: 0.2),
                                   ),
-                                  color: AppColors.whiteColor.withValues(alpha: 0.12),
+                                  color: AppColors.whiteColor
+                                      .withValues(alpha: 0.12),
                                 ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,13 +81,15 @@ class LiveEndScreen extends StatelessWidget {
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                        color: AppColors.colorTextGrey
+                                            .withValues(alpha: 0.22),
                                       ),
                                       child: Stack(
                                         children: [
                                           AspectRatio(
                                             aspectRatio: 1,
-                                            child: Image.asset(AppAsset.icProfilePlaceHolder),
+                                            child: Image.asset(
+                                                AppAsset.icProfilePlaceHolder),
                                           ),
                                           AspectRatio(
                                             aspectRatio: 1,
@@ -99,8 +103,10 @@ class LiveEndScreen extends StatelessWidget {
                                     ),
                                     7.width,
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         SizedBox(
                                           width: 95,
@@ -108,17 +114,20 @@ class LiveEndScreen extends StatelessWidget {
                                             logic.hostName,
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
-                                            style: AppFontStyle.styleW600(AppColors.whiteColor, 14),
+                                            style: AppFontStyle.styleW600(
+                                                AppColors.whiteColor, 14),
                                           ),
                                         ),
                                         Row(
                                           children: [
-                                            Image.asset(AppAsset.icEye, width: 18),
+                                            Image.asset(AppAsset.icEye,
+                                                width: 18),
                                             5.width,
                                             Text(
                                               "0",
                                               maxLines: 1,
-                                              style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                                              style: AppFontStyle.styleW700(
+                                                  AppColors.whiteColor, 12),
                                             ),
                                           ],
                                         ),
@@ -139,10 +148,12 @@ class LiveEndScreen extends StatelessWidget {
                                 padding: const EdgeInsets.all(5),
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: AppColors.whiteColor.withValues(alpha: 0.1),
+                                  color: AppColors.whiteColor
+                                      .withValues(alpha: 0.1),
                                   border: Border.all(
                                     strokeAlign: 0.4,
-                                    color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                    color: AppColors.whiteColor
+                                        .withValues(alpha: 0.2),
                                   ),
                                 ),
                                 child: Image.asset(
@@ -174,7 +185,8 @@ class LiveEndScreen extends StatelessWidget {
                             width: 125,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                              color: AppColors.colorTextGrey
+                                  .withValues(alpha: 0.22),
                             ),
                             clipBehavior: Clip.hardEdge,
                             child: CustomImage(
@@ -186,7 +198,8 @@ class LiveEndScreen extends StatelessWidget {
                         3.height,
                         Text(
                           EnumLocale.txtLiveEnd.name.tr,
-                          style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 20),
                         )
                       ],
                     ),

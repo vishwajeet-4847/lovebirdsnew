@@ -1,6 +1,6 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -81,7 +81,8 @@ class StepProgressIndicator extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: circleGradient == null ? circleColor : null,
                       gradient: circleGradient,
-                      border: Border.all(color: AppColors.indicatorBorderColor, width: 2),
+                      border: Border.all(
+                          color: AppColors.indicatorBorderColor, width: 2),
                     ),
                     child: Center(
                       child: Text(
@@ -93,7 +94,11 @@ class StepProgressIndicator extends StatelessWidget {
                   const SizedBox(height: 6),
                   Text(
                     steps[index],
-                    style: AppFontStyle.styleW700(isCompleted ? AppColors.whiteColor : AppColors.indicatorTxtColor, 11),
+                    style: AppFontStyle.styleW700(
+                        isCompleted
+                            ? AppColors.whiteColor
+                            : AppColors.indicatorTxtColor,
+                        11),
                     textAlign: TextAlign.center,
                   ),
                 ],

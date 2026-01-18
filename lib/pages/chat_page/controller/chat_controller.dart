@@ -2,34 +2,34 @@ import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:figgy/custom/bottom_sheet/image_picker_bottom_sheet.dart';
-import 'package:figgy/custom/custom_image_piker.dart';
-import 'package:figgy/custom/dialog/block_dialog.dart';
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/chat_page/api/fetch_chat_history_from_host_api.dart';
-import 'package:figgy/pages/chat_page/api/fetch_chat_history_from_user_api.dart';
-import 'package:figgy/pages/chat_page/api/send_file_api_host.dart';
-import 'package:figgy/pages/chat_page/api/send_file_api_user.dart';
-import 'package:figgy/pages/chat_page/model/fetch_chat_history_from_host_model.dart';
-import 'package:figgy/pages/chat_page/model/fetch_chat_history_from_user_model.dart';
-import 'package:figgy/pages/chat_page/model/get_socket_data_model.dart';
-import 'package:figgy/pages/chat_page/model/host_send_file_api_model.dart';
-import 'package:figgy/pages/chat_page/model/user_send_file_api_model.dart';
-import 'package:figgy/pages/host_detail_page/api/host_detail_api.dart';
-import 'package:figgy/pages/host_detail_page/model/host_detail_model.dart';
-import 'package:figgy/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_emit.dart';
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/socket_params.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/bottom_sheet/image_picker_bottom_sheet.dart';
+import 'package:LoveBirds/custom/custom_image_piker.dart';
+import 'package:LoveBirds/custom/dialog/block_dialog.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/chat_page/api/fetch_chat_history_from_host_api.dart';
+import 'package:LoveBirds/pages/chat_page/api/fetch_chat_history_from_user_api.dart';
+import 'package:LoveBirds/pages/chat_page/api/send_file_api_host.dart';
+import 'package:LoveBirds/pages/chat_page/api/send_file_api_user.dart';
+import 'package:LoveBirds/pages/chat_page/model/fetch_chat_history_from_host_model.dart';
+import 'package:LoveBirds/pages/chat_page/model/fetch_chat_history_from_user_model.dart';
+import 'package:LoveBirds/pages/chat_page/model/get_socket_data_model.dart';
+import 'package:LoveBirds/pages/chat_page/model/host_send_file_api_model.dart';
+import 'package:LoveBirds/pages/chat_page/model/user_send_file_api_model.dart';
+import 'package:LoveBirds/pages/host_detail_page/api/host_detail_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/model/host_detail_model.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_emit.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/socket_params.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -83,7 +83,9 @@ class ChatController extends GetxController {
   FetchChatHistoryFromHostModel? fetchChatHistoryFromHostModel;
   FetchChatHistoryFromUserModel? fetchChatHistoryFromUserModel;
 
-  String get chatTopicId => Database.isHost ? fetchChatHistoryFromHostModel?.chatTopic ?? "" : fetchChatHistoryFromUserModel?.chatTopic ?? "";
+  String get chatTopicId => Database.isHost
+      ? fetchChatHistoryFromHostModel?.chatTopic ?? ""
+      : fetchChatHistoryFromUserModel?.chatTopic ?? "";
 
   HostDetailModel? hostDetailModel;
 
@@ -101,9 +103,13 @@ class ChatController extends GetxController {
 
     Database.isHost ? hostChats.clear() : userChats.clear();
 
-    Database.isHost ? FetchChatHistoryFromHostApi.startPagination = 0 : FetchChatHistoryFromUserApi.startUserPagination = 0;
+    Database.isHost
+        ? FetchChatHistoryFromHostApi.startPagination = 0
+        : FetchChatHistoryFromUserApi.startUserPagination = 0;
 
-    Database.isHost ? getHostChatHistory(isPagination: false) : getUserChatHistory(isPagination: false);
+    Database.isHost
+        ? getHostChatHistory(isPagination: false)
+        : getUserChatHistory(isPagination: false);
 
     GiftBottomSheetWidget.getGiftCategoryApi();
 
@@ -133,7 +139,8 @@ class ChatController extends GetxController {
     super.onClose();
   }
 
-  bool shouldAutoPlayFor(String id) => svgaShouldAutoPlayOnce.contains(id) && !svgaPlayedOnce.contains(id);
+  bool shouldAutoPlayFor(String id) =>
+      svgaShouldAutoPlayOnce.contains(id) && !svgaPlayedOnce.contains(id);
 
   Future<bool> onTryStartManualPlay(String id) async {
     if (svgaCurrentlyPlayingId == null) {
@@ -422,7 +429,8 @@ class ChatController extends GetxController {
     await onScrollDown();
 
     if (Database.isHost) {
-      if (receiverId == response['senderId'] || receiverId == response['receiverId']) {
+      if (receiverId == response['senderId'] ||
+          receiverId == response['receiverId']) {
         if (response["messageType"] == 2) {
           if (response["senderId"] == Database.hostId) {
             hostChats.removeAt(0);
@@ -538,13 +546,19 @@ class ChatController extends GetxController {
 
     if (response[SocketParams.messageId] != null) {
       if (Database.isHost) {
-        if (receiverId == response['senderId'] || receiverId == response['receiverId']) {
-          hostChats[hostChats.indexWhere((element) => element.id == response[SocketParams.messageId])].isRead = true;
+        if (receiverId == response['senderId'] ||
+            receiverId == response['receiverId']) {
+          hostChats[hostChats.indexWhere(
+                  (element) => element.id == response[SocketParams.messageId])]
+              .isRead = true;
           update([AppConstant.onChatList]);
         }
       } else {
-        if (hostId == response['senderId'] || hostId == response['receiverId']) {
-          userChats[userChats.indexWhere((element) => element.id == response[SocketParams.messageId])].isRead = true;
+        if (hostId == response['senderId'] ||
+            hostId == response['receiverId']) {
+          userChats[userChats.indexWhere(
+                  (element) => element.id == response[SocketParams.messageId])]
+              .isRead = true;
           update([AppConstant.onChatList]);
         }
       }
@@ -566,7 +580,8 @@ class ChatController extends GetxController {
         }
       },
       onClickGallery: () async {
-        final imagePath = await CustomImagePicker.pickImage(ImageSource.gallery);
+        final imagePath =
+            await CustomImagePicker.pickImage(ImageSource.gallery);
 
         if (imagePath != null) {
           onInsertImage(imagePath);
@@ -684,7 +699,8 @@ class ChatController extends GetxController {
   Future<void> onStartAudioRecording() async {
     Utils.showLog("Audio Recording Start");
     Directory appDocDir = await getApplicationDocumentsDirectory();
-    String filePath = "${appDocDir.path}/audio_${DateTime.now().millisecondsSinceEpoch}.mp3";
+    String filePath =
+        "${appDocDir.path}/audio_${DateTime.now().millisecondsSinceEpoch}.mp3";
 
     await audioRecorder.start(const RecordConfig(), path: filePath);
 
@@ -883,12 +899,15 @@ class ChatController extends GetxController {
 
   //**************** Send GIFT
   onSendGift() async {
-    if (GiftBottomSheetWidget.selectedGiftId.isEmpty || GiftBottomSheetWidget.giftUrl.isEmpty || GiftBottomSheetWidget.giftType == -1) {
+    if (GiftBottomSheetWidget.selectedGiftId.isEmpty ||
+        GiftBottomSheetWidget.giftUrl.isEmpty ||
+        GiftBottomSheetWidget.giftType == -1) {
       Utils.showToast("Please select a gift first");
       return;
     }
 
-    final totalCost = GiftBottomSheetWidget.giftCoin * GiftBottomSheetWidget.giftCount.toInt();
+    final totalCost = GiftBottomSheetWidget.giftCoin *
+        GiftBottomSheetWidget.giftCount.toInt();
     if (totalCost > Database.coin) {
       Utils.showToast(EnumLocale.txtYouHaveInsufficientCoins.name.tr);
       await 600.milliseconds.delay();
@@ -924,11 +943,13 @@ class ChatController extends GetxController {
     log("response Done => $response");
     log("giftCount=>${response["giftCount"]}");
 
-    final String id =
-        (response["id"]?.toString().trim().isNotEmpty ?? false) ? response["id"].toString() : DateTime.now().millisecondsSinceEpoch.toString();
+    final String id = (response["id"]?.toString().trim().isNotEmpty ?? false)
+        ? response["id"].toString()
+        : DateTime.now().millisecondsSinceEpoch.toString();
 
     final int giftType = response["giftType"] ?? 0;
-    final int giftCount = int.tryParse(response["giftCount"]?.toString() ?? "1") ?? 1;
+    final int giftCount =
+        int.tryParse(response["giftCount"]?.toString() ?? "1") ?? 1;
     final String giftUrl = response["giftUrl"] ?? "";
     final String thumbUrl = response["giftsvgaImage"] ?? "";
 
@@ -971,8 +992,11 @@ class ChatController extends GetxController {
 
   //**************** Pagination
   Future<void> onPagination() async {
-    if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
-      Database.isHost ? await getHostChatHistory(isPagination: true) : await getUserChatHistory(isPagination: true);
+    if (scrollController.position.pixels ==
+        scrollController.position.maxScrollExtent) {
+      Database.isHost
+          ? await getHostChatHistory(isPagination: true)
+          : await getUserChatHistory(isPagination: true);
       update([AppConstant.idOnPagination, AppConstant.onChatList]);
     }
   }

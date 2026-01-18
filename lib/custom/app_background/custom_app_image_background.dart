@@ -1,5 +1,5 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

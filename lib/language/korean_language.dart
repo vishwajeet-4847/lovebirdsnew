@@ -1,4 +1,4 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> koKR = {
   EnumLocale.txtLetsStart.name: "시작하자",
@@ -18,7 +18,8 @@ final Map<String, String> koKR = {
   EnumLocale.txtRecharge.name: "재충전",
   EnumLocale.txtMyGems.name: "내 보석",
   EnumLocale.txtPleaseEnterWithdrawCoin.name: "코인 인출을 입력하세요",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name: "출금 요청 코인은 관리자가 지정한 것보다 커야 합니다.",
+  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin
+      .name: "출금 요청 코인은 관리자가 지정한 것보다 커야 합니다.",
   EnumLocale.txtPleaseSelectWithdrawMethod.name: "출금 방법을 선택해주세요",
   EnumLocale.txtPleaseEnterAllPaymentDetails.name: "모든 결제 세부 정보를 입력하세요",
   EnumLocale.txtSelectPaymentGateway.name: "결제 게이트웨이 선택",
@@ -71,8 +72,10 @@ final Map<String, String> koKR = {
   EnumLocale.txtCallMe.name: "전화해",
   EnumLocale.txtVerificationStatus.name: "검증 상태:",
   EnumLocale.txtVerificationDetails.name: "확인 세부 정보",
-  EnumLocale.txtVerificationRequestText.name: "제출하신 모든 정보를 저희가 접수했습니다. 확인 후 업데이트되는 대로 알려드리겠습니다. 프로필 확인에는 영업일 기준 약 3~4일이 소요됩니다.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "사용자에게 인출을 위한 충분한 자금이 없습니다.",
+  EnumLocale.txtVerificationRequestText.name:
+      "제출하신 모든 정보를 저희가 접수했습니다. 확인 후 업데이트되는 대로 알려드리겠습니다. 프로필 확인에는 영업일 기준 약 3~4일이 소요됩니다.",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "사용자에게 인출을 위한 충분한 자금이 없습니다.",
   EnumLocale.txtIncomingVideoCall.name: "영상통화가 들어옵니다...",
   EnumLocale.txtIncomingAudioCall.name: "오디오 통화가 들어옵니다...",
   EnumLocale.txtUploadYourImages.name: "이미지 업로드",
@@ -120,7 +123,8 @@ final Map<String, String> koKR = {
   EnumLocale.txtConnecting.name: "연결 중...",
   EnumLocale.txtVideoCall.name: "영상 통화",
   EnumLocale.txtUnblock.name: "차단 해제",
-  EnumLocale.txtApplealDetails.name: "귀하의 불만 사항은 가능한 한 빨리 접수될 것입니다. 불만 사항에 대한 자세한 설명을 제출해 주십시오.",
+  EnumLocale.txtApplealDetails.name:
+      "귀하의 불만 사항은 가능한 한 빨리 접수될 것입니다. 불만 사항에 대한 자세한 설명을 제출해 주십시오.",
   EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "신고 사유를 선택해 주세요.",
   EnumLocale.txtCancel.name: "취소",
   EnumLocale.txtSave.name: "구하다",
@@ -189,12 +193,15 @@ final Map<String, String> koKR = {
   EnumLocale.txtGender.name: "성별",
   EnumLocale.txtOptional.name: "선택 과목",
   EnumLocale.txtPleaseSelectDocument.name: "먼저 문서를 선택해 주세요",
-  EnumLocale.txtVipDescription.name: "참고: VIP는 자동 구독 결제가 아니며 만료 후 자동 갱신되지 않습니다. VIP 활성화 후 바로 보상을 받으실 수 있으며, VIP 유효 기간 동안 다양한 혜택을 누리실 수 있습니다.",
+  EnumLocale.txtVipDescription.name:
+      "참고: VIP는 자동 구독 결제가 아니며 만료 후 자동 갱신되지 않습니다. VIP 활성화 후 바로 보상을 받으실 수 있으며, VIP 유효 기간 동안 다양한 혜택을 누리실 수 있습니다.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP 특권을 누리세요",
-  EnumLocale.txtDailyCheckInDescription.name: "매주 다이아몬드를 받으려면 원하는 금액을 충전한 후 체크인하세요.",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "매주 다이아몬드를 받으려면 원하는 금액을 충전한 후 체크인하세요.",
   EnumLocale.txtDay.name: "낮",
   EnumLocale.txtSelectPaymentOption.name: "결제 옵션을 선택하세요",
-  EnumLocale.txtVerificationText.name: "호스트 요청이 승인되었습니다! 모든 기능을 제대로 이용하려면 app_profile_image를 다시 시작하세요.\n\n기다려주셔서 감사합니다. 함께하게 되어 기쁩니다!",
+  EnumLocale.txtVerificationText.name:
+      "호스트 요청이 승인되었습니다! 모든 기능을 제대로 이용하려면 app_profile_image를 다시 시작하세요.\n\n기다려주셔서 감사합니다. 함께하게 되어 기쁩니다!",
   EnumLocale.txtRandomCallRate.name: "무작위 통화율",
   EnumLocale.txtCallRate.name: "통화료",
   EnumLocale.txtPrivateCallRate.name: "개인 통화 요금",
@@ -218,7 +225,8 @@ final Map<String, String> koKR = {
   EnumLocale.txtDeclineRequest.name:
       "호스트 요청이 승인되지 않았습니다.\n\n철저히 검토한 결과, 귀하의 프로필은 현재 호스트가 되는 데 필요한 기준을 충족하지 않는 것으로 확인되었습니다.\n\n신청하는 데 시간을 내주셔서 감사드리며, 관심을 가져주셔서 감사드립니다.",
   EnumLocale.txtStopLive.name: "라이브 중지",
-  EnumLocale.txtStopLiveText.name: "라이브 스트리밍을 중지하시겠습니까? 이 작업은 취소할 수 없으며 방송이 즉시 종료됩니다. '스트리밍 중지'를 클릭하여 확인하세요.",
+  EnumLocale.txtStopLiveText.name:
+      "라이브 스트리밍을 중지하시겠습니까? 이 작업은 취소할 수 없으며 방송이 즉시 종료됩니다. '스트리밍 중지'를 클릭하여 확인하세요.",
   EnumLocale.txtStop.name: "멈추다",
   EnumLocale.txtEditProfile.name: "프로필 편집",
   EnumLocale.txtEditProfileDetails.name: "프로필 세부 정보 편집",
@@ -239,7 +247,8 @@ final Map<String, String> koKR = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "먼저 선물을 선택해주세요",
   EnumLocale.txtTermsAndConditions.name: "이용 약관",
   EnumLocale.txtUnderMaintenance.name: '이 앱은 현재 유지 관리 중입니다.',
-  EnumLocale.desEnterUnderAppMaintenance.name: '시스템 유지 관리가 진행 중입니다. 나중에 다시 시도해 주세요.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      '시스템 유지 관리가 진행 중입니다. 나중에 다시 시도해 주세요.',
   EnumLocale.txtCloseAPP.name: '앱 닫기',
   EnumLocale.txtSearchCountry.name: '국가 검색',
   EnumLocale.txtCoins.name: '동전',

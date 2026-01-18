@@ -1,7 +1,7 @@
-import 'package:figgy/custom/dialog/block_dialog.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/dialog/block_dialog.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +16,8 @@ class TopView extends StatelessWidget {
       top: 0,
       child: Container(
         height: MediaQuery.of(context).viewPadding.top + 60,
-        padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top, left: 15, right: 15),
+        padding: EdgeInsets.only(
+            top: MediaQuery.of(context).viewPadding.top, left: 15, right: 15),
         alignment: Alignment.center,
         width: Get.width,
         decoration: BoxDecoration(

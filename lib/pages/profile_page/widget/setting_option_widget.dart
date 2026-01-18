@@ -1,7 +1,7 @@
-// import 'package:figgy/utils/asset.dart';
-// import 'package:figgy/utils/colors_utils.dart';
-// import 'package:figgy/utils/font_style.dart';
-// import 'package:figgy/utils/utils.dart';
+// import 'package:LoveBirds/utils/asset.dart';
+// import 'package:LoveBirds/utils/colors_utils.dart';
+// import 'package:LoveBirds/utils/font_style.dart';
+// import 'package:LoveBirds/utils/utils.dart';
 // import 'package:flutter/material.dart';
 //
 // class SettingsOptionItemWidget extends StatelessWidget {
@@ -52,10 +52,10 @@
 //     );
 //   }
 // }
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -89,7 +89,8 @@ class SettingsOptionItemWidget extends StatelessWidget {
             Container(
               height: 54,
               width: 54,
-              decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(14)),
+              decoration: BoxDecoration(
+                  color: color, borderRadius: BorderRadius.circular(14)),
               child: Center(
                 child: SizedBox(
                   height: 30,

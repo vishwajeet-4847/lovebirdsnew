@@ -1,6 +1,6 @@
-import 'package:figgy/pages/host_live_streamers_page/widget/host_country_view.dart';
-import 'package:figgy/pages/host_live_streamers_page/widget/host_stream_bottom_widget.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/widget/host_country_view.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/widget/host_stream_bottom_widget.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class HostMainStreamView extends StatelessWidget {

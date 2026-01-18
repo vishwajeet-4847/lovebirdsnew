@@ -1,15 +1,15 @@
-import 'package:figgy/custom/bottom_sheet/video_bottom_sheet.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/no_data_found/no_data_found.dart';
-import 'package:figgy/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/shimmer/host_stream_bottom_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/bottom_sheet/video_bottom_sheet.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/no_data_found/no_data_found.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/shimmer/host_stream_bottom_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -30,7 +30,8 @@ class DiscoverHostForUserFollowingTab extends StatelessWidget {
                   ? const DiscoverHostForUserShimmer().paddingOnly(top: 10)
                   : RefreshIndicator(
                       onRefresh: () async {
-                        await logic.discoverHostForUser(country: logic.selectedCountry);
+                        await logic.discoverHostForUser(
+                            country: logic.selectedCountry);
                       },
                       child: logic.followUserList.isEmpty
                           ? SingleChildScrollView(
@@ -48,24 +49,31 @@ class DiscoverHostForUserFollowingTab extends StatelessWidget {
                                     padding: const EdgeInsets.only(top: 12),
                                     itemCount: logic.followUserList.length,
                                     shrinkWrap: true,
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 2,
                                       mainAxisSpacing: 18,
                                       crossAxisSpacing: 18,
                                       childAspectRatio: 0.8,
                                     ),
                                     itemBuilder: (context, index) {
-                                      final hostList = logic.followUserList[index];
+                                      final hostList =
+                                          logic.followUserList[index];
 
                                       return GestureDetector(
                                         onTap: () {
-                                          Get.toNamed(AppRoutes.hostDetailPage, arguments: {
-                                            "hostId": hostList.id,
-                                            "isOnline": hostList.status ?? "",
-                                          })?.then(
+                                          Get.toNamed(AppRoutes.hostDetailPage,
+                                              arguments: {
+                                                "hostId": hostList.id,
+                                                "isOnline":
+                                                    hostList.status ?? "",
+                                              })?.then(
                                             (_) async {
-                                              logic.discoverHostForUser(country: logic.selectedCountry);
+                                              logic.discoverHostForUser(
+                                                  country:
+                                                      logic.selectedCountry);
                                             },
                                           );
                                         },
@@ -80,59 +88,115 @@ class DiscoverHostForUserFollowingTab extends StatelessWidget {
                                           child: Stack(
                                             children: [
                                               Container(
-                                                color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                                color: AppColors.colorTextGrey
+                                                    .withValues(alpha: 0.22),
                                                 height: Get.height,
                                                 width: Get.width,
                                                 child: CustomImage(
-                                                  image: logic.followUserList[index].image ?? "",
+                                                  image: logic
+                                                          .followUserList[index]
+                                                          .image ??
+                                                      "",
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
                                               Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   const Spacer(),
                                                   Container(
                                                     height: 22,
-                                                    padding: const EdgeInsets.only(left: 5, right: 5),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 5, right: 5),
                                                     alignment: Alignment.center,
                                                     decoration: BoxDecoration(
-                                                      color: Colors.black.withValues(alpha: 0.48),
-                                                      borderRadius: const BorderRadius.only(
-                                                        bottomLeft: Radius.circular(12),
+                                                      color: Colors.black
+                                                          .withValues(
+                                                              alpha: 0.48),
+                                                      borderRadius:
+                                                          const BorderRadius
+                                                              .only(
+                                                        bottomLeft:
+                                                            Radius.circular(12),
                                                       ),
                                                     ),
                                                     child: Row(
-                                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
-                                                        hostList.status == "Live"
+                                                        hostList.status ==
+                                                                "Live"
                                                             ? Lottie.asset(
-                                                                AppAsset.lottieLive,
+                                                                AppAsset
+                                                                    .lottieLive,
                                                                 height: 70,
                                                               )
                                                             : Container(
                                                                 height: 10,
                                                                 width: 10,
-                                                                alignment: Alignment.center,
-                                                                decoration: BoxDecoration(
-                                                                  border: Border.all(color: AppColors.whiteColor, width: 0.4),
-                                                                  color: hostList.status == "Online" ? AppColors.greenColor : AppColors.redColor,
-                                                                  shape: BoxShape.circle,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  border: Border.all(
+                                                                      color: AppColors
+                                                                          .whiteColor,
+                                                                      width:
+                                                                          0.4),
+                                                                  color: hostList
+                                                                              .status ==
+                                                                          "Online"
+                                                                      ? AppColors
+                                                                          .greenColor
+                                                                      : AppColors
+                                                                          .redColor,
+                                                                  shape: BoxShape
+                                                                      .circle,
                                                                 ),
-                                                              ).paddingOnly(left: 4),
+                                                              ).paddingOnly(
+                                                                left: 4),
                                                         5.width,
                                                         Text(
-                                                          hostList.status == "Online"
-                                                              ? EnumLocale.txtOnline.name.tr
-                                                              : hostList.status == "Offline"
-                                                                  ? EnumLocale.txtOffline.name.tr
-                                                                  : hostList.status == "Live"
-                                                                      ? EnumLocale.txtLive.name.tr
-                                                                      : EnumLocale.txtBusy.name.tr,
-                                                          style: AppFontStyle.styleW500(
-                                                            hostList.status == "Live" ? AppColors.greenColor : AppColors.whiteColor,
+                                                          hostList.status ==
+                                                                  "Online"
+                                                              ? EnumLocale
+                                                                  .txtOnline
+                                                                  .name
+                                                                  .tr
+                                                              : hostList.status ==
+                                                                      "Offline"
+                                                                  ? EnumLocale
+                                                                      .txtOffline
+                                                                      .name
+                                                                      .tr
+                                                                  : hostList.status ==
+                                                                          "Live"
+                                                                      ? EnumLocale
+                                                                          .txtLive
+                                                                          .name
+                                                                          .tr
+                                                                      : EnumLocale
+                                                                          .txtBusy
+                                                                          .name
+                                                                          .tr,
+                                                          style: AppFontStyle
+                                                              .styleW500(
+                                                            hostList.status ==
+                                                                    "Live"
+                                                                ? AppColors
+                                                                    .greenColor
+                                                                : AppColors
+                                                                    .whiteColor,
                                                             11,
                                                           ),
                                                         ).paddingOnly(right: 7),
@@ -150,11 +214,15 @@ class DiscoverHostForUserFollowingTab extends StatelessWidget {
                                                     gradient: LinearGradient(
                                                       colors: [
                                                         AppColors.transparent,
-                                                        AppColors.blackColor.withValues(alpha: 0.0),
+                                                        AppColors.blackColor
+                                                            .withValues(
+                                                                alpha: 0.0),
                                                         AppColors.blackColor,
                                                       ],
-                                                      begin: Alignment.topCenter,
-                                                      end: Alignment.bottomCenter,
+                                                      begin:
+                                                          Alignment.topCenter,
+                                                      end: Alignment
+                                                          .bottomCenter,
                                                     ),
                                                   ),
                                                 ),
@@ -163,38 +231,65 @@ class DiscoverHostForUserFollowingTab extends StatelessWidget {
                                               Positioned(
                                                 bottom: 0,
                                                 child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 10,
+                                                      vertical: 5),
                                                   child: SizedBox(
                                                     height: 45,
                                                     width: Get.width * 0.41,
                                                     child: Row(
-                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
                                                       children: [
                                                         Column(
-                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
                                                           children: [
                                                             SizedBox(
                                                               width: 100,
                                                               child: Text(
-                                                                logic.followUserList[index].name ?? "",
-                                                                style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
-                                                                overflow: TextOverflow.ellipsis,
+                                                                logic
+                                                                        .followUserList[
+                                                                            index]
+                                                                        .name ??
+                                                                    "",
+                                                                style: AppFontStyle
+                                                                    .styleW700(
+                                                                        AppColors
+                                                                            .whiteColor,
+                                                                        16),
+                                                                overflow:
+                                                                    TextOverflow
+                                                                        .ellipsis,
                                                               ),
                                                             ),
                                                             Row(
                                                               children: [
-                                                                (hostList.countryFlagImage?.startsWith("http") == true)
-                                                                    ? Image.network(
+                                                                (hostList.countryFlagImage?.startsWith(
+                                                                            "http") ==
+                                                                        true)
+                                                                    ? Image
+                                                                        .network(
                                                                         "${hostList.countryFlagImage}",
-                                                                        height: 10,
+                                                                        height:
+                                                                            10,
                                                                       )
                                                                     : Text(
-                                                                        hostList.countryFlagImage ?? "",
+                                                                        hostList.countryFlagImage ??
+                                                                            "",
                                                                       ),
                                                                 5.width,
                                                                 Text(
-                                                                  hostList.country ?? "",
-                                                                  style: AppFontStyle.styleW600(AppColors.whiteColor, 13),
+                                                                  hostList.country ??
+                                                                      "",
+                                                                  style: AppFontStyle
+                                                                      .styleW600(
+                                                                          AppColors
+                                                                              .whiteColor,
+                                                                          13),
                                                                 ),
                                                               ],
                                                             ),
@@ -210,22 +305,38 @@ class DiscoverHostForUserFollowingTab extends StatelessWidget {
                                                 right: 8,
                                                 child: GestureDetector(
                                                   onTap: () {
-                                                    if (hostList.status == "Online") {
+                                                    if (hostList.status ==
+                                                        "Online") {
                                                       showVideoBottomSheet(
                                                         context: context,
-                                                        receiverId: hostList.id ?? "",
-                                                        receiverName: hostList.name ?? "",
-                                                        receiverImage: hostList.image ?? "",
-                                                        audioCallCharge: hostList.audioCallRate ?? 0,
-                                                        videoCallCharge: hostList.privateCallRate ?? 0,
-                                                        isFake: hostList.isFake == true ? true : false,
-                                                        videoList: hostList.video,
+                                                        receiverId:
+                                                            hostList.id ?? "",
+                                                        receiverName:
+                                                            hostList.name ?? "",
+                                                        receiverImage:
+                                                            hostList.image ??
+                                                                "",
+                                                        audioCallCharge: hostList
+                                                                .audioCallRate ??
+                                                            0,
+                                                        videoCallCharge: hostList
+                                                                .privateCallRate ??
+                                                            0,
+                                                        isFake:
+                                                            hostList.isFake ==
+                                                                    true
+                                                                ? true
+                                                                : false,
+                                                        videoList:
+                                                            hostList.video,
                                                       );
                                                     }
                                                   },
-                                                  child: hostList.status == "Online"
+                                                  child: hostList.status ==
+                                                          "Online"
                                                       ? Lottie.asset(
-                                                          AppAsset.lottieVideoCall,
+                                                          AppAsset
+                                                              .lottieVideoCall,
                                                           fit: BoxFit.cover,
                                                           height: 44,
                                                         )

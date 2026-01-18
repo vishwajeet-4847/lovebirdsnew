@@ -1,5 +1,5 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +27,9 @@ class Impression extends StatelessWidget {
               child: Wrap(
                 spacing: 12,
                 runSpacing: 15,
-                children: logic.impression.map((text) => ImpressionWidget(text: text)).toList(),
+                children: logic.impression
+                    .map((text) => ImpressionWidget(text: text))
+                    .toList(),
               ),
             );
           },

@@ -1,12 +1,12 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/outgoing_host_call_page/controller/outgoing_host_call_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/outgoing_host_call_page/controller/outgoing_host_call_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -53,7 +53,8 @@ class OutgoingHostCallView extends GetView<OutgoingHostCallController> {
                           Text(
                             EnumLocale.txtIncomingVideoCall.name.tr,
                             maxLines: 1,
-                            style: AppFontStyle.styleW400(AppColors.whiteColor, 20),
+                            style: AppFontStyle.styleW400(
+                                AppColors.whiteColor, 20),
                           ),
                           Lottie.asset(
                             AppAsset.lottieLoading,
@@ -91,7 +92,8 @@ class OutgoingHostCallView extends GetView<OutgoingHostCallController> {
                         child: Text(
                           logic.hostName,
                           maxLines: 1,
-                          style: AppFontStyle.styleW800(AppColors.whiteColor, 22),
+                          style:
+                              AppFontStyle.styleW800(AppColors.whiteColor, 22),
                         ),
                       ),
                       const Spacer(),

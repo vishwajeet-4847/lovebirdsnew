@@ -1,14 +1,14 @@
 import 'dart:math';
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/my_wallet_page/api/get_coin_history_api.dart';
-import 'package:figgy/pages/my_wallet_page/api/get_host_coin_history.dart';
-import 'package:figgy/pages/my_wallet_page/model/fetch_coin_history_model.dart';
-import 'package:figgy/pages/my_wallet_page/model/fetch_host_coin_history_model.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/my_wallet_page/api/get_coin_history_api.dart';
+import 'package:LoveBirds/pages/my_wallet_page/api/get_host_coin_history.dart';
+import 'package:LoveBirds/pages/my_wallet_page/model/fetch_coin_history_model.dart';
+import 'package:LoveBirds/pages/my_wallet_page/model/fetch_host_coin_history_model.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -52,7 +52,9 @@ class MyWalletController extends GetxController {
   }
 
   Future<void> init() async {
-    Database.isHost ? await onGetHostCoinHistory() : await onGetUserCoinHistory();
+    Database.isHost
+        ? await onGetHostCoinHistory()
+        : await onGetUserCoinHistory();
     Utils.showLog("My Wallet Page Controller Initialize Success");
   }
 
@@ -97,7 +99,11 @@ class MyWalletController extends GetxController {
       }
     }
 
-    update([AppConstant.idGetCoinHistory, AppConstant.idWalletOnPagination, AppConstant.idChangeDate]);
+    update([
+      AppConstant.idGetCoinHistory,
+      AppConstant.idWalletOnPagination,
+      AppConstant.idChangeDate
+    ]);
   }
 
   Future<void> onGetHostCoinHistory({bool isPagination = false}) async {
@@ -141,7 +147,11 @@ class MyWalletController extends GetxController {
       }
     }
 
-    update([AppConstant.idGetCoinHistory, AppConstant.idWalletOnPagination, AppConstant.idChangeDate]);
+    update([
+      AppConstant.idGetCoinHistory,
+      AppConstant.idWalletOnPagination,
+      AppConstant.idChangeDate
+    ]);
   }
 
   Future<void> onChangeDate({
@@ -164,19 +174,23 @@ class MyWalletController extends GetxController {
   }
 
   Future<void> onPagination() async {
-    if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
+    if (scrollController.position.pixels ==
+        scrollController.position.maxScrollExtent) {
       if (Database.isHost) {
         GetHostCoinHistoryApi.startPagination++;
       } else {
         GetUserCoinHistoryApi.startPagination++;
       }
 
-      Database.isHost ? await onGetHostCoinHistory(isPagination: true) : await onGetUserCoinHistory(isPagination: true);
+      Database.isHost
+          ? await onGetHostCoinHistory(isPagination: true)
+          : await onGetUserCoinHistory(isPagination: true);
       update([AppConstant.idOnPagination, AppConstant.onChatList]);
     }
   }
 
-  String getTitleFromType(int type, String receiverName, String typeDescription) {
+  String getTitleFromType(
+      int type, String receiverName, String typeDescription) {
     switch (type) {
       case 9:
         return "💬Chat With $receiverName";
@@ -188,16 +202,17 @@ class MyWalletController extends GetxController {
         return "🎥Private Video Call $receiverName";
       case 13:
         return "🎥Random Video Call $receiverName";
-        case 14:
+      case 14:
         return "Admin Credit";
-        case 15:
+      case 15:
         return "Admin Debit";
       default:
         return typeDescription;
     }
   }
 
-  String getHostTitleFromType(int type, String senderName, String typeDescription) {
+  String getHostTitleFromType(
+      int type, String senderName, String typeDescription) {
     switch (type) {
       case 9:
         return "💬Chat to $senderName";
@@ -220,7 +235,8 @@ class MyWalletController extends GetxController {
 
   String dateFormat(dynamic date) {
     final DateTime utcDate = DateTime.parse(date.toString());
-    final DateTime istDate = utcDate.toLocal(); // This auto converts to IST if device is in IST
+    final DateTime istDate =
+        utcDate.toLocal(); // This auto converts to IST if device is in IST
 
     final DateFormat formatter = DateFormat('d/M/yyyy, h:mm:ss a');
     return formatter.format(istDate);
@@ -240,6 +256,7 @@ class MyWalletController extends GetxController {
 
   String _generateRandomId() {
     final random = Random();
-    return List.generate(8, (_) => random.nextInt(10)).join(); // Example: 85231947
+    return List.generate(8, (_) => random.nextInt(10))
+        .join(); // Example: 85231947
   }
 }

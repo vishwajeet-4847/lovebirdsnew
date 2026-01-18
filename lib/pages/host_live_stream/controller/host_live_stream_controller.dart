@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:camera/camera.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/pages/host_live_stream/api/create_host_live_api.dart';
-import 'package:figgy/pages/host_live_stream/model/create_host_live_model.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/pages/host_live_stream/api/create_host_live_api.dart';
+import 'package:LoveBirds/pages/host_live_stream/model/create_host_live_model.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -66,11 +66,17 @@ class HostLiveStreamController extends GetxController {
   }
 
   Future<void> onSwitchCamera() async {
-    Get.dialog(barrierDismissible: false, const PopScope(canPop: false, child: LoadingWidget())); // Start Loading...
+    Get.dialog(
+        barrierDismissible: false,
+        const PopScope(
+            canPop: false, child: LoadingWidget())); // Start Loading...
 
-    cameraLensDirection = cameraLensDirection == CameraLensDirection.back ? CameraLensDirection.front : CameraLensDirection.back;
+    cameraLensDirection = cameraLensDirection == CameraLensDirection.back
+        ? CameraLensDirection.front
+        : CameraLensDirection.back;
     final cameras = await availableCameras();
-    final camera = cameras.firstWhere((camera) => camera.lensDirection == cameraLensDirection);
+    final camera = cameras
+        .firstWhere((camera) => camera.lensDirection == cameraLensDirection);
     cameraController = CameraController(camera, ResolutionPreset.high);
     await cameraController!.initialize();
 

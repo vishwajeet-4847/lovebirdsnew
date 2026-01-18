@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/pages/chat_page/model/host_send_file_api_model.dart';
-import 'package:figgy/pages/host_live_page/controller/host_live_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_listen.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/socket_events.dart';
-import 'package:figgy/utils/socket_params.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/pages/chat_page/model/host_send_file_api_model.dart';
+import 'package:LoveBirds/pages/host_live_page/controller/host_live_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_listen.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/socket_events.dart';
+import 'package:LoveBirds/utils/socket_params.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:socket_io_client/socket_io_client.dart' as io;
@@ -44,8 +44,10 @@ class SocketServices {
     try {
       socket = io.io(
         Api.baseUrl,
-        io.OptionBuilder()
-            .setTransports(['websocket']).setQuery({"globalRoom": "globalRoom:${Database.isHost ? Database.hostId : Database.loginUserId}"}).build(),
+        io.OptionBuilder().setTransports(['websocket']).setQuery({
+          "globalRoom":
+              "globalRoom:${Database.isHost ? Database.hostId : Database.loginUserId}"
+        }).build(),
       );
 
       socket?.connect();
@@ -53,9 +55,12 @@ class SocketServices {
 
       socket?.onConnect((data) async {
         Utils.showLog("Socket Listen => Socket Connected : ${socket?.id}");
-        Utils.showLog("liveHistoryId.isNotEmpty : ${liveRoomHistoryId.isNotEmpty}");
+        Utils.showLog(
+            "liveHistoryId.isNotEmpty : ${liveRoomHistoryId.isNotEmpty}");
 
-        if (liveRoomHistoryId.isNotEmpty && socket != null && socket!.connected) {
+        if (liveRoomHistoryId.isNotEmpty &&
+            socket != null &&
+            socket!.connected) {
           try {
             Utils.showLog("Attempting to rejoin room: $liveRoomHistoryId");
             await 7.seconds.delay();
@@ -109,7 +114,8 @@ class SocketServices {
           });
 
           socket?.on(SocketEvents.callAnswerReceived, (data) async {
-            Utils.showLog("Socket Listen  => Private Call AnswerReceived : $data");
+            Utils.showLog(
+                "Socket Listen  => Private Call AnswerReceived : $data");
 
             SocketListen.onAcceptCall(data);
           });
@@ -120,7 +126,8 @@ class SocketServices {
           });
 
           socket?.on(SocketEvents.callDisconnected, (data) async {
-            Utils.showLog("Socket Listen  => Private Call Disconnected : $data");
+            Utils.showLog(
+                "Socket Listen  => Private Call Disconnected : $data");
             SocketListen.onCallDisconnected(data);
           });
 
@@ -142,7 +149,8 @@ class SocketServices {
           //================ For Live Streaming ================//
 
           socket!.on(SocketEvents.liveRoomJoin, (liveRoomConnectData) {
-            Utils.showLog("Socket Listen => Live Room Connect : $liveRoomConnectData");
+            Utils.showLog(
+                "Socket Listen => Live Room Connect : $liveRoomConnectData");
 
             final data = jsonDecode(liveRoomConnectData);
             liveRoomHistoryId = data["liveHistoryId"];
@@ -151,7 +159,8 @@ class SocketServices {
 
           socket!.on(SocketEvents.liveJoinerCount, (liveJoinerCountData) {
             userWatchCount.value = liveJoinerCountData;
-            Utils.showLog("Socket Listen => Live Room Add : $liveJoinerCountData");
+            Utils.showLog(
+                "Socket Listen => Live Room Add : $liveJoinerCountData");
           });
 
           socket!.on(SocketEvents.removeLiveJoiner, (lessView) {
@@ -168,12 +177,15 @@ class SocketServices {
             }
           });
 
-          socket!.on(SocketEvents.liveStreamStatusCheck, (liveStreamStatusCheckData) {
-            Utils.showLog("Socket Listen => Live Stream Status Check :: $liveStreamStatusCheckData");
+          socket!.on(SocketEvents.liveStreamStatusCheck,
+              (liveStreamStatusCheckData) {
+            Utils.showLog(
+                "Socket Listen => Live Stream Status Check :: $liveStreamStatusCheckData");
 
             if (Get.currentRoute == AppRoutes.hostLivePage) {
               final controller = Get.find<HostLiveController>();
-              Utils.showLog("controller.liveStatus :: ${controller.liveStatus}");
+              Utils.showLog(
+                  "controller.liveStatus :: ${controller.liveStatus}");
 
               controller.liveStatus = liveStreamStatusCheckData["liveStatus"];
               Utils.showLog("Live Status :: ${controller.liveStatus}");
@@ -228,17 +240,22 @@ class SocketServices {
   //=================== Socket Emit Method ===================//
 
   static Future<void> onLiveRoomConnect({required String liveHistoryId}) async {
-    final liveRoomConnectData = jsonEncode({SocketParams.liveHistoryId: liveHistoryId});
+    final liveRoomConnectData =
+        jsonEncode({SocketParams.liveHistoryId: liveHistoryId});
 
     if (socket != null && socket!.connected) {
       socket?.emit(SocketEvents.liveRoomJoin, liveRoomConnectData);
-      Utils.showLog("Socket Emit => Live Room Connected :: $liveRoomConnectData");
+      Utils.showLog(
+          "Socket Emit => Live Room Connected :: $liveRoomConnectData");
     } else {
       Utils.showLog("Socket Not Connected !!");
     }
   }
 
-  static Future<void> onLiveRoomExit({required String liveHistoryId, required bool isHost, required String hostId}) async {
+  static Future<void> onLiveRoomExit(
+      {required String liveHistoryId,
+      required bool isHost,
+      required String hostId}) async {
     if (isHost) {
       final endLive = jsonEncode({
         SocketParams.liveHistoryId: liveHistoryId,
@@ -257,16 +274,22 @@ class SocketServices {
     }
   }
 
-  static Future<void> onAddView({required String userId, required String liveHistoryId}) async {
+  static Future<void> onAddView(
+      {required String userId, required String liveHistoryId}) async {
     isLiveRunning = true;
 
-    final liveJoinerCount = jsonEncode({SocketParams.userId: userId, SocketParams.liveHistoryId: liveHistoryId});
+    final liveJoinerCount = jsonEncode({
+      SocketParams.userId: userId,
+      SocketParams.liveHistoryId: liveHistoryId
+    });
 
     if (socket != null && socket!.connected) {
-      Utils.showLog("Socket Emit userWatchCount.value :: ${userWatchCount.value}");
+      Utils.showLog(
+          "Socket Emit userWatchCount.value :: ${userWatchCount.value}");
 
       socket?.emit(SocketEvents.liveJoinerCount, liveJoinerCount);
-      Utils.showLog("Socket Emit => New User Join Live Room :: $liveJoinerCount");
+      Utils.showLog(
+          "Socket Emit => New User Join Live Room :: $liveJoinerCount");
 
       liveRoomHistoryId = liveHistoryId;
       Utils.showLog("liveRoomHistoryId : $liveRoomHistoryId");
@@ -275,8 +298,12 @@ class SocketServices {
     }
   }
 
-  static Future<void> onLessView({required String userId, required String liveHistoryId}) async {
-    final removeLiveJoiner = jsonEncode({SocketParams.userId: userId, SocketParams.liveHistoryId: liveHistoryId});
+  static Future<void> onLessView(
+      {required String userId, required String liveHistoryId}) async {
+    final removeLiveJoiner = jsonEncode({
+      SocketParams.userId: userId,
+      SocketParams.liveHistoryId: liveHistoryId
+    });
     Utils.showLog("Socket Emit => User Exit Live Room :: $removeLiveJoiner");
 
     if (socket != null && socket!.connected) {
@@ -288,22 +315,29 @@ class SocketServices {
   }
 
   static Future<void> onLiveRoomReJoin({required String liveHistoryId}) async {
-    final liveRoomReJoinConnectData = jsonEncode({SocketParams.liveHistoryId: liveHistoryId});
+    final liveRoomReJoinConnectData =
+        jsonEncode({SocketParams.liveHistoryId: liveHistoryId});
 
     if (socket != null && socket!.connected) {
       socket?.emit(SocketEvents.liveRoomJoin, liveRoomReJoinConnectData);
-      Utils.showLog("Socket Emit => Live Room Re-join Connected :: $liveRoomReJoinConnectData");
+      Utils.showLog(
+          "Socket Emit => Live Room Re-join Connected :: $liveRoomReJoinConnectData");
     } else {
       Utils.showLog("Socket Not Connected !!");
     }
   }
 
-  static Future<void> onLiveStreamStatusCheck({required String hostId, required String liveHistoryId}) async {
-    final liveStreamStatusCheck = jsonEncode({SocketParams.liveHistoryId: liveHistoryId, SocketParams.hostId: hostId});
+  static Future<void> onLiveStreamStatusCheck(
+      {required String hostId, required String liveHistoryId}) async {
+    final liveStreamStatusCheck = jsonEncode({
+      SocketParams.liveHistoryId: liveHistoryId,
+      SocketParams.hostId: hostId
+    });
 
     if (socket != null && socket!.connected) {
       socket?.emit(SocketEvents.liveStreamStatusCheck, liveStreamStatusCheck);
-      Utils.showLog("Socket Emit => Live Stream Status Check :: $liveStreamStatusCheck");
+      Utils.showLog(
+          "Socket Emit => Live Stream Status Check :: $liveStreamStatusCheck");
 
       liveRoomHistoryId = liveHistoryId;
       Utils.showLog("liveRoomHistoryId : $liveRoomHistoryId");
@@ -405,7 +439,9 @@ class SocketServices {
     GiftBottomSheetWidget.giftsvgaImage = gift["svgaThumbUrl"];
 
     GiftBottomSheetWidget.isShowGift.value = true;
-    GiftBottomSheetWidget.giftType == 3 ? await 10000.milliseconds.delay() : await 3000.milliseconds.delay();
+    GiftBottomSheetWidget.giftType == 3
+        ? await 10000.milliseconds.delay()
+        : await 3000.milliseconds.delay();
     GiftBottomSheetWidget.isShowGift.value = false;
   }
 }

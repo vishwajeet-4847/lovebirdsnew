@@ -2,17 +2,17 @@
 
 import 'dart:developer';
 
-import 'package:figgy/pages/chat_page/api/host_blocking_user_api.dart';
-import 'package:figgy/pages/chat_page/api/user_blocking_host_api.dart';
-import 'package:figgy/pages/chat_page/model/host_block_user_model.dart';
-import 'package:figgy/pages/chat_page/model/usre_block_host_api.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/chat_page/api/host_blocking_user_api.dart';
+import 'package:LoveBirds/pages/chat_page/api/user_blocking_host_api.dart';
+import 'package:LoveBirds/pages/chat_page/model/host_block_user_model.dart';
+import 'package:LoveBirds/pages/chat_page/model/usre_block_host_api.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -79,8 +79,7 @@ class BlockDialog extends StatelessWidget {
           20.height,
           GestureDetector(
             onTap: () async {
-
-              if(isLive== true){
+              if (isLive == true) {
                 final uid = FirebaseUid.onGet();
                 final token = await FirebaseAccessToken.onGet();
 
@@ -94,70 +93,69 @@ class BlockDialog extends StatelessWidget {
 
                 if (userBlockHostApiModel?.status == true) {
                   Utils.showToast(userBlockHostApiModel?.message ?? "");
-           Get.close(2);
-                } else {
-                  Utils.showToast(userBlockHostApiModel?.message ?? "");
-                }
-
-
-              }else{
-              log("hostId api::::::::::::::::$hostId");
-              if (isHost) {
-                final uid = FirebaseUid.onGet();
-                final token = await FirebaseAccessToken.onGet();
-
-                log("hostId api::::::::::::::::$hostId");
-
-                userBlockHostApiModel = await UserBlockHostApi.callApi(
-                  hostId: hostId,
-                  token: token ?? "",
-                  uid: uid ?? "",
-                );
-
-                if (userBlockHostApiModel?.status == true) {
-                  Utils.showToast(userBlockHostApiModel?.message ?? "");
-                  if (Get.currentRoute == AppRoutes.chatPage ||
-                      Get.currentRoute == AppRoutes.hostDetailPage) {
-                    if (isChatHostDetail == true) {
-                      Get.close(3);
-                    } else {
-                      Get.close(2);
-                    }
-                  } else if (Get.currentRoute == AppRoutes.videoCallPage) {
-                    if (isVideoCall == true) {
-                      Get.close(2);
-                    }
-                  } else {
-                    Get.back();
-                  }
+                  Get.close(2);
                 } else {
                   Utils.showToast(userBlockHostApiModel?.message ?? "");
                 }
               } else {
-                final uid = FirebaseUid.onGet();
-                final token = await FirebaseAccessToken.onGet();
                 log("hostId api::::::::::::::::$hostId");
-                hostBlockUserApiModel = await HostBlockingUserApi.callApi(
-                  hostId: Database.hostId,
-                  token: token ?? "",
-                  uid: uid ?? "",
-                  userId: userId,
-                );
+                if (isHost) {
+                  final uid = FirebaseUid.onGet();
+                  final token = await FirebaseAccessToken.onGet();
 
-                if (hostBlockUserApiModel?.status == true) {
-                  Utils.showToast(hostBlockUserApiModel?.message ?? "");
+                  log("hostId api::::::::::::::::$hostId");
 
-                  if (Get.currentRoute == AppRoutes.chatPage) {
-                    Get.close(2);
-                  } else if (Get.currentRoute == AppRoutes.videoCallPage) {
-                    Get.close(2);
+                  userBlockHostApiModel = await UserBlockHostApi.callApi(
+                    hostId: hostId,
+                    token: token ?? "",
+                    uid: uid ?? "",
+                  );
+
+                  if (userBlockHostApiModel?.status == true) {
+                    Utils.showToast(userBlockHostApiModel?.message ?? "");
+                    if (Get.currentRoute == AppRoutes.chatPage ||
+                        Get.currentRoute == AppRoutes.hostDetailPage) {
+                      if (isChatHostDetail == true) {
+                        Get.close(3);
+                      } else {
+                        Get.close(2);
+                      }
+                    } else if (Get.currentRoute == AppRoutes.videoCallPage) {
+                      if (isVideoCall == true) {
+                        Get.close(2);
+                      }
+                    } else {
+                      Get.back();
+                    }
                   } else {
-                    Get.back();
+                    Utils.showToast(userBlockHostApiModel?.message ?? "");
                   }
                 } else {
-                  Utils.showToast(hostBlockUserApiModel?.message ?? "");
+                  final uid = FirebaseUid.onGet();
+                  final token = await FirebaseAccessToken.onGet();
+                  log("hostId api::::::::::::::::$hostId");
+                  hostBlockUserApiModel = await HostBlockingUserApi.callApi(
+                    hostId: Database.hostId,
+                    token: token ?? "",
+                    uid: uid ?? "",
+                    userId: userId,
+                  );
+
+                  if (hostBlockUserApiModel?.status == true) {
+                    Utils.showToast(hostBlockUserApiModel?.message ?? "");
+
+                    if (Get.currentRoute == AppRoutes.chatPage) {
+                      Get.close(2);
+                    } else if (Get.currentRoute == AppRoutes.videoCallPage) {
+                      Get.close(2);
+                    } else {
+                      Get.back();
+                    }
+                  } else {
+                    Utils.showToast(hostBlockUserApiModel?.message ?? "");
+                  }
                 }
-              }}
+              }
             },
             child: Container(
               alignment: Alignment.center,

@@ -1,13 +1,13 @@
 import 'dart:math';
 
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_emit.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_emit.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,7 +39,8 @@ void showVideoBottomSheet({
           children: [
             Container(
               height: MediaQuery.of(context).viewPadding.top + 60,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -101,13 +102,20 @@ void showVideoBottomSheet({
                             });
                           } else {
                             await SocketEmit.onSendPrivateCall(
-                              callerId: Database.isHost ? Database.hostId : Database.loginUserId,
+                              callerId: Database.isHost
+                                  ? Database.hostId
+                                  : Database.loginUserId,
                               receiverId: receiverId,
                               agoraUID: 0,
-                              channel: (100000 + Random().nextInt(900000)).toString(),
+                              channel: (100000 + Random().nextInt(900000))
+                                  .toString(),
                               callType: "audio",
-                              senderName: Database.fetchLoginUserProfileModel?.user?.name ?? "",
-                              senderImage: Database.fetchLoginUserProfileModel?.user?.image ?? "",
+                              senderName: Database
+                                      .fetchLoginUserProfileModel?.user?.name ??
+                                  "",
+                              senderImage: Database.fetchLoginUserProfileModel
+                                      ?.user?.image ??
+                                  "",
                               receiverName: receiverName,
                               receiverImage: receiverImage,
                               callerRole: "user",
@@ -117,7 +125,8 @@ void showVideoBottomSheet({
                             // Get.back();
                           }
                         } else {
-                          Utils.showToast(EnumLocale.txtYouHaveInsufficientCoins.name.tr);
+                          Utils.showToast(
+                              EnumLocale.txtYouHaveInsufficientCoins.name.tr);
                           await 600.milliseconds.delay();
                           Get.toNamed(AppRoutes.topUpPage);
                         }
@@ -128,7 +137,8 @@ void showVideoBottomSheet({
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
                           gradient: AppColors.audioCallButtonGradient,
-                          borderRadius: const BorderRadius.all(Radius.circular(20)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(20)),
                           border: Border.all(color: AppColors.whiteColor),
                           color: AppColors.redColor,
                         ),
@@ -144,8 +154,11 @@ void showVideoBottomSheet({
                       children: [
                         Image.asset(AppAsset.singleSmallCoin, width: 25),
                         Text(
-                          audioCallCharge == 0 ? "${Database.audioPrivateCallRate} /min" : "$audioCallCharge /min",
-                          style: AppFontStyle.styleW400(AppColors.whiteColor, 13),
+                          audioCallCharge == 0
+                              ? "${Database.audioPrivateCallRate} /min"
+                              : "$audioCallCharge /min",
+                          style:
+                              AppFontStyle.styleW400(AppColors.whiteColor, 13),
                         ),
                       ],
                     ),
@@ -159,8 +172,10 @@ void showVideoBottomSheet({
                           if (isFake) {
                             final random = Random();
                             final List<String>? videoList1 = videoList;
-                            final String randomVideoUrl =
-                                (videoList1 != null && videoList1.isNotEmpty) ? videoList1[random.nextInt(videoList1.length)] : "";
+                            final String randomVideoUrl = (videoList1 != null &&
+                                    videoList1.isNotEmpty)
+                                ? videoList1[random.nextInt(videoList1.length)]
+                                : "";
 
                             Get.toNamed(AppRoutes.incomingHostCall, arguments: {
                               "hostName": receiverName,
@@ -178,7 +193,9 @@ void showVideoBottomSheet({
                             });
                           } else {
                             await SocketEmit.onSendPrivateCall(
-                              callerId: Database.isHost ? Database.hostId : Database.loginUserId,
+                              callerId: Database.isHost
+                                  ? Database.hostId
+                                  : Database.loginUserId,
                               receiverId: receiverId,
                               agoraUID: 0,
                               channel: onGenerateRandomNumber(),
@@ -193,7 +210,8 @@ void showVideoBottomSheet({
                             // Get.back();
                           }
                         } else {
-                          Utils.showToast(EnumLocale.txtYouHaveInsufficientCoins.name.tr);
+                          Utils.showToast(
+                              EnumLocale.txtYouHaveInsufficientCoins.name.tr);
                           await 600.milliseconds.delay();
                           Get.toNamed(AppRoutes.topUpPage);
                         }
@@ -204,7 +222,8 @@ void showVideoBottomSheet({
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
                           gradient: AppColors.videoCallButtonGradient,
-                          borderRadius: const BorderRadius.all(Radius.circular(20)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(20)),
                           border: Border.all(color: AppColors.whiteColor),
                           color: AppColors.redColor,
                         ),
@@ -220,8 +239,11 @@ void showVideoBottomSheet({
                       children: [
                         Image.asset(AppAsset.singleSmallCoin, width: 25),
                         Text(
-                          videoCallCharge == 0 ? "${Database.videoPrivateCallRate} /min" : "$videoCallCharge /min",
-                          style: AppFontStyle.styleW600(AppColors.whiteColor, 13),
+                          videoCallCharge == 0
+                              ? "${Database.videoPrivateCallRate} /min"
+                              : "$videoCallCharge /min",
+                          style:
+                              AppFontStyle.styleW600(AppColors.whiteColor, 13),
                         ),
                       ],
                     ),

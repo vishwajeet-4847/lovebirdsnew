@@ -1,25 +1,25 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/bottom_sheet/image_picker_bottom_sheet.dart';
-import 'package:figgy/custom/country_picker.dart';
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/custom/custom_image_piker.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/host_detail_page/api/get_host_profile_api.dart';
-import 'package:figgy/pages/host_detail_page/model/get_user_profile_model.dart';
-import 'package:figgy/pages/host_edit_profile_page/api/host_edit_profile.dart';
-import 'package:figgy/pages/host_edit_profile_page/model/host_edit_profile_model.dart';
-import 'package:figgy/pages/host_request_page/api/fetch_impression_api.dart';
-import 'package:figgy/pages/host_request_page/model/fetch_impression_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/bottom_sheet/image_picker_bottom_sheet.dart';
+import 'package:LoveBirds/custom/country_picker.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/custom/custom_image_piker.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/host_detail_page/api/get_host_profile_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/model/get_user_profile_model.dart';
+import 'package:LoveBirds/pages/host_edit_profile_page/api/host_edit_profile.dart';
+import 'package:LoveBirds/pages/host_edit_profile_page/model/host_edit_profile_model.dart';
+import 'package:LoveBirds/pages/host_request_page/api/fetch_impression_api.dart';
+import 'package:LoveBirds/pages/host_request_page/model/fetch_impression_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -40,9 +40,12 @@ class HostEditProfileController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController dateOfBirthController = TextEditingController();
   TextEditingController bioDetailsController = TextEditingController();
-  TextEditingController randomCallRateForMaleController = TextEditingController();
-  TextEditingController randomCallRateForFeMaleController = TextEditingController();
-  TextEditingController randomCallRateForBothController = TextEditingController();
+  TextEditingController randomCallRateForMaleController =
+      TextEditingController();
+  TextEditingController randomCallRateForFeMaleController =
+      TextEditingController();
+  TextEditingController randomCallRateForBothController =
+      TextEditingController();
   TextEditingController privetCallRateController = TextEditingController();
   TextEditingController audioCallRateController = TextEditingController();
   TextEditingController chatRateController = TextEditingController();
@@ -99,7 +102,8 @@ class HostEditProfileController extends GetxController {
     flagController.text = flag ?? "";
     countryController.text = Database.country;
 
-    getHostProfileModel = await GetHostProfileApi.callApi(hostId: Database.hostId);
+    getHostProfileModel =
+        await GetHostProfileApi.callApi(hostId: Database.hostId);
 
     getHostData();
     allLanguage();
@@ -118,17 +122,27 @@ class HostEditProfileController extends GetxController {
     bioDetailsController.text = getHostProfileModel?.host?.bio ?? "";
     countryController.text = getHostProfileModel?.host?.country ?? "";
     flagController.text = getHostProfileModel?.host?.countryFlagImage ?? "";
-    randomCallRateForMaleController.text = getHostProfileModel?.host?.randomCallMaleRate.toString() ?? "";
-    randomCallRateForFeMaleController.text = getHostProfileModel?.host?.randomCallFemaleRate.toString() ?? "";
-    randomCallRateForBothController.text = getHostProfileModel?.host?.randomCallRate.toString() ?? "";
-    privetCallRateController.text = getHostProfileModel?.host?.privateCallRate.toString() ?? "";
-    audioCallRateController.text = getHostProfileModel?.host?.audioCallRate.toString() ?? "";
-    chatRateController.text = getHostProfileModel?.host?.chatRate.toString() ?? "";
-    selectedCategories = (getHostProfileModel?.host?.impression ?? []).where((e) => e.toString().trim().isNotEmpty).toList();
+    randomCallRateForMaleController.text =
+        getHostProfileModel?.host?.randomCallMaleRate.toString() ?? "";
+    randomCallRateForFeMaleController.text =
+        getHostProfileModel?.host?.randomCallFemaleRate.toString() ?? "";
+    randomCallRateForBothController.text =
+        getHostProfileModel?.host?.randomCallRate.toString() ?? "";
+    privetCallRateController.text =
+        getHostProfileModel?.host?.privateCallRate.toString() ?? "";
+    audioCallRateController.text =
+        getHostProfileModel?.host?.audioCallRate.toString() ?? "";
+    chatRateController.text =
+        getHostProfileModel?.host?.chatRate.toString() ?? "";
+    selectedCategories = (getHostProfileModel?.host?.impression ?? [])
+        .where((e) => e.toString().trim().isNotEmpty)
+        .toList();
     selectedLanguages = getHostProfileModel?.host?.language ?? [];
     profileImage = getHostProfileModel?.host?.image ?? "";
     serverVideosWithIndex.clear();
-    for (int i = 0; i < (getHostProfileModel?.host?.profileVideo?.length ?? 0); i++) {
+    for (int i = 0;
+        i < (getHostProfileModel?.host?.profileVideo?.length ?? 0);
+        i++) {
       final url = getHostProfileModel?.host?.profileVideo?[i];
       if (url != null && url.trim().isNotEmpty) {
         serverVideosWithIndex[i] = url;
@@ -136,17 +150,26 @@ class HostEditProfileController extends GetxController {
     }
     videoUrls = serverVideosWithIndex.values.toList();
 
-    isMale = getHostProfileModel?.host?.gender?.toLowerCase() == "male" ? true : false;
-    datePickerController.selectedDateString = getHostProfileModel?.host?.dob ?? "";
+    isMale = getHostProfileModel?.host?.gender?.toLowerCase() == "male"
+        ? true
+        : false;
+    datePickerController.selectedDateString =
+        getHostProfileModel?.host?.dob ?? "";
 
     images = List.generate(3, (index) => null);
 
-    for (int i = 0; i < (getHostProfileModel?.host?.photoGallery?.length ?? 0); i++) {
+    for (int i = 0;
+        i < (getHostProfileModel?.host?.photoGallery?.length ?? 0);
+        i++) {
       final photoPath = getHostProfileModel?.host?.photoGallery?[i] ?? '';
       images[i] = getFullImageUrl(photoPath);
     }
 
-    update([AppConstant.onChangeGender, AppConstant.idChangeCountry, AppConstant.idShowThumbnail]);
+    update([
+      AppConstant.onChangeGender,
+      AppConstant.idChangeCountry,
+      AppConstant.idShowThumbnail
+    ]);
     datePickerController.update([AppConstant.idUpdateDate]);
   }
 
@@ -165,7 +188,9 @@ class HostEditProfileController extends GetxController {
     fetchImpressionModel = await FetchImpressionApi.callApi();
 
     if (fetchImpressionModel != null) {
-      categories = fetchImpressionModel!.personalityImpressions.map((e) => e.name).toList();
+      categories = fetchImpressionModel!.personalityImpressions
+          .map((e) => e.name)
+          .toList();
     } else {
       categories = [];
     }
@@ -194,7 +219,8 @@ class HostEditProfileController extends GetxController {
 
   //******************** Language
   Future allLanguage() async {
-    final String response = await rootBundle.loadString(AppAsset.getAllLanguage);
+    final String response =
+        await rootBundle.loadString(AppAsset.getAllLanguage);
     allLanguageData = jsonDecode(response);
     log("AllLanguage: $allLanguageData");
 
@@ -209,7 +235,9 @@ class HostEditProfileController extends GetxController {
     if (query.isEmpty) {
       filteredLanguages = List.from(allLanguages);
     } else {
-      filteredLanguages = allLanguages.where((lang) => lang.toLowerCase().contains(query.toLowerCase())).toList();
+      filteredLanguages = allLanguages
+          .where((lang) => lang.toLowerCase().contains(query.toLowerCase()))
+          .toList();
     }
     update();
   }
@@ -240,7 +268,11 @@ class HostEditProfileController extends GetxController {
   }
 
   String getFlagEmoji(String countryCode) {
-    return countryCode.toUpperCase().runes.map((code) => String.fromCharCode(code + 127397)).join();
+    return countryCode
+        .toUpperCase()
+        .runes
+        .map((code) => String.fromCharCode(code + 127397))
+        .join();
   }
 
   //******************** Gender
@@ -285,14 +317,16 @@ class HostEditProfileController extends GetxController {
     await ImagePickerBottomSheetUi.show(
       context: context,
       onClickCamera: () async {
-        final pickedImagePath = await CustomImagePicker.pickImage(ImageSource.camera);
+        final pickedImagePath =
+            await CustomImagePicker.pickImage(ImageSource.camera);
         if (pickedImagePath != null) {
           images[index] = pickedImagePath;
           update();
         }
       },
       onClickGallery: () async {
-        final pickedImagePath = await CustomImagePicker.pickImage(ImageSource.gallery);
+        final pickedImagePath =
+            await CustomImagePicker.pickImage(ImageSource.gallery);
         if (pickedImagePath != null) {
           images[index] = pickedImagePath;
           update();
@@ -347,7 +381,8 @@ class HostEditProfileController extends GetxController {
     update([AppConstant.idShowThumbnail]);
   }
 
-  Future<String?> generateThumbnail(String videoPathOrUrl, {required bool isNetwork}) async {
+  Future<String?> generateThumbnail(String videoPathOrUrl,
+      {required bool isNetwork}) async {
     final tempDir = await getTemporaryDirectory();
     return await VideoThumbnail.thumbnailFile(
       video: videoPathOrUrl,
@@ -387,7 +422,8 @@ class HostEditProfileController extends GetxController {
       mainTitle: EnumLocale.txtChooseVideo.name.tr,
       title: EnumLocale.txtTakeVideo.name.tr,
       onClickCamera: () async {
-        final XFile? video = await imagePicker.pickVideo(source: ImageSource.camera);
+        final XFile? video =
+            await imagePicker.pickVideo(source: ImageSource.camera);
         if (video != null) {
           await addLocalVideo(video.path);
         }
@@ -472,7 +508,9 @@ class HostEditProfileController extends GetxController {
       return;
     }
 
-    final selectedImageCount = images.where((element) => element != null && element.toString().isNotEmpty).length;
+    final selectedImageCount = images
+        .where((element) => element != null && element.toString().isNotEmpty)
+        .length;
 
     if (selectedImageCount < 3) {
       Utils.showToast("Please select minimum 3 images.");
@@ -533,7 +571,8 @@ class HostEditProfileController extends GetxController {
     } catch (e) {
       Get.back();
       Utils.showLog("Error updating profile: $e");
-      Utils.showToast("Failed to update profile. Please check your internet connection.");
+      Utils.showToast(
+          "Failed to update profile. Please check your internet connection.");
     }
 
     FocusManager.instance.primaryFocus?.unfocus();
@@ -553,7 +592,9 @@ class HostEditProfileController extends GetxController {
       return;
     }
 
-    final selectedImageCount = images.where((element) => element != null && element.toString().isNotEmpty).length;
+    final selectedImageCount = images
+        .where((element) => element != null && element.toString().isNotEmpty)
+        .length;
 
     if (selectedImageCount < 3) {
       Utils.showToast("Please select minimum 3 images.");
@@ -616,7 +657,8 @@ class HostEditProfileController extends GetxController {
     } catch (e) {
       Get.back();
       Utils.showLog("Error updating profile: $e");
-      Utils.showToast("Failed to update profile. Please check your internet connection.");
+      Utils.showToast(
+          "Failed to update profile. Please check your internet connection.");
     }
 
     FocusManager.instance.primaryFocus?.unfocus();

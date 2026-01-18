@@ -1,15 +1,15 @@
-import 'package:figgy/custom/app_title/custom_title.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/dialog/block_dialog.dart';
-import 'package:figgy/pages/host_detail_page/controller/host_detail_controller.dart';
-import 'package:figgy/pages/host_detail_page/widget/bottom_view_widget.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_title/custom_title.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/dialog/block_dialog.dart';
+import 'package:LoveBirds/pages/host_detail_page/controller/host_detail_controller.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/bottom_view_widget.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -88,14 +88,16 @@ class MultiImg extends StatelessWidget {
                                 ),
                               );
                               Get.dialog(
-                                barrierColor: AppColors.blackColor.withValues(alpha: 0.8),
+                                barrierColor:
+                                    AppColors.blackColor.withValues(alpha: 0.8),
                                 Dialog(
                                   backgroundColor: AppColors.transparent,
                                   shadowColor: Colors.transparent,
                                   surfaceTintColor: Colors.transparent,
                                   elevation: 0,
                                   child: BlockDialog(
-                                    hostId: logic.hostDetailModel?.host?.id ?? "",
+                                    hostId:
+                                        logic.hostDetailModel?.host?.id ?? "",
                                     isHost: true,
                                     userId: Database.loginUserId,
                                   ),
@@ -127,7 +129,8 @@ class MultiImg extends StatelessWidget {
                               borderRadius: BorderRadius.circular(25),
                               color: AppColors.colorGold1,
                               border: Border.all(
-                                color: AppColors.colorDialog.withValues(alpha: 0.5),
+                                color: AppColors.colorDialog
+                                    .withValues(alpha: 0.5),
                                 width: 1.5,
                               ),
                             ),
@@ -157,12 +160,16 @@ class MultiImg extends StatelessWidget {
                                                 ).paddingOnly(left: 8)
                                               : Text(
                                                   "${logic.finalCallRate}",
-                                                  style: AppFontStyle.styleW800(AppColors.colorGold1, 13),
-                                                ).paddingOnly(top: 3, bottom: 3, left: 8),
+                                                  style: AppFontStyle.styleW800(
+                                                      AppColors.colorGold1, 13),
+                                                ).paddingOnly(
+                                                  top: 3, bottom: 3, left: 8),
                                           Text(
                                             "/Min",
-                                            style: AppFontStyle.styleW800(AppColors.colorGold1, 13),
-                                          ).paddingOnly(top: 3, bottom: 3, right: 8),
+                                            style: AppFontStyle.styleW800(
+                                                AppColors.colorGold1, 13),
+                                          ).paddingOnly(
+                                              top: 3, bottom: 3, right: 8),
                                         ],
                                       ),
                                     );
@@ -181,14 +188,16 @@ class MultiImg extends StatelessWidget {
                 children: [
                   Container(
                     color: AppColors.primaryColor1,
-                    padding: const EdgeInsets.only(bottom: 10, top: 10, left: 10),
+                    padding:
+                        const EdgeInsets.only(bottom: 10, top: 10, left: 10),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           decoration: BoxDecoration(
                               border: Border.all(
-                                color: AppColors.whiteColor.withValues(alpha: 0.50),
+                                color: AppColors.whiteColor
+                                    .withValues(alpha: 0.50),
                               ),
                               borderRadius: BorderRadius.circular(15)),
                           padding: const EdgeInsets.all(0.8),
@@ -199,7 +208,8 @@ class MultiImg extends StatelessWidget {
                               width: 78,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
-                                color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                color: AppColors.colorTextGrey
+                                    .withValues(alpha: 0.22),
                               ),
                               child: CustomImage(
                                 image: logic.hostDetailModel?.host?.image ?? "",
@@ -220,14 +230,18 @@ class MultiImg extends StatelessWidget {
                                       text: name,
                                       style: textStyle,
                                       scrollAxis: Axis.horizontal,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       blankSpace: 10.0,
                                       velocity: 30.0,
-                                      pauseAfterRound: const Duration(seconds: 1),
+                                      pauseAfterRound:
+                                          const Duration(seconds: 1),
                                       startPadding: 0.0,
-                                      accelerationDuration: const Duration(seconds: 1),
+                                      accelerationDuration:
+                                          const Duration(seconds: 1),
                                       accelerationCurve: Curves.linear,
-                                      decelerationDuration: const Duration(milliseconds: 500),
+                                      decelerationDuration:
+                                          const Duration(milliseconds: 500),
                                       decelerationCurve: Curves.easeOut,
                                     )
                                   : Text(
@@ -244,12 +258,15 @@ class MultiImg extends StatelessWidget {
                                 Text(
                                   logic.hostDetailModel?.host?.uniqueId ?? "",
                                   maxLines: 1,
-                                  style: AppFontStyle.styleW500(AppColors.uniqueIdTxtColor, 14),
+                                  style: AppFontStyle.styleW500(
+                                      AppColors.uniqueIdTxtColor, 14),
                                 ),
                                 5.width,
                                 GestureDetector(
                                   onTap: () {
-                                    Utils.copyText(logic.hostDetailModel?.host?.uniqueId ?? "");
+                                    Utils.copyText(
+                                        logic.hostDetailModel?.host?.uniqueId ??
+                                            "");
                                   },
                                   child: Container(
                                     color: Colors.transparent,
@@ -267,7 +284,9 @@ class MultiImg extends StatelessWidget {
                             Row(
                               children: [
                                 Container(
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(80), color: AppColors.colorPink1),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(80),
+                                      color: AppColors.colorPink1),
                                   child: Row(
                                     children: [
                                       Image.asset(
@@ -277,11 +296,14 @@ class MultiImg extends StatelessWidget {
                                       ),
                                       3.width,
                                       Text(
-                                        logic.hostDetailModel?.host?.gender ?? "",
-                                        style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                                        logic.hostDetailModel?.host?.gender ??
+                                            "",
+                                        style: AppFontStyle.styleW700(
+                                            AppColors.whiteColor, 12),
                                       ),
                                     ],
-                                  ).paddingSymmetric(vertical: 4, horizontal: 9),
+                                  ).paddingSymmetric(
+                                      vertical: 4, horizontal: 9),
                                 ),
                                 8.width,
                                 Container(
@@ -298,14 +320,20 @@ class MultiImg extends StatelessWidget {
                                     children: [
                                       Text(
                                         "${EnumLocale.txtFollowers.name.tr} : ",
-                                        style: AppFontStyle.styleW600(AppColors.whiteColor, 12),
+                                        style: AppFontStyle.styleW600(
+                                            AppColors.whiteColor, 12),
                                       ),
                                       Text(
-                                        logic.hostDetailModel?.host?.totalFollower.toString() ?? "",
-                                        style: AppFontStyle.styleW800(AppColors.whiteColor, 12),
+                                        logic.hostDetailModel?.host
+                                                ?.totalFollower
+                                                .toString() ??
+                                            "",
+                                        style: AppFontStyle.styleW800(
+                                            AppColors.whiteColor, 12),
                                       ),
                                     ],
-                                  ).paddingOnly(top: 3, bottom: 3, left: 7, right: 7),
+                                  ).paddingOnly(
+                                      top: 3, bottom: 3, left: 7, right: 7),
                                 )
                               ],
                             ),
@@ -319,7 +347,8 @@ class MultiImg extends StatelessWidget {
                             Database.isHost
                                 ? const Offstage()
                                 : Padding(
-                                    padding: const EdgeInsets.only(right: 8, top: 2),
+                                    padding:
+                                        const EdgeInsets.only(right: 8, top: 2),
                                     child: GetBuilder<HostDetailController>(
                                       id: AppConstant.idFollowToggle,
                                       builder: (controller) {
@@ -330,24 +359,45 @@ class MultiImg extends StatelessWidget {
                                           child: Container(
                                             height: 26,
                                             decoration: BoxDecoration(
-                                              color: logic.isFollow ? null : AppColors.followBgColor,
-                                              gradient: logic.isFollow ? AppColors.gradientButtonColor : null,
+                                              color: logic.isFollow
+                                                  ? null
+                                                  : AppColors.followBgColor,
+                                              gradient: logic.isFollow
+                                                  ? AppColors
+                                                      .gradientButtonColor
+                                                  : null,
                                               border: logic.isFollow
                                                   ? null
                                                   : Border.all(
-                                                      color: AppColors.whiteColor.withValues(alpha: 0.34),
+                                                      color: AppColors
+                                                          .whiteColor
+                                                          .withValues(
+                                                              alpha: 0.34),
                                                     ),
-                                              borderRadius: BorderRadius.circular(30),
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
                                             ),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.min,
-                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
                                               children: [
-                                                Image.asset(logic.isFollow ? AppAsset.followingIcon2 : AppAsset.followIcon2, width: 14, height: 14),
+                                                Image.asset(
+                                                    logic.isFollow
+                                                        ? AppAsset
+                                                            .followingIcon2
+                                                        : AppAsset.followIcon2,
+                                                    width: 14,
+                                                    height: 14),
                                                 const SizedBox(width: 7),
                                                 Text(
-                                                  logic.isFollow ? EnumLocale.txtFollowing.name.tr : EnumLocale.txtFollow.name.tr,
-                                                  style: AppFontStyle.styleW700(Colors.white, 13),
+                                                  logic.isFollow
+                                                      ? EnumLocale
+                                                          .txtFollowing.name.tr
+                                                      : EnumLocale
+                                                          .txtFollow.name.tr,
+                                                  style: AppFontStyle.styleW700(
+                                                      Colors.white, 13),
                                                 ),
                                               ],
                                             ).paddingSymmetric(horizontal: 9),
@@ -362,7 +412,8 @@ class MultiImg extends StatelessWidget {
                     ),
                   ),
                   18.height,
-                  HostDetailTitle(title: EnumLocale.txtAboutMe.name.tr).paddingOnly(left: 14),
+                  HostDetailTitle(title: EnumLocale.txtAboutMe.name.tr)
+                      .paddingOnly(left: 14),
                   10.height,
                   Container(
                     width: Get.width,

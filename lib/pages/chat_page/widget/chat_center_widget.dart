@@ -1,23 +1,23 @@
 import 'dart:developer';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/custom_image/host_photo_gallery.dart';
-import 'package:figgy/custom/no_data_found/no_data_found.dart';
-import 'package:figgy/pages/chat_page/controller/chat_controller.dart';
-import 'package:figgy/pages/chat_page/widget/receiver_audio_message.dart';
-import 'package:figgy/pages/chat_page/widget/receiver_chat_widget.dart';
-import 'package:figgy/pages/chat_page/widget/sender_audio_message_widget.dart';
-import 'package:figgy/pages/chat_page/widget/sender_chat_widget.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/custom_image/host_photo_gallery.dart';
+import 'package:LoveBirds/custom/no_data_found/no_data_found.dart';
+import 'package:LoveBirds/pages/chat_page/controller/chat_controller.dart';
+import 'package:LoveBirds/pages/chat_page/widget/receiver_audio_message.dart';
+import 'package:LoveBirds/pages/chat_page/widget/receiver_chat_widget.dart';
+import 'package:LoveBirds/pages/chat_page/widget/sender_audio_message_widget.dart';
+import 'package:LoveBirds/pages/chat_page/widget/sender_chat_widget.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svga/flutter_svga.dart';
 import 'package:get/get.dart';
@@ -65,7 +65,8 @@ class ChatCenterWidget extends GetView<ChatController> {
             final chat = chatList[index];
             final isLastMessage = index == 0;
             if (chat.messageType == 1) {
-              return chat.senderId == Database.loginUserId || chat.senderId == Database.hostId
+              return chat.senderId == Database.loginUserId ||
+                      chat.senderId == Database.hostId
                   ? SenderChatWidget(
                       message: chat.message ?? "",
                       time: chat.date ?? "",
@@ -77,7 +78,8 @@ class ChatCenterWidget extends GetView<ChatController> {
             } else if (chat.messageType == 2) {
               return buildImageMessage(chat, context, isLastMessage, chat.date);
             } else if (chat.messageType == 3) {
-              return chat.senderId == Database.hostId || chat.senderId == Database.loginUserId
+              return chat.senderId == Database.hostId ||
+                      chat.senderId == Database.loginUserId
                   ? SenderAudioMessageWidget(
                       audioUrl: chat.audio ?? "",
                       time: chat.date ?? "",
@@ -92,7 +94,8 @@ class ChatCenterWidget extends GetView<ChatController> {
                       chat: chat,
                     );
             } else if (chat.messageType == 4) {
-              return chat.senderId == Database.hostId || chat.senderId == Database.loginUserId
+              return chat.senderId == Database.hostId ||
+                      chat.senderId == Database.loginUserId
                   ? buildSenderGiftMessage(chat)
                   : buildReceiverGiftMessage(chat);
             } else if (chat.messageType == 5) {
@@ -115,10 +118,12 @@ class ChatCenterWidget extends GetView<ChatController> {
       return const SizedBox.shrink();
     }
 
-    bool isSender = chat.senderId == Database.loginUserId || chat.senderId == Database.hostId;
+    bool isSender = chat.senderId == Database.loginUserId ||
+        chat.senderId == Database.hostId;
 
     return Row(
-      mainAxisAlignment: isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
+      mainAxisAlignment:
+          isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Visibility(
@@ -159,7 +164,9 @@ class ChatCenterWidget extends GetView<ChatController> {
                   Get.to(FullScreenImageView(imageUrl: imageUrl));
                 },
                 child: Column(
-                  crossAxisAlignment: isSender ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                  crossAxisAlignment: isSender
+                      ? CrossAxisAlignment.end
+                      : CrossAxisAlignment.start,
                   children: [
                     Container(
                       clipBehavior: Clip.antiAlias,
@@ -266,28 +273,43 @@ class ChatCenterWidget extends GetView<ChatController> {
                     child: chat.giftType == 3
                         ? GetBuilder<ChatController>(
                             builder: (logic) {
-                              final shouldAuto = logic.shouldAutoPlayFor(chat.id ?? "");
+                              final shouldAuto =
+                                  logic.shouldAutoPlayFor(chat.id ?? "");
                               return GiftSvgaOnce(
-                                key: ValueKey('svga_${chat.id ?? chat.image ?? chat.message}'),
-                                svgaUrl: Api.baseUrl + (chat.giftImage ?? chat.message ?? ""),
-                                thumbUrl: Api.baseUrl + (chat.giftsvgaImage ?? chat.image ?? chat.message ?? ""),
+                                key: ValueKey(
+                                    'svga_${chat.id ?? chat.image ?? chat.message}'),
+                                svgaUrl: Api.baseUrl +
+                                    (chat.giftImage ?? chat.message ?? ""),
+                                thumbUrl: Api.baseUrl +
+                                    (chat.giftsvgaImage ??
+                                        chat.image ??
+                                        chat.message ??
+                                        ""),
                                 size: const Size(80, 80),
                                 autoPlayFirstTime: shouldAuto,
                                 onFirstPlayComplete: () {
                                   final id = chat.id ?? "";
-                                  if (id.isNotEmpty) logic.markAutoPlayConsumed(id);
+                                  if (id.isNotEmpty)
+                                    logic.markAutoPlayConsumed(id);
                                 },
-                                onFirstPlayFailed: () => logic.onAutoPlayFailed(chat.id ?? ""), // NEW
+                                onFirstPlayFailed: () => logic
+                                    .onAutoPlayFailed(chat.id ?? ""), // NEW
 
-                                onTryPlay: () => logic.onTryStartManualPlay(chat.id ?? ""),
-                                onReplayStart: () => logic.onManualReplayStart(chat.id ?? ""), // NEW
-                                onReplayComplete: () => logic.onManualReplayFinished(chat.id ?? ""), // UPDATED
-                                onReplayError: () => logic.onManualReplayError(chat.id ?? ""), // NEW
+                                onTryPlay: () =>
+                                    logic.onTryStartManualPlay(chat.id ?? ""),
+                                onReplayStart: () => logic
+                                    .onManualReplayStart(chat.id ?? ""), // NEW
+                                onReplayComplete: () =>
+                                    logic.onManualReplayFinished(
+                                        chat.id ?? ""), // UPDATED
+                                onReplayError: () => logic
+                                    .onManualReplayError(chat.id ?? ""), // NEW
                               );
                             },
                           )
                         : Container(
-                            color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                            color:
+                                AppColors.colorTextGrey.withValues(alpha: 0.22),
                             width: 80,
                             height: 80,
                             child: CustomImage(
@@ -323,7 +345,9 @@ class ChatCenterWidget extends GetView<ChatController> {
           builder: (logic) {
             return Container(
               padding: const EdgeInsets.all(1.2),
-              decoration: BoxDecoration(border: Border.all(color: AppColors.whiteColor), shape: BoxShape.circle),
+              decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.whiteColor),
+                  shape: BoxShape.circle),
               child: Container(
                 height: 32,
                 width: 32,
@@ -401,28 +425,43 @@ class ChatCenterWidget extends GetView<ChatController> {
                     child: chat.giftType == 3
                         ? GetBuilder<ChatController>(
                             builder: (logic) {
-                              final shouldAuto = logic.shouldAutoPlayFor(chat.id ?? "");
+                              final shouldAuto =
+                                  logic.shouldAutoPlayFor(chat.id ?? "");
                               return GiftSvgaOnce(
-                                key: ValueKey('svga_${chat.id ?? chat.image ?? chat.message}'),
-                                svgaUrl: Api.baseUrl + (chat.giftImage ?? chat.message ?? ""),
-                                thumbUrl: Api.baseUrl + (chat.giftsvgaImage ?? chat.image ?? chat.message ?? ""),
+                                key: ValueKey(
+                                    'svga_${chat.id ?? chat.image ?? chat.message}'),
+                                svgaUrl: Api.baseUrl +
+                                    (chat.giftImage ?? chat.message ?? ""),
+                                thumbUrl: Api.baseUrl +
+                                    (chat.giftsvgaImage ??
+                                        chat.image ??
+                                        chat.message ??
+                                        ""),
                                 size: const Size(80, 80),
                                 autoPlayFirstTime: shouldAuto,
                                 onFirstPlayComplete: () {
                                   final id = chat.id ?? "";
-                                  if (id.isNotEmpty) logic.markAutoPlayConsumed(id);
+                                  if (id.isNotEmpty)
+                                    logic.markAutoPlayConsumed(id);
                                 },
-                                onFirstPlayFailed: () => logic.onAutoPlayFailed(chat.id ?? ""), // NEW
+                                onFirstPlayFailed: () => logic
+                                    .onAutoPlayFailed(chat.id ?? ""), // NEW
 
-                                onTryPlay: () => logic.onTryStartManualPlay(chat.id ?? ""),
-                                onReplayStart: () => logic.onManualReplayStart(chat.id ?? ""), // NEW
-                                onReplayComplete: () => logic.onManualReplayFinished(chat.id ?? ""), // UPDATED
-                                onReplayError: () => logic.onManualReplayError(chat.id ?? ""), // NEW
+                                onTryPlay: () =>
+                                    logic.onTryStartManualPlay(chat.id ?? ""),
+                                onReplayStart: () => logic
+                                    .onManualReplayStart(chat.id ?? ""), // NEW
+                                onReplayComplete: () =>
+                                    logic.onManualReplayFinished(
+                                        chat.id ?? ""), // UPDATED
+                                onReplayError: () => logic
+                                    .onManualReplayError(chat.id ?? ""), // NEW
                               );
                             },
                           )
                         : Container(
-                            color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                            color:
+                                AppColors.colorTextGrey.withValues(alpha: 0.22),
                             width: 80,
                             height: 80,
                             child: CustomImage(
@@ -458,10 +497,12 @@ class ChatCenterWidget extends GetView<ChatController> {
   }
 
   Widget buildVideoCall(chat) {
-    bool isSender = chat.senderId == Database.loginUserId || chat.senderId == Database.hostId;
+    bool isSender = chat.senderId == Database.loginUserId ||
+        chat.senderId == Database.hostId;
 
     return Row(
-      mainAxisAlignment: isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
+      mainAxisAlignment:
+          isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
@@ -492,7 +533,8 @@ class ChatCenterWidget extends GetView<ChatController> {
                   Container(
                     width: 48,
                     height: 48,
-                    decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.purple2),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle, color: AppColors.purple2),
                     child: Center(
                       child: Image.asset(
                         AppAsset.callIconGradiant,
@@ -505,8 +547,12 @@ class ChatCenterWidget extends GetView<ChatController> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(EnumLocale.txtVideoCall.name.tr, style: AppFontStyle.styleW800(AppColors.whiteColor, 18)),
-                      Text(chat.callDuration ?? "00:00", style: AppFontStyle.styleW600(AppColors.chatDetailColor, 14)),
+                      Text(EnumLocale.txtVideoCall.name.tr,
+                          style:
+                              AppFontStyle.styleW800(AppColors.whiteColor, 18)),
+                      Text(chat.callDuration ?? "00:00",
+                          style: AppFontStyle.styleW600(
+                              AppColors.chatDetailColor, 14)),
                     ],
                   ),
                   GetBuilder<ChatController>(
@@ -527,10 +573,12 @@ class ChatCenterWidget extends GetView<ChatController> {
   }
 
   Widget buildVoiceCall(chat) {
-    bool isSender = chat.senderId == Database.loginUserId || chat.senderId == Database.hostId;
+    bool isSender = chat.senderId == Database.loginUserId ||
+        chat.senderId == Database.hostId;
 
     return Row(
-      mainAxisAlignment: isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
+      mainAxisAlignment:
+          isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
@@ -561,7 +609,8 @@ class ChatCenterWidget extends GetView<ChatController> {
                   Container(
                     height: 48,
                     width: 48,
-                    decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.purple2),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle, color: AppColors.purple2),
                     child: Center(
                       child: Image.asset(
                         AppAsset.icAudioCallIconGradiant,
@@ -580,7 +629,8 @@ class ChatCenterWidget extends GetView<ChatController> {
                       ),
                       Text(
                         chat.callDuration ?? "00:00",
-                        style: AppFontStyle.styleW600(AppColors.chatDetailColor, 14),
+                        style: AppFontStyle.styleW600(
+                            AppColors.chatDetailColor, 14),
                       ),
                     ],
                   ),
@@ -636,7 +686,8 @@ class GiftSvgaOnce extends StatefulWidget {
   State<GiftSvgaOnce> createState() => _GiftSvgaOnceState();
 }
 
-class _GiftSvgaOnceState extends State<GiftSvgaOnce> with SingleTickerProviderStateMixin {
+class _GiftSvgaOnceState extends State<GiftSvgaOnce>
+    with SingleTickerProviderStateMixin {
   late final SVGAAnimationController _controller;
   bool _isPlaying = false;
   bool _hasPlayedOnce = false;
@@ -656,7 +707,9 @@ class _GiftSvgaOnceState extends State<GiftSvgaOnce> with SingleTickerProviderSt
     _decodeTried = true;
     try {
       // Optional: small timeout so it won't hang forever
-      final movie = await SVGAParser.shared.decodeFromURL(widget.svgaUrl).timeout(const Duration(seconds: 6));
+      final movie = await SVGAParser.shared
+          .decodeFromURL(widget.svgaUrl)
+          .timeout(const Duration(seconds: 6));
       if (!mounted) return;
       _controller.videoItem = movie;
     } catch (e) {
@@ -760,7 +813,8 @@ class _GiftSvgaOnceState extends State<GiftSvgaOnce> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
-    Utils.showLog('widget.thumbnail url svga image ::::::   ${widget.thumbUrl}');
+    Utils.showLog(
+        'widget.thumbnail url svga image ::::::   ${widget.thumbUrl}');
     final box = SizedBox(
       height: widget.size.height,
       width: widget.size.width,

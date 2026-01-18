@@ -1,12 +1,18 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CarouselWidget extends StatelessWidget {
-  const CarouselWidget({super.key, required this.title, this.textSpan1, this.textSpan2, this.textSpan3, this.image});
+  const CarouselWidget(
+      {super.key,
+      required this.title,
+      this.textSpan1,
+      this.textSpan2,
+      this.textSpan3,
+      this.image});
 
   final String title;
   final String? textSpan1;
@@ -47,7 +53,8 @@ class CarouselWidget extends StatelessWidget {
                     ),
                     TextSpan(
                       text: textSpan2,
-                      style: AppFontStyle.styleW400(AppColors.colorGoldButton, 12),
+                      style:
+                          AppFontStyle.styleW400(AppColors.colorGoldButton, 12),
                     ),
                     TextSpan(
                       text: textSpan3,

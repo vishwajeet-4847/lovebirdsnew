@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/vip_page/model/get_vip_plan.dart';
+import 'package:LoveBirds/pages/vip_page/model/get_vip_plan.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../utils/api.dart';

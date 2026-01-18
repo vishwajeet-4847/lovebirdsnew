@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/block_list_page/model/get_blocked_user_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/block_list_page/model/get_blocked_user_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class GetBlockedUserApi {
@@ -13,7 +13,8 @@ class GetBlockedUserApi {
   static Future<GetBlockedUserModel?> callApi({required String hostId}) async {
     Utils.showLog("Get Blocked User Api Calling...");
 
-    final uri = Uri.parse("${Api.getBlockedUserForHost}?start=$startPagination&limit=$limitPagination&hostId=$hostId");
+    final uri = Uri.parse(
+        "${Api.getBlockedUserForHost}?start=$startPagination&limit=$limitPagination&hostId=$hostId");
     final headers = {
       Api.key: Api.secretKey,
     };

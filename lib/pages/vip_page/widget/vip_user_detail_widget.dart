@@ -1,12 +1,12 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/vip_page/controller/vip_controller.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/vip_page/controller/vip_controller.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -50,7 +50,8 @@ class VipUserDetailWidget extends StatelessWidget {
                             clipBehavior: Clip.antiAlias,
                             margin: const EdgeInsets.only(left: 20),
                             decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(50)),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50)),
                             ),
                             child: Image.network(
                               Api.baseUrl + Database.isVipFrameBadge,
@@ -73,7 +74,9 @@ class VipUserDetailWidget extends StatelessWidget {
                   style: AppFontStyle.styleW800(AppColors.whiteColor, 25),
                 ),
                 Text(
-                  Database.isVip ? EnumLocale.txtYouReVIP.name.tr : EnumLocale.txtYouReNotVIP.name.tr,
+                  Database.isVip
+                      ? EnumLocale.txtYouReVIP.name.tr
+                      : EnumLocale.txtYouReNotVIP.name.tr,
                   style: AppFontStyle.styleW700(AppColors.vipTextColor, 15),
                 ),
               ],

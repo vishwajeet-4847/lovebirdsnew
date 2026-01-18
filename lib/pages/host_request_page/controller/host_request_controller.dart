@@ -2,28 +2,28 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/bottom_sheet/image_picker_bottom_sheet.dart';
-import 'package:figgy/custom/country_picker.dart';
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/custom/custom_image_piker.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/host_request_page/api/create_verification_request_api.dart';
-import 'package:figgy/pages/host_request_page/api/fetch_impression_api.dart';
-import 'package:figgy/pages/host_request_page/api/host_request_api.dart';
-import 'package:figgy/pages/host_request_page/api/validate_agency_code_api.dart';
-import 'package:figgy/pages/host_request_page/model/fetch_impression_model.dart';
-import 'package:figgy/pages/host_request_page/model/get_identity_proof_model.dart';
-import 'package:figgy/pages/host_request_page/model/host_request_model.dart';
-import 'package:figgy/pages/host_request_page/model/validate_agency_code_model.dart';
-import 'package:figgy/pages/host_request_page/widget/host_request_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/bottom_sheet/image_picker_bottom_sheet.dart';
+import 'package:LoveBirds/custom/country_picker.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/custom/custom_image_piker.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/host_request_page/api/create_verification_request_api.dart';
+import 'package:LoveBirds/pages/host_request_page/api/fetch_impression_api.dart';
+import 'package:LoveBirds/pages/host_request_page/api/host_request_api.dart';
+import 'package:LoveBirds/pages/host_request_page/api/validate_agency_code_api.dart';
+import 'package:LoveBirds/pages/host_request_page/model/fetch_impression_model.dart';
+import 'package:LoveBirds/pages/host_request_page/model/get_identity_proof_model.dart';
+import 'package:LoveBirds/pages/host_request_page/model/host_request_model.dart';
+import 'package:LoveBirds/pages/host_request_page/model/validate_agency_code_model.dart';
+import 'package:LoveBirds/pages/host_request_page/widget/host_request_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -194,7 +194,8 @@ class HostRequestController extends GetxController {
         }
       },
       onClickGallery: () async {
-        final imagePath = await CustomImagePicker.pickImage(ImageSource.gallery);
+        final imagePath =
+            await CustomImagePicker.pickImage(ImageSource.gallery);
 
         if (imagePath != null) {
           images[index] = imagePath;
@@ -257,7 +258,9 @@ class HostRequestController extends GetxController {
     fetchImpressionModel = await FetchImpressionApi.callApi();
 
     if (fetchImpressionModel != null) {
-      impressionList = fetchImpressionModel!.personalityImpressions.map((e) => e.name).toList();
+      impressionList = fetchImpressionModel!.personalityImpressions
+          .map((e) => e.name)
+          .toList();
     } else {
       impressionList = [];
     }
@@ -267,7 +270,8 @@ class HostRequestController extends GetxController {
 
   //*************** Host Request Select Language View
   allLanguage() async {
-    final String response = await rootBundle.loadString(AppAsset.getAllLanguage);
+    final String response =
+        await rootBundle.loadString(AppAsset.getAllLanguage);
     allLanguageData = jsonDecode(response);
 
     allLanguages = allLanguageData.values.map((e) => e as String).toList();
@@ -281,7 +285,9 @@ class HostRequestController extends GetxController {
     if (query.isEmpty) {
       filteredLanguages = List.from(allLanguages);
     } else {
-      filteredLanguages = allLanguages.where((lang) => lang.toLowerCase().contains(query.toLowerCase())).toList();
+      filteredLanguages = allLanguages
+          .where((lang) => lang.toLowerCase().contains(query.toLowerCase()))
+          .toList();
     }
     update();
   }
@@ -306,7 +312,8 @@ class HostRequestController extends GetxController {
       await ImagePickerBottomSheetUi.show(
         context: context,
         onClickCamera: () async {
-          final imagePath = await CustomImagePicker.pickImage(ImageSource.camera);
+          final imagePath =
+              await CustomImagePicker.pickImage(ImageSource.camera);
 
           if (imagePath != null) {
             fontImage = imagePath;
@@ -317,7 +324,8 @@ class HostRequestController extends GetxController {
           }
         },
         onClickGallery: () async {
-          final imagePath = await CustomImagePicker.pickImage(ImageSource.gallery);
+          final imagePath =
+              await CustomImagePicker.pickImage(ImageSource.gallery);
 
           if (imagePath != null) {
             fontImage = imagePath;
@@ -347,7 +355,8 @@ class HostRequestController extends GetxController {
       await ImagePickerBottomSheetUi.show(
         context: context,
         onClickCamera: () async {
-          final imagePath = await CustomImagePicker.pickImage(ImageSource.camera);
+          final imagePath =
+              await CustomImagePicker.pickImage(ImageSource.camera);
 
           if (imagePath != null) {
             backImage = imagePath;
@@ -358,7 +367,8 @@ class HostRequestController extends GetxController {
           }
         },
         onClickGallery: () async {
-          final imagePath = await CustomImagePicker.pickImage(ImageSource.gallery);
+          final imagePath =
+              await CustomImagePicker.pickImage(ImageSource.gallery);
 
           if (imagePath != null) {
             backImage = imagePath;

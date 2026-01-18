@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> enUS = {
   EnumLocale.txtLetsStart.name: "Let's Start",
   EnumLocale.txtGoogle.name: "Google",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "By logging in, you agree to our ",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "By logging in, you agree to our ",
   EnumLocale.txtPrivacyPolicy.name: "Privacy Policy",
   EnumLocale.txtAnd.name: " and ",
   EnumLocale.txtUseAgreement.name: "Use Agreement",
   EnumLocale.txtCoinRechargeSuccess.name: "Coin Recharge Success",
   EnumLocale.txtSomeThingWentWrong.name: "Something went wrong",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "Long Press To Enable Audio Recording",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "Long Press To Enable Audio Recording",
   EnumLocale.txtPleaseAllowPermission.name: "Please Allow Permission",
   EnumLocale.txtTypeSomething.name: "Say Something...",
   EnumLocale.txtRandomMatch.name: "Random Match",
@@ -18,10 +20,13 @@ final Map<String, String> enUS = {
   EnumLocale.txtRecharge.name: "Recharge",
   EnumLocale.txtMyGems.name: "My Gems",
   EnumLocale.txtPleaseEnterWithdrawCoin.name: "Please Enter Withdraw Coin",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "The requested withdrawal amount must exceed the minimum limit set by the administrator",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "Please select withdraw method",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "Please enter payment details",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "Please select withdraw method",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "Please enter payment details",
   EnumLocale.txtSelectPaymentGateway.name: "Select Payment Gateway",
   EnumLocale.txtAvailableCoin.name: "Available Coins",
   EnumLocale.txtWithdraw.name: "Withdraw",
@@ -74,7 +79,8 @@ final Map<String, String> enUS = {
   EnumLocale.txtVerificationDetails.name: "Verification Details",
   EnumLocale.txtVerificationRequestText.name:
       "All of the details you have submitted has been received by Us. We will check and update you on this once we have an update for you.\n\nIt will take around 3 to 4 business days to check and verify your profile.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "Insufficient balance to process the withdrawal request",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "Insufficient balance to process the withdrawal request",
   EnumLocale.txtIncomingVideoCall.name: "Incoming video call...",
   EnumLocale.txtIncomingAudioCall.name: "Incoming audio call...",
   EnumLocale.txtUploadYourImages.name: "Upload Your Images",
@@ -124,7 +130,8 @@ final Map<String, String> enUS = {
   EnumLocale.txtUnblock.name: "Unblock",
   EnumLocale.txtApplealDetails.name:
       "Your complaint will be accepted as soon as possible, please submit as detailed a description of your complaint as possible",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "Please select the reason your wish to report",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "Please select the reason your wish to report",
   EnumLocale.txtCancel.name: "Cancel",
   EnumLocale.txtSave.name: "Save",
   EnumLocale.txtCheckIn.name: "Check In",
@@ -132,7 +139,8 @@ final Map<String, String> enUS = {
   EnumLocale.txtNoInternetConnection.name: "No Internet Connection",
   EnumLocale.txtGifts.name: "Gifts",
   EnumLocale.txtSend.name: "Send",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "Do you want to sure\n exit this App?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "Do you want to sure\n exit this App?",
   EnumLocale.txtPay.name: "Pay",
   EnumLocale.txtTotal.name: "Total",
   EnumLocale.txtPayNow.name: "Pay Now",
@@ -143,8 +151,10 @@ final Map<String, String> enUS = {
   EnumLocale.txtGallery.name: "Gallery",
   EnumLocale.txtTakePhoto.name: "Take Photo",
   EnumLocale.txtWaitingForRemoteUser.name: "Waiting for remote user...",
-  EnumLocale.txtPleaseSelectADocumentType.name: "Please select a document type.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "Please check your internet connection.",
+  EnumLocale.txtPleaseSelectADocumentType.name:
+      "Please select a document type.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "Please check your internet connection.",
   EnumLocale.txtLiveHost.name: "Live Host",
   EnumLocale.txtEnterBio.name: "Enter your bio",
   EnumLocale.txtUploadId.name: "Upload Your Images",
@@ -195,7 +205,8 @@ final Map<String, String> enUS = {
   EnumLocale.txtVipDescription.name:
       "Note: VIP is not an automatic subscription payment and will not be automatically renewed after expiration. After activating VIP, you can directly receive rewards, and other privileges can be enjoyed throughout the VIP validity period.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP ENJOY PRIVILEGES",
-  EnumLocale.txtDailyCheckInDescription.name: "Check in after recharging any amount to get diamonds every week",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "Check in after recharging any amount to get diamonds every week",
   EnumLocale.txtDay.name: "Day ",
   EnumLocale.txtSelectPaymentOption.name: "Select Payment Option",
   EnumLocale.txtVerificationText.name:
@@ -212,12 +223,16 @@ final Map<String, String> enUS = {
   EnumLocale.txtPayment.name: "Payment",
   EnumLocale.txtBlockHost.name: "Block Host",
   EnumLocale.txtBlockUser.name: "Block User",
-  EnumLocale.txtBlockDetailsHost.name: "Are you sure you want to block this host ?",
-  EnumLocale.txtBlockDetailsUser.name: "Are you sure you want to block this user ?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "Are you sure you want to block this host ?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "Are you sure you want to block this user ?",
   EnumLocale.txtUnBlockHost.name: "Unblock Host",
   EnumLocale.txtUnBlockUser.name: "Unblock User",
-  EnumLocale.txtUnBlockDetailsHost.name: "Are you sure you want to unblock this host ?",
-  EnumLocale.txtUnBlockDetailsUser.name: "Are you sure you want to unblock this user ?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "Are you sure you want to unblock this host ?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "Are you sure you want to unblock this user ?",
   EnumLocale.txtWithdrawHistory.name: "Withdraw History",
   EnumLocale.txtWalletHistory.name: "Wallet History",
   EnumLocale.txtDeclineRequest.name:
@@ -245,7 +260,8 @@ final Map<String, String> enUS = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "Please select gift first",
   EnumLocale.txtTermsAndConditions.name: " Terms and Conditions",
   EnumLocale.txtUnderMaintenance.name: 'This App Are Under Maintenance',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'System maintenance in progress: please try again later.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'System maintenance in progress: please try again later.',
   EnumLocale.txtCloseAPP.name: 'Close App',
   EnumLocale.txtSearchCountry.name: 'Search Country',
   EnumLocale.txtCoins.name: 'Coins',
@@ -276,19 +292,22 @@ final Map<String, String> enUS = {
   EnumLocale.txtViewAll.name: 'View All',
   EnumLocale.txtPleaseSelectVideo.name: 'Please select at least on video',
   EnumLocale.txtDeleteAccount.name: 'Delete Account',
-  EnumLocale.txtDoYouWantToSureDeleteAccountThisApp.name: "Do you want to sure\n delete account?",
-
+  EnumLocale.txtDoYouWantToSureDeleteAccountThisApp.name:
+      "Do you want to sure\n delete account?",
   EnumLocale.txtAppName.name: "Figgy",
-  EnumLocale.txtPaymentFailedPleaseTryAgain.name: "Payment Failed Please Try Again",
+  EnumLocale.txtPaymentFailedPleaseTryAgain.name:
+      "Payment Failed Please Try Again",
   EnumLocale.txtReport.name: "Report",
   EnumLocale.txtItIsSpam.name: "It is spam",
   EnumLocale.txtNudityOrSexualActivity.name: "Nudity or sexual activity",
   EnumLocale.txtHateSpeechOrSymbols.name: "Hate speech or symbols",
-  EnumLocale.txtViolenceOrDangerousOrganization.name: "Violence or dangerous organization",
+  EnumLocale.txtViolenceOrDangerousOrganization.name:
+      "Violence or dangerous organization",
   EnumLocale.txtFalseInformation.name: "False information",
   EnumLocale.txtBullyingOrHarassment.name: "Bullying or harassment",
   EnumLocale.txtScamOrFraud.name: "Scam or fraud",
-  EnumLocale.txtIntellectualPropertyViolation.name: "Intellectual property violation",
+  EnumLocale.txtIntellectualPropertyViolation.name:
+      "Intellectual property violation",
   EnumLocale.txtSuicideOrSelfInjury.name: "Suicide or self injury",
   EnumLocale.txtDrugs.name: "Drugs",
   EnumLocale.txtEatingDisorders.name: "Eating disorders",

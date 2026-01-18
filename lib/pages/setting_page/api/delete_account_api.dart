@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/pages/setting_page/model/user_delete_account_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/pages/setting_page/model/user_delete_account_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class DeleteAccountApi {

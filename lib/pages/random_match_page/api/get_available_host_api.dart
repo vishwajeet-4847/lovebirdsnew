@@ -1,21 +1,29 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/random_match_page/model/get_available_host_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/random_match_page/model/get_available_host_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class GetAvailableHostApi {
   static GetAvailableHostModel? getAvailableHostModel;
 
-  static Future<GetAvailableHostModel?> callApi({required String gender, required String token, required String uid}) async {
+  static Future<GetAvailableHostModel?> callApi(
+      {required String gender,
+      required String token,
+      required String uid}) async {
     Utils.showLog("Get Available Host Api Calling...");
     try {
-      final uri = Uri.parse("${Api.getAvailableHostForRandomMatch}?gender=$gender");
+      final uri =
+          Uri.parse("${Api.getAvailableHostForRandomMatch}?gender=$gender");
       log("Get Available Host Api Uri => $uri");
 
-      final headers = {Api.key: Api.secretKey, Api.tokenKey: "Bearer $token", Api.uidKey: uid};
+      final headers = {
+        Api.key: Api.secretKey,
+        Api.tokenKey: "Bearer $token",
+        Api.uidKey: uid
+      };
       log("Get Available Host Api headers => $headers");
 
       final response = await http.get(uri, headers: headers);

@@ -1,5 +1,5 @@
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/utils/enum.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -43,7 +43,8 @@ void showCupertinoDatePicker({required BuildContext context}) {
                 minimumYear: 1900,
                 maximumYear: DateTime.now().year,
                 initialDateTime: logic.selectedDate,
-                onDateTimeChanged: (DateTime newDate) => logic.updateSelectedDate(newDate),
+                onDateTimeChanged: (DateTime newDate) =>
+                    logic.updateSelectedDate(newDate),
               ),
             ),
           ],

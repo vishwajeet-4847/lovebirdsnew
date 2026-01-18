@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> idID = {
   EnumLocale.txtLetsStart.name: "Ayo Mulai",
   EnumLocale.txtGoogle.name: "Google",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "Dengan masuk, Anda menyetujui ketentuan kami",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "Dengan masuk, Anda menyetujui ketentuan kami",
   EnumLocale.txtPrivacyPolicy.name: "Kebijakan Privasi",
   EnumLocale.txtAnd.name: "Dan",
   EnumLocale.txtUseAgreement.name: "Gunakan Perjanjian",
   EnumLocale.txtCoinRechargeSuccess.name: "Sukses Isi Ulang Koin",
   EnumLocale.txtSomeThingWentWrong.name: "Ada yang salah",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "Tekan Lama Untuk Mengaktifkan Rekaman Audio",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "Tekan Lama Untuk Mengaktifkan Rekaman Audio",
   EnumLocale.txtPleaseAllowPermission.name: "Mohon Izin",
   EnumLocale.txtTypeSomething.name: "Katakan Sesuatu...",
   EnumLocale.txtRandomMatch.name: "Pencocokan Acak",
@@ -18,10 +20,13 @@ final Map<String, String> idID = {
   EnumLocale.txtRecharge.name: "Isi ulang",
   EnumLocale.txtMyGems.name: "Permata Saya",
   EnumLocale.txtPleaseEnterWithdrawCoin.name: "Silakan Masukkan Tarik Koin",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "Penarikan Koin yang Diminta Harus Lebih Besar Dari Yang Ditentukan Oleh Admin",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "Silakan Pilih Metode Penarikan",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "Harap Masukkan Semua Rincian Pembayaran",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "Silakan Pilih Metode Penarikan",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "Harap Masukkan Semua Rincian Pembayaran",
   EnumLocale.txtSelectPaymentGateway.name: "Pilih Gateway Pembayaran",
   EnumLocale.txtAvailableCoin.name: "Koin Tersedia",
   EnumLocale.txtWithdraw.name: "Menarik",
@@ -55,7 +60,8 @@ final Map<String, String> idID = {
   EnumLocale.txtBoth.name: "Keduanya",
   EnumLocale.txtMale.name: "Pria",
   EnumLocale.txtFemale.name: "Perempuan",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "Jadilah VIP, Nikmati Keistimewaan",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "Jadilah VIP, Nikmati Keistimewaan",
   EnumLocale.txtMore.name: "Lagi",
   EnumLocale.txtGems.name: "Permata",
   EnumLocale.txtDailyCheckIn.name: "Pendaftaran harian",
@@ -74,7 +80,8 @@ final Map<String, String> idID = {
   EnumLocale.txtVerificationDetails.name: "Detail Verifikasi",
   EnumLocale.txtVerificationRequestText.name:
       "Semua detail yang Anda kirimkan telah kami terima. Kami akan memeriksa dan memberi tahu Anda tentang hal ini setelah kami mendapatkan informasi terbaru.\n\nDiperlukan waktu sekitar 3 hingga 4 hari kerja untuk memeriksa dan memverifikasi profil Anda.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "Pengguna Tidak Memiliki Dana Yang Cukup Untuk Melakukan Penarikan",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "Pengguna Tidak Memiliki Dana Yang Cukup Untuk Melakukan Penarikan",
   EnumLocale.txtIncomingVideoCall.name: "Panggilan video masuk...",
   EnumLocale.txtIncomingAudioCall.name: "Panggilan audio masuk...",
   EnumLocale.txtUploadYourImages.name: "Unggah Gambar Anda",
@@ -122,8 +129,10 @@ final Map<String, String> idID = {
   EnumLocale.txtConnecting.name: "Menghubungkan...",
   EnumLocale.txtVideoCall.name: "Panggilan Video",
   EnumLocale.txtUnblock.name: "Buka blokir",
-  EnumLocale.txtApplealDetails.name: "Keluhan Anda akan kami terima secepatnya, mohon sampaikan keluhan Anda sedetail mungkin",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "Silakan pilih alasan mengapa Anda ingin melaporkan",
+  EnumLocale.txtApplealDetails.name:
+      "Keluhan Anda akan kami terima secepatnya, mohon sampaikan keluhan Anda sedetail mungkin",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "Silakan pilih alasan mengapa Anda ingin melaporkan",
   EnumLocale.txtCancel.name: "Membatalkan",
   EnumLocale.txtSave.name: "Menyimpan",
   EnumLocale.txtCheckIn.name: "Daftar Masuk",
@@ -131,7 +140,8 @@ final Map<String, String> idID = {
   EnumLocale.txtNoInternetConnection.name: "Tidak Ada Koneksi Internet",
   EnumLocale.txtGifts.name: "Hadiah",
   EnumLocale.txtSend.name: "Mengirim",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "Apakah Anda ingin keluar dari Aplikasi ini?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "Apakah Anda ingin keluar dari Aplikasi ini?",
   EnumLocale.txtPay.name: "Membayar",
   EnumLocale.txtTotal.name: "Total",
   EnumLocale.txtPayNow.name: "Bayar Sekarang",
@@ -143,7 +153,8 @@ final Map<String, String> idID = {
   EnumLocale.txtTakePhoto.name: "Ambil Foto",
   EnumLocale.txtWaitingForRemoteUser.name: "Menunggu pengguna jarak jauh...",
   EnumLocale.txtPleaseSelectADocumentType.name: "Silakan pilih jenis dokumen.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "Silakan periksa koneksi internet Anda.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "Silakan periksa koneksi internet Anda.",
   EnumLocale.txtLiveHost.name: "Pembawa acara langsung",
   EnumLocale.txtEnterBio.name: "Masukkan biodata Anda",
   EnumLocale.txtUploadId.name: "Unggah Gambar Anda",
@@ -162,7 +173,8 @@ final Map<String, String> idID = {
   EnumLocale.txtPleaseSelectFontImages.name: "Silakan Pilih Gambar Font",
   EnumLocale.txtAudioCallDiscount.name: "Diskon Panggilan Audio",
   EnumLocale.txtVideoCallDiscount.name: "Diskon Panggilan Video",
-  EnumLocale.txtRandomMatchCallDiscount.name: "Diskon Panggilan Pertandingan Acak",
+  EnumLocale.txtRandomMatchCallDiscount.name:
+      "Diskon Panggilan Pertandingan Acak",
   EnumLocale.txtTopUpCoinBonus.name: "Bonus Koin Isi Ulang",
   EnumLocale.txtFreeMessages.name: "Pesan Gratis",
   EnumLocale.txtGemsGift.name: "Hadiah Permata",
@@ -190,11 +202,13 @@ final Map<String, String> idID = {
   EnumLocale.txtCountry.name: "Negara",
   EnumLocale.txtGender.name: "Jenis kelamin",
   EnumLocale.txtOptional.name: "Opsional",
-  EnumLocale.txtPleaseSelectDocument.name: "Silakan pilih dokumen terlebih dahulu",
+  EnumLocale.txtPleaseSelectDocument.name:
+      "Silakan pilih dokumen terlebih dahulu",
   EnumLocale.txtVipDescription.name:
       "Catatan: VIP bukan pembayaran langganan otomatis dan tidak akan diperpanjang secara otomatis setelah masa berlaku habis. Setelah mengaktifkan VIP, Anda dapat langsung menerima hadiah, dan hak istimewa lainnya dapat dinikmati selama masa berlaku VIP.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP NIKMATI HAK ISTIMEWA",
-  EnumLocale.txtDailyCheckInDescription.name: "Daftar setelah mengisi ulang sejumlah uang untuk mendapatkan berlian setiap minggu",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "Daftar setelah mengisi ulang sejumlah uang untuk mendapatkan berlian setiap minggu",
   EnumLocale.txtDay.name: "Hari",
   EnumLocale.txtSelectPaymentOption.name: "Pilih Opsi Pembayaran",
   EnumLocale.txtVerificationText.name:
@@ -211,12 +225,16 @@ final Map<String, String> idID = {
   EnumLocale.txtPayment.name: "Pembayaran",
   EnumLocale.txtBlockHost.name: "Blokir Host",
   EnumLocale.txtBlockUser.name: "Blokir Pengguna",
-  EnumLocale.txtBlockDetailsHost.name: "Apakah Anda yakin ingin memblokir host ini?",
-  EnumLocale.txtBlockDetailsUser.name: "Apakah Anda yakin ingin memblokir pengguna ini?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "Apakah Anda yakin ingin memblokir host ini?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "Apakah Anda yakin ingin memblokir pengguna ini?",
   EnumLocale.txtUnBlockHost.name: "Buka Blokir Host",
   EnumLocale.txtUnBlockUser.name: "Buka Blokir Pengguna",
-  EnumLocale.txtUnBlockDetailsHost.name: "Apakah Anda yakin ingin membuka blokir host ini?",
-  EnumLocale.txtUnBlockDetailsUser.name: "Apakah Anda yakin ingin membuka blokir pengguna ini?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "Apakah Anda yakin ingin membuka blokir host ini?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "Apakah Anda yakin ingin membuka blokir pengguna ini?",
   EnumLocale.txtWithdrawHistory.name: "Tarik Riwayat",
   EnumLocale.txtWalletHistory.name: "Sejarah Dompet",
   EnumLocale.txtDeclineRequest.name:
@@ -241,10 +259,12 @@ final Map<String, String> idID = {
   EnumLocale.txtPending.name: "Tertunda",
   EnumLocale.txtDecline.name: "Menolak",
   EnumLocale.txtAccepted.name: "Diterima",
-  EnumLocale.txtPleaseSelectGiftFirst.name: "Silakan pilih hadiah terlebih dahulu",
+  EnumLocale.txtPleaseSelectGiftFirst.name:
+      "Silakan pilih hadiah terlebih dahulu",
   EnumLocale.txtTermsAndConditions.name: "syarat dan Ketentuan",
   EnumLocale.txtUnderMaintenance.name: 'Aplikasi Ini Sedang Dalam Pemeliharaan',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'Pemeliharaan sistem sedang berlangsung: silakan coba lagi nanti.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'Pemeliharaan sistem sedang berlangsung: silakan coba lagi nanti.',
   EnumLocale.txtCloseAPP.name: 'Tutup Aplikasi',
   EnumLocale.txtSearchCountry.name: 'Cari Negara',
   EnumLocale.txtCoins.name: 'Koin',

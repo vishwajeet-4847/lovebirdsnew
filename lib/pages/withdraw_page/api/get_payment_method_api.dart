@@ -1,15 +1,16 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/withdraw_page/model/get_paymet_model.dart';
-import 'package:figgy/utils/api.dart';
+import 'package:LoveBirds/pages/withdraw_page/model/get_paymet_model.dart';
+import 'package:LoveBirds/utils/api.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../utils/utils.dart';
 
 class GetPaymentMethodApi {
   static GetPaymentModel? getPaymentModel;
-  static Future<GetPaymentModel?> callApi({required String token, required String uid}) async {
+  static Future<GetPaymentModel?> callApi(
+      {required String token, required String uid}) async {
     Utils.showLog("Get Payment Method Api Calling...");
     try {
       final uri = Uri.parse(Api.getPaymentMethodsApi);

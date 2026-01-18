@@ -1,6 +1,6 @@
-import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-import 'package:figgy/pages/vip_page/controller/vip_controller.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+import 'package:LoveBirds/pages/vip_page/controller/vip_controller.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:get/get.dart';
 
 class ProfileViewBinding extends Bindings {

@@ -1,11 +1,11 @@
-import 'package:figgy/pages/random_match_page/controller/random_match_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/random_match_page/controller/random_match_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -56,7 +56,8 @@ class RandomTopViewWidget extends StatelessWidget {
                             builder: (logic) {
                               return Text(
                                 Database.coin.toString().split('.')[0],
-                                style: AppFontStyle.styleW800(AppColors.whiteColor, 18),
+                                style: AppFontStyle.styleW800(
+                                    AppColors.whiteColor, 18),
                               ).paddingOnly(right: 5);
                             }),
                       ],

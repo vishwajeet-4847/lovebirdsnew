@@ -1,16 +1,16 @@
-import 'package:figgy/custom/app_background/custom_app_background.dart';
-import 'package:figgy/custom/bottom_sheet/video_bottom_sheet.dart';
-import 'package:figgy/pages/host_detail_page/controller/host_detail_controller.dart';
-import 'package:figgy/pages/host_detail_page/widget/multi_img.dart';
-import 'package:figgy/pages/host_detail_page/widget/user_information_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/shimmer/host_view_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_background/custom_app_background.dart';
+import 'package:LoveBirds/custom/bottom_sheet/video_bottom_sheet.dart';
+import 'package:LoveBirds/pages/host_detail_page/controller/host_detail_controller.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/multi_img.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/user_information_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/shimmer/host_view_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -47,29 +47,44 @@ class HostDetailView extends StatelessWidget {
                               Expanded(
                                 child: CustomButton(
                                   onTap: () {
-                                    bool isOnlineBool = logic.isOnline?.toLowerCase() == "online" ? true : false;
+                                    bool isOnlineBool =
+                                        logic.isOnline?.toLowerCase() ==
+                                                "online"
+                                            ? true
+                                            : false;
 
                                     bool isChatHostDetail = false;
 
-                                    Utils.showLog("isChatHostDetail :: $isChatHostDetail");
-                                    Utils.showLog("isOnlineBool :: $isOnlineBool");
-                                    Utils.showLog("isOnlineBool :: ${logic.isOnline}");
+                                    Utils.showLog(
+                                        "isChatHostDetail :: $isChatHostDetail");
+                                    Utils.showLog(
+                                        "isOnlineBool :: $isOnlineBool");
+                                    Utils.showLog(
+                                        "isOnlineBool :: ${logic.isOnline}");
 
                                     Get.toNamed(
                                       AppRoutes.chatPage,
                                       arguments: {
-                                        "hostId": logic.hostDetailModel?.host?.id ?? "",
-                                        "hostName": logic.hostDetailModel?.host?.name ?? "",
-                                        "profileImage": logic.hostDetailModel?.host?.image ?? "",
+                                        "hostId":
+                                            logic.hostDetailModel?.host?.id ??
+                                                "",
+                                        "hostName":
+                                            logic.hostDetailModel?.host?.name ??
+                                                "",
+                                        "profileImage": logic
+                                                .hostDetailModel?.host?.image ??
+                                            "",
                                         "isOnline": isOnlineBool,
                                         "isChatHostDetail": true,
-                                        "isFake": logic.hostDetailModel?.host?.isFake,
+                                        "isFake":
+                                            logic.hostDetailModel?.host?.isFake,
                                       },
                                     );
                                   },
                                   text: EnumLocale.txtMessage.name.tr,
                                   icon: AppAsset.messageIcon2,
-                                  rate: "${logic.hostDetailModel?.host?.chatRate ?? 0}/Message",
+                                  rate:
+                                      "${logic.hostDetailModel?.host?.chatRate ?? 0}/Message",
                                   gradient: AppColors.message,
                                 ),
                               ),
@@ -79,19 +94,34 @@ class HostDetailView extends StatelessWidget {
                                   onTap: () {
                                     showVideoBottomSheet(
                                       context: context,
-                                      receiverId: logic.hostDetailModel?.host?.id ?? "",
-                                      receiverImage: logic.hostDetailModel?.host?.image ?? "",
-                                      receiverName: logic.hostDetailModel?.host?.name ?? "",
-                                      audioCallCharge: logic.hostDetailModel?.host?.audioCallRate ?? 0,
-                                      videoCallCharge: logic.hostDetailModel?.host?.privateCallRate ?? 0,
-                                      isFake: logic.hostDetailModel?.host?.isFake == true ? true : false,
-                                      videoList: logic.hostDetailModel?.host?.video,
+                                      receiverId:
+                                          logic.hostDetailModel?.host?.id ?? "",
+                                      receiverImage:
+                                          logic.hostDetailModel?.host?.image ??
+                                              "",
+                                      receiverName:
+                                          logic.hostDetailModel?.host?.name ??
+                                              "",
+                                      audioCallCharge: logic.hostDetailModel
+                                              ?.host?.audioCallRate ??
+                                          0,
+                                      videoCallCharge: logic.hostDetailModel
+                                              ?.host?.privateCallRate ??
+                                          0,
+                                      isFake:
+                                          logic.hostDetailModel?.host?.isFake ==
+                                                  true
+                                              ? true
+                                              : false,
+                                      videoList:
+                                          logic.hostDetailModel?.host?.video,
                                     );
                                   },
                                   text: EnumLocale.txtCall.name.tr,
                                   icon: AppAsset.icInlineCall,
                                   color: AppColors.whiteColor,
-                                  rate: "${logic.hostDetailModel?.host?.privateCallRate ?? 0}/Min",
+                                  rate:
+                                      "${logic.hostDetailModel?.host?.privateCallRate ?? 0}/Min",
                                   gradient: AppColors.call,
                                 ),
                               ),

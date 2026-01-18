@@ -1,19 +1,19 @@
 import 'dart:developer';
 
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/bottom_sheet/image_picker_bottom_sheet.dart';
-import 'package:figgy/custom/country_picker.dart';
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/custom/custom_image_piker.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/edit_profile_page/api/edit_profile_api.dart';
-import 'package:figgy/pages/edit_profile_page/model/edit_profile_model.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/bottom_sheet/image_picker_bottom_sheet.dart';
+import 'package:LoveBirds/custom/country_picker.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/custom/custom_image_piker.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/edit_profile_page/api/edit_profile_api.dart';
+import 'package:LoveBirds/pages/edit_profile_page/model/edit_profile_model.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -45,13 +45,21 @@ class EditProfileController extends GetxController {
 
     await CustomFetchUserCoin.init();
 
-    nameController.text = CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.name ?? "";
-    emailController.text = CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.email ?? "";
-    bioDetailsController.text = CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.bio ?? "";
-    countryController.text = CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.country ?? "";
-    flagController.text = CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.countryFlagImage ?? "";
-    profileImage = CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.image ?? "";
-    datePickerController.selectedDateString = CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.dob ?? "";
+    nameController.text =
+        CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.name ?? "";
+    emailController.text =
+        CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.email ?? "";
+    bioDetailsController.text =
+        CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.bio ?? "";
+    countryController.text =
+        CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.country ?? "";
+    flagController.text = CustomFetchUserCoin
+            .fetchLoginUserProfileModel?.user?.countryFlagImage ??
+        "";
+    profileImage =
+        CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.image ?? "";
+    datePickerController.selectedDateString =
+        CustomFetchUserCoin.fetchLoginUserProfileModel?.user?.dob ?? "";
 
     isLoading = false;
     update([AppConstant.idChangeCountry, AppConstant.idChangeCountry]);
@@ -136,7 +144,8 @@ class EditProfileController extends GetxController {
     } catch (e) {
       Get.back();
       Utils.showLog("Error updating profile: $e");
-      Utils.showToast("Failed to update profile. Please check your internet connection.");
+      Utils.showToast(
+          "Failed to update profile. Please check your internet connection.");
     }
     FocusManager.instance.primaryFocus?.unfocus();
   }

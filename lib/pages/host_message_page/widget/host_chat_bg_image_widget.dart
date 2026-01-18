@@ -1,4 +1,4 @@
-import 'package:figgy/utils/asset.dart';
+import 'package:LoveBirds/utils/asset.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +14,8 @@ class HostChatBgImageWidget extends StatelessWidget {
       width: Get.width,
       child: Image(
         image: const AssetImage(AppAsset.allBackgroundImage),
-        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+        loadingBuilder: (BuildContext context, Widget child,
+            ImageChunkEvent? loadingProgress) {
           return Container(
             decoration: BoxDecoration(
               gradient: AppColors.incomingCallGradient,
@@ -27,6 +28,7 @@ class HostChatBgImageWidget extends StatelessWidget {
     );
   }
 }
+
 class HostChatDetailBgImageWidget extends StatelessWidget {
   const HostChatDetailBgImageWidget({super.key});
 
@@ -37,7 +39,8 @@ class HostChatDetailBgImageWidget extends StatelessWidget {
       width: Get.width,
       child: Image(
         image: const AssetImage(AppAsset.chatBackground),
-        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+        loadingBuilder: (BuildContext context, Widget child,
+            ImageChunkEvent? loadingProgress) {
           return Container(
             decoration: BoxDecoration(
               gradient: AppColors.incomingCallGradient,

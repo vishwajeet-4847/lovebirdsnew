@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/socket_events.dart';
-import 'package:figgy/utils/socket_params.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/socket_events.dart';
+import 'package:LoveBirds/utils/socket_params.dart';
+import 'package:LoveBirds/utils/utils.dart';
 
 class SocketEmit {
   static Future<void> onSendMessage({

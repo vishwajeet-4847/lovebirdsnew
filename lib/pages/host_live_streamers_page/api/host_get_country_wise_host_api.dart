@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/host_live_streamers_page/model/get_host_country_wise_host_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/model/get_host_country_wise_host_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class GetHostCountryWiseHostApi {
@@ -21,7 +21,8 @@ class GetHostCountryWiseHostApi {
     int limit = 10,
   }) async {
     Utils.showLog("Get Country Wise Host Api Calling...");
-    final uri = Uri.parse("${Api.getCountryWiseHostForHost}?country=$country&hostId=$hostId&start=$start&limit=$limit");
+    final uri = Uri.parse(
+        "${Api.getCountryWiseHostForHost}?country=$country&hostId=$hostId&start=$start&limit=$limit");
     log("Uri => $uri");
     Utils.showLog("Get Country Wise Host Uri => $uri");
 
@@ -34,7 +35,8 @@ class GetHostCountryWiseHostApi {
     try {
       final response = await http.get(uri, headers: headers);
       if (response.statusCode == 200) {
-        getCountryWiseHostModel = GetHostCountryWiseHostModel?.fromJson(jsonDecode(response.body));
+        getCountryWiseHostModel =
+            GetHostCountryWiseHostModel?.fromJson(jsonDecode(response.body));
 
         Utils.showLog("Get Country Wise Host Api Calling... ${response.body}");
 

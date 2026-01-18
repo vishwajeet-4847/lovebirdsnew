@@ -1,15 +1,15 @@
 import 'dart:math';
 
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/no_data_found/no_data_found.dart';
-import 'package:figgy/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/shimmer/host_stream_bottom_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/no_data_found/no_data_found.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/shimmer/host_stream_bottom_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -32,12 +32,16 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
 
               return RefreshIndicator(
                 onRefresh: () async {
-                  await logic.discoverHostForUser(country: logic.selectedCountry);
+                  await logic.discoverHostForUser(
+                      country: logic.selectedCountry);
                 },
                 child: logic.liveHostList.isEmpty
                     ? ListView(
                         physics: const AlwaysScrollableScrollPhysics(),
-                        children: [SizedBox(height: box.maxHeight, child: NoDataFoundWidget())],
+                        children: [
+                          SizedBox(
+                              height: box.maxHeight, child: NoDataFoundWidget())
+                        ],
                       )
                     : GridView.builder(
                         controller: logic.scrollController,
@@ -49,7 +53,8 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                         ),
                         itemCount: logic.liveHostList.length,
                         physics: const AlwaysScrollableScrollPhysics(),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           mainAxisSpacing: 18,
                           crossAxisSpacing: 18,
@@ -61,9 +66,13 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                             onTap: () {
                               if (liveHost.isFake == true) {
                                 final random = Random();
-                                final List<String>? videoList = liveHost.liveVideo;
+                                final List<String>? videoList =
+                                    liveHost.liveVideo;
                                 final String randomVideoUrl =
-                                    (videoList != null && videoList.isNotEmpty) ? videoList[random.nextInt(videoList.length)] : "";
+                                    (videoList != null && videoList.isNotEmpty)
+                                        ? videoList[
+                                            random.nextInt(videoList.length)]
+                                        : "";
 
                                 Get.toNamed(
                                   AppRoutes.fakeLivePage,
@@ -71,14 +80,16 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                                     "isHost": false,
                                     "name": liveHost.name ?? "",
                                     "image": liveHost.image ?? "",
-                                    "liveHistoryId": liveHost.liveHistoryId ?? "",
+                                    "liveHistoryId":
+                                        liveHost.liveHistoryId ?? "",
                                     "hostId": liveHost.hostId ?? "",
                                     "token": liveHost.token ?? "",
                                     "channel": liveHost.channel ?? "",
                                     "videoUrl": randomVideoUrl,
                                   },
                                 )?.then((_) {
-                                  logic.discoverHostForUser(country: logic.selectedCountry);
+                                  logic.discoverHostForUser(
+                                      country: logic.selectedCountry);
                                 });
                               } else {
                                 Get.toNamed(
@@ -87,13 +98,15 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                                     "isHost": false,
                                     "name": liveHost.name ?? "",
                                     "image": liveHost.image ?? "",
-                                    "liveHistoryId": liveHost.liveHistoryId ?? "",
+                                    "liveHistoryId":
+                                        liveHost.liveHistoryId ?? "",
                                     "hostId": liveHost.hostId ?? "",
                                     "token": liveHost.token ?? "",
                                     "channel": liveHost.channel ?? "",
                                   },
                                 )?.then((_) {
-                                  logic.discoverHostForUser(country: logic.selectedCountry);
+                                  logic.discoverHostForUser(
+                                      country: logic.selectedCountry);
                                 });
                               }
                             },
@@ -101,12 +114,14 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                               clipBehavior: Clip.antiAlias,
                               alignment: Alignment.center,
                               decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(22)),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(22)),
                               ),
                               child: Stack(
                                 children: [
                                   Container(
-                                    color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                    color: AppColors.colorTextGrey
+                                        .withValues(alpha: 0.22),
                                     height: double.infinity,
                                     width: double.infinity,
                                     child: CustomImage(
@@ -119,22 +134,27 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                                     children: [
                                       Container(
                                         height: 22,
-                                        padding: const EdgeInsets.symmetric(horizontal: 7),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 7),
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
-                                          color: Colors.black.withValues(alpha: 0.48),
+                                          color: Colors.black
+                                              .withValues(alpha: 0.48),
                                           borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(12),
                                           ),
                                         ),
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
-                                            Lottie.asset(AppAsset.lottieLive, height: 70),
+                                            Lottie.asset(AppAsset.lottieLive,
+                                                height: 70),
                                             const SizedBox(width: 3),
                                             Text(
                                               EnumLocale.txtLive.name.tr,
-                                              style: AppFontStyle.styleW500(AppColors.greenColor, 14),
+                                              style: AppFontStyle.styleW500(
+                                                  AppColors.greenColor, 14),
                                             ),
                                           ],
                                         ),
@@ -150,7 +170,8 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                                         gradient: LinearGradient(
                                           colors: [
                                             AppColors.transparent,
-                                            AppColors.blackColor.withValues(alpha: 0.0),
+                                            AppColors.blackColor
+                                                .withValues(alpha: 0.0),
                                             AppColors.blackColor,
                                           ],
                                           begin: Alignment.topCenter,
@@ -162,32 +183,45 @@ class DiscoverHostForUserLiveHostTab extends StatelessWidget {
                                   Positioned(
                                     bottom: 1,
                                     child: Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 5),
                                       child: SizedBox(
                                         height: 45,
                                         width: 150,
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   liveHost.name ?? "",
-                                                  style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
+                                                  style: AppFontStyle.styleW700(
+                                                      AppColors.whiteColor, 16),
                                                 ),
                                                 Row(
                                                   children: [
-                                                    (liveHost.countryFlagImage?.startsWith("http") == true)
+                                                    (liveHost.countryFlagImage
+                                                                ?.startsWith(
+                                                                    "http") ==
+                                                            true)
                                                         ? Image.network(
                                                             "${liveHost.countryFlagImage}",
                                                             height: 10,
                                                           )
-                                                        : Text(liveHost.countryFlagImage ?? ""),
+                                                        : Text(liveHost
+                                                                .countryFlagImage ??
+                                                            ""),
                                                     const SizedBox(width: 1),
                                                     Text(
                                                       liveHost.country ?? "",
-                                                      style: AppFontStyle.styleW400(AppColors.whiteColor, 15),
+                                                      style: AppFontStyle
+                                                          .styleW400(
+                                                              AppColors
+                                                                  .whiteColor,
+                                                              15),
                                                     ),
                                                   ],
                                                 ),

@@ -1,11 +1,11 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/host_message_page/api/get_chat_thumb_list_host.dart';
-import 'package:figgy/pages/host_message_page/controller/host_message_controller.dart';
-import 'package:figgy/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/host_message_page/api/get_chat_thumb_list_host.dart';
+import 'package:LoveBirds/pages/host_message_page/controller/host_message_controller.dart';
+import 'package:LoveBirds/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -83,7 +83,8 @@ class HostMessageContainer extends StatelessWidget {
                       width: Get.width * 0.55,
                       child: Text(
                         hostChatList.message ?? "",
-                        style: AppFontStyle.styleW500(AppColors.chatDetailColor, 14),
+                        style: AppFontStyle.styleW500(
+                            AppColors.chatDetailColor, 14),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -109,14 +110,18 @@ class HostMessageContainer extends StatelessWidget {
                               color: AppColors.unReadColor,
                             ),
                             child: Text(
-                              hostChatList.unreadCount == 0 ? "" : hostChatList.unreadCount?.toString() ?? "",
-                              style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
+                              hostChatList.unreadCount == 0
+                                  ? ""
+                                  : hostChatList.unreadCount?.toString() ?? "",
+                              style: AppFontStyle.styleW700(
+                                  AppColors.whiteColor, 16),
                             ),
                           ),
                     10.height,
                     Text(
                       hostChatList.time ?? "",
-                      style: AppFontStyle.styleW600(AppColors.chatDetailColor, 12),
+                      style:
+                          AppFontStyle.styleW600(AppColors.chatDetailColor, 12),
                     ),
                   ],
                 ),

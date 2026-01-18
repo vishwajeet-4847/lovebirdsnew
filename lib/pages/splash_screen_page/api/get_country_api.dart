@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:figgy/pages/splash_screen_page/model/get_country_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/splash_screen_page/model/get_country_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:http/http.dart' as http;
 
@@ -15,7 +15,8 @@ class GetCountryApi {
       return CountryCode.fromCountryCode(countryCode);
     }
 
-    CountryCode country = getCountryDialCode(getCountryModel?.countryCode ?? "IN");
+    CountryCode country =
+        getCountryDialCode(getCountryModel?.countryCode ?? "IN");
     Utils.showLog("country.Dial code :: ${country.dialCode}");
 
     Database.onSetDialCode(country.dialCode ?? "");
@@ -44,8 +45,10 @@ class GetCountryApi {
 
         getCountryModel = GetCountryModel.fromJson(jsonResponse);
 
-        Utils.showLog("getCountryModel?.country ?? :: ${getCountryModel?.country ?? ""}");
-        Utils.showLog("getCountryModel?.countryCode ?? :: ${getCountryModel?.countryCode ?? ""}");
+        Utils.showLog(
+            "getCountryModel?.country ?? :: ${getCountryModel?.country ?? ""}");
+        Utils.showLog(
+            "getCountryModel?.countryCode ?? :: ${getCountryModel?.countryCode ?? ""}");
 
         Database.onSetCountry(getCountryModel?.country ?? "India");
         Database.onSetCountryCode(getCountryModel?.countryCode ?? "IN");

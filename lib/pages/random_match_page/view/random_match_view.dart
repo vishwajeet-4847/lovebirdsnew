@@ -1,10 +1,10 @@
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/pages/random_match_page/controller/random_match_controller.dart';
-import 'package:figgy/pages/random_match_page/widget/background_image_widget.dart';
-import 'package:figgy/pages/random_match_page/widget/random_bottom_view_widget.dart';
-import 'package:figgy/pages/random_match_page/widget/top_view_widget.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/pages/random_match_page/controller/random_match_controller.dart';
+import 'package:LoveBirds/pages/random_match_page/widget/background_image_widget.dart';
+import 'package:LoveBirds/pages/random_match_page/widget/random_bottom_view_widget.dart';
+import 'package:LoveBirds/pages/random_match_page/widget/top_view_widget.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';

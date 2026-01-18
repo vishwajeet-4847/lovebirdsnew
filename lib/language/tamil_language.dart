@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> taIN = {
   EnumLocale.txtLetsStart.name: "ஆரம்பிப்போம்",
   EnumLocale.txtGoogle.name: "கூகுள்",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "உள்நுழைவதன் மூலம், நீங்கள் எங்களுடையதை ஒப்புக்கொள்கிறீர்கள்",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "உள்நுழைவதன் மூலம், நீங்கள் எங்களுடையதை ஒப்புக்கொள்கிறீர்கள்",
   EnumLocale.txtPrivacyPolicy.name: "தனியுரிமைக் கொள்கை",
   EnumLocale.txtAnd.name: "மற்றும்",
   EnumLocale.txtUseAgreement.name: "ஒப்பந்தத்தைப் பயன்படுத்தவும்",
   EnumLocale.txtCoinRechargeSuccess.name: "நாணயம் ரீசார்ஜ் வெற்றி",
   EnumLocale.txtSomeThingWentWrong.name: "ஏதோ தவறாகிவிட்டது",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "ஆடியோ பதிவை இயக்க நீண்ட நேரம் அழுத்தவும்",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "ஆடியோ பதிவை இயக்க நீண்ட நேரம் அழுத்தவும்",
   EnumLocale.txtPleaseAllowPermission.name: "தயவுசெய்து அனுமதி வழங்கவும்",
   EnumLocale.txtTypeSomething.name: "ஏதாவது சொல்லு...",
   EnumLocale.txtRandomMatch.name: "சீரற்ற போட்டி",
@@ -17,12 +19,17 @@ final Map<String, String> taIN = {
   EnumLocale.txtContactus.name: "எங்களை தொடர்பு கொள்ளவும்",
   EnumLocale.txtRecharge.name: "ரீசார்ஜ்",
   EnumLocale.txtMyGems.name: "என் ரத்தினங்கள்",
-  EnumLocale.txtPleaseEnterWithdrawCoin.name: "திரும்பப் பெறுவதற்கான நாணயத்தை உள்ளிடவும்",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale.txtPleaseEnterWithdrawCoin.name:
+      "திரும்பப் பெறுவதற்கான நாணயத்தை உள்ளிடவும்",
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "திரும்பப் பெற கோரப்பட்ட நாணயம் நிர்வாகியால் குறிப்பிடப்பட்டதை விட அதிகமாக இருக்க வேண்டும்",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "திரும்பப் பெறும் முறையைத் தேர்ந்தெடுக்கவும்",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "அனைத்து கட்டண விவரங்களையும் உள்ளிடவும்",
-  EnumLocale.txtSelectPaymentGateway.name: "கட்டண நுழைவாயிலைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "திரும்பப் பெறும் முறையைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "அனைத்து கட்டண விவரங்களையும் உள்ளிடவும்",
+  EnumLocale.txtSelectPaymentGateway.name:
+      "கட்டண நுழைவாயிலைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtAvailableCoin.name: "கிடைக்கும் நாணயம்",
   EnumLocale.txtWithdraw.name: "திரும்பப் பெறவும்",
   EnumLocale.txtHistory.name: "வரலாறு",
@@ -55,7 +62,8 @@ final Map<String, String> taIN = {
   EnumLocale.txtBoth.name: "இரண்டும்",
   EnumLocale.txtMale.name: "ஆண்",
   EnumLocale.txtFemale.name: "பெண்",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "விஐபி ஆகுங்கள், சிறப்புரிமையை அனுபவிக்கவும்",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "விஐபி ஆகுங்கள், சிறப்புரிமையை அனுபவிக்கவும்",
   EnumLocale.txtMore.name: "மேலும்",
   EnumLocale.txtGems.name: "ரத்தினங்கள்",
   EnumLocale.txtDailyCheckIn.name: "தினசரி செக்-இன்",
@@ -74,7 +82,8 @@ final Map<String, String> taIN = {
   EnumLocale.txtVerificationDetails.name: "சரிபார்ப்பு விவரங்கள்",
   EnumLocale.txtVerificationRequestText.name:
       "நீங்கள் சமர்ப்பித்த அனைத்து விவரங்களும் எங்களால் பெறப்பட்டுள்ளன. உங்களுக்கான புதுப்பிப்பைப் பெற்றவுடன், நாங்கள் இதைப் பார்த்துப் புதுப்பிப்போம்.\n\nஉங்கள் சுயவிவரத்தைச் சரிபார்த்து சரிபார்க்க சுமார் 3 முதல் 4 வணிக நாட்கள் ஆகும்.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "திரும்பப் பெறுவதற்கு பயனரிடம் போதிய நிதி இல்லை",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "திரும்பப் பெறுவதற்கு பயனரிடம் போதிய நிதி இல்லை",
   EnumLocale.txtIncomingVideoCall.name: "உள்வரும் வீடியோ அழைப்பு...",
   EnumLocale.txtIncomingAudioCall.name: "உள்வரும் ஆடியோ அழைப்பு...",
   EnumLocale.txtUploadYourImages.name: "உங்கள் படங்களை பதிவேற்றவும்",
@@ -124,27 +133,34 @@ final Map<String, String> taIN = {
   EnumLocale.txtUnblock.name: "தடைநீக்கு",
   EnumLocale.txtApplealDetails.name:
       "உங்கள் புகார் கூடிய விரைவில் ஏற்றுக்கொள்ளப்படும், உங்கள் புகாரின் விரிவான விளக்கத்தை முடிந்தவரை சமர்ப்பிக்கவும்",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "நீங்கள் புகாரளிக்க விரும்பும் காரணத்தைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "நீங்கள் புகாரளிக்க விரும்பும் காரணத்தைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtCancel.name: "ரத்து செய்",
   EnumLocale.txtSave.name: "சேமிக்கவும்",
   EnumLocale.txtCheckIn.name: "செக் இன்",
-  EnumLocale.txtOpenVIPEnjoyPrivilege.name: "விஐபி அனுபவிக்கும் சிறப்புரிமையைத் திறக்கவும்",
+  EnumLocale.txtOpenVIPEnjoyPrivilege.name:
+      "விஐபி அனுபவிக்கும் சிறப்புரிமையைத் திறக்கவும்",
   EnumLocale.txtNoInternetConnection.name: "இணைய இணைப்பு இல்லை",
   EnumLocale.txtGifts.name: "பரிசுகள்",
   EnumLocale.txtSend.name: "அனுப்பு",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "இந்த பயன்பாட்டிலிருந்து\n நிச்சயமாக வெளியேற விரும்புகிறீர்களா?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "இந்த பயன்பாட்டிலிருந்து\n நிச்சயமாக வெளியேற விரும்புகிறீர்களா?",
   EnumLocale.txtPay.name: "செலுத்து",
   EnumLocale.txtTotal.name: "மொத்தம்",
   EnumLocale.txtPayNow.name: "இப்போது செலுத்தவும்",
-  EnumLocale.txtSelectCallOption.name: "அழைப்பு விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtSelectCallOption.name:
+      "அழைப்பு விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtAudioCall.name: "ஆடியோ அழைப்பு",
   EnumLocale.txtSearch.name: "தேடு",
   EnumLocale.txtChooseImage.name: "படத்தை தேர்வு செய்யவும்",
   EnumLocale.txtGallery.name: "தொகுப்பு",
   EnumLocale.txtTakePhoto.name: "புகைப்படம் எடு",
-  EnumLocale.txtWaitingForRemoteUser.name: "தொலைநிலைப் பயனருக்காகக் காத்திருக்கிறது...",
-  EnumLocale.txtPleaseSelectADocumentType.name: "ஆவண வகையைத் தேர்ந்தெடுக்கவும்.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "உங்கள் இணைய இணைப்பைச் சரிபார்க்கவும்.",
+  EnumLocale.txtWaitingForRemoteUser.name:
+      "தொலைநிலைப் பயனருக்காகக் காத்திருக்கிறது...",
+  EnumLocale.txtPleaseSelectADocumentType.name:
+      "ஆவண வகையைத் தேர்ந்தெடுக்கவும்.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "உங்கள் இணைய இணைப்பைச் சரிபார்க்கவும்.",
   EnumLocale.txtLiveHost.name: "லைவ் ஹோஸ்ட்",
   EnumLocale.txtEnterBio.name: "உங்கள் பயோவை உள்ளிடவும்",
   EnumLocale.txtUploadId.name: "உங்கள் படங்களை பதிவேற்றவும்",
@@ -154,13 +170,16 @@ final Map<String, String> taIN = {
   EnumLocale.txtDocumentVerification.name: "ஆவண சரிபார்ப்பு",
   EnumLocale.txtFront.name: "(முன்)",
   EnumLocale.txtBack.name: "(பின்புறம்)",
-  EnumLocale.txtPleaseSelectImage.name: "தயவுசெய்து படங்களைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtPleaseSelectImage.name:
+      "தயவுசெய்து படங்களைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtSelectMultipleLanguage.name: "பல மொழியைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtMyLanguage.name: "என் மொழி",
   EnumLocale.txtContinue.name: "தொடரவும்",
-  EnumLocale.txtYouHaveInsufficientCoins.name: "உங்களிடம் போதுமான நாணயங்கள் இல்லை",
+  EnumLocale.txtYouHaveInsufficientCoins.name:
+      "உங்களிடம் போதுமான நாணயங்கள் இல்லை",
   EnumLocale.txtPleaseSelectBackImages.name: "பின் படங்களைத் தேர்ந்தெடுக்கவும்",
-  EnumLocale.txtPleaseSelectFontImages.name: "எழுத்துருப் படங்களைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtPleaseSelectFontImages.name:
+      "எழுத்துருப் படங்களைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtAudioCallDiscount.name: "ஆடியோ அழைப்பு தள்ளுபடி",
   EnumLocale.txtVideoCallDiscount.name: "வீடியோ அழைப்பு தள்ளுபடி",
   EnumLocale.txtRandomMatchCallDiscount.name: "சீரற்ற போட்டி அழைப்பு தள்ளுபடி",
@@ -191,13 +210,16 @@ final Map<String, String> taIN = {
   EnumLocale.txtCountry.name: "நாடு",
   EnumLocale.txtGender.name: "பாலினம்",
   EnumLocale.txtOptional.name: "விருப்பமானது",
-  EnumLocale.txtPleaseSelectDocument.name: "முதலில் ஆவணத்தைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtPleaseSelectDocument.name:
+      "முதலில் ஆவணத்தைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtVipDescription.name:
       "குறிப்பு: விஐபி என்பது தானாக சந்தா செலுத்துவது அல்ல, காலாவதியான பிறகு தானாகவே புதுப்பிக்கப்படாது. விஐபியை செயல்படுத்திய பிறகு, நீங்கள் நேரடியாக வெகுமதிகளைப் பெறலாம், மேலும் விஐபி செல்லுபடியாகும் காலம் முழுவதும் பிற சலுகைகளை அனுபவிக்க முடியும்.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "விஐபி சலுகைகளை அனுபவிக்கவும்",
-  EnumLocale.txtDailyCheckInDescription.name: "ஒவ்வொரு வாரமும் வைரங்களைப் பெறுவதற்கு ஏதேனும் தொகையை ரீசார்ஜ் செய்த பிறகு சரிபார்க்கவும்",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "ஒவ்வொரு வாரமும் வைரங்களைப் பெறுவதற்கு ஏதேனும் தொகையை ரீசார்ஜ் செய்த பிறகு சரிபார்க்கவும்",
   EnumLocale.txtDay.name: "நாள்",
-  EnumLocale.txtSelectPaymentOption.name: "கட்டண விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtSelectPaymentOption.name:
+      "கட்டண விருப்பத்தைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtVerificationText.name:
       "உங்கள் ஹோஸ்ட் கோரிக்கை ஏற்கப்பட்டது! அனைத்து அம்சங்களுக்கும் முழு அணுகலை உறுதிசெய்ய, app_profile_image ஐ மறுதொடக்கம் செய்யுங்கள்.\n\nஉங்கள் பொறுமைக்கு நன்றி—உங்களைச் சேர்ப்பதில் நாங்கள் மகிழ்ச்சியடைகிறோம்!",
   EnumLocale.txtRandomCallRate.name: "சீரற்ற அழைப்பு விகிதம்",
@@ -212,12 +234,16 @@ final Map<String, String> taIN = {
   EnumLocale.txtPayment.name: "பணம் செலுத்துதல்",
   EnumLocale.txtBlockHost.name: "ப்ளாக் ஹோஸ்ட்",
   EnumLocale.txtBlockUser.name: "பயனரைத் தடு",
-  EnumLocale.txtBlockDetailsHost.name: "இந்த ஹோஸ்டைத் தடுக்க விரும்புகிறீர்களா?",
-  EnumLocale.txtBlockDetailsUser.name: "இந்தப் பயனரை நிச்சயமாகத் தடுக்க விரும்புகிறீர்களா?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "இந்த ஹோஸ்டைத் தடுக்க விரும்புகிறீர்களா?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "இந்தப் பயனரை நிச்சயமாகத் தடுக்க விரும்புகிறீர்களா?",
   EnumLocale.txtUnBlockHost.name: "ஹோஸ்டைத் தடைநீக்கு",
   EnumLocale.txtUnBlockUser.name: "பயனரைத் தடைநீக்கு",
-  EnumLocale.txtUnBlockDetailsHost.name: "இந்த ஹோஸ்டை கண்டிப்பாக தடைநீக்க விரும்புகிறீர்களா?",
-  EnumLocale.txtUnBlockDetailsUser.name: "இந்தப் பயனரை நிச்சயமாக தடைநீக்க விரும்புகிறீர்களா?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "இந்த ஹோஸ்டை கண்டிப்பாக தடைநீக்க விரும்புகிறீர்களா?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "இந்தப் பயனரை நிச்சயமாக தடைநீக்க விரும்புகிறீர்களா?",
   EnumLocale.txtWithdrawHistory.name: "வரலாற்றைத் திரும்பப் பெறவும்",
   EnumLocale.txtWalletHistory.name: "பணப்பை வரலாறு",
   EnumLocale.txtDeclineRequest.name:
@@ -231,10 +257,12 @@ final Map<String, String> taIN = {
   EnumLocale.txtVIEWMORE.name: "மேலும் காண்க",
   EnumLocale.txtCoinBalance.name: "நாணய இருப்பு",
   EnumLocale.txtEnterAmount.name: "தொகையை உள்ளிடவும்",
-  EnumLocale.txtMinimumWithdraw200.name: "*குறைந்தபட்சம் திரும்பப் பெறுதல் \$ 200",
+  EnumLocale.txtMinimumWithdraw200.name:
+      "*குறைந்தபட்சம் திரும்பப் பெறுதல் \$ 200",
   EnumLocale.txtEnterGooglePayNumber.name: "Google Pay எண்ணை உள்ளிடவும்",
   EnumLocale.txtRequestProgress.name: "கோரிக்கை செயல்முறை",
-  EnumLocale.txtPleaseSelectCountry.name: "தயவுசெய்து நாட்டைத் தேர்ந்தெடுக்கவும்",
+  EnumLocale.txtPleaseSelectCountry.name:
+      "தயவுசெய்து நாட்டைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtFollow.name: "பின்பற்றவும்",
   EnumLocale.txtRequestAccepted.name: "கோரிக்கை ஏற்கப்பட்டது",
   EnumLocale.txtRequestPending.name: "கோரிக்கை நிலுவையில் உள்ளது",
@@ -245,7 +273,8 @@ final Map<String, String> taIN = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "முதலில் பரிசைத் தேர்ந்தெடுக்கவும்",
   EnumLocale.txtTermsAndConditions.name: "விதிமுறைகள் மற்றும் நிபந்தனைகள்",
   EnumLocale.txtUnderMaintenance.name: 'இந்த ஆப் பராமரிப்பில் உள்ளது',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'கணினி பராமரிப்பு செயலில் உள்ளது: தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'கணினி பராமரிப்பு செயலில் உள்ளது: தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.',
   EnumLocale.txtCloseAPP.name: 'பயன்பாட்டை மூடு',
   EnumLocale.txtSearchCountry.name: 'தேடல் நாடு',
   EnumLocale.txtCoins.name: 'நாணயங்கள்',

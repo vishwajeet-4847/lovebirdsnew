@@ -1,17 +1,18 @@
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/bottom_sheet/report_bottom_sheet.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/pages/video_call_page/controller/video_call_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/bottom_sheet/report_bottom_sheet.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/pages/video_call_page/controller/video_call_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -248,25 +249,42 @@ class VideoCallView extends StatelessWidget {
                     children: [
                       logic.onUserMuteVideo
                           ? GetBuilder<VideoCallController>(
+                              id: AppConstant.idOnVideoCall,
                               builder: (logic) {
                                 if (logic.remoteUid != null &&
                                     logic.remoteUid != 0) {
                                   return logic.callType == "audio"
                                       ? Container()
                                       : logic.onUserMuteAudio
-                                          ? AgoraVideoView(
-                                              controller:
-                                                  VideoViewController.remote(
-                                                rtcEngine: logic.engine!,
-                                                canvas: VideoCanvas(
-                                                  uid: logic.remoteUid!,
-                                                  mirrorMode: VideoMirrorModeType
-                                                      .videoMirrorModeEnabled,
-                                                ),
-                                                connection: RtcConnection(
-                                                    channelId: logic.channel),
-                                              ),
-                                            )
+                                          ? logic.isLocalVideoEnlarged
+                                              ? AgoraVideoView(
+                                                  controller:
+                                                      VideoViewController(
+                                                    rtcEngine: logic.engine!,
+                                                    canvas: const VideoCanvas(
+                                                      uid: 0,
+                                                      mirrorMode:
+                                                          VideoMirrorModeType
+                                                              .videoMirrorModeEnabled,
+                                                    ),
+                                                  ),
+                                                )
+                                              : AgoraVideoView(
+                                                  controller:
+                                                      VideoViewController
+                                                          .remote(
+                                                    rtcEngine: logic.engine!,
+                                                    canvas: VideoCanvas(
+                                                      uid: logic.remoteUid!,
+                                                      mirrorMode:
+                                                          VideoMirrorModeType
+                                                              .videoMirrorModeEnabled,
+                                                    ),
+                                                    connection: RtcConnection(
+                                                        channelId:
+                                                            logic.channel),
+                                                  ),
+                                                )
                                           : Stack(
                                               children: [
                                                 AgoraVideoView(
@@ -626,6 +644,69 @@ class VideoCallView extends StatelessWidget {
                                         ],
                                       ),
                                     ),
+                                    5.height,
+                                    !Database.isHost
+                                        ? Positioned(
+                                            top: 30,
+                                            right: 12,
+                                            child:
+                                                GetBuilder<VideoCallController>(
+                                              id: AppConstant.idUpdateCoin,
+                                              builder: (logic) {
+                                                return GestureDetector(
+                                                  onTap: () {
+                                                    Get.toNamed(
+                                                            AppRoutes.topUpPage)
+                                                        ?.then((_) async {
+                                                      await logic
+                                                          .getUpdatedCoin();
+                                                    });
+                                                  },
+                                                  child: Container(
+                                                    height: 32,
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 10),
+                                                    decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color: AppColors
+                                                              .colorDimButton),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              50),
+                                                      gradient: AppColors
+                                                          .gradientButtonColor,
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Image.asset(
+                                                          AppAsset.coinIcon2,
+                                                          height: 20,
+                                                          width: 20,
+                                                        ),
+                                                        const SizedBox(
+                                                            width: 6),
+                                                        Text(
+                                                          Database.coin
+                                                              .toString()
+                                                              .split('.')[0],
+                                                          style: AppFontStyle
+                                                              .styleW800(
+                                                            AppColors
+                                                                .whiteColor,
+                                                            16,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          )
+                                        : 1.height,
                                   ],
                                 ),
                                 PopupMenuButton<String>(
@@ -662,86 +743,126 @@ class VideoCallView extends StatelessWidget {
                                 GetBuilder<VideoCallController>(
                                   builder: (logic) {
                                     if (logic.engine != null) {
-                                      return Container(
-                                        height: 172,
-                                        width: 140,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          color: AppColors.blackColor,
-                                        ),
-                                        child: logic.callType == "audio"
-                                            ? Center(
-                                                child: Text(EnumLocale
-                                                    .txtAudioCall.name.tr))
-                                            : logic.isVideoOn == false &&
-                                                    logic.isMute == true
-                                                ? Center(
-                                                    child: Image.asset(
-                                                      AppAsset.icMicCamera,
-                                                      height: 50,
-                                                      width: 50,
-                                                      color:
-                                                          AppColors.whiteColor,
-                                                    ),
-                                                  )
-                                                : logic.isVideoOn
-                                                    ? logic.isMute
-                                                        ? Stack(
-                                                            children: [
-                                                              AgoraVideoView(
-                                                                controller:
-                                                                    VideoViewController(
-                                                                  rtcEngine: logic
-                                                                      .engine!,
-                                                                  canvas:
-                                                                      const VideoCanvas(
-                                                                    uid: 0,
-                                                                    mirrorMode:
-                                                                        VideoMirrorModeType
-                                                                            .videoMirrorModeEnabled,
+                                      return GestureDetector(
+                                        onTap: () {
+                                          print(
+                                              "tappped herer somewherehre=====\n/\n\n\n\n\n");
+                                          logic.toggleVideoView();
+                                          logic.update(
+                                              [AppConstant.idOnVideoCall]);
+                                        },
+                                        child: Container(
+                                          height: 172,
+                                          width: 140,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            color: AppColors.blackColor,
+                                          ),
+                                          child: logic.isLocalVideoEnlarged
+                                              // 🔹 Show remote video in small preview when local is large
+                                              ? (logic.remoteUid != null &&
+                                                      logic.remoteUid != 0
+                                                  ? AgoraVideoView(
+                                                      controller:
+                                                          VideoViewController
+                                                              .remote(
+                                                        rtcEngine:
+                                                            logic.engine!,
+                                                        canvas: VideoCanvas(
+                                                            uid: logic
+                                                                .remoteUid!),
+                                                        connection:
+                                                            RtcConnection(
+                                                                channelId: logic
+                                                                    .channel),
+                                                      ),
+                                                    )
+                                                  : Center(
+                                                      child: Text(
+                                                          "Waiting for remote...")))
+                                              // 🔹 Otherwise show local video in small preview
+                                              : logic.callType == "audio"
+                                                  ? Center(
+                                                      child: Text(EnumLocale
+                                                          .txtAudioCall
+                                                          .name
+                                                          .tr),
+                                                    )
+                                                  : !logic.isVideoOn &&
+                                                          logic.isMute
+                                                      ? Center(
+                                                          child: Image.asset(
+                                                            AppAsset
+                                                                .icMicCamera,
+                                                            height: 50,
+                                                            width: 50,
+                                                            color: AppColors
+                                                                .whiteColor,
+                                                          ),
+                                                        )
+                                                      : logic.isVideoOn
+                                                          ? logic.isMute
+                                                              ? Stack(
+                                                                  children: [
+                                                                    AgoraVideoView(
+                                                                      controller:
+                                                                          VideoViewController(
+                                                                        rtcEngine:
+                                                                            logic.engine!,
+                                                                        canvas:
+                                                                            const VideoCanvas(
+                                                                          uid:
+                                                                              0,
+                                                                          mirrorMode:
+                                                                              VideoMirrorModeType.videoMirrorModeEnabled,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Center(
+                                                                      child: Image
+                                                                          .asset(
+                                                                        AppAsset
+                                                                            .icUnMuteMic,
+                                                                        height:
+                                                                            50,
+                                                                        width:
+                                                                            50,
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                )
+                                                              : AgoraVideoView(
+                                                                  controller:
+                                                                      VideoViewController(
+                                                                    rtcEngine: logic
+                                                                        .engine!,
+                                                                    canvas:
+                                                                        const VideoCanvas(
+                                                                      uid: 0,
+                                                                      mirrorMode:
+                                                                          VideoMirrorModeType
+                                                                              .videoMirrorModeEnabled,
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                              ),
-                                                              Center(
-                                                                child:
-                                                                    Image.asset(
-                                                                  AppAsset
-                                                                      .icUnMuteMic,
-                                                                  height: 50,
-                                                                  width: 50,
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          )
-                                                        : AgoraVideoView(
-                                                            controller:
-                                                                VideoViewController(
-                                                              rtcEngine:
-                                                                  logic.engine!,
-                                                              canvas:
-                                                                  const VideoCanvas(
-                                                                uid: 0,
-                                                                mirrorMode:
-                                                                    VideoMirrorModeType
-                                                                        .videoMirrorModeEnabled,
+                                                                )
+                                                          : Center(
+                                                              child:
+                                                                  Image.asset(
+                                                                AppAsset
+                                                                    .icVideoPause,
+                                                                height: 50,
+                                                                width: 50,
                                                               ),
                                                             ),
-                                                          )
-                                                    : Center(
-                                                        child: Image.asset(
-                                                          AppAsset.icVideoPause,
-                                                          height: 50,
-                                                          width: 50,
-                                                        ),
-                                                      ),
+                                        ),
                                       );
                                     } else {
                                       return const SizedBox();
                                     }
                                   },
-                                ),
+                                )
                               ],
                             ),
                             const Spacer(),
@@ -759,6 +880,26 @@ class VideoCallView extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
+                                  !Database.isHost
+                                      ? GetBuilder<VideoCallController>(
+                                          builder: (logic) {
+                                            return GestureDetector(
+                                              onTap: () {
+                                                GiftBottomSheetWidget.show(
+                                                  context: Get.context!,
+                                                  callback: () =>
+                                                      logic.onSendGift(),
+                                                  isChat: false,
+                                                );
+                                                logic.update();
+                                              },
+                                              child: Image.asset(
+                                                  AppAsset.icGift,
+                                                  height: 34),
+                                            );
+                                          },
+                                        )
+                                      : const SizedBox.shrink(),
                                   GetBuilder<VideoCallController>(
                                     id: AppConstant.idMuteMic,
                                     builder: (logic) {
@@ -772,22 +913,7 @@ class VideoCallView extends StatelessWidget {
                                       );
                                     },
                                   ),
-                                  GetBuilder<VideoCallController>(
-                                      builder: (logic) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        GiftBottomSheetWidget.show(
-                                          context: Get.context!,
-                                          callback: () => logic.onSendGift(),
-                                          isChat: false,
-                                        );
 
-                                        logic.update();
-                                      },
-                                      child: Image.asset(AppAsset.icGift,
-                                          height: 34),
-                                    );
-                                  }),
                                   GetBuilder<VideoCallController>(
                                     id: AppConstant.idToggleVideo,
                                     builder: (logic) {

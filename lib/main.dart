@@ -1,16 +1,15 @@
-
 import 'dart:async';
 import 'dart:io';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:figgy/localization/localizations_delegate.dart';
-import 'package:figgy/routes/app_pages.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/notification_services.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/localization/localizations_delegate.dart';
+import 'package:LoveBirds/routes/app_pages.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/notification_services.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,7 +25,6 @@ AppLifecycleState? currentAppLifecycleState;
 /// We register it in NotificationServices.init() which sets FirebaseMessaging.onBackgroundMessage.
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
 
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -69,20 +67,18 @@ Future<void> onRequestPermissions() async {
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  static final StreamController purchaseStreamController = StreamController<PurchaseDetails>.broadcast();
+  static final StreamController purchaseStreamController =
+      StreamController<PurchaseDetails>.broadcast();
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> with WidgetsBindingObserver, TickerProviderStateMixin {
-
-
+class _MyAppState extends State<MyApp>
+    with WidgetsBindingObserver, TickerProviderStateMixin {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     currentAppLifecycleState = state;
-
-
 
     Utils.showLog('AppLifecycleState changed to: $state');
   }
@@ -103,4 +99,3 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver, TickerProvid
     );
   }
 }
-

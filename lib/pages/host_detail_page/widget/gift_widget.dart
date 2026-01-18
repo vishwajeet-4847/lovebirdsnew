@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:figgy/custom/app_title/custom_title.dart';
-import 'package:figgy/pages/chat_page/widget/chat_center_widget.dart';
-import 'package:figgy/pages/host_detail_page/controller/host_detail_controller.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_title/custom_title.dart';
+import 'package:LoveBirds/pages/chat_page/widget/chat_center_widget.dart';
+import 'package:LoveBirds/pages/host_detail_page/controller/host_detail_controller.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,8 @@ class _GiftTile extends StatelessWidget {
   final ReceivedGift gift;
   const _GiftTile({required this.gift});
 
-  bool get _isSvga => (gift.giftType == 3) && ((gift.giftImage ?? '').isNotEmpty);
+  bool get _isSvga =>
+      (gift.giftType == 3) && ((gift.giftImage ?? '').isNotEmpty);
 
   String get _svgaUrl => Api.baseUrl + (gift.giftImage ?? "");
   String get _thumbUrl {
@@ -57,8 +58,10 @@ class _GiftTile extends StatelessWidget {
                       width: 70,
                       height: 70,
                       fit: BoxFit.contain,
-                      placeholder: (_, __) => Image.asset(AppAsset.icPlaceHolder),
-                      errorWidget: (_, __, ___) => Image.asset(AppAsset.icPlaceHolder),
+                      placeholder: (_, __) =>
+                          Image.asset(AppAsset.icPlaceHolder),
+                      errorWidget: (_, __, ___) =>
+                          Image.asset(AppAsset.icPlaceHolder),
                     ),
             ),
           ),
@@ -95,7 +98,8 @@ class HostDetailsGiftWidget extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HostDetailTitle(title: EnumLocale.txtReceivedGifts.name.tr).paddingOnly(left: 14),
+            HostDetailTitle(title: EnumLocale.txtReceivedGifts.name.tr)
+                .paddingOnly(left: 14),
             10.height,
             SizedBox(
               height: Get.height * 0.17,

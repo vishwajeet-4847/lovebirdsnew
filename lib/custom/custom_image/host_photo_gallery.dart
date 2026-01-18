@@ -1,5 +1,5 @@
 import 'package:dismissible_page/dismissible_page.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

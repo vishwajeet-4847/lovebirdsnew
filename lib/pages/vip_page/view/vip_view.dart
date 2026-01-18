@@ -1,12 +1,12 @@
-import 'package:figgy/pages/vip_page/controller/vip_controller.dart';
-import 'package:figgy/pages/vip_page/widget/main_vip_view_widget.dart';
-import 'package:figgy/pages/vip_page/widget/vip_app_bar_widget.dart';
-import 'package:figgy/pages/vip_page/widget/vip_user_detail_widget.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/vip_page/controller/vip_controller.dart';
+import 'package:LoveBirds/pages/vip_page/widget/main_vip_view_widget.dart';
+import 'package:LoveBirds/pages/vip_page/widget/vip_app_bar_widget.dart';
+import 'package:LoveBirds/pages/vip_page/widget/vip_user_detail_widget.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

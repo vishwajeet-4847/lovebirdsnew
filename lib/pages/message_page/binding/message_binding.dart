@@ -1,4 +1,4 @@
-import 'package:figgy/pages/message_page/controller/message_controller.dart';
+import 'package:LoveBirds/pages/message_page/controller/message_controller.dart';
 import 'package:get/get.dart';
 
 class MessageBinding extends Bindings {

@@ -1,5 +1,5 @@
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -56,7 +56,9 @@ class DeleteAccountDialog extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(EnumLocale.txtDeleteAccount.name.tr, style: AppFontStyle.styleW700(AppColors.whiteColor, 18)),
+                      Text(EnumLocale.txtDeleteAccount.name.tr,
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 18)),
                     ],
                   ),
                 ),
@@ -73,7 +75,9 @@ class DeleteAccountDialog extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     color: AppColors.colorGry.withValues(alpha: 0.3),
                   ),
-                  child: Text(EnumLocale.txtCancel.name.tr, style: AppFontStyle.styleW700(AppColors.cancelTxtColor, 18))),
+                  child: Text(EnumLocale.txtCancel.name.tr,
+                      style: AppFontStyle.styleW700(
+                          AppColors.cancelTxtColor, 18))),
             ),
           ],
         ),

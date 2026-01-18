@@ -1,4 +1,4 @@
-import 'package:figgy/utils/api.dart';
+import 'package:LoveBirds/utils/api.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -107,7 +107,8 @@ class _ReelsPlayerViewState extends State<ReelsPlayerView> {
                             top: 40,
                             left: 16,
                             child: IconButton(
-                              icon: const Icon(Icons.arrow_back, color: Colors.white),
+                              icon: const Icon(Icons.arrow_back,
+                                  color: Colors.white),
                               onPressed: () => Navigator.pop(context),
                             ),
                           ),
@@ -121,22 +122,32 @@ class _ReelsPlayerViewState extends State<ReelsPlayerView> {
                                   activeColor: Colors.red,
                                   inactiveColor: Colors.white24,
                                   min: 0,
-                                  max: _controller.value.duration.inSeconds.toDouble(),
-                                  value: _controller.value.position.inSeconds.clamp(0, _controller.value.duration.inSeconds).toDouble(),
+                                  max: _controller.value.duration.inSeconds
+                                      .toDouble(),
+                                  value: _controller.value.position.inSeconds
+                                      .clamp(0,
+                                          _controller.value.duration.inSeconds)
+                                      .toDouble(),
                                   onChanged: (value) {
-                                    _controller.seekTo(Duration(seconds: value.toInt()));
+                                    _controller.seekTo(
+                                        Duration(seconds: value.toInt()));
                                   },
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      _formatDuration(_controller.value.position),
-                                      style: const TextStyle(color: Colors.white, fontSize: 12),
+                                      _formatDuration(
+                                          _controller.value.position),
+                                      style: const TextStyle(
+                                          color: Colors.white, fontSize: 12),
                                     ),
                                     Text(
-                                      _formatDuration(_controller.value.duration),
-                                      style: const TextStyle(color: Colors.white, fontSize: 12),
+                                      _formatDuration(
+                                          _controller.value.duration),
+                                      style: const TextStyle(
+                                          color: Colors.white, fontSize: 12),
                                     ),
                                   ],
                                 ),
@@ -146,7 +157,8 @@ class _ReelsPlayerViewState extends State<ReelsPlayerView> {
                         ],
                       ),
                     )
-                  : const Center(child: CircularProgressIndicator(color: Colors.white));
+                  : const Center(
+                      child: CircularProgressIndicator(color: Colors.white));
             },
           ),
         ],

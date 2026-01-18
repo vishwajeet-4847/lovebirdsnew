@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:chewie/chewie.dart';
-import 'package:figgy/utils/asset.dart';
+import 'package:LoveBirds/utils/asset.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
@@ -48,7 +48,8 @@ class _ChewiePlayerScreenState extends State<ChewiePlayerScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: _chewieController != null && _chewieController!.videoPlayerController.value.isInitialized
+        child: _chewieController != null &&
+                _chewieController!.videoPlayerController.value.isInitialized
             ? Stack(
                 children: [
                   Chewie(controller: _chewieController!),
@@ -63,7 +64,9 @@ class _ChewiePlayerScreenState extends State<ChewiePlayerScreen> {
                         height: 40,
                         width: 40,
                         color: Colors.transparent,
-                        child: Image.asset(AppAsset.icLeftArrow, color: Colors.white).paddingAll(10),
+                        child: Image.asset(AppAsset.icLeftArrow,
+                                color: Colors.white)
+                            .paddingAll(10),
                       ),
                     ),
                   )

@@ -1,10 +1,10 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/audio_player_page/controller/audio_player_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/audio_player_page/controller/audio_player_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -94,7 +94,8 @@ class AudioPlayerView extends GetView<AudioPlayerController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(56),
                             color: AppColors.whiteColor.withValues(alpha: 0.12),
@@ -111,7 +112,8 @@ class AudioPlayerView extends GetView<AudioPlayerController> {
                               8.width,
                               Text(
                                 logic.formattedTime ?? "",
-                                style: AppFontStyle.styleW700(AppColors.whiteColor, 14),
+                                style: AppFontStyle.styleW700(
+                                    AppColors.whiteColor, 14),
                               ),
                             ],
                           ),
@@ -129,12 +131,15 @@ class AudioPlayerView extends GetView<AudioPlayerController> {
                             width: 50,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor.withValues(alpha: 0.2),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.2),
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
                               color: AppColors.whiteColor,
-                              logic.isSpeakerOn ? AppAsset.icSpeakerOn : AppAsset.icSpeakerOff,
+                              logic.isSpeakerOn
+                                  ? AppAsset.icSpeakerOn
+                                  : AppAsset.icSpeakerOff,
                               height: 30,
                             ),
                           ),
@@ -162,12 +167,15 @@ class AudioPlayerView extends GetView<AudioPlayerController> {
                             width: 50,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor.withValues(alpha: 0.2),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.2),
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
                               color: AppColors.whiteColor,
-                              logic.isMute ? AppAsset.icUnMuteMic : AppAsset.icMuteMic,
+                              logic.isMute
+                                  ? AppAsset.icUnMuteMic
+                                  : AppAsset.icMuteMic,
                               height: 30,
                             ),
                           ),

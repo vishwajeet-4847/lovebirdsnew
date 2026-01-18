@@ -1,13 +1,13 @@
 import 'dart:developer';
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/verification_page/api/fetch_host_request_status_api.dart';
-import 'package:figgy/pages/verification_page/model/fetch_host_request_status_model.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/verification_page/api/fetch_host_request_status_api.dart';
+import 'package:LoveBirds/pages/verification_page/model/fetch_host_request_status_model.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 
 class VerificationController extends GetxController {

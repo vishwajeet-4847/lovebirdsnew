@@ -1,11 +1,11 @@
 import 'dart:developer';
 
-import 'package:figgy/pages/host_request_page/controller/host_request_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_request_page/controller/host_request_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +31,8 @@ class HostRequestLanguagePicker {
               children: [
                 Container(
                   height: MediaQuery.of(context).viewPadding.top + 60,
-                  padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).viewPadding.top),
                   alignment: Alignment.center,
                   width: Get.width,
                   decoration: BoxDecoration(
@@ -45,7 +46,8 @@ class HostRequestLanguagePicker {
                         28.width,
                         Text(
                           EnumLocale.txtSelectLanguage.name.tr,
-                          style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 18),
                         ),
                         GestureDetector(
                           onTap: Get.back,
@@ -54,7 +56,8 @@ class HostRequestLanguagePicker {
                             width: 25,
                             padding: const EdgeInsets.symmetric(horizontal: 5),
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor.withValues(alpha: 0.5),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.5),
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
@@ -80,7 +83,8 @@ class HostRequestLanguagePicker {
                     contentPadding: EdgeInsets.zero,
                     labelStyle: AppFontStyle.styleW400(AppColors.colorGry, 14),
                     hintText: EnumLocale.txtTypingSomething.name.tr,
-                    hintStyle: AppFontStyle.styleW400(AppColors.colorGry.withValues(alpha: 0.5), 14),
+                    hintStyle: AppFontStyle.styleW400(
+                        AppColors.colorGry.withValues(alpha: 0.5), 14),
                     prefixIcon: Icon(
                       Icons.search,
                       color: AppColors.colorGry.withValues(alpha: 0.3),
@@ -100,7 +104,8 @@ class HostRequestLanguagePicker {
                         : null,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: AppColors.colorGry.withValues(alpha: 0.3)),
+                      borderSide: BorderSide(
+                          color: AppColors.colorGry.withValues(alpha: 0.3)),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -114,7 +119,8 @@ class HostRequestLanguagePicker {
                     itemCount: logic.filteredLanguages.length,
                     itemBuilder: (context, index) {
                       final language = logic.filteredLanguages[index];
-                      final isSelected = logic.selectedLanguages.contains(language);
+                      final isSelected =
+                          logic.selectedLanguages.contains(language);
 
                       return GestureDetector(
                         onTap: () {
@@ -133,9 +139,13 @@ class HostRequestLanguagePicker {
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                               width: 1,
-                              color: isSelected ? AppColors.googleButtonColor.withValues(alpha: 0.8) : AppColors.colorUnSelectedImpression,
+                              color: isSelected
+                                  ? AppColors.googleButtonColor
+                                      .withValues(alpha: 0.8)
+                                  : AppColors.colorUnSelectedImpression,
                             ),
-                            color: AppColors.colorUnSelectedImpression.withValues(alpha: 0.2),
+                            color: AppColors.colorUnSelectedImpression
+                                .withValues(alpha: 0.2),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -146,7 +156,9 @@ class HostRequestLanguagePicker {
                                   language,
                                   style: TextStyle(
                                     color: AppColors.whiteColor,
-                                    fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                                    fontWeight: isSelected
+                                        ? FontWeight.bold
+                                        : FontWeight.normal,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -157,7 +169,8 @@ class HostRequestLanguagePicker {
                                   child: Image.asset(
                                     AppAsset.icCheck,
                                     height: 20,
-                                    color: AppColors.googleButtonColor.withValues(alpha: 0.8),
+                                    color: AppColors.googleButtonColor
+                                        .withValues(alpha: 0.8),
                                   ),
                                 ),
                             ],

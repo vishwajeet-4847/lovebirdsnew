@@ -1,5 +1,5 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,10 +7,12 @@ class BackgroundImageRandomPageWidget extends StatefulWidget {
   const BackgroundImageRandomPageWidget({super.key});
 
   @override
-  State<BackgroundImageRandomPageWidget> createState() => _BackgroundImageRandomPageWidgetState();
+  State<BackgroundImageRandomPageWidget> createState() =>
+      _BackgroundImageRandomPageWidgetState();
 }
 
-class _BackgroundImageRandomPageWidgetState extends State<BackgroundImageRandomPageWidget> {
+class _BackgroundImageRandomPageWidgetState
+    extends State<BackgroundImageRandomPageWidget> {
   final _image = const AssetImage(AppAsset.imaRandomBg1);
 
   @override

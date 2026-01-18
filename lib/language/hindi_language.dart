@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> hiIN = {
   EnumLocale.txtLetsStart.name: "चलो शुरू करो",
   EnumLocale.txtGoogle.name: "गूगल",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "लॉग इन करके, आप हमारी शर्तों से सहमत होते हैं",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "लॉग इन करके, आप हमारी शर्तों से सहमत होते हैं",
   EnumLocale.txtPrivacyPolicy.name: "गोपनीयता नीति",
   EnumLocale.txtAnd.name: "और",
   EnumLocale.txtUseAgreement.name: "उपयोग अनुबंध",
   EnumLocale.txtCoinRechargeSuccess.name: "सिक्का रिचार्ज सफल",
   EnumLocale.txtSomeThingWentWrong.name: "कुछ गलत हो गया",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "ऑडियो रिकॉर्डिंग सक्षम करने के लिए देर तक दबाएँ",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "ऑडियो रिकॉर्डिंग सक्षम करने के लिए देर तक दबाएँ",
   EnumLocale.txtPleaseAllowPermission.name: "कृपया अनुमति दें",
   EnumLocale.txtTypeSomething.name: "कुछ कहो...",
   EnumLocale.txtRandomMatch.name: "यादृच्छिक मिलान",
@@ -17,11 +19,14 @@ final Map<String, String> hiIN = {
   EnumLocale.txtContactus.name: "हमसे संपर्क करें",
   EnumLocale.txtRecharge.name: "फिर से दाम लगाना",
   EnumLocale.txtMyGems.name: "मेरे रत्न",
-  EnumLocale.txtPleaseEnterWithdrawCoin.name: "कृपया सिक्का वापस लेने हेतु विवरण दर्ज करें",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale.txtPleaseEnterWithdrawCoin.name:
+      "कृपया सिक्का वापस लेने हेतु विवरण दर्ज करें",
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "निकासी हेतु अनुरोधित सिक्का व्यवस्थापक द्वारा निर्दिष्ट से अधिक होना चाहिए",
   EnumLocale.txtPleaseSelectWithdrawMethod.name: "कृपया निकासी विधि चुनें",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "कृपया सभी भुगतान विवरण दर्ज करें",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "कृपया सभी भुगतान विवरण दर्ज करें",
   EnumLocale.txtSelectPaymentGateway.name: "भुगतान गेटवे चुनें",
   EnumLocale.txtAvailableCoin.name: "उपलब्ध सिक्का",
   EnumLocale.txtWithdraw.name: "निकालना",
@@ -55,7 +60,8 @@ final Map<String, String> hiIN = {
   EnumLocale.txtBoth.name: "दोनों",
   EnumLocale.txtMale.name: "पुरुष",
   EnumLocale.txtFemale.name: "महिला",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "वीआईपी बनें, विशेषाधिकार का आनंद लें",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "वीआईपी बनें, विशेषाधिकार का आनंद लें",
   EnumLocale.txtMore.name: "अधिक",
   EnumLocale.txtGems.name: "रत्न",
   EnumLocale.txtDailyCheckIn.name: "दैनिक चेक-इन",
@@ -74,7 +80,8 @@ final Map<String, String> hiIN = {
   EnumLocale.txtVerificationDetails.name: "सत्यापन विवरण",
   EnumLocale.txtVerificationRequestText.name:
       "आपके द्वारा सबमिट की गई सभी जानकारी हमें प्राप्त हो गई है। आपके लिए अपडेट मिलने पर हम इसकी जांच करेंगे और आपको अपडेट करेंगे।\n\nआपकी प्रोफ़ाइल की जांच और सत्यापन में लगभग 3 से 4 व्यावसायिक दिन लगेंगे।",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "उपयोगकर्ता के पास निकासी के लिए पर्याप्त धनराशि नहीं है",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "उपयोगकर्ता के पास निकासी के लिए पर्याप्त धनराशि नहीं है",
   EnumLocale.txtIncomingVideoCall.name: "इनकमिंग वीडियो कॉल...",
   EnumLocale.txtIncomingAudioCall.name: "इनकमिंग ऑडियो कॉल...",
   EnumLocale.txtUploadYourImages.name: "अपनी छवियाँ अपलोड करें",
@@ -100,7 +107,8 @@ final Map<String, String> hiIN = {
   EnumLocale.txtEnterYourDOB.name: "अपना DOB दर्ज करें",
   EnumLocale.txtSelfIntroduction.name: "आत्म परिचय",
   EnumLocale.txtAppleal.name: "एप्पल",
-  EnumLocale.txtThankYouForYourFeedback.name: "आपकी प्रतिक्रिया के लिए आपका धन्यवाद",
+  EnumLocale.txtThankYouForYourFeedback.name:
+      "आपकी प्रतिक्रिया के लिए आपका धन्यवाद",
   EnumLocale.txtSubmit.name: "जमा करना",
   EnumLocale.txtSelectCountry.name: "देश चुनें",
   EnumLocale.txtSelectGender.name: "लिंग चुनें",
@@ -122,16 +130,20 @@ final Map<String, String> hiIN = {
   EnumLocale.txtConnecting.name: "कनेक्ट हो रहा है...",
   EnumLocale.txtVideoCall.name: "वीडियो कॉल",
   EnumLocale.txtUnblock.name: "अनब्लॉक",
-  EnumLocale.txtApplealDetails.name: "आपकी शिकायत यथाशीघ्र स्वीकार कर ली जाएगी, कृपया अपनी शिकायत का यथासंभव विस्तृत विवरण प्रस्तुत करें",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "कृपया रिपोर्ट करने का कारण चुनें",
+  EnumLocale.txtApplealDetails.name:
+      "आपकी शिकायत यथाशीघ्र स्वीकार कर ली जाएगी, कृपया अपनी शिकायत का यथासंभव विस्तृत विवरण प्रस्तुत करें",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "कृपया रिपोर्ट करने का कारण चुनें",
   EnumLocale.txtCancel.name: "रद्द करना",
   EnumLocale.txtSave.name: "बचाना",
   EnumLocale.txtCheckIn.name: "चेक इन",
-  EnumLocale.txtOpenVIPEnjoyPrivilege.name: "ओपन वीआईपी विशेषाधिकार का आनंद लें",
+  EnumLocale.txtOpenVIPEnjoyPrivilege.name:
+      "ओपन वीआईपी विशेषाधिकार का आनंद लें",
   EnumLocale.txtNoInternetConnection.name: "कोई इंटरनेट कनेक्शन नहीं",
   EnumLocale.txtGifts.name: "उपहार",
   EnumLocale.txtSend.name: "भेजना",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "क्या आप निश्चित रूप से इस ऐप से बाहर निकलना चाहते हैं?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "क्या आप निश्चित रूप से इस ऐप से बाहर निकलना चाहते हैं?",
   EnumLocale.txtPay.name: "वेतन",
   EnumLocale.txtTotal.name: "कुल",
   EnumLocale.txtPayNow.name: "अब भुगतान करें",
@@ -141,9 +153,11 @@ final Map<String, String> hiIN = {
   EnumLocale.txtChooseImage.name: "छवि चुनें",
   EnumLocale.txtGallery.name: "गैलरी",
   EnumLocale.txtTakePhoto.name: "फोटो लो",
-  EnumLocale.txtWaitingForRemoteUser.name: "दूरस्थ उपयोगकर्ता की प्रतीक्षा की जा रही है...",
+  EnumLocale.txtWaitingForRemoteUser.name:
+      "दूरस्थ उपयोगकर्ता की प्रतीक्षा की जा रही है...",
   EnumLocale.txtPleaseSelectADocumentType.name: "कृपया दस्तावेज़ प्रकार चुनें.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "कृपया अपने इंटरनेट कनेक्शन की जाँच करें।",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "कृपया अपने इंटरनेट कनेक्शन की जाँच करें।",
   EnumLocale.txtLiveHost.name: "लाइव होस्ट",
   EnumLocale.txtEnterBio.name: "अपना बायोडाटा दर्ज करें",
   EnumLocale.txtUploadId.name: "अपनी छवियाँ अपलोड करें",
@@ -194,7 +208,8 @@ final Map<String, String> hiIN = {
   EnumLocale.txtVipDescription.name:
       "नोट: VIP एक स्वचालित सदस्यता भुगतान नहीं है और समाप्ति के बाद स्वचालित रूप से नवीनीकृत नहीं होगा। VIP सक्रिय करने के बाद, आप सीधे पुरस्कार प्राप्त कर सकते हैं, और VIP वैधता अवधि के दौरान अन्य विशेषाधिकारों का आनंद लिया जा सकता है।",
   EnumLocale.txtVIPEnjoyPrivileges.name: "वीआईपी विशेषाधिकार का आनंद लें",
-  EnumLocale.txtDailyCheckInDescription.name: "हर सप्ताह हीरे पाने के लिए किसी भी राशि का रिचार्ज करने के बाद चेक इन करें",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "हर सप्ताह हीरे पाने के लिए किसी भी राशि का रिचार्ज करने के बाद चेक इन करें",
   EnumLocale.txtDay.name: "दिन",
   EnumLocale.txtSelectPaymentOption.name: "भुगतान विकल्प चुनें",
   EnumLocale.txtVerificationText.name:
@@ -211,12 +226,16 @@ final Map<String, String> hiIN = {
   EnumLocale.txtPayment.name: "भुगतान",
   EnumLocale.txtBlockHost.name: "ब्लॉक होस्ट",
   EnumLocale.txtBlockUser.name: "खंड उपयोगकर्ता",
-  EnumLocale.txtBlockDetailsHost.name: "क्या आप वाकई इस होस्ट को ब्लॉक करना चाहते हैं?",
-  EnumLocale.txtBlockDetailsUser.name: "क्या वाकई आपको इस प्रयोगकर्ता को ब्लॉक करना है ?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "क्या आप वाकई इस होस्ट को ब्लॉक करना चाहते हैं?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "क्या वाकई आपको इस प्रयोगकर्ता को ब्लॉक करना है ?",
   EnumLocale.txtUnBlockHost.name: "होस्ट को अनब्लॉक करें",
   EnumLocale.txtUnBlockUser.name: "उपयोगकर्ता को अनब्लॉक करें",
-  EnumLocale.txtUnBlockDetailsHost.name: "क्या आप वाकई इस होस्ट को अनब्लॉक करना चाहते हैं?",
-  EnumLocale.txtUnBlockDetailsUser.name: "क्या आप वाकई इस उपयोगकर्ता को अनब्लॉक करना चाहते हैं?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "क्या आप वाकई इस होस्ट को अनब्लॉक करना चाहते हैं?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "क्या आप वाकई इस उपयोगकर्ता को अनब्लॉक करना चाहते हैं?",
   EnumLocale.txtWithdrawHistory.name: "वापसी का इतिहास",
   EnumLocale.txtWalletHistory.name: "वॉलेट इतिहास",
   EnumLocale.txtDeclineRequest.name:
@@ -244,7 +263,8 @@ final Map<String, String> hiIN = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "कृपया पहले उपहार चुनें",
   EnumLocale.txtTermsAndConditions.name: "नियम और शर्तें",
   EnumLocale.txtUnderMaintenance.name: 'यह ऐप रखरखाव के अधीन है',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'सिस्टम रखरखाव प्रगति पर है: कृपया बाद में पुनः प्रयास करें.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'सिस्टम रखरखाव प्रगति पर है: कृपया बाद में पुनः प्रयास करें.',
   EnumLocale.txtCloseAPP.name: 'ऐप बंद करें',
   EnumLocale.txtSearchCountry.name: 'देश खोजें',
   EnumLocale.txtCoins.name: 'सिक्के',

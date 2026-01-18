@@ -1,4 +1,4 @@
-import 'package:figgy/utils/asset.dart';
+import 'package:LoveBirds/utils/asset.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +12,8 @@ class ChatBgImageWidget extends StatelessWidget {
       width: Get.width,
       child: Image(
         image: const AssetImage(AppAsset.allBackgroundImage),
-        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+        loadingBuilder: (BuildContext context, Widget child,
+            ImageChunkEvent? loadingProgress) {
           return Container(
             decoration: const BoxDecoration(),
             child: child,

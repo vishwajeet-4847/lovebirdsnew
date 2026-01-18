@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:figgy/localization/localizations_delegate.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/localization/localizations_delegate.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:get/get.dart';
 
 class AppLanguageController extends GetxController {

@@ -2,13 +2,13 @@
 // import 'dart:math';
 
 // import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-// import 'package:figgy/custom/dialog/block_dialog.dart';
-// import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-// import 'package:figgy/socket/socket_emit.dart';
-// import 'package:figgy/utils/colors_utils.dart';
-// import 'package:figgy/utils/constant.dart';
-// import 'package:figgy/utils/database.dart';
-// import 'package:figgy/utils/utils.dart';
+// import 'package:LoveBirds/custom/dialog/block_dialog.dart';
+// import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+// import 'package:LoveBirds/socket/socket_emit.dart';
+// import 'package:LoveBirds/utils/colors_utils.dart';
+// import 'package:LoveBirds/utils/constant.dart';
+// import 'package:LoveBirds/utils/database.dart';
+// import 'package:LoveBirds/utils/utils.dart';
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
@@ -424,17 +424,17 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:figgy/custom/dialog/block_dialog.dart';
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_emit.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/dialog/block_dialog.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_emit.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -702,6 +702,8 @@ class VideoCallController extends GetxController {
   }
 
   void toggleVideoView() {
+    print(
+        "====================\n\n\n\n\n==============switcvh \n\n\n\==============");
     isLocalVideoEnlarged = !isLocalVideoEnlarged;
     update([AppConstant.idOnVideoCall]);
   }
@@ -762,25 +764,54 @@ class VideoCallController extends GetxController {
     }
   }
 
+  // void startTimer() async {
+  //   startTime = DateTime.now();
+  //   print("⏱ Timer started at $startTime");
+
+  //   timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+  //     final duration = DateTime.now().difference(startTime ?? DateTime.now());
+  //     final minutes = duration.inMinutes.remainder(60);
+  //     final seconds = duration.inSeconds.remainder(60);
+  //     formattedTime =
+  //         '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+
+  //     print("⏱ Timer tick: $formattedTime");
+
+  //     if (seconds == 0 && !Database.isHost) {
+  //       print("🎯 Non-host coin cut triggered");
+  //       onCallCoinCut(gender: gender);
+  //     }
+  //     getUpdatedCoin();
+  //     update([AppConstant.idUpdateCoin]);
+  //     update([AppConstant.idOnVideoCall]);
+  //   });
+  // }
+
   void startTimer() {
     startTime = DateTime.now();
     print("⏱ Timer started at $startTime");
 
-    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      final duration = DateTime.now().difference(startTime ?? DateTime.now());
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
+      final duration = DateTime.now().difference(startTime!);
       final minutes = duration.inMinutes.remainder(60);
       final seconds = duration.inSeconds.remainder(60);
+
       formattedTime =
           '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
 
       print("⏱ Timer tick: $formattedTime");
 
+      // Trigger coin cut only at the start of each minute for non-hosts
       if (seconds == 0 && !Database.isHost) {
         print("🎯 Non-host coin cut triggered");
         onCallCoinCut(gender: gender);
+        await getUpdatedCoin();
+      } else {
+        await getUpdatedCoin();
       }
 
-      update([AppConstant.idOnVideoCall]);
+      // Update UI
+      update([AppConstant.idUpdateCoin, AppConstant.idOnVideoCall]);
     });
   }
 

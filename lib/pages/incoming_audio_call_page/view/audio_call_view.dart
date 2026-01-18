@@ -1,12 +1,12 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/incoming_audio_call_page/controller/audio_call_controller.dart';
-import 'package:figgy/socket/socket_emit.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/incoming_audio_call_page/controller/audio_call_controller.dart';
+import 'package:LoveBirds/socket/socket_emit.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -45,7 +45,9 @@ class IncomingAudioCallView extends StatelessWidget {
                     alignment: Alignment.center,
                     width: Get.width,
                     child: Text(
-                      logic.callType == 'video' ? EnumLocale.txtIncomingVideoCall.name.tr : EnumLocale.txtIncomingAudioCall.name.tr,
+                      logic.callType == 'video'
+                          ? EnumLocale.txtIncomingVideoCall.name.tr
+                          : EnumLocale.txtIncomingAudioCall.name.tr,
                       maxLines: 1,
                       style: AppFontStyle.styleW400(AppColors.whiteColor, 20),
                     ),

@@ -1,11 +1,11 @@
-import 'package:figgy/common/gradiant_text.dart';
-import 'package:figgy/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
-import 'package:figgy/pages/host_live_streamers_page/widget/host_followed.dart';
-import 'package:figgy/pages/host_live_streamers_page/widget/host_main_stream_view.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/gradiant_text.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/widget/host_followed.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/widget/host_main_stream_view.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -53,7 +53,8 @@ class HostTabBar extends StatelessWidget {
                               controller.selectedTabIndex == index
                                   ? GradientText(
                                       text: text,
-                                      style: AppFontStyle.styleW700(Colors.white, 20),
+                                      style: AppFontStyle.styleW700(
+                                          Colors.white, 20),
                                       gradient: const LinearGradient(
                                         colors: [
                                           AppColors.pinkColor,
@@ -65,7 +66,8 @@ class HostTabBar extends StatelessWidget {
                                     )
                                   : Text(
                                       text,
-                                      style: AppFontStyle.styleW600(AppColors.whiteColor, 18),
+                                      style: AppFontStyle.styleW600(
+                                          AppColors.whiteColor, 18),
                                     ),
                               if (controller.selectedTabIndex == index)
                                 Positioned(
@@ -94,8 +96,10 @@ class HostTabBar extends StatelessWidget {
                                     child: Center(
                                       child: Text(
                                         "New",
-                                        style: AppFontStyle.styleW600(AppColors.whiteColor, 7),
-                                      ).paddingSymmetric(vertical: 0, horizontal: 4),
+                                        style: AppFontStyle.styleW600(
+                                            AppColors.whiteColor, 7),
+                                      ).paddingSymmetric(
+                                          vertical: 0, horizontal: 4),
                                     ),
                                   ),
                                 ),

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:figgy/utils/api.dart';
+import 'package:LoveBirds/utils/api.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -30,7 +30,9 @@ class _EditReelsPlayerViewState extends State<EditReelsPlayerView> {
 
     reordered = [
       widget.videoUrls[widget.initialIndex],
-      ...List.generate(widget.videoUrls.length, (i) => i).where((i) => i != widget.initialIndex).map((i) => widget.videoUrls[i]),
+      ...List.generate(widget.videoUrls.length, (i) => i)
+          .where((i) => i != widget.initialIndex)
+          .map((i) => widget.videoUrls[i]),
     ];
 
     currentIndex = 0;
@@ -94,7 +96,8 @@ class _EditReelsPlayerViewState extends State<EditReelsPlayerView> {
             onPageChanged: _onPageChanged,
             itemBuilder: (_, __) {
               if (!isReady) {
-                return const Center(child: CircularProgressIndicator(color: Colors.white));
+                return const Center(
+                    child: CircularProgressIndicator(color: Colors.white));
               }
               return GestureDetector(
                 onTap: () {
@@ -111,7 +114,9 @@ class _EditReelsPlayerViewState extends State<EditReelsPlayerView> {
                         child: VideoPlayer(_controller!),
                       ),
                     ),
-                    if (!(_controller!.value.isPlaying)) const Icon(Icons.play_arrow, color: Colors.white, size: 80),
+                    if (!(_controller!.value.isPlaying))
+                      const Icon(Icons.play_arrow,
+                          color: Colors.white, size: 80),
                     Positioned(
                       top: 40,
                       left: 16,
@@ -130,17 +135,25 @@ class _EditReelsPlayerViewState extends State<EditReelsPlayerView> {
                             activeColor: Colors.red,
                             inactiveColor: Colors.white24,
                             min: 0,
-                            max: _controller!.value.duration.inSeconds.toDouble(),
-                            value: _controller!.value.position.inSeconds.clamp(0, _controller!.value.duration.inSeconds).toDouble(),
+                            max: _controller!.value.duration.inSeconds
+                                .toDouble(),
+                            value: _controller!.value.position.inSeconds
+                                .clamp(0, _controller!.value.duration.inSeconds)
+                                .toDouble(),
                             onChanged: (value) {
-                              _controller!.seekTo(Duration(seconds: value.toInt()));
+                              _controller!
+                                  .seekTo(Duration(seconds: value.toInt()));
                             },
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(_fmt(_controller!.value.position), style: const TextStyle(color: Colors.white, fontSize: 12)),
-                              Text(_fmt(_controller!.value.duration), style: const TextStyle(color: Colors.white, fontSize: 12)),
+                              Text(_fmt(_controller!.value.position),
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 12)),
+                              Text(_fmt(_controller!.value.duration),
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 12)),
                             ],
                           ),
                         ],

@@ -1,24 +1,28 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/pages/fake_live_page/controller/fake_live_controller.dart';
-import 'package:figgy/pages/fake_live_page/widget/fake_comment_data.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/pages/fake_live_page/controller/fake_live_controller.dart';
+import 'package:LoveBirds/pages/fake_live_page/widget/fake_comment_data.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:lottie/lottie.dart';
 
 class UserLiveUi extends StatelessWidget {
-  const UserLiveUi({super.key, required this.liveScreen, required this.liveRoomId, required this.liveUserId});
+  const UserLiveUi(
+      {super.key,
+      required this.liveScreen,
+      required this.liveRoomId,
+      required this.liveUserId});
 
   final Widget liveScreen;
   final String liveRoomId;
@@ -44,9 +48,14 @@ class UserLiveUi extends StatelessWidget {
                       child: FittedBox(
                         fit: BoxFit.cover,
                         child: SizedBox(
-                          width: controller.videoPlayerController?.value.size.width ?? 0,
-                          height: controller.videoPlayerController?.value.size.height ?? 0,
-                          child: Chewie(controller: controller.chewieController!),
+                          width: controller
+                                  .videoPlayerController?.value.size.width ??
+                              0,
+                          height: controller
+                                  .videoPlayerController?.value.size.height ??
+                              0,
+                          child:
+                              Chewie(controller: controller.chewieController!),
                         ),
                       ),
                     )
@@ -57,7 +66,8 @@ class UserLiveUi extends StatelessWidget {
                       child: Stack(
                         children: [
                           Container(
-                            color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                            color:
+                                AppColors.colorTextGrey.withValues(alpha: 0.22),
                             height: Get.height,
                             width: Get.width,
                             child: CustomImage(
@@ -94,7 +104,8 @@ class UserLiveUi extends StatelessWidget {
                                     width: 125,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                      color: AppColors.colorTextGrey
+                                          .withValues(alpha: 0.22),
                                     ),
                                     clipBehavior: Clip.hardEdge,
                                     child: CustomImage(
@@ -109,7 +120,8 @@ class UserLiveUi extends StatelessWidget {
                                   children: [
                                     Text(
                                       EnumLocale.txtConnect.name.tr,
-                                      style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                                      style: AppFontStyle.styleW700(
+                                          AppColors.whiteColor, 20),
                                     ),
                                     Lottie.asset(
                                       AppAsset.lottieLoading,
@@ -146,7 +158,9 @@ class UserLiveUi extends StatelessWidget {
                         height: 40,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(56),
-                          border: Border.all(color: AppColors.colorBorder.withValues(alpha: 0.3)),
+                          border: Border.all(
+                              color:
+                                  AppColors.colorBorder.withValues(alpha: 0.3)),
                           color: AppColors.blackColor.withValues(alpha: 0.45),
                         ),
                         child: Row(
@@ -157,12 +171,14 @@ class UserLiveUi extends StatelessWidget {
                               height: 30,
                               width: 30,
                               clipBehavior: Clip.antiAlias,
-                              decoration: const BoxDecoration(shape: BoxShape.circle),
+                              decoration:
+                                  const BoxDecoration(shape: BoxShape.circle),
                               child: Stack(
                                 children: [
                                   AspectRatio(
                                     aspectRatio: 1,
-                                    child: Image.asset(AppAsset.icProfilePlaceHolder),
+                                    child: Image.asset(
+                                        AppAsset.icProfilePlaceHolder),
                                   ),
                                   AspectRatio(
                                     aspectRatio: 1,
@@ -183,16 +199,19 @@ class UserLiveUi extends StatelessWidget {
                                   controller.name,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: AppFontStyle.styleW600(AppColors.whiteColor, 12),
+                                  style: AppFontStyle.styleW600(
+                                      AppColors.whiteColor, 12),
                                 ),
                                 GetBuilder<FakeLiveController>(
                                   id: AppConstant.onChangeTime,
                                   builder: (logic) {
                                     return Text(
-                                      logic.onConvertSecondToHMS(logic.countTime),
+                                      logic.onConvertSecondToHMS(
+                                          logic.countTime),
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
-                                      style: AppFontStyle.styleW400(AppColors.whiteColor, 11),
+                                      style: AppFontStyle.styleW400(
+                                          AppColors.whiteColor, 11),
                                     );
                                   },
                                 ),
@@ -235,7 +254,10 @@ class UserLiveUi extends StatelessWidget {
             width: Get.width,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.transparent, AppColors.blackColor.withValues(alpha: 0.7)],
+                colors: [
+                  AppColors.transparent,
+                  AppColors.blackColor.withValues(alpha: 0.7)
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -280,7 +302,8 @@ class UserLiveUi extends StatelessWidget {
                             color: AppColors.whiteColor.withValues(alpha: 0.1),
                             border: Border.all(
                               strokeAlign: 0.4,
-                              color: AppColors.whiteColor.withValues(alpha: 0.2),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.2),
                             ),
                           ),
                           child: Image.asset(
@@ -309,7 +332,12 @@ class UserLiveUi extends StatelessWidget {
                         return const LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
-                          colors: [Colors.black, Colors.transparent, Colors.transparent, Colors.transparent],
+                          colors: [
+                            Colors.black,
+                            Colors.transparent,
+                            Colors.transparent,
+                            Colors.transparent
+                          ],
                           stops: [0.0, 0.1, 0.8, 8.0],
                         ).createShader(bounds);
                       },
@@ -331,9 +359,12 @@ class UserLiveUi extends StatelessWidget {
                                   padding: EdgeInsets.zero,
                                   itemBuilder: (context, index) {
                                     return CommentItemUi(
-                                      title: fakeHostCommentListBlank[index].user,
-                                      subTitle: fakeHostCommentListBlank[index].message,
-                                      leading: fakeHostCommentListBlank[index].image,
+                                      title:
+                                          fakeHostCommentListBlank[index].user,
+                                      subTitle: fakeHostCommentListBlank[index]
+                                          .message,
+                                      leading:
+                                          fakeHostCommentListBlank[index].image,
                                     );
                                   },
                                 ),
@@ -452,7 +483,9 @@ class CommentItemUi extends StatelessWidget {
                 height: 38,
                 width: 38,
                 clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.colorBorder.withValues(alpha: 0.8)),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.colorBorder.withValues(alpha: 0.8)),
                 child: Stack(
                   children: [
                     AspectRatio(
@@ -484,7 +517,8 @@ class CommentItemUi extends StatelessWidget {
                 ),
                 2.height,
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                   decoration: BoxDecoration(
                     color: AppColors.whiteColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(7),

@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:figgy/pages/login_page/model/fetch_login_user_profile_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/login_page/model/fetch_login_user_profile_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class FetchLoginUserProfileApi {
@@ -25,7 +25,6 @@ class FetchLoginUserProfileApi {
       Api.uidKey: uid,
     };
 
-
     Utils.showLog("headers::::::::::::::::::::::${headers}");
     try {
       final response = await http.get(uri, headers: headers);
@@ -34,7 +33,8 @@ class FetchLoginUserProfileApi {
         final jsonResponse = json.decode(response.body);
         Utils.showLog("Get Login User Profile Response => ${response.body}");
 
-        fetchLoginUserProfileModel = FetchLoginUserProfileModel.fromJson(jsonResponse);
+        fetchLoginUserProfileModel =
+            FetchLoginUserProfileModel.fromJson(jsonResponse);
 
         Database.onSetHost(fetchLoginUserProfileModel?.user?.isHost ?? false);
         Database.onSetHostId(fetchLoginUserProfileModel?.user?.hostId ?? "");

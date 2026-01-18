@@ -1,14 +1,14 @@
 import 'dart:io';
 
-import 'package:figgy/custom/app_button/custom_gradient_button.dart';
-import 'package:figgy/pages/payment_page/controller/payment_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_button/custom_gradient_button.dart';
+import 'package:LoveBirds/pages/payment_page/controller/payment_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,29 +22,27 @@ class PaymentView extends StatelessWidget {
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-
-
-
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AppAsset.allBackgroundImage),
-              fit: BoxFit.cover,
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(AppAsset.allBackgroundImage),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: GetBuilder<PaymentScreenController>(
+              id: AppConstant.onChangePaymentMethod,
+              builder: (controller) => CustomGradientButton(
+                height: 56,
+                text: EnumLocale.txtPayNow.name.tr,
+                onTap: () {
+                  controller.onClickPayNow();
+                },
+                textSize: 20,
+              ),
             ),
           ),
-          child: GetBuilder<PaymentScreenController>(
-            id: AppConstant.onChangePaymentMethod,
-            builder: (controller) => CustomGradientButton(
-              height: 56,
-              text: EnumLocale.txtPayNow.name.tr,
-              onTap: () {
-                controller.onClickPayNow();
-              },
-              textSize: 20,
-            ),
-          ),
-        ),
-      ],),
+        ],
+      ),
       body: Container(
         height: Get.height,
         width: Get.width,
@@ -59,7 +57,8 @@ class PaymentView extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).viewPadding.top + 72,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -69,7 +68,11 @@ class PaymentView extends StatelessWidget {
                     bottomRight: Radius.circular(20),
                   ),
                   boxShadow: [
-                    BoxShadow(color: AppColors.blackColor.withValues(alpha: 0.40), offset: const Offset(0, -6), blurRadius: 34, spreadRadius: 0)
+                    BoxShadow(
+                        color: AppColors.blackColor.withValues(alpha: 0.40),
+                        offset: const Offset(0, -6),
+                        blurRadius: 34,
+                        spreadRadius: 0)
                   ]),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,36 +122,46 @@ class PaymentView extends StatelessWidget {
                             // Visibility(visible: Utils.isShowInAppPurchasePaymentMethod, child: const PaymentItemUi(5)),
                             // Visibility(visible: Utils.isShowInAppPurchasePaymentMethod, child: const PaymentItemUi(6)),
 
-
-
-                            if ((Platform.isAndroid && Utils.isShowRazorPayAndroid == true) ||
-                                (Platform.isIOS && Utils.isShowRazorPayIos == true))
-                            const PaymentItemUi(0),
-                            if ((Platform.isAndroid && Utils.isShowStripeAndroid == true) ||
-                                (Platform.isIOS && Utils.isShowStripeIos == true))
-                            const PaymentItemUi(1),
-                            if ((Platform.isAndroid && Utils.isShowFlutterWaveAndroid == true) ||
-                                (Platform.isIOS && Utils.isShowFlutterWaveIos == true))
-                            const PaymentItemUi(2),
-                            if ((Platform.isAndroid && Utils.isShowGooglePayAndroid == true) ||
-                                (Platform.isIOS && Utils.isShowGooglePayIos == true))
-                            const PaymentItemUi(3),
-                            if ((Platform.isAndroid && Utils.isShowPayPalAndroid == true) ||
-                                (Platform.isIOS && Utils.isShowPayPalIos == true))
-                            const PaymentItemUi(4),
-                            if ((Platform.isAndroid && Utils.isShowPayStackAndroid == true) ||
-                                (Platform.isIOS && Utils.isShowPayStackIos == true))
-                            const PaymentItemUi(5),
-                            if ((Platform.isAndroid && Utils.isShowCashFreeAndroid == true) ||
-                                (Platform.isIOS && Utils.isShowCashFreeIos == true))
-                            const PaymentItemUi(6),
-
+                            if ((Platform.isAndroid &&
+                                    Utils.isShowRazorPayAndroid == true) ||
+                                (Platform.isIOS &&
+                                    Utils.isShowRazorPayIos == true))
+                              const PaymentItemUi(0),
+                            if ((Platform.isAndroid &&
+                                    Utils.isShowStripeAndroid == true) ||
+                                (Platform.isIOS &&
+                                    Utils.isShowStripeIos == true))
+                              const PaymentItemUi(1),
+                            if ((Platform.isAndroid &&
+                                    Utils.isShowFlutterWaveAndroid == true) ||
+                                (Platform.isIOS &&
+                                    Utils.isShowFlutterWaveIos == true))
+                              const PaymentItemUi(2),
+                            if ((Platform.isAndroid &&
+                                    Utils.isShowGooglePayAndroid == true) ||
+                                (Platform.isIOS &&
+                                    Utils.isShowGooglePayIos == true))
+                              const PaymentItemUi(3),
+                            if ((Platform.isAndroid &&
+                                    Utils.isShowPayPalAndroid == true) ||
+                                (Platform.isIOS &&
+                                    Utils.isShowPayPalIos == true))
+                              const PaymentItemUi(4),
+                            if ((Platform.isAndroid &&
+                                    Utils.isShowPayStackAndroid == true) ||
+                                (Platform.isIOS &&
+                                    Utils.isShowPayStackIos == true))
+                              const PaymentItemUi(5),
+                            if ((Platform.isAndroid &&
+                                    Utils.isShowCashFreeAndroid == true) ||
+                                (Platform.isIOS &&
+                                    Utils.isShowCashFreeIos == true))
+                              const PaymentItemUi(6),
                           ],
                         ),
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),
@@ -189,7 +202,8 @@ class PaymentItemUi extends StatelessWidget {
             decoration: BoxDecoration(
               color: AppColors.settingColor,
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.whiteColor.withValues(alpha: 0.12)),
+              border: Border.all(
+                  color: AppColors.whiteColor.withValues(alpha: 0.12)),
             ),
             child: Row(
               children: [
@@ -203,7 +217,8 @@ class PaymentItemUi extends StatelessWidget {
                   child: Center(
                     child: Image.asset(
                       logic.paymentMethodList[index]["icon"]!,
-                      width: double.parse(logic.paymentMethodList[index]["size"]!),
+                      width:
+                          double.parse(logic.paymentMethodList[index]["size"]!),
                     ),
                   ),
                 ),

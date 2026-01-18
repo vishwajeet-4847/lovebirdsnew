@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:figgy/pages/login_page/model/login_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/login_page/model/login_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class LoginApi {

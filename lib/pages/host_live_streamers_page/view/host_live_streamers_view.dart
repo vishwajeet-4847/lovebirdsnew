@@ -1,14 +1,14 @@
 import 'dart:io';
 
-import 'package:figgy/custom/app_background/custom_app_image_background.dart';
-import 'package:figgy/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
-import 'package:figgy/pages/host_live_streamers_page/widget/host_tab_bar.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_background/custom_app_image_background.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/widget/host_tab_bar.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +26,9 @@ class HostLiveStreamersView extends GetView<HostLiveStreamersController> {
         controller.pageController.jumpToPage(controller.selectedTabIndex);
       });
     } else {
-      Get.lazyPut<HostLiveStreamersController>(() => HostLiveStreamersController(), fenix: true);
+      Get.lazyPut<HostLiveStreamersController>(
+          () => HostLiveStreamersController(),
+          fenix: true);
     }
 
     return DefaultTabController(
@@ -68,7 +70,10 @@ class HostLiveStreamersView extends GetView<HostLiveStreamersController> {
                         ),
                       ],
                     ),
-                  ).paddingOnly(bottom: Platform.isIOS ? Get.height * 0.9 : Get.height * 0.11),
+                  ).paddingOnly(
+                      bottom: Platform.isIOS
+                          ? Get.height * 0.9
+                          : Get.height * 0.11),
                 ),
               ),
             ],

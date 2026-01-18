@@ -1,10 +1,10 @@
-import 'package:figgy/custom/app_title/custom_title.dart';
-import 'package:figgy/pages/host_detail_page/controller/host_detail_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_title/custom_title.dart';
+import 'package:LoveBirds/pages/host_detail_page/controller/host_detail_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +16,8 @@ class HostDetailLanguageWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HostDetailTitle(title: EnumLocale.txtLanguages.name.tr).paddingOnly(left: 14),
+        HostDetailTitle(title: EnumLocale.txtLanguages.name.tr)
+            .paddingOnly(left: 14),
         10.height,
         GetBuilder<HostDetailController>(
           builder: (logic) {
@@ -36,9 +37,12 @@ class HostDetailLanguageWidget extends StatelessWidget {
                     backgroundColor: AppColors.languageBgColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: AppColors.whiteColor.withValues(alpha: 0.20), width: 0.6),
+                      side: BorderSide(
+                          color: AppColors.whiteColor.withValues(alpha: 0.20),
+                          width: 0.6),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
                     labelPadding: EdgeInsets.zero,
                   );
                 },
@@ -47,7 +51,8 @@ class HostDetailLanguageWidget extends StatelessWidget {
           },
         ),
         16.height,
-        HostDetailTitle(title: EnumLocale.txtImpression.name.tr).paddingOnly(left: 14),
+        HostDetailTitle(title: EnumLocale.txtImpression.name.tr)
+            .paddingOnly(left: 14),
         10.height,
         GetBuilder<HostDetailController>(
           builder: (logic) {
@@ -67,9 +72,12 @@ class HostDetailLanguageWidget extends StatelessWidget {
                     backgroundColor: AppColors.impressionBgColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: AppColors.whiteColor.withValues(alpha: 0.20), width: 0.6),
+                      side: BorderSide(
+                          color: AppColors.whiteColor.withValues(alpha: 0.20),
+                          width: 0.6),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
                     labelPadding: EdgeInsets.zero,
                   );
                 },
@@ -114,7 +122,8 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: bgColor,
           gradient: gradient,
-          border: Border.all(color: AppColors.whiteColor.withValues(alpha: 0.18)),
+          border:
+              Border.all(color: AppColors.whiteColor.withValues(alpha: 0.18)),
           borderRadius: BorderRadius.circular(30),
         ),
         child: Row(

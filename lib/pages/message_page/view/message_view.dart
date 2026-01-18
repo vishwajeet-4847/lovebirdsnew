@@ -1,13 +1,13 @@
-import 'package:figgy/pages/bottom_bar/controller/bottom_bar_controller.dart';
-import 'package:figgy/pages/host_message_page/widget/host_chat_top_widget.dart';
-import 'package:figgy/pages/message_page/controller/message_controller.dart';
-import 'package:figgy/pages/message_page/widget/message_view_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/pages/bottom_bar/controller/bottom_bar_controller.dart';
+import 'package:LoveBirds/pages/host_message_page/widget/host_chat_top_widget.dart';
+import 'package:LoveBirds/pages/message_page/controller/message_controller.dart';
+import 'package:LoveBirds/pages/message_page/widget/message_view_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

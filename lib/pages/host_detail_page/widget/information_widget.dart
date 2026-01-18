@@ -1,5 +1,5 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 
 class ImpressionWidget extends StatelessWidget {
@@ -14,7 +14,8 @@ class ImpressionWidget extends StatelessWidget {
         color: AppColors.colorUnSelectedImpression,
         borderRadius: BorderRadius.circular(50),
       ),
-      child: Text(text, style: AppFontStyle.styleW600(AppColors.whiteColor, 12)),
+      child:
+          Text(text, style: AppFontStyle.styleW600(AppColors.whiteColor, 12)),
     );
   }
 }

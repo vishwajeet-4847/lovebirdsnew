@@ -1,16 +1,16 @@
 import 'dart:async';
 
-import 'package:figgy/custom/dialog/daily_check_in_dialog.dart';
-import 'package:figgy/pages/discover_host_for_user_page/view/discover_host_for_user_view.dart';
-import 'package:figgy/pages/message_page/view/message_view.dart';
-import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-import 'package:figgy/pages/profile_page/view/profile_view.dart';
-import 'package:figgy/pages/random_match_page/view/random_match_view.dart';
-import 'package:figgy/pages/top_up_page/controller/top_up_controller.dart';
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/dialog/daily_check_in_dialog.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/view/discover_host_for_user_view.dart';
+import 'package:LoveBirds/pages/message_page/view/message_view.dart';
+import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+import 'package:LoveBirds/pages/profile_page/view/profile_view.dart';
+import 'package:LoveBirds/pages/random_match_page/view/random_match_view.dart';
+import 'package:LoveBirds/pages/top_up_page/controller/top_up_controller.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

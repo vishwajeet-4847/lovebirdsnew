@@ -1,7 +1,7 @@
-import 'package:figgy/pages/splash_screen_page/controller/splash_screen_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/splash_screen_page/controller/splash_screen_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -20,7 +20,8 @@ class SplashScreenView extends StatelessWidget {
             return Stack(
               children: [
                 Container(
-                  decoration: BoxDecoration(gradient: AppColors.gradientButtonColor),
+                  decoration:
+                      BoxDecoration(gradient: AppColors.gradientButtonColor),
                   child: Image.asset(
                     AppAsset.splashScreenImage2,
                     fit: BoxFit.cover,

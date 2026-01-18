@@ -1,27 +1,28 @@
 import 'dart:developer';
 
 import 'package:carousel_slider/carousel_controller.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/login_page/api/fetch_login_user_profile_api.dart';
-import 'package:figgy/pages/splash_screen_page/api/get_setting_api.dart';
-import 'package:figgy/pages/vip_page/api/get_vip_plan.dart';
-import 'package:figgy/pages/vip_page/api/vip_plan_privilege_api.dart';
-import 'package:figgy/pages/vip_page/model/get_vip_plan.dart';
-import 'package:figgy/pages/vip_page/model/vip_plan_privilege_model.dart';
-import 'package:figgy/pages/vip_page/widget/carousel_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/login_page/api/fetch_login_user_profile_api.dart';
+import 'package:LoveBirds/pages/splash_screen_page/api/get_setting_api.dart';
+import 'package:LoveBirds/pages/vip_page/api/get_vip_plan.dart';
+import 'package:LoveBirds/pages/vip_page/api/vip_plan_privilege_api.dart';
+import 'package:LoveBirds/pages/vip_page/model/get_vip_plan.dart';
+import 'package:LoveBirds/pages/vip_page/model/vip_plan_privilege_model.dart';
+import 'package:LoveBirds/pages/vip_page/widget/carousel_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
 import 'package:get/get.dart';
 
 class VipController extends GetxController {
   int currentIndex = 0;
   int carouselIndex = 0;
   bool isLoading = false;
-  CarouselSliderController carouselController = CarouselSliderController(); // public now
+  CarouselSliderController carouselController =
+      CarouselSliderController(); // public now
 
   VipPlanPrivilegeModel? vipPlanPrivilegeModel;
   List<VipCarouselWidget> vipPrivilegeList = [];
@@ -53,7 +54,11 @@ class VipController extends GetxController {
   void onCarouselTap({required int id}) {
     carouselIndex = id;
 
-    update([AppConstant.idOnCarouselTap1, AppConstant.idVipChangeTab, AppConstant.idChangePage]);
+    update([
+      AppConstant.idOnCarouselTap1,
+      AppConstant.idVipChangeTab,
+      AppConstant.idChangePage
+    ]);
   }
 
   void changeTab({required int index}) {
@@ -68,7 +73,11 @@ class VipController extends GetxController {
     log("vipPlanId: $vipPlanId");
 
     buildVipPrivilegeList();
-    update([AppConstant.idOnCarouselTap1, AppConstant.idVipChangeTab, AppConstant.idChangePage]);
+    update([
+      AppConstant.idOnCarouselTap1,
+      AppConstant.idVipChangeTab,
+      AppConstant.idChangePage
+    ]);
   }
 
   Future<void> getVipPrivilege() async {
@@ -84,7 +93,11 @@ class VipController extends GetxController {
 
     buildVipPrivilegeList();
     frameLoading = false;
-    update([AppConstant.idOnCarouselTap1, AppConstant.idVipChangeTab, AppConstant.idChangePage]);
+    update([
+      AppConstant.idOnCarouselTap1,
+      AppConstant.idVipChangeTab,
+      AppConstant.idChangePage
+    ]);
   }
 
   Future<void> getVipPlan() async {
@@ -93,7 +106,8 @@ class VipController extends GetxController {
     final uid = FirebaseUid.onGet();
     final token = await FirebaseAccessToken.onGet();
 
-    getVipPlanModel = await GetVipPlanApi.callApi(token: token ?? "", uid: uid ?? "");
+    getVipPlanModel =
+        await GetVipPlanApi.callApi(token: token ?? "", uid: uid ?? "");
     vipPlanList = getVipPlanModel?.data ?? [];
 
     if (vipPlanList.isNotEmpty) {
@@ -149,28 +163,32 @@ class VipController extends GetxController {
         VipCarouselWidget(
           title: EnumLocale.txtGemsGift.name.tr,
           textSpan1: EnumLocale.txtGet.name.tr,
-          textSpan2: ' ${coin.toString().split('.')[0]} ${EnumLocale.txtGems.name.tr} ',
+          textSpan2:
+              ' ${coin.toString().split('.')[0]} ${EnumLocale.txtGems.name.tr} ',
           textSpan3: EnumLocale.txtImmediately.name.tr,
           image: AppAsset.icGameGift,
         ),
         VipCarouselWidget(
           title: EnumLocale.txtAudioCallDiscount.name.tr,
           textSpan1: EnumLocale.txtEnjoy.name.tr,
-          textSpan2: ' ${data.audioCallDiscount}${EnumLocale.txtDiscount.name.tr} ',
+          textSpan2:
+              ' ${data.audioCallDiscount}${EnumLocale.txtDiscount.name.tr} ',
           textSpan3: EnumLocale.txtOnAudioCalls.name.tr,
           image: AppAsset.icAudioCallDiscount,
         ),
         VipCarouselWidget(
           title: EnumLocale.txtVideoCallDiscount.name.tr,
           textSpan1: EnumLocale.txtEnjoy.name.tr,
-          textSpan2: ' ${data.videoCallDiscount}${EnumLocale.txtDiscount.name.tr} ',
+          textSpan2:
+              ' ${data.videoCallDiscount}${EnumLocale.txtDiscount.name.tr} ',
           textSpan3: EnumLocale.txtOnVideoCalls.name.tr,
           image: AppAsset.icVideoCallDiscount,
         ),
         VipCarouselWidget(
           title: EnumLocale.txtRandomMatchCallDiscount.name.tr,
           textSpan1: EnumLocale.txtEnjoy.name.tr,
-          textSpan2: ' ${data.randomMatchCallDiscount}${EnumLocale.txtDiscount.name.tr} ',
+          textSpan2:
+              ' ${data.randomMatchCallDiscount}${EnumLocale.txtDiscount.name.tr} ',
           textSpan3: EnumLocale.txtOnRandomMatchCalls.name.tr,
           image: AppAsset.icRandomMatchCall,
         ),

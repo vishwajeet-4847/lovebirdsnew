@@ -1,7 +1,7 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
 
@@ -33,7 +33,8 @@ class CommonInfoTile extends StatelessWidget {
         decoration: BoxDecoration(
             color: const Color(0xff9B8B8B).withValues(alpha: 0.06),
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: AppColors.whiteColor.withValues(alpha: 0.16))),
+            border: Border.all(
+                color: AppColors.whiteColor.withValues(alpha: 0.16))),
         child: Row(
           children: [
             Container(

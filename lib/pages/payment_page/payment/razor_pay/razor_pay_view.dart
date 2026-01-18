@@ -1,6 +1,6 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
@@ -31,7 +31,10 @@ class RazorPayService {
       'theme.color': AppColors.primaryColor.value.toRadixString(16),
       'description': "Figgy",
       'currency': Utils.currencyCode,
-      'prefill': {'contact': "", 'email': Database.fetchLoginUserProfileModel?.user?.email ?? ""},
+      'prefill': {
+        'contact': "",
+        'email': Database.fetchLoginUserProfileModel?.user?.email ?? ""
+      },
       'external': {
         'wallets': ['paytm']
       }
@@ -43,13 +46,15 @@ class RazorPayService {
     }
   }
 
-  void handlePaymentSuccess(PaymentSuccessResponse response) async => onComplete.call();
+  void handlePaymentSuccess(PaymentSuccessResponse response) async =>
+      onComplete.call();
 
   void handlePaymentError(PaymentFailureResponse response) {
     Utils.showLog("RazorPay Payment Failed !! => ${response.message}");
   }
 
   void handleExternalWallet(ExternalWalletResponse response) {
-    Utils.showLog("RazorPay Payment External Wallet !! => ${response.walletName}");
+    Utils.showLog(
+        "RazorPay Payment External Wallet !! => ${response.walletName}");
   }
 }

@@ -1,10 +1,10 @@
-import 'package:figgy/common/step_progress_indicator.dart';
-import 'package:figgy/pages/host_request_page/controller/host_request_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/step_progress_indicator.dart';
+import 'package:LoveBirds/pages/host_request_page/controller/host_request_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,7 +35,8 @@ class HostRequestView extends StatelessWidget {
                 children: [
                   Container(
                     height: MediaQuery.of(context).viewPadding.top + 72,
-                    padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).viewPadding.top),
                     alignment: Alignment.center,
                     width: Get.width,
                     decoration: BoxDecoration(
@@ -71,7 +72,8 @@ class HostRequestView extends StatelessWidget {
                         ),
                         Text(
                           EnumLocale.txtHostRequest.name.tr,
-                          style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 20),
                         ),
                         45.width,
                       ],
@@ -79,7 +81,8 @@ class HostRequestView extends StatelessWidget {
                   ),
                   Expanded(
                     child: SingleChildScrollView(
-                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 15),
                       child: GetBuilder<HostRequestController>(
                         init: HostRequestController(),
                         builder: (logic) {
@@ -88,10 +91,12 @@ class HostRequestView extends StatelessWidget {
                             children: [
                               Text(
                                 EnumLocale.txtRequestProgress.name.tr,
-                                style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                                style: AppFontStyle.styleW700(
+                                    AppColors.whiteColor, 18),
                               ),
                               18.height,
-                              StepProgressIndicator(currentStep: logic.currentStep),
+                              StepProgressIndicator(
+                                  currentStep: logic.currentStep),
                               Container(
                                 constraints: BoxConstraints(
                                   minHeight: Get.height * 0.6,
@@ -113,8 +118,11 @@ class HostRequestView extends StatelessWidget {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      logic.currentStep == 3 ? EnumLocale.txtSendRequest.name.tr : EnumLocale.txtNext.name.tr,
-                                      style: AppFontStyle.styleW600(AppColors.whiteColor, 17),
+                                      logic.currentStep == 3
+                                          ? EnumLocale.txtSendRequest.name.tr
+                                          : EnumLocale.txtNext.name.tr,
+                                      style: AppFontStyle.styleW600(
+                                          AppColors.whiteColor, 17),
                                     ),
                                   ),
                                 ),

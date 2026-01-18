@@ -1,10 +1,10 @@
-import 'package:figgy/pages/withdraw_page/controller/withdraw_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/withdraw_page/controller/withdraw_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -65,7 +65,8 @@ class EnterCoinFieldUi extends StatelessWidget {
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: EnumLocale.txtEnterWithdrawCoin.name.tr,
-                          hintStyle: AppFontStyle.styleW400(AppColors.colorGry, 14),
+                          hintStyle:
+                              AppFontStyle.styleW400(AppColors.colorGry, 14),
                         ),
                         onChanged: (value) {
                           logic.calculateText(value);
@@ -105,7 +106,8 @@ class EnterCoinFieldUi extends StatelessWidget {
 }
 
 class EnterGooglePayNumberFieldUi extends GetView<WithdrawController> {
-  const EnterGooglePayNumberFieldUi({super.key, required this.title, required this.controller1});
+  const EnterGooglePayNumberFieldUi(
+      {super.key, required this.title, required this.controller1});
 
   final String title;
   final TextEditingController controller1;

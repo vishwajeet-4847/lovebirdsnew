@@ -1,4 +1,4 @@
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 

@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/edit_profile_page/model/edit_profile_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/edit_profile_page/model/edit_profile_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class EditProfileApi {
@@ -26,7 +26,12 @@ class EditProfileApi {
       );
       Utils.showLog("Edit Profile Api URL => ${request.url}");
 
-      var headers = {'key': Api.secretKey, 'authorization': 'Bearer $token', 'x-user-uid': uid, 'Content-Type': 'application/json'};
+      var headers = {
+        'key': Api.secretKey,
+        'authorization': 'Bearer $token',
+        'x-user-uid': uid,
+        'Content-Type': 'application/json'
+      };
       Utils.showLog("Edit Profile Api Headers => $headers");
 
       request.fields.addAll({

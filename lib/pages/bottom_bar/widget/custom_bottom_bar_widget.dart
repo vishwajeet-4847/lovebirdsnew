@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:figgy/pages/bottom_bar/controller/bottom_bar_controller.dart';
-import 'package:figgy/utils/asset.dart';
+import 'package:LoveBirds/pages/bottom_bar/controller/bottom_bar_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

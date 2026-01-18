@@ -1,18 +1,18 @@
 import 'dart:developer';
 
-import 'package:figgy/custom/country_picker.dart';
-import 'package:figgy/custom/dialog/block_dialog.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/chat_page/model/host_block_user_model.dart';
-import 'package:figgy/pages/host_live_streamers_page/api/host_get_country_wise_host_api.dart';
-import 'package:figgy/pages/host_live_streamers_page/model/get_host_country_wise_host_model.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/country_picker.dart';
+import 'package:LoveBirds/custom/dialog/block_dialog.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/chat_page/model/host_block_user_model.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/api/host_get_country_wise_host_api.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/model/get_host_country_wise_host_model.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,7 +39,10 @@ class HostLiveStreamersController extends GetxController {
     AppAsset.german,
     AppAsset.russian,
   ];
-  List<dynamic> tabName = [EnumLocale.txtHost.name.tr, EnumLocale.txtFollowers.name.tr];
+  List<dynamic> tabName = [
+    EnumLocale.txtHost.name.tr,
+    EnumLocale.txtFollowers.name.tr
+  ];
   int selectedTabIndex = 0;
 
   final PageController pageController = PageController();
@@ -98,13 +101,15 @@ class HostLiveStreamersController extends GetxController {
         limit: 10,
       );
 
-      Utils.showLog('Load more hosts result: ${result?.toJson().toString() ?? "null"}');
+      Utils.showLog(
+          'Load more hosts result: ${result?.toJson().toString() ?? "null"}');
 
       if (result != null && result.status == true && result.hosts != null) {
         // Only update the list if we got new data
         if (result.hosts!.isNotEmpty) {
           hostList.addAll(result.hosts!);
-          hasMoreData = result.hosts!.length >= 10; // Check if we got a full page
+          hasMoreData =
+              result.hosts!.length >= 10; // Check if we got a full page
           // Update the current page for the next load
           GetHostCountryWiseHostApi.currentPage++;
           update([AppConstant.idHostStreamPage3]);
@@ -141,7 +146,10 @@ class HostLiveStreamersController extends GetxController {
 
   void _setupScrollController() {
     scrollController.addListener(() {
-      if (scrollController.position.pixels >= scrollController.position.maxScrollExtent - 200 && !isLoadingMore && hasMoreData) {
+      if (scrollController.position.pixels >=
+              scrollController.position.maxScrollExtent - 200 &&
+          !isLoadingMore &&
+          hasMoreData) {
         loadMoreHosts();
       }
     });
@@ -193,7 +201,8 @@ class HostLiveStreamersController extends GetxController {
     await getCountryWishHost(country: selectedCountry);
   }
 
-  Future<void> getCountryWishHost({required String country, bool loadMore = false}) async {
+  Future<void> getCountryWishHost(
+      {required String country, bool loadMore = false}) async {
     // Prevent multiple simultaneous API calls
     if ((isLoading && !loadMore) || (isLoadingMore && loadMore)) {
       Utils.showLog('Skipping duplicate API call');
@@ -215,7 +224,8 @@ class HostLiveStreamersController extends GetxController {
       }
       isLoadingMore = true;
       update([AppConstant.idHostStreamPage3]);
-      Utils.showLog('Loading more data, page: ${GetHostCountryWiseHostApi.currentPage + 1}');
+      Utils.showLog(
+          'Loading more data, page: ${GetHostCountryWiseHostApi.currentPage + 1}');
     }
 
     try {
@@ -236,7 +246,8 @@ class HostLiveStreamersController extends GetxController {
         limit: 10,
       );
 
-      Utils.showLog('Get country wise hosts result: ${result?.toJson().toString() ?? "null"}');
+      Utils.showLog(
+          'Get country wise hosts result: ${result?.toJson().toString() ?? "null"}');
 
       if (result != null) {
         if (result.status == true) {
@@ -253,7 +264,8 @@ class HostLiveStreamersController extends GetxController {
             hostList = result.hosts ?? [];
             // Reset to first page for new searches
             GetHostCountryWiseHostApi.currentPage = 1;
-            Utils.showLog('Initial load complete. Loaded ${hostList.length} hosts');
+            Utils.showLog(
+                'Initial load complete. Loaded ${hostList.length} hosts');
           }
 
           // Check if we got a full page of results

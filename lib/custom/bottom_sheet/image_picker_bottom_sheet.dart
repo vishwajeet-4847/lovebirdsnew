@@ -1,8 +1,8 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
@@ -33,7 +33,8 @@ class ImagePickerBottomSheetUi {
             children: [
               Container(
                 height: MediaQuery.of(context).viewPadding.top + 60,
-                padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).viewPadding.top),
                 alignment: Alignment.center,
                 width: Get.width,
                 decoration: BoxDecoration(
@@ -86,7 +87,8 @@ class ImagePickerBottomSheetUi {
                           padding: const EdgeInsets.all(15),
                           decoration: BoxDecoration(
                             gradient: AppColors.audioCallButtonGradient,
-                            borderRadius: const BorderRadius.all(Radius.circular(20)),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
                             border: Border.all(color: AppColors.whiteColor),
                             color: AppColors.redColor,
                           ),
@@ -116,7 +118,8 @@ class ImagePickerBottomSheetUi {
                           padding: const EdgeInsets.all(15),
                           decoration: BoxDecoration(
                             gradient: AppColors.videoCallButtonGradient,
-                            borderRadius: const BorderRadius.all(Radius.circular(20)),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
                             border: Border.all(color: AppColors.whiteColor),
                             color: AppColors.redColor,
                           ),

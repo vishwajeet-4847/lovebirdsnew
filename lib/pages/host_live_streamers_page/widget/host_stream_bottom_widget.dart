@@ -1,13 +1,14 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/shimmer/host_stream_bottom_shimmer.dart' as host_shimmer;
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/shimmer/host_stream_bottom_shimmer.dart'
+    as host_shimmer;
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -30,10 +31,13 @@ class HostStreamBottomWidget extends StatelessWidget {
 
               return RefreshIndicator(
                 onRefresh: () async {
-                  await logic.getCountryWishHost(country: logic.selectedCountry);
+                  await logic.getCountryWishHost(
+                      country: logic.selectedCountry);
                   logic.update([AppConstant.idHostStreamPage3]);
                 },
-                child: logic.hostList.isEmpty ? _buildEmptyState(box) : _buildHostGrid(logic, box),
+                child: logic.hostList.isEmpty
+                    ? _buildEmptyState(box)
+                    : _buildHostGrid(logic, box),
               );
             },
           ),
@@ -67,7 +71,8 @@ class HostStreamBottomWidget extends StatelessWidget {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (logic.scrollController.hasClients) {
         logic.scrollController.addListener(() {
-          if (logic.scrollController.position.pixels == logic.scrollController.position.maxScrollExtent &&
+          if (logic.scrollController.position.pixels ==
+                  logic.scrollController.position.maxScrollExtent &&
               !logic.isLoadingMore &&
               logic.hasMoreData) {
             logic.loadMoreHosts();
@@ -206,7 +211,9 @@ class HostStreamBottomWidget extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 2),
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColors.whiteColor, width: 0.4),
-                  color: hostList?.status == "Online" ? AppColors.greenColor : AppColors.redColor,
+                  color: hostList?.status == "Online"
+                      ? AppColors.greenColor
+                      : AppColors.redColor,
                   shape: BoxShape.circle,
                 ),
               ),
@@ -214,7 +221,9 @@ class HostStreamBottomWidget extends StatelessWidget {
             Text(
               _getStatusText(hostList?.status),
               style: AppFontStyle.styleW400(
-                hostList?.status == "Live" ? AppColors.greenColor : AppColors.whiteColor,
+                hostList?.status == "Live"
+                    ? AppColors.greenColor
+                    : AppColors.whiteColor,
                 10,
               ),
             ),

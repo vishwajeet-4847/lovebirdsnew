@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:figgy/pages/host_edit_profile_page/model/host_edit_profile_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_edit_profile_page/model/host_edit_profile_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class HostEditProfileApi {
@@ -34,7 +34,12 @@ class HostEditProfileApi {
   }) async {
     Utils.showLog("Host Edit Profile Api Calling...");
     try {
-      var headers = {'key': Api.secretKey, Api.tokenKey: "Bearer $token", Api.uidKey: uid, 'Content-Type': 'application/json'};
+      var headers = {
+        'key': Api.secretKey,
+        Api.tokenKey: "Bearer $token",
+        Api.uidKey: uid,
+        'Content-Type': 'application/json'
+      };
       Utils.showLog("Edit Profile Api Headers => $headers");
 
       var request = http.MultipartRequest(
@@ -62,11 +67,13 @@ class HostEditProfileApi {
       });
 
       if (removeProfileVideoIndex.isNotEmpty) {
-        request.fields['removeProfileVideoIndex'] = jsonEncode(removeProfileVideoIndex);
+        request.fields['removeProfileVideoIndex'] =
+            jsonEncode(removeProfileVideoIndex);
       }
 
       if (removePhotoGalleryIndex.isNotEmpty) {
-        request.fields['removePhotoGalleryIndex'] = jsonEncode(removePhotoGalleryIndex);
+        request.fields['removePhotoGalleryIndex'] =
+            jsonEncode(removePhotoGalleryIndex);
       }
 
       if (image != null && image.isNotEmpty && await File(image).exists()) {
@@ -76,7 +83,8 @@ class HostEditProfileApi {
       if (photoGallery.isNotEmpty) {
         for (final path in photoGallery) {
           if (path != null && path.isNotEmpty && await File(path).exists()) {
-            request.files.add(await http.MultipartFile.fromPath('photoGallery', path));
+            request.files
+                .add(await http.MultipartFile.fromPath('photoGallery', path));
           }
         }
       }
@@ -84,7 +92,8 @@ class HostEditProfileApi {
       if (newProfileVideoPaths.isNotEmpty) {
         for (final path in newProfileVideoPaths) {
           if (await File(path).exists()) {
-            request.files.add(await http.MultipartFile.fromPath('profileVideo', path));
+            request.files
+                .add(await http.MultipartFile.fromPath('profileVideo', path));
           }
         }
       }

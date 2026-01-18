@@ -1,10 +1,10 @@
-// import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-// import 'package:figgy/pages/profile_page/widget/setting_option_widget.dart';
-// import 'package:figgy/routes/app_routes.dart';
-// import 'package:figgy/utils/asset.dart';
-// import 'package:figgy/utils/colors_utils.dart';
-// import 'package:figgy/utils/database.dart';
-// import 'package:figgy/utils/enum.dart';
+// import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+// import 'package:LoveBirds/pages/profile_page/widget/setting_option_widget.dart';
+// import 'package:LoveBirds/routes/app_routes.dart';
+// import 'package:LoveBirds/utils/asset.dart';
+// import 'package:LoveBirds/utils/colors_utils.dart';
+// import 'package:LoveBirds/utils/database.dart';
+// import 'package:LoveBirds/utils/enum.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 //
@@ -71,15 +71,15 @@
 //     );
 //   }
 // }
-import 'package:figgy/custom/dialog/daily_check_in_dialog.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/dialog/daily_check_in_dialog.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -97,7 +97,8 @@ class BottomProfileWidget extends StatelessWidget {
           builder: (controller) {
             return CommonInfoTile(
               onTap: () {
-                Get.toNamed(AppRoutes.topUpPage)?.then((val) => controller.update());
+                Get.toNamed(AppRoutes.topUpPage)
+                    ?.then((val) => controller.update());
               },
               text: EnumLocale.txtMyWallet.name.tr,
               imageAsset: AppAsset.hostWithDrawIcon,
@@ -112,7 +113,8 @@ class BottomProfileWidget extends StatelessWidget {
               barrierColor: AppColors.blackColor.withValues(alpha: 0.8),
               Dialog(
                 alignment: Alignment.center,
-                insetPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                insetPadding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 backgroundColor: AppColors.transparent,
                 shadowColor: Colors.transparent,
                 surfaceTintColor: Colors.transparent,

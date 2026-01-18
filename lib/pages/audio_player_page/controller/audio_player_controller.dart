@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:proximity_screen_lock/proximity_screen_lock.dart';
@@ -64,7 +64,8 @@ class AudioPlayerController extends GetxController {
     isProximitySupported = await ProximityScreenLock.isProximityLockSupported();
     if (isProximitySupported) {
       await ProximityScreenLock.setActive(true);
-      subsProximity = ProximityScreenLock.proximityStates.listen((objectDetected) {
+      subsProximity =
+          ProximityScreenLock.proximityStates.listen((objectDetected) {
         isObjectNear = objectDetected;
         Utils.showLog("Proximity object detected: $isObjectNear");
       });
@@ -83,7 +84,8 @@ class AudioPlayerController extends GetxController {
       ];
 
       final random = Random();
-      final fullAssetPath = assetAudioList[random.nextInt(assetAudioList.length)];
+      final fullAssetPath =
+          assetAudioList[random.nextInt(assetAudioList.length)];
       final assetPath = fullAssetPath.replaceFirst('assets/', '');
 
       Utils.showLog("Attempting to play: $assetPath");
@@ -140,7 +142,8 @@ class AudioPlayerController extends GetxController {
       final duration = DateTime.now().difference(startTime ?? DateTime.now());
       final minutes = duration.inMinutes.remainder(60);
       final seconds = duration.inSeconds.remainder(60);
-      formattedTime = '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+      formattedTime =
+          '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
 
       update([AppConstant.idOnAudioCall]);
     });
@@ -156,7 +159,8 @@ class AudioPlayerController extends GetxController {
     duration = endTime?.difference(startTime!);
     minutes = duration?.inMinutes.remainder(60);
     seconds = duration?.inSeconds.remainder(60);
-    finalDuration = '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+    finalDuration =
+        '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
 
     Utils.showLog('Call Duration :: $duration');
     Utils.showLog('Final Duration :: $finalDuration');

@@ -2,21 +2,21 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:figgy/custom/app_title/custom_title.dart';
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/custom/cupertino_date_picker/date_picker.dart';
-import 'package:figgy/custom/gender.dart';
-import 'package:figgy/custom/gradiant_border_container.dart';
-import 'package:figgy/custom/text_field/custom_text_field.dart';
-import 'package:figgy/pages/host_request_page/controller/host_request_controller.dart';
-import 'package:figgy/pages/host_request_page/widget/host_request_language.dart';
-import 'package:figgy/pages/host_request_page/widget/video_player_screen.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_title/custom_title.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/date_picker.dart';
+import 'package:LoveBirds/custom/gender.dart';
+import 'package:LoveBirds/custom/gradiant_border_container.dart';
+import 'package:LoveBirds/custom/text_field/custom_text_field.dart';
+import 'package:LoveBirds/pages/host_request_page/controller/host_request_controller.dart';
+import 'package:LoveBirds/pages/host_request_page/widget/host_request_language.dart';
+import 'package:LoveBirds/pages/host_request_page/widget/video_player_screen.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
@@ -74,7 +74,10 @@ class UploadImageWidget extends StatelessWidget {
                 childrenDelegate: SliverChildBuilderDelegate(
                   (context, index) {
                     if (logic.images[index] != null) {
-                      return imageTile(imageUrl: logic.images[index] ?? "", index: index, context: context);
+                      return imageTile(
+                          imageUrl: logic.images[index] ?? "",
+                          index: index,
+                          context: context);
                     } else {
                       return buildAddButton(index: index, context: context);
                     }
@@ -128,7 +131,8 @@ Widget imageTile({
                               bottomLeft: Radius.circular(10),
                             )
                           : index == 1
-                              ? const BorderRadius.only(topRight: Radius.circular(10))
+                              ? const BorderRadius.only(
+                                  topRight: Radius.circular(10))
                               : index == 2
                                   ? const BorderRadius.only(
                                       bottomRight: Radius.circular(10),
@@ -226,7 +230,8 @@ Widget buildAddButton({required int index, required BuildContext context}) {
                     : index == 1
                         ? const BorderRadius.only(topRight: Radius.circular(10))
                         : index == 2
-                            ? const BorderRadius.only(bottomRight: Radius.circular(10))
+                            ? const BorderRadius.only(
+                                bottomRight: Radius.circular(10))
                             : null,
               ),
               child: Center(
@@ -245,7 +250,8 @@ Widget buildAddButton({required int index, required BuildContext context}) {
                       height: 30,
                       width: 86,
                       alignment: Alignment.center,
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 6, vertical: 3),
                       decoration: BoxDecoration(
                         color: AppColors.whiteColor.withValues(alpha: 0.22),
                         borderRadius: const BorderRadius.only(
@@ -253,7 +259,9 @@ Widget buildAddButton({required int index, required BuildContext context}) {
                           bottomRight: Radius.circular(10),
                         ),
                       ),
-                      child: Text(EnumLocale.txtProfileImage.name.tr, style: AppFontStyle.styleW500(AppColors.whiteColor, 11)),
+                      child: Text(EnumLocale.txtProfileImage.name.tr,
+                          style:
+                              AppFontStyle.styleW500(AppColors.whiteColor, 11)),
                     )
                   : Container(),
             ),
@@ -441,16 +449,22 @@ class SelectImpressionView extends StatelessWidget {
               runSpacing: 10,
               children: logic.impressionList.map(
                 (category) {
-                  bool isSelected = logic.selectedImpressionList.contains(category);
+                  bool isSelected =
+                      logic.selectedImpressionList.contains(category);
                   return GestureDetector(
                     onTap: () => logic.toggleSelectionCategories(category),
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 9),
                       decoration: BoxDecoration(
-                        color: isSelected ? AppColors.selectImpressionColor : AppColors.unselectImpressionColor,
+                        color: isSelected
+                            ? AppColors.selectImpressionColor
+                            : AppColors.unselectImpressionColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text(category, style: AppFontStyle.styleW600(AppColors.whiteColor, 15)),
+                      child: Text(category,
+                          style:
+                              AppFontStyle.styleW600(AppColors.whiteColor, 15)),
                     ),
                   );
                 },
@@ -476,7 +490,8 @@ class SelectLanguageView extends StatelessWidget {
             30.height,
             CustomTitle1(title: EnumLocale.txtSelectMultipleLanguage.name.tr),
             GestureDetector(
-              onTap: () => HostRequestLanguagePicker.pickLanguageForHostRequest(context),
+              onTap: () =>
+                  HostRequestLanguagePicker.pickLanguageForHostRequest(context),
               child: Container(
                 height: 50,
                 width: Get.width,
@@ -506,7 +521,8 @@ class SelectLanguageView extends StatelessWidget {
                 ? const SizedBox()
                 : Text(
                     EnumLocale.txtMyLanguage.name.tr,
-                    style: AppFontStyle.styleW600(AppColors.myLanguageColor, 16),
+                    style:
+                        AppFontStyle.styleW600(AppColors.myLanguageColor, 16),
                   ).paddingOnly(top: 20),
             15.height,
             Wrap(
@@ -515,7 +531,8 @@ class SelectLanguageView extends StatelessWidget {
               children: logic.selectedLanguages.map(
                 (category) {
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
                     decoration: BoxDecoration(
                       color: AppColors.unselectImpressionColor,
                       borderRadius: BorderRadius.circular(10),
@@ -523,7 +540,9 @@ class SelectLanguageView extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(category, style: AppFontStyle.styleW600(AppColors.whiteColor, 15)),
+                        Text(category,
+                            style: AppFontStyle.styleW600(
+                                AppColors.whiteColor, 15)),
                         const SizedBox(width: 8),
                         GestureDetector(
                           onTap: () => logic.toggleSelectionLanguage(category),
@@ -558,7 +577,8 @@ class HostRequestAgencyCodeView extends StatelessWidget {
           children: [
             20.height,
             CustomTitle1(
-              title: "${EnumLocale.txtAgencyCode.name.tr} (${EnumLocale.txtOptional.name.tr})",
+              title:
+                  "${EnumLocale.txtAgencyCode.name.tr} (${EnumLocale.txtOptional.name.tr})",
             ),
             CustomTextField(
               maxLines: 1,
@@ -615,7 +635,9 @@ class SelectDocumentsView extends StatelessWidget {
                 DropdownButtonHideUnderline(
                   child: DropdownButton2<String>(
                     isExpanded: true,
-                    value: controller.selectedDocumentType?.isEmpty ?? true ? null : controller.selectedDocumentType,
+                    value: controller.selectedDocumentType?.isEmpty ?? true
+                        ? null
+                        : controller.selectedDocumentType,
                     hint: Text(
                       EnumLocale.txtSelectDocument.name.tr,
                       style: AppFontStyle.styleW500(AppColors.whiteColor, 14),
@@ -625,14 +647,18 @@ class SelectDocumentsView extends StatelessWidget {
                         value: item.title,
                         child: Text(
                           item.title ?? "",
-                          style: AppFontStyle.styleW500(AppColors.whiteColor, 14),
+                          style:
+                              AppFontStyle.styleW500(AppColors.whiteColor, 14),
                         ),
                       );
                     }).toList(),
                     onChanged: (value) {
                       log("selectedProofTitle (Dropdown2): $value");
                       controller.selectedDocumentType = value ?? "";
-                      controller.update([AppConstant.idIdentityProof, AppConstant.idDocumentType]);
+                      controller.update([
+                        AppConstant.idIdentityProof,
+                        AppConstant.idDocumentType
+                      ]);
                     },
                     buttonStyleData: ButtonStyleData(
                       padding: const EdgeInsets.only(right: 15),
@@ -642,7 +668,8 @@ class SelectDocumentsView extends StatelessWidget {
                       ),
                     ),
                     iconStyleData: IconStyleData(
-                      icon: Icon(Icons.keyboard_arrow_down, color: AppColors.whiteColor),
+                      icon: Icon(Icons.keyboard_arrow_down,
+                          color: AppColors.whiteColor),
                     ),
                     dropdownStyleData: DropdownStyleData(
                       decoration: BoxDecoration(
@@ -666,7 +693,8 @@ class SelectDocumentsView extends StatelessWidget {
                   childTxt: EnumLocale.txtAttach.name.tr,
                   imagePath: controller.fontImage,
                   placeholderAsset: AppAsset.icIdImage,
-                  title: "${EnumLocale.txtUploadIdPhotos.name.tr} ${EnumLocale.txtFront.name.tr}",
+                  title:
+                      "${EnumLocale.txtUploadIdPhotos.name.tr} ${EnumLocale.txtFront.name.tr}",
                   onPick: () => controller.onPickProfileImage(context),
                   onCancel: controller.onCancelProfileImage,
                 ),
@@ -680,7 +708,8 @@ class SelectDocumentsView extends StatelessWidget {
                   childTxt: EnumLocale.txtAttach.name.tr,
                   imagePath: controller.backImage,
                   placeholderAsset: AppAsset.icIdImage,
-                  title: "${EnumLocale.txtUploadIdPhotos.name.tr} ${EnumLocale.txtBack.name.tr}",
+                  title:
+                      "${EnumLocale.txtUploadIdPhotos.name.tr} ${EnumLocale.txtBack.name.tr}",
                   onPick: () => controller.onPickDocumentImage(context),
                   onCancel: controller.onCancelDocumentImage,
                 ),
@@ -720,7 +749,8 @@ class ImageUploadContainer extends StatelessWidget {
           ? Container(
               clipBehavior: Clip.antiAlias,
               margin: const EdgeInsets.all(1.5),
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(18)),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(18)),
               child: Stack(
                 children: [
                   Image.file(
@@ -745,7 +775,8 @@ class ImageUploadContainer extends StatelessWidget {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: AppColors.blackColor,
-                            border: Border.all(color: AppColors.colorGry, width: 2),
+                            border:
+                                Border.all(color: AppColors.colorGry, width: 2),
                           ),
                           child: Center(
                             child: Image.asset(
@@ -766,7 +797,8 @@ class ImageUploadContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset(placeholderAsset, width: 72),
-                  Text(title, style: AppFontStyle.styleW500(AppColors.colorGry2, 14)),
+                  Text(title,
+                      style: AppFontStyle.styleW500(AppColors.colorGry2, 14)),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 22),
                     child: GestureDetector(
@@ -778,7 +810,9 @@ class ImageUploadContainer extends StatelessWidget {
                           color: AppColors.purpleLight,
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        child: Text(childTxt, style: AppFontStyle.styleW700(AppColors.whiteColor, 16)),
+                        child: Text(childTxt,
+                            style: AppFontStyle.styleW700(
+                                AppColors.whiteColor, 16)),
                       ),
                     ),
                   ),
@@ -827,7 +861,8 @@ class SelectProfileVideoView extends StatelessWidget {
                                     onTap: () {
                                       Get.to(
                                         ChewiePlayerScreen(
-                                          file: File(controller.mediaFileList[index].path),
+                                          file: File(controller
+                                              .mediaFileList[index].path),
                                         ),
                                       );
                                     },
@@ -837,9 +872,12 @@ class SelectProfileVideoView extends StatelessWidget {
                                       margin: const EdgeInsets.only(left: 8),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(16),
-                                        image: controller.videoThumbnails[index] != null
+                                        image: controller
+                                                    .videoThumbnails[index] !=
+                                                null
                                             ? DecorationImage(
-                                                image: MemoryImage(controller.videoThumbnails[index]!),
+                                                image: MemoryImage(controller
+                                                    .videoThumbnails[index]!),
                                                 fit: BoxFit.cover,
                                               )
                                             : null,
@@ -852,9 +890,12 @@ class SelectProfileVideoView extends StatelessWidget {
                                     top: 3,
                                     child: InkWell(
                                       onTap: () {
-                                        controller.mediaFileList.removeAt(index);
-                                        controller.videoThumbnails.removeAt(index);
-                                        controller.update([AppConstant.idChangeProfileImage]);
+                                        controller.mediaFileList
+                                            .removeAt(index);
+                                        controller.videoThumbnails
+                                            .removeAt(index);
+                                        controller.update(
+                                            [AppConstant.idChangeProfileImage]);
                                       },
                                       child: Image.asset(
                                         AppAsset.icDelete,
@@ -870,7 +911,8 @@ class SelectProfileVideoView extends StatelessWidget {
                                         onTap: () {
                                           Get.to(
                                             ChewiePlayerScreen(
-                                              file: File(controller.mediaFileList[index].path),
+                                              file: File(controller
+                                                  .mediaFileList[index].path),
                                             ),
                                           );
                                         },
@@ -934,7 +976,8 @@ class VideoUploadContainer extends StatelessWidget {
                     color: AppColors.purpleLight,
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Text(childTxt, style: AppFontStyle.styleW700(AppColors.whiteColor, 16)),
+                  child: Text(childTxt,
+                      style: AppFontStyle.styleW700(AppColors.whiteColor, 16)),
                 ),
               ),
             ),

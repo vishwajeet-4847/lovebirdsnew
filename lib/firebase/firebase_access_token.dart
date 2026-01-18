@@ -1,4 +1,4 @@
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseAccessToken {
@@ -11,7 +11,9 @@ class FirebaseAccessToken {
         return expiryTime.isBefore(DateTime.now());
       });
       Utils.showLog("Firebase Token Is Expire => $isExpired");
-      final token = isExpired == true ? await user?.getIdToken() : await user?.getIdToken(true);
+      final token = isExpired == true
+          ? await user?.getIdToken()
+          : await user?.getIdToken(true);
       Utils.showLog("Firebase Token => $token");
       return token;
     } catch (e) {

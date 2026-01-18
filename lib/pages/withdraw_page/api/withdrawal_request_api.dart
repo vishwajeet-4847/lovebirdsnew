@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/withdraw_page/model/create_withdraw_request_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/pages/withdraw_page/model/create_withdraw_request_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../utils/utils.dart';
@@ -20,7 +20,8 @@ class WithdrawalRequestApi {
   }) async {
     Utils.showLog("Withdrawal Request Api Calling...");
     try {
-      final uri = Uri.parse("${Api.createWithdrawalRequest}?hostId=${Database.hostId}");
+      final uri =
+          Uri.parse("${Api.createWithdrawalRequest}?hostId=${Database.hostId}");
       final headers = {
         Api.key: Api.secretKey,
         Api.tokenKey: "Bearer $token",
@@ -44,7 +45,8 @@ class WithdrawalRequestApi {
 
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
-        createWithdrawRequestModel = CreateWithdrawRequestModel.fromJson(jsonResponse);
+        createWithdrawRequestModel =
+            CreateWithdrawRequestModel.fromJson(jsonResponse);
       } else {
         Utils.showLog("Withdrawal Request Api Response Error");
         return null;

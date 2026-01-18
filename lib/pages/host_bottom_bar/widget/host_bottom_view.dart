@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:figgy/pages/host_bottom_bar/controller/host_bottom_controller.dart';
-import 'package:figgy/pages/host_bottom_bar/widget/host_custom_bottom.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/pages/host_bottom_bar/controller/host_bottom_controller.dart';
+import 'package:LoveBirds/pages/host_bottom_bar/widget/host_custom_bottom.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,9 +34,18 @@ class HostBottomViewUi extends StatelessWidget {
           ),
           child: Row(
             children: [
-              hostCustomBottomBar(index: 0, selectIcon: AppAsset.icNaviExploreSelect, unSelectIcon: AppAsset.icNaviExploreUnSelect),
-              hostCustomBottomBar(index: 1, selectIcon: AppAsset.icNaviMessageSelect, unSelectIcon: AppAsset.icNaviMessageUnSelect),
-              hostCustomBottomBar(index: 2, selectIcon: AppAsset.icNaviMineSelect, unSelectIcon: AppAsset.icNaviMineUnSelect),
+              hostCustomBottomBar(
+                  index: 0,
+                  selectIcon: AppAsset.icNaviExploreSelect,
+                  unSelectIcon: AppAsset.icNaviExploreUnSelect),
+              hostCustomBottomBar(
+                  index: 1,
+                  selectIcon: AppAsset.icNaviMessageSelect,
+                  unSelectIcon: AppAsset.icNaviMessageUnSelect),
+              hostCustomBottomBar(
+                  index: 2,
+                  selectIcon: AppAsset.icNaviMineSelect,
+                  unSelectIcon: AppAsset.icNaviMineUnSelect),
             ],
           ),
         );

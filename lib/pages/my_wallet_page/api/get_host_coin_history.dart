@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/my_wallet_page/model/fetch_host_coin_history_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/pages/my_wallet_page/model/fetch_host_coin_history_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../utils/utils.dart';
@@ -25,14 +25,19 @@ class GetHostCoinHistoryApi {
       final uri = Uri.parse(
           "${Api.getWalletHistoryForHost}?start=$startPagination&limit=$limitPagination&hostId=$hostId&startDate=$startDate&endDate=$endDate");
 
-      final headers = {Api.key: Api.secretKey, Api.tokenKey: "Bearer $token", Api.uidKey: uid};
+      final headers = {
+        Api.key: Api.secretKey,
+        Api.tokenKey: "Bearer $token",
+        Api.uidKey: uid
+      };
       log("Fetch Host Coin History Api headers => $headers");
       log("Fetch Host Coin History Api Uri => $uri");
       final response = await http.get(uri, headers: headers);
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
         log("Fetch Host Coin History Api Response => ${response.body}");
-        fetchHostCoinHistoryModel = FetchHostCoinHistoryModel.fromJson(jsonResponse);
+        fetchHostCoinHistoryModel =
+            FetchHostCoinHistoryModel.fromJson(jsonResponse);
       } else {
         Utils.showLog("Fetch Host Coin History Api Response Error");
         return null;

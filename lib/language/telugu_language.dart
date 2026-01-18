@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> teIN = {
   EnumLocale.txtLetsStart.name: "ప్రారంభిద్దాం",
   EnumLocale.txtGoogle.name: "Google",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "లాగిన్ చేయడం ద్వారా, మీరు మాకి అంగీకరిస్తారు",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "లాగిన్ చేయడం ద్వారా, మీరు మాకి అంగీకరిస్తారు",
   EnumLocale.txtPrivacyPolicy.name: "గోప్యతా విధానం",
   EnumLocale.txtAnd.name: "మరియు",
   EnumLocale.txtUseAgreement.name: "ఒప్పందాన్ని ఉపయోగించండి",
   EnumLocale.txtCoinRechargeSuccess.name: "కాయిన్ రీఛార్జ్ విజయం",
   EnumLocale.txtSomeThingWentWrong.name: "ఏదో తప్పు జరిగింది",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "ఆడియో రికార్డింగ్‌ని ప్రారంభించడానికి ఎక్కువసేపు నొక్కండి",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "ఆడియో రికార్డింగ్‌ని ప్రారంభించడానికి ఎక్కువసేపు నొక్కండి",
   EnumLocale.txtPleaseAllowPermission.name: "దయచేసి అనుమతిని అనుమతించండి",
   EnumLocale.txtTypeSomething.name: "ఏదో చెప్పు...",
   EnumLocale.txtRandomMatch.name: "యాదృచ్ఛిక మ్యాచ్",
@@ -17,11 +19,15 @@ final Map<String, String> teIN = {
   EnumLocale.txtContactus.name: "మమ్మల్ని సంప్రదించండి",
   EnumLocale.txtRecharge.name: "రీఛార్జ్ చేయండి",
   EnumLocale.txtMyGems.name: "నా రత్నాలు",
-  EnumLocale.txtPleaseEnterWithdrawCoin.name: "దయచేసి విత్‌డ్రా కాయిన్‌ని నమోదు చేయండి",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale.txtPleaseEnterWithdrawCoin.name:
+      "దయచేసి విత్‌డ్రా కాయిన్‌ని నమోదు చేయండి",
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "ఉపసంహరణ అభ్యర్థించిన నాణెం తప్పనిసరిగా నిర్వాహకులు పేర్కొన్న దానికంటే ఎక్కువగా ఉండాలి",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "దయచేసి ఉపసంహరణ పద్ధతిని ఎంచుకోండి",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "దయచేసి అన్ని చెల్లింపు వివరాలను నమోదు చేయండి",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "దయచేసి ఉపసంహరణ పద్ధతిని ఎంచుకోండి",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "దయచేసి అన్ని చెల్లింపు వివరాలను నమోదు చేయండి",
   EnumLocale.txtSelectPaymentGateway.name: "చెల్లింపు గేట్‌వేని ఎంచుకోండి",
   EnumLocale.txtAvailableCoin.name: "అందుబాటులో ఉన్న నాణెం",
   EnumLocale.txtWithdraw.name: "ఉపసంహరించుకోండి",
@@ -55,7 +61,8 @@ final Map<String, String> teIN = {
   EnumLocale.txtBoth.name: "రెండూ",
   EnumLocale.txtMale.name: "పురుషుడు",
   EnumLocale.txtFemale.name: "స్త్రీ",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "VIP అవ్వండి, ప్రివిలేజ్ ఆనందించండి",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "VIP అవ్వండి, ప్రివిలేజ్ ఆనందించండి",
   EnumLocale.txtMore.name: "మరిన్ని",
   EnumLocale.txtGems.name: "రత్నాలు",
   EnumLocale.txtDailyCheckIn.name: "రోజువారీ చెక్-ఇన్",
@@ -74,7 +81,8 @@ final Map<String, String> teIN = {
   EnumLocale.txtVerificationDetails.name: "ధృవీకరణ వివరాలు",
   EnumLocale.txtVerificationRequestText.name:
       "మీరు సమర్పించిన వివరాలన్నీ మా ద్వారా స్వీకరించబడ్డాయి. మేము మీ కోసం ఒక నవీకరణను కలిగి ఉన్న తర్వాత మేము దీన్ని తనిఖీ చేసి, మీకు అప్‌డేట్ చేస్తాము.\n\nమీ ప్రొఫైల్‌ని తనిఖీ చేసి ధృవీకరించడానికి దాదాపు 3 నుండి 4 పని రోజులు పడుతుంది.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "ఉపసంహరణ చేయడానికి వినియోగదారు వద్ద తగినంత నిధులు లేవు",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "ఉపసంహరణ చేయడానికి వినియోగదారు వద్ద తగినంత నిధులు లేవు",
   EnumLocale.txtIncomingVideoCall.name: "ఇన్‌కమింగ్ వీడియో కాల్...",
   EnumLocale.txtIncomingAudioCall.name: "ఇన్‌కమింగ్ ఆడియో కాల్...",
   EnumLocale.txtUploadYourImages.name: "మీ చిత్రాలను అప్‌లోడ్ చేయండి",
@@ -124,15 +132,18 @@ final Map<String, String> teIN = {
   EnumLocale.txtUnblock.name: "అన్‌బ్లాక్ చేయండి",
   EnumLocale.txtApplealDetails.name:
       "మీ ఫిర్యాదు వీలైనంత త్వరగా ఆమోదించబడుతుంది, దయచేసి మీ ఫిర్యాదు యొక్క వివరణాత్మక వివరణను వీలైనంత త్వరగా సమర్పించండి",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "దయచేసి మీరు నివేదించాలనుకుంటున్న కారణాన్ని ఎంచుకోండి",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "దయచేసి మీరు నివేదించాలనుకుంటున్న కారణాన్ని ఎంచుకోండి",
   EnumLocale.txtCancel.name: "రద్దు చేయి",
   EnumLocale.txtSave.name: "సేవ్ చేయండి",
   EnumLocale.txtCheckIn.name: "చెక్ ఇన్ చేయండి",
-  EnumLocale.txtOpenVIPEnjoyPrivilege.name: "విఐపి ఎంజాయ్ ప్రివిలేజ్‌ని తెరవండి",
+  EnumLocale.txtOpenVIPEnjoyPrivilege.name:
+      "విఐపి ఎంజాయ్ ప్రివిలేజ్‌ని తెరవండి",
   EnumLocale.txtNoInternetConnection.name: "ఇంటర్నెట్ కనెక్షన్ లేదు",
   EnumLocale.txtGifts.name: "బహుమతులు",
   EnumLocale.txtSend.name: "పంపండి",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "మీరు ఖచ్చితంగా\n ఈ యాప్ నుండి నిష్క్రమించాలనుకుంటున్నారా?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "మీరు ఖచ్చితంగా\n ఈ యాప్ నుండి నిష్క్రమించాలనుకుంటున్నారా?",
   EnumLocale.txtPay.name: "చెల్లించండి",
   EnumLocale.txtTotal.name: "మొత్తం",
   EnumLocale.txtPayNow.name: "ఇప్పుడే చెల్లించండి",
@@ -142,9 +153,12 @@ final Map<String, String> teIN = {
   EnumLocale.txtChooseImage.name: "చిత్రాన్ని ఎంచుకోండి",
   EnumLocale.txtGallery.name: "గ్యాలరీ",
   EnumLocale.txtTakePhoto.name: "ఫోటో తీయండి",
-  EnumLocale.txtWaitingForRemoteUser.name: "రిమోట్ వినియోగదారు కోసం వేచి ఉంది...",
-  EnumLocale.txtPleaseSelectADocumentType.name: "దయచేసి పత్ర రకాన్ని ఎంచుకోండి.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "దయచేసి మీ ఇంటర్నెట్ కనెక్షన్‌ని తనిఖీ చేయండి.",
+  EnumLocale.txtWaitingForRemoteUser.name:
+      "రిమోట్ వినియోగదారు కోసం వేచి ఉంది...",
+  EnumLocale.txtPleaseSelectADocumentType.name:
+      "దయచేసి పత్ర రకాన్ని ఎంచుకోండి.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "దయచేసి మీ ఇంటర్నెట్ కనెక్షన్‌ని తనిఖీ చేయండి.",
   EnumLocale.txtLiveHost.name: "ప్రత్యక్ష హోస్ట్",
   EnumLocale.txtEnterBio.name: "మీ బయోని నమోదు చేయండి",
   EnumLocale.txtUploadId.name: "మీ చిత్రాలను అప్‌లోడ్ చేయండి",
@@ -159,7 +173,8 @@ final Map<String, String> teIN = {
   EnumLocale.txtMyLanguage.name: "నా భాష",
   EnumLocale.txtContinue.name: "కొనసాగించు",
   EnumLocale.txtYouHaveInsufficientCoins.name: "మీ వద్ద తగినంత నాణేలు లేవు",
-  EnumLocale.txtPleaseSelectBackImages.name: "దయచేసి వెనుకకు చిత్రాలను ఎంచుకోండి",
+  EnumLocale.txtPleaseSelectBackImages.name:
+      "దయచేసి వెనుకకు చిత్రాలను ఎంచుకోండి",
   EnumLocale.txtPleaseSelectFontImages.name: "దయచేసి ఫాంట్ చిత్రాలను ఎంచుకోండి",
   EnumLocale.txtAudioCallDiscount.name: "ఆడియో కాల్ తగ్గింపు",
   EnumLocale.txtVideoCallDiscount.name: "వీడియో కాల్ తగ్గింపు",
@@ -195,7 +210,8 @@ final Map<String, String> teIN = {
   EnumLocale.txtVipDescription.name:
       "గమనిక: VIP అనేది ఆటోమేటిక్ సబ్‌స్క్రిప్షన్ చెల్లింపు కాదు మరియు గడువు ముగిసిన తర్వాత స్వయంచాలకంగా పునరుద్ధరించబడదు. VIPని యాక్టివేట్ చేసిన తర్వాత, మీరు నేరుగా రివార్డ్‌లను స్వీకరించవచ్చు మరియు VIP చెల్లుబాటు వ్యవధిలో ఇతర అధికారాలను ఆస్వాదించవచ్చు.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "విఐపి ఎంజాయ్ ప్రివిలేజెస్",
-  EnumLocale.txtDailyCheckInDescription.name: "ప్రతి వారం వజ్రాలు పొందడానికి ఏదైనా మొత్తాన్ని రీఛార్జ్ చేసిన తర్వాత చెక్ ఇన్ చేయండి",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "ప్రతి వారం వజ్రాలు పొందడానికి ఏదైనా మొత్తాన్ని రీఛార్జ్ చేసిన తర్వాత చెక్ ఇన్ చేయండి",
   EnumLocale.txtDay.name: "రోజు",
   EnumLocale.txtSelectPaymentOption.name: "చెల్లింపు ఎంపికను ఎంచుకోండి",
   EnumLocale.txtVerificationText.name:
@@ -212,12 +228,16 @@ final Map<String, String> teIN = {
   EnumLocale.txtPayment.name: "చెల్లింపు",
   EnumLocale.txtBlockHost.name: "బ్లాక్ హోస్ట్",
   EnumLocale.txtBlockUser.name: "వినియోగదారుని బ్లాక్ చేయండి",
-  EnumLocale.txtBlockDetailsHost.name: "మీరు ఖచ్చితంగా ఈ హోస్ట్‌ని బ్లాక్ చేయాలనుకుంటున్నారా?",
-  EnumLocale.txtBlockDetailsUser.name: "మీరు ఖచ్చితంగా ఈ వినియోగదారుని బ్లాక్ చేయాలనుకుంటున్నారా ?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "మీరు ఖచ్చితంగా ఈ హోస్ట్‌ని బ్లాక్ చేయాలనుకుంటున్నారా?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "మీరు ఖచ్చితంగా ఈ వినియోగదారుని బ్లాక్ చేయాలనుకుంటున్నారా ?",
   EnumLocale.txtUnBlockHost.name: "హోస్ట్‌ని అన్‌బ్లాక్ చేయండి",
   EnumLocale.txtUnBlockUser.name: "వినియోగదారుని అన్‌బ్లాక్ చేయండి",
-  EnumLocale.txtUnBlockDetailsHost.name: "మీరు ఖచ్చితంగా ఈ హోస్ట్‌ని అన్‌బ్లాక్ చేయాలనుకుంటున్నారా?",
-  EnumLocale.txtUnBlockDetailsUser.name: "మీరు ఖచ్చితంగా ఈ వినియోగదారుని అన్‌బ్లాక్ చేయాలనుకుంటున్నారా?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "మీరు ఖచ్చితంగా ఈ హోస్ట్‌ని అన్‌బ్లాక్ చేయాలనుకుంటున్నారా?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "మీరు ఖచ్చితంగా ఈ వినియోగదారుని అన్‌బ్లాక్ చేయాలనుకుంటున్నారా?",
   EnumLocale.txtWithdrawHistory.name: "చరిత్రను ఉపసంహరించుకోండి",
   EnumLocale.txtWalletHistory.name: "వాలెట్ చరిత్ర",
   EnumLocale.txtDeclineRequest.name:
@@ -245,7 +265,8 @@ final Map<String, String> teIN = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "దయచేసి ముందుగా బహుమతిని ఎంచుకోండి",
   EnumLocale.txtTermsAndConditions.name: "నిబంధనలు మరియు షరతులు",
   EnumLocale.txtUnderMaintenance.name: 'ఈ యాప్ నిర్వహణలో ఉంది',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'సిస్టమ్ నిర్వహణ ప్రోగ్రెస్‌లో ఉంది: దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'సిస్టమ్ నిర్వహణ ప్రోగ్రెస్‌లో ఉంది: దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.',
   EnumLocale.txtCloseAPP.name: 'యాప్‌ను మూసివేయండి',
   EnumLocale.txtSearchCountry.name: 'శోధన దేశం',
   EnumLocale.txtCoins.name: 'నాణేలు',

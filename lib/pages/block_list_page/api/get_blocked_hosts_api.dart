@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/block_list_page/model/get_blocked_hosts_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/block_list_page/model/get_blocked_hosts_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class GetBlockedHostsApi {
@@ -11,10 +11,12 @@ class GetBlockedHostsApi {
   static int startPagination = 1;
   static int limitPagination = 20;
 
-  static Future<GetBlockedHostsModel?> callApi({required String token, required String uid}) async {
+  static Future<GetBlockedHostsModel?> callApi(
+      {required String token, required String uid}) async {
     Utils.showLog("Get Blocked Host Api Calling...");
 
-    final uri = Uri.parse("${Api.getBlockedHostForUser}?start=$startPagination&limit=$limitPagination");
+    final uri = Uri.parse(
+        "${Api.getBlockedHostForUser}?start=$startPagination&limit=$limitPagination");
 
     final headers = {
       Api.key: Api.secretKey,

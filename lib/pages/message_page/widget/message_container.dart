@@ -1,12 +1,12 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/pages/message_page/controller/message_controller.dart';
-import 'package:figgy/pages/message_page/model/get_chat_thumb_list_user_model.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/pages/message_page/controller/message_controller.dart';
+import 'package:LoveBirds/pages/message_page/model/get_chat_thumb_list_user_model.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -84,7 +84,8 @@ class MessageContainer extends StatelessWidget {
                       width: Get.width * 0.55,
                       child: Text(
                         chatList?.message ?? "",
-                        style: AppFontStyle.styleW500(AppColors.chatDetailColor, 14),
+                        style: AppFontStyle.styleW500(
+                            AppColors.chatDetailColor, 14),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -110,14 +111,18 @@ class MessageContainer extends StatelessWidget {
                               color: AppColors.unReadColor,
                             ),
                             child: Text(
-                              chatList?.unreadCount == 0 ? "" : chatList?.unreadCount?.toString() ?? "",
-                              style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
+                              chatList?.unreadCount == 0
+                                  ? ""
+                                  : chatList?.unreadCount?.toString() ?? "",
+                              style: AppFontStyle.styleW700(
+                                  AppColors.whiteColor, 16),
                             ),
                           ),
                     10.height,
                     Text(
                       chatList?.time ?? "",
-                      style: AppFontStyle.styleW600(AppColors.chatDetailColor, 12),
+                      style:
+                          AppFontStyle.styleW600(AppColors.chatDetailColor, 12),
                     ),
                   ],
                 )

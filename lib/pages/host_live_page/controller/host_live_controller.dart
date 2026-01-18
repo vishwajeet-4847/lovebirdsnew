@@ -2,25 +2,25 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/dialog/block_dialog.dart';
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/host_detail_page/api/follow_unfollow_api.dart';
-import 'package:figgy/pages/host_detail_page/api/host_detail_api.dart';
-import 'package:figgy/pages/host_detail_page/model/follow_unfollow_model.dart';
-import 'package:figgy/pages/host_detail_page/model/host_detail_model.dart';
-import 'package:figgy/pages/host_live_stream/model/create_host_live_model.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/dialog/block_dialog.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/host_detail_page/api/follow_unfollow_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/api/host_detail_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/model/follow_unfollow_model.dart';
+import 'package:LoveBirds/pages/host_detail_page/model/host_detail_model.dart';
+import 'package:LoveBirds/pages/host_live_stream/model/create_host_live_model.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -370,11 +370,11 @@ class HostLiveController extends GetxController {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         child: BlockDialog(
-          hostId:hostId ,
-          isHost:  false,
-          userId:  Database.loginUserId,
+          hostId: hostId,
+          isHost: false,
+          userId: Database.loginUserId,
           // isVideoCall: true,
-          isLive :true ,
+          isLive: true,
         ),
       ),
     );

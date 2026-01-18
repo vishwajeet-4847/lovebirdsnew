@@ -1,6 +1,6 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -60,7 +60,9 @@ class _PaymentDropdownState extends State<PaymentDropdown> {
                   ),
                 ),
                 Icon(
-                  isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+                  isExpanded
+                      ? Icons.keyboard_arrow_up
+                      : Icons.keyboard_arrow_down,
                   color: Colors.white,
                 ),
               ],
@@ -91,7 +93,8 @@ class _PaymentDropdownState extends State<PaymentDropdown> {
                   decoration: BoxDecoration(
                     color: AppColors.settingColor,
                     border: Border(
-                      top: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
+                      top: BorderSide(
+                          color: Colors.white.withValues(alpha: 0.1)),
                     ),
                   ),
                   child: Row(

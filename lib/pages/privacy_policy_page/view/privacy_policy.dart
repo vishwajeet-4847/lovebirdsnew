@@ -1,9 +1,9 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
@@ -27,7 +27,8 @@ class PrivacyPolicy extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).viewPadding.top + 72,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -106,7 +107,8 @@ class PrivacyPolicy extends StatelessWidget {
                       fontSize: FontSize(18),
                       color: AppColors.whiteColor,
                       lineHeight: const LineHeight(1.5),
-                      margin: Margins.zero, // You can keep a little bottom margin
+                      margin:
+                          Margins.zero, // You can keep a little bottom margin
                       padding: HtmlPaddings.only(top: 25),
                     ),
                   },

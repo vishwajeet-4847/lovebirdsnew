@@ -1,4 +1,4 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> zhCN = {
   EnumLocale.txtLetsStart.name: "让我们开始吧",
@@ -18,7 +18,8 @@ final Map<String, String> zhCN = {
   EnumLocale.txtRecharge.name: "充值",
   EnumLocale.txtMyGems.name: "我的宝石",
   EnumLocale.txtPleaseEnterWithdrawCoin.name: "请输入提币",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name: "提现请求币种必须大于管理员指定值",
+  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin
+      .name: "提现请求币种必须大于管理员指定值",
   EnumLocale.txtPleaseSelectWithdrawMethod.name: "请选择提现方式",
   EnumLocale.txtPleaseEnterAllPaymentDetails.name: "请输入所有付款详情",
   EnumLocale.txtSelectPaymentGateway.name: "选择支付网关",
@@ -71,8 +72,10 @@ final Map<String, String> zhCN = {
   EnumLocale.txtCallMe.name: "打电话给我",
   EnumLocale.txtVerificationStatus.name: "验证状态：",
   EnumLocale.txtVerificationDetails.name: "验证详情",
-  EnumLocale.txtVerificationRequestText.name: "我们已收到您提交的所有信息。一旦有更新，我们会进行核实并通知您。\n\n核实您的个人资料大约需要 3 到 4 个工作日。",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "用户没有足够的资金进行提款",
+  EnumLocale.txtVerificationRequestText.name:
+      "我们已收到您提交的所有信息。一旦有更新，我们会进行核实并通知您。\n\n核实您的个人资料大约需要 3 到 4 个工作日。",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "用户没有足够的资金进行提款",
   EnumLocale.txtIncomingVideoCall.name: "有视频通话...",
   EnumLocale.txtIncomingAudioCall.name: "有音频呼叫进来...",
   EnumLocale.txtUploadYourImages.name: "上传您的图片",
@@ -189,12 +192,14 @@ final Map<String, String> zhCN = {
   EnumLocale.txtGender.name: "性别",
   EnumLocale.txtOptional.name: "选修的",
   EnumLocale.txtPleaseSelectDocument.name: "请先选择文档",
-  EnumLocale.txtVipDescription.name: "注意：VIP并非自动订阅付费，到期后不会自动续订。开通VIP后可直接领取奖励，并在VIP有效期内享受其他权益。",
+  EnumLocale.txtVipDescription.name:
+      "注意：VIP并非自动订阅付费，到期后不会自动续订。开通VIP后可直接领取奖励，并在VIP有效期内享受其他权益。",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP尊享特权",
   EnumLocale.txtDailyCheckInDescription.name: "每周充值任意金额签到送钻石",
   EnumLocale.txtDay.name: "天",
   EnumLocale.txtSelectPaymentOption.name: "选择付款方式",
-  EnumLocale.txtVerificationText.name: "您的托管请求已获批准！为确保能够完全访问所有功能，请重启 app_profile_image。\n\n感谢您的耐心等待——我们很高兴您能加入我们！",
+  EnumLocale.txtVerificationText.name:
+      "您的托管请求已获批准！为确保能够完全访问所有功能，请重启 app_profile_image。\n\n感谢您的耐心等待——我们很高兴您能加入我们！",
   EnumLocale.txtRandomCallRate.name: "随机呼叫率",
   EnumLocale.txtCallRate.name: "通话费率",
   EnumLocale.txtPrivateCallRate.name: "私人通话费率",
@@ -215,7 +220,8 @@ final Map<String, String> zhCN = {
   EnumLocale.txtUnBlockDetailsUser.name: "您确定要解除对该用户的阻止吗？",
   EnumLocale.txtWithdrawHistory.name: "提现历史记录",
   EnumLocale.txtWalletHistory.name: "钱包历史",
-  EnumLocale.txtDeclineRequest.name: "您的房东申请未获批准。\n\n经过全面审核，我们发现您的个人资料目前不符合成为房东的条件。\n\n感谢您抽出时间申请，也感谢您的关注。",
+  EnumLocale.txtDeclineRequest.name:
+      "您的房东申请未获批准。\n\n经过全面审核，我们发现您的个人资料目前不符合成为房东的条件。\n\n感谢您抽出时间申请，也感谢您的关注。",
   EnumLocale.txtStopLive.name: "停止直播",
   EnumLocale.txtStopLiveText.name: "停止直播？此操作无法撤消，并将立即终止直播。点击“停止直播”进行确认。",
   EnumLocale.txtStop.name: "停止",

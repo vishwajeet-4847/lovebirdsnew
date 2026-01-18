@@ -1,17 +1,17 @@
 import 'dart:math';
 
-import 'package:figgy/custom/country_picker.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/discover_host_for_user_page/api/discover_host_for_user_api.dart';
-import 'package:figgy/pages/discover_host_for_user_page/model/discover_host_for_user_model.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/country_picker.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/api/discover_host_for_user_api.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/model/discover_host_for_user_model.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -3,12 +3,12 @@ import 'dart:developer';
 
 import 'package:camera/camera.dart';
 import 'package:chewie/chewie.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/socket/socket_emit.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/socket/socket_emit.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -124,11 +124,17 @@ class HostVideoCallController extends GetxController {
   }
 
   Future<void> onSwitchCamera() async {
-    Get.dialog(barrierDismissible: false, const PopScope(canPop: false, child: LoadingWidget())); // Start Loading...
+    Get.dialog(
+        barrierDismissible: false,
+        const PopScope(
+            canPop: false, child: LoadingWidget())); // Start Loading...
 
-    cameraLensDirection = cameraLensDirection == CameraLensDirection.back ? CameraLensDirection.front : CameraLensDirection.back;
+    cameraLensDirection = cameraLensDirection == CameraLensDirection.back
+        ? CameraLensDirection.front
+        : CameraLensDirection.back;
     final cameras = await availableCameras();
-    final camera = cameras.firstWhere((camera) => camera.lensDirection == cameraLensDirection);
+    final camera = cameras
+        .firstWhere((camera) => camera.lensDirection == cameraLensDirection);
     cameraController = CameraController(camera, ResolutionPreset.high);
     await cameraController!.initialize();
 
@@ -142,7 +148,8 @@ class HostVideoCallController extends GetxController {
       final duration = DateTime.now().difference(startTime ?? DateTime.now());
       final minutes = duration.inMinutes.remainder(60);
       final seconds = duration.inSeconds.remainder(60);
-      formattedTime = '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+      formattedTime =
+          '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
 
       if (seconds == 0) {
         Utils.showLog('Start timer :: $formattedTime');
@@ -167,7 +174,8 @@ class HostVideoCallController extends GetxController {
     duration = endTime?.difference(startTime!);
     minutes = duration?.inMinutes.remainder(60);
     seconds = duration?.inSeconds.remainder(60);
-    finalDuration = '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+    finalDuration =
+        '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
 
     Utils.showLog('Call Duration :: $duration');
     Utils.showLog('Final Duration :: $finalDuration');
@@ -181,7 +189,9 @@ class HostVideoCallController extends GetxController {
   Future<void> toggleCamera() async {
     isRotedCamera = !isRotedCamera;
 
-    cameraLensDirection = cameraLensDirection == CameraLensDirection.front ? CameraLensDirection.back : CameraLensDirection.front;
+    cameraLensDirection = cameraLensDirection == CameraLensDirection.front
+        ? CameraLensDirection.back
+        : CameraLensDirection.front;
 
     try {
       final cameras = await availableCameras();
@@ -198,7 +208,11 @@ class HostVideoCallController extends GetxController {
 
       await cameraController!.initialize();
 
-      update([AppConstant.onInitializeCamera, AppConstant.idToggleCamera, AppConstant.idOnVideoCall]);
+      update([
+        AppConstant.onInitializeCamera,
+        AppConstant.idToggleCamera,
+        AppConstant.idOnVideoCall
+      ]);
     } catch (e) {
       Utils.showLog("Camera switch error: $e");
     }
@@ -206,17 +220,23 @@ class HostVideoCallController extends GetxController {
 
   void toggleVideo() {
     isVideoOn = !isVideoOn;
-    update([AppConstant.onInitializeCamera, AppConstant.idToggleVideo, AppConstant.idOnVideoCall]);
+    update([
+      AppConstant.onInitializeCamera,
+      AppConstant.idToggleVideo,
+      AppConstant.idOnVideoCall
+    ]);
   }
 
   Future<void> initializeVideoPlayer() async {
     try {
       log("Video Url =>'${Api.baseUrl + videoUrl}'");
-      videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(Api.baseUrl + videoUrl));
+      videoPlayerController =
+          VideoPlayerController.networkUrl(Uri.parse(Api.baseUrl + videoUrl));
 
       await videoPlayerController?.initialize();
 
-      if (videoPlayerController != null && (videoPlayerController?.value.isInitialized ?? false)) {
+      if (videoPlayerController != null &&
+          (videoPlayerController?.value.isInitialized ?? false)) {
         chewieController = ChewieController(
           videoPlayerController: videoPlayerController!,
           looping: true,

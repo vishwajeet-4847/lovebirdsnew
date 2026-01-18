@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/host_request_page/model/get_identity_proof_model.dart';
-import 'package:figgy/utils/api.dart';
+import 'package:LoveBirds/pages/host_request_page/model/get_identity_proof_model.dart';
+import 'package:LoveBirds/utils/api.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../utils/utils.dart';

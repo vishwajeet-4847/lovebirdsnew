@@ -1,11 +1,15 @@
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 
 class FlutterWaveService {
-  static Future<void> init({required String amount, required Callback onPaymentComplete}) async {
-    final Customer customer = Customer(name: "Flutter wave Developer", email: "customer@customer.com", phoneNumber: '');
+  static Future<void> init(
+      {required String amount, required Callback onPaymentComplete}) async {
+    final Customer customer = Customer(
+        name: "Flutter wave Developer",
+        email: "customer@customer.com",
+        phoneNumber: '');
 
     Utils.showLog("Flutter Wave Id => ${Utils.flutterWaveId}");
     final Flutterwave flutterWave = Flutterwave(

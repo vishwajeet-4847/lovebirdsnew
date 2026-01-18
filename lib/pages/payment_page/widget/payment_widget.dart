@@ -1,4 +1,4 @@
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 
 class PaymentRadioButtonUi extends StatelessWidget {
@@ -27,7 +27,9 @@ class PaymentRadioButtonUi extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: isSelected ? null : AppColors.transparent,
                 border: Border.all(
-                  color: isSelected ? AppColors.whiteColor : AppColors.primaryColor.withValues(alpha: 0.5),
+                  color: isSelected
+                      ? AppColors.whiteColor
+                      : AppColors.primaryColor.withValues(alpha: 0.5),
                   width: 1.5,
                 ),
               ),

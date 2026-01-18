@@ -1,11 +1,11 @@
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/splash_screen_page/api/get_setting_api.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/splash_screen_page/api/get_setting_api.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -87,7 +87,9 @@ class LogoutUserDialogUi extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(EnumLocale.txtLogOut.name.tr, style: AppFontStyle.styleW700(AppColors.whiteColor, 18)),
+                      Text(EnumLocale.txtLogOut.name.tr,
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 18)),
                     ],
                   ),
                 ),
@@ -104,7 +106,9 @@ class LogoutUserDialogUi extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     color: AppColors.colorGry.withValues(alpha: 0.3),
                   ),
-                  child: Text(EnumLocale.txtCancel.name.tr, style: AppFontStyle.styleW700(AppColors.cancelTxtColor, 18))),
+                  child: Text(EnumLocale.txtCancel.name.tr,
+                      style: AppFontStyle.styleW700(
+                          AppColors.cancelTxtColor, 18))),
             ),
           ],
         ),

@@ -1,15 +1,18 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/chat_page/model/usre_block_host_api.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/chat_page/model/usre_block_host_api.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class UserBlockHostApi {
   static UserBlockHostApiModel? userBlockHostApiModel;
 
-  static Future<UserBlockHostApiModel?> callApi({required String hostId, required String token, required String uid}) async {
+  static Future<UserBlockHostApiModel?> callApi(
+      {required String hostId,
+      required String token,
+      required String uid}) async {
     Utils.showLog("User Block Host Api Calling...");
 
     final uri = Uri.parse("${Api.userBlockHost}?hostId=$hostId");

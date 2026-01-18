@@ -1,15 +1,15 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:camera/camera.dart';
 import 'package:chewie/chewie.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/host_video_call_page/controller/host_video_call_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/host_video_call_page/controller/host_video_call_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -45,14 +45,20 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                     height: Get.height,
                     child: controller.chewieController != null &&
                             controller.videoPlayerController != null &&
-                            controller.videoPlayerController!.value.isInitialized
+                            controller
+                                .videoPlayerController!.value.isInitialized
                         ? SizedBox.expand(
                             child: FittedBox(
                               fit: BoxFit.cover,
                               child: SizedBox(
-                                width: controller.videoPlayerController?.value.size.width ?? 0,
-                                height: controller.videoPlayerController?.value.size.height ?? 0,
-                                child: Chewie(controller: controller.chewieController!),
+                                width: controller.videoPlayerController?.value
+                                        .size.width ??
+                                    0,
+                                height: controller.videoPlayerController?.value
+                                        .size.height ??
+                                    0,
+                                child: Chewie(
+                                    controller: controller.chewieController!),
                               ),
                             ),
                           )
@@ -63,7 +69,8 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                             child: Stack(
                               children: [
                                 Container(
-                                  color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                  color: AppColors.colorTextGrey
+                                      .withValues(alpha: 0.22),
                                   height: Get.height,
                                   width: Get.width,
                                   child: CustomImage(
@@ -100,7 +107,8 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                                           width: 125,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
-                                            color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                            color: AppColors.colorTextGrey
+                                                .withValues(alpha: 0.22),
                                           ),
                                           clipBehavior: Clip.hardEdge,
                                           child: CustomImage(
@@ -111,11 +119,13 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                                       ),
                                       3.height,
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             EnumLocale.txtConnect.name.tr,
-                                            style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                                            style: AppFontStyle.styleW700(
+                                                AppColors.whiteColor, 20),
                                           ),
                                           Lottie.asset(
                                             AppAsset.lottieLoading,
@@ -135,7 +145,10 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
               GetBuilder<HostVideoCallController>(
                 id: AppConstant.onInitializeCamera,
                 builder: (controller) {
-                  if (controller.cameraController != null && (controller.cameraController?.value.isInitialized ?? false) && controller.isVideoOn) {
+                  if (controller.cameraController != null &&
+                      (controller.cameraController?.value.isInitialized ??
+                          false) &&
+                      controller.isVideoOn) {
                     return Positioned(
                       top: 50,
                       right: 20,
@@ -150,16 +163,22 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: ClipRect(
-                            clipper: _MediaSizeClipper(MediaQuery.of(context).size),
+                            clipper:
+                                _MediaSizeClipper(MediaQuery.of(context).size),
                             child: Transform.scale(
-                              scale: 1 / (controller.cameraController!.value.aspectRatio * MediaQuery.of(context).size.aspectRatio),
+                              scale: 1 /
+                                  (controller
+                                          .cameraController!.value.aspectRatio *
+                                      MediaQuery.of(context).size.aspectRatio),
                               alignment: Alignment.topCenter,
                               child: controller.shouldMirrorCamera
                                   ? Transform(
-                                alignment: Alignment.center,
-                                transform: Matrix4.identity()..scale(-1.0, 1.0),
-                                child: CameraPreview(controller.cameraController!),
-                              )
+                                      alignment: Alignment.center,
+                                      transform: Matrix4.identity()
+                                        ..scale(-1.0, 1.0),
+                                      child: CameraPreview(
+                                          controller.cameraController!),
+                                    )
                                   : CameraPreview(controller.cameraController!),
                             ),
                           ),
@@ -173,7 +192,9 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                       width: 135,
                       height: 170,
                       child: Container(
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: AppColors.blackColor),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: AppColors.blackColor),
                         child: controller.isVideoOn
                             ? const LoadingWidget()
                             : Icon(
@@ -199,11 +220,15 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 3, horizontal: 3),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(56),
-                                border: Border.all(color: AppColors.colorBorder.withValues(alpha: 0.3)),
-                                color: AppColors.blackColor.withValues(alpha: 0.45),
+                                border: Border.all(
+                                    color: AppColors.colorBorder
+                                        .withValues(alpha: 0.3)),
+                                color: AppColors.blackColor
+                                    .withValues(alpha: 0.45),
                               ),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -212,12 +237,14 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                                     height: 40,
                                     width: 40,
                                     clipBehavior: Clip.antiAlias,
-                                    decoration: const BoxDecoration(shape: BoxShape.circle),
+                                    decoration: const BoxDecoration(
+                                        shape: BoxShape.circle),
                                     child: Stack(
                                       children: [
                                         AspectRatio(
                                           aspectRatio: 1,
-                                          child: Image.asset(AppAsset.icProfilePlaceHolder),
+                                          child: Image.asset(
+                                              AppAsset.icProfilePlaceHolder),
                                         ),
                                         AspectRatio(
                                           aspectRatio: 1,
@@ -231,7 +258,8 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                                   ),
                                   7.width,
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
                                         width: 85,
@@ -239,28 +267,38 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                                           logic.hostName.trim(),
                                           maxLines: 1,
                                           overflow: TextOverflow.ellipsis,
-                                          style: AppFontStyle.styleW600(AppColors.whiteColor, 14),
+                                          style: AppFontStyle.styleW600(
+                                              AppColors.whiteColor, 14),
                                         ),
                                       ),
                                       GestureDetector(
                                         onTap: () {
                                           Utils.copyText(
-                                            logic.hostUniqueId.isEmpty == true ? "96854320" : logic.hostUniqueId,
+                                            logic.hostUniqueId.isEmpty == true
+                                                ? "96854320"
+                                                : logic.hostUniqueId,
                                           );
                                         },
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              logic.hostUniqueId.isEmpty == true ? "96854320" : logic.hostUniqueId,
+                                              logic.hostUniqueId.isEmpty == true
+                                                  ? "96854320"
+                                                  : logic.hostUniqueId,
                                               maxLines: 1,
-                                              style: AppFontStyle.styleW500(AppColors.whiteColor, 10),
+                                              style: AppFontStyle.styleW500(
+                                                  AppColors.whiteColor, 10),
                                             ),
                                             5.width,
                                             GestureDetector(
                                               onTap: () {
                                                 Utils.copyText(
-                                                  logic.hostUniqueId.isEmpty == true ? "96854320" : logic.hostUniqueId,
+                                                  logic.hostUniqueId.isEmpty ==
+                                                          true
+                                                      ? "96854320"
+                                                      : logic.hostUniqueId,
                                                 );
                                               },
                                               child: Container(
@@ -283,11 +321,15 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                             ),
                             10.height,
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 12, vertical: 10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(56),
-                                border: Border.all(color: AppColors.colorBorder.withValues(alpha: 0.3)),
-                                color: AppColors.blackColor.withValues(alpha: 0.45),
+                                border: Border.all(
+                                    color: AppColors.colorBorder
+                                        .withValues(alpha: 0.3)),
+                                color: AppColors.blackColor
+                                    .withValues(alpha: 0.45),
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -301,7 +343,8 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                                   8.width,
                                   Text(
                                     logic.formattedTime ?? "",
-                                    style: AppFontStyle.styleW700(AppColors.whiteColor, 14),
+                                    style: AppFontStyle.styleW700(
+                                        AppColors.whiteColor, 14),
                                   ),
                                 ],
                               ),
@@ -334,7 +377,9 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                           return GestureDetector(
                             onTap: () => logic.muteMic(),
                             child: circularIcon(
-                              logic.isMute ? AppAsset.icUnMuteMic : AppAsset.icMuteMic,
+                              logic.isMute
+                                  ? AppAsset.icUnMuteMic
+                                  : AppAsset.icMuteMic,
                             ),
                           );
                         },
@@ -345,7 +390,9 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                           return GestureDetector(
                             onTap: () => logic.toggleVideo(),
                             child: circularIcon(
-                              logic.isVideoOn ? AppAsset.icVCall : AppAsset.icVCallOff,
+                              logic.isVideoOn
+                                  ? AppAsset.icVCall
+                                  : AppAsset.icVCallOff,
                             ),
                           );
                         },

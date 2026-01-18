@@ -1,5 +1,5 @@
-import 'package:figgy/pages/host_bottom_bar/controller/host_bottom_controller.dart';
-import 'package:figgy/pages/host_bottom_bar/widget/host_bottom_view.dart';
+import 'package:LoveBirds/pages/host_bottom_bar/controller/host_bottom_controller.dart';
+import 'package:LoveBirds/pages/host_bottom_bar/widget/host_bottom_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

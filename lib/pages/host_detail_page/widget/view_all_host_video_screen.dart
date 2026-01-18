@@ -1,18 +1,19 @@
 import 'dart:io';
 
-import 'package:figgy/pages/host_detail_page/widget/reels_player_view.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/reels_player_view.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ViewAllHostVideoScreen extends StatelessWidget {
   final List<String> videoUrls;
   final List<String> thumbnail;
-  const ViewAllHostVideoScreen({super.key, required this.videoUrls, required this.thumbnail});
+  const ViewAllHostVideoScreen(
+      {super.key, required this.videoUrls, required this.thumbnail});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,8 @@ class ViewAllHostVideoScreen extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).viewPadding.top + 72,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -79,7 +81,8 @@ class ViewAllHostVideoScreen extends StatelessWidget {
                 ),
                 itemCount: videoUrls.length,
                 itemBuilder: (context, index) {
-                  final thumbPath = thumbnail.isNotEmpty ? thumbnail[index] : null;
+                  final thumbPath =
+                      thumbnail.isNotEmpty ? thumbnail[index] : null;
 
                   return GestureDetector(
                     onTap: () {

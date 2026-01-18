@@ -1,17 +1,17 @@
 import 'dart:math';
 
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/matching_page/controller/matching_controller.dart';
-import 'package:figgy/pages/matching_page/widget/matching_bg_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_emit.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/matching_page/controller/matching_controller.dart';
+import 'package:LoveBirds/pages/matching_page/widget/matching_bg_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_emit.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,7 +37,8 @@ class MatchingView extends StatelessWidget {
                     height: 30,
                     width: 30,
                     padding: const EdgeInsets.all(5),
-                    margin: const EdgeInsets.only(top: 20, right: 20, bottom: 20, left: 10),
+                    margin: const EdgeInsets.only(
+                        top: 20, right: 20, bottom: 20, left: 10),
                     child: Image.asset(AppAsset.icLeftArrow),
                   ),
                 ),
@@ -64,13 +65,16 @@ class MatchingView extends StatelessWidget {
                         ),
                         clipBehavior: Clip.antiAlias,
                         child: CustomImage(
-                          image: (Database.profileImage.startsWith("http")) ? Database.profileImage : "${Api.baseUrl}${Database.profileImage}",
+                          image: (Database.profileImage.startsWith("http"))
+                              ? Database.profileImage
+                              : "${Api.baseUrl}${Database.profileImage}",
                           fit: BoxFit.cover,
                           padding: 20,
                         ),
                       ),
                     ),
-                    Image.asset(AppAsset.icMatchRing, height: 50, width: 50).paddingOnly(left: 30, right: 30),
+                    Image.asset(AppAsset.icMatchRing, height: 50, width: 50)
+                        .paddingOnly(left: 30, right: 30),
                     RippleAnimation(
                       color: AppColors.timeTxtColor,
                       delay: const Duration(milliseconds: 300),
@@ -88,7 +92,9 @@ class MatchingView extends StatelessWidget {
                         ),
                         clipBehavior: Clip.antiAlias,
                         child: CustomImage(
-                          image: (logic.getAvailableHost?.image?.startsWith("http") == true)
+                          image: (logic.getAvailableHost?.image
+                                      ?.startsWith("http") ==
+                                  true)
                               ? (logic.getAvailableHost?.image ?? "")
                               : "${Api.baseUrl}${logic.getAvailableHost?.image}",
                           fit: BoxFit.cover,
@@ -113,24 +119,34 @@ class MatchingView extends StatelessWidget {
                   Text(
                     "${EnumLocale.txtYouAnd.name.tr} ${logic.getAvailableHost?.name} ${EnumLocale.txtHaveLikedEachOther.name.tr}",
                     textAlign: TextAlign.center,
-                    style: AppFontStyle.styleW400(AppColors.whiteColor.withValues(alpha: 0.8), 18),
+                    style: AppFontStyle.styleW400(
+                        AppColors.whiteColor.withValues(alpha: 0.8), 18),
                   ),
                   const Spacer(),
                   GestureDetector(
                     onTap: () async {
                       if (Database.coin >
-                          (Database.fetchLoginUserProfileModel?.user?.gender?.toLowerCase() == "male"
+                          (Database.fetchLoginUserProfileModel?.user?.gender
+                                      ?.toLowerCase() ==
+                                  "male"
                               ? Database.maleRandomCallRate
-                              : Database.fetchLoginUserProfileModel?.user?.gender?.toLowerCase() == "female"
+                              : Database.fetchLoginUserProfileModel?.user
+                                          ?.gender
+                                          ?.toLowerCase() ==
+                                      "female"
                                   ? Database.femaleRandomCallRate
                                   : Database.generalRandomCallRate)) {
                         if (logic.getAvailableHost?.isFake == true) {
                           final random = Random();
-                          final List<String>? videoList = logic.getAvailableHost?.video;
+                          final List<String>? videoList =
+                              logic.getAvailableHost?.video;
                           final String randomVideoUrl =
-                              (videoList != null && videoList.isNotEmpty) ? videoList[random.nextInt(videoList.length)] : "";
+                              (videoList != null && videoList.isNotEmpty)
+                                  ? videoList[random.nextInt(videoList.length)]
+                                  : "";
 
-                          Utils.showLog("randomVideoUrl****************** $randomVideoUrl");
+                          Utils.showLog(
+                              "randomVideoUrl****************** $randomVideoUrl");
 
                           Get.toNamed(AppRoutes.incomingHostCall, arguments: {
                             "hostName": logic.getAvailableHost?.name,
@@ -158,9 +174,11 @@ class MatchingView extends StatelessWidget {
                           );
                         }
                       } else {
-                        Utils.showToast(EnumLocale.txtYouHaveInsufficientCoins.name.tr);
+                        Utils.showToast(
+                            EnumLocale.txtYouHaveInsufficientCoins.name.tr);
                         await 600.milliseconds.delay();
-                        Get.toNamed(AppRoutes.topUpPage)?.then((val) => logic.update());
+                        Get.toNamed(AppRoutes.topUpPage)
+                            ?.then((val) => logic.update());
                       }
                     },
                     child: Container(
@@ -169,7 +187,8 @@ class MatchingView extends StatelessWidget {
                         gradient: AppColors.gradientButtonColor,
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                      margin:
+                          const EdgeInsets.only(left: 20, right: 20, top: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -186,7 +205,8 @@ class MatchingView extends StatelessWidget {
                             children: [
                               Text(
                                 EnumLocale.txtVideoCall.name.tr,
-                                style: AppFontStyle.styleW800(AppColors.whiteColor, 16),
+                                style: AppFontStyle.styleW800(
+                                    AppColors.whiteColor, 16),
                               ),
                               Row(
                                 children: [
@@ -197,7 +217,8 @@ class MatchingView extends StatelessWidget {
                                   5.width,
                                   Text(
                                     "${(logic.selectedGender == "male" ? logic.getAvailableHost?.randomCallMaleRate : logic.selectedGender == "female" ? logic.getAvailableHost?.randomCallFemaleRate : logic.getAvailableHost?.randomCallRate).toString()}/min",
-                                    style: AppFontStyle.styleW800(AppColors.whiteColor, 12),
+                                    style: AppFontStyle.styleW800(
+                                        AppColors.whiteColor, 12),
                                   ),
                                 ],
                               ),
@@ -233,7 +254,8 @@ class MatchingView extends StatelessWidget {
                         gradient: AppColors.saveButton,
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                      margin:
+                          const EdgeInsets.only(left: 20, right: 20, top: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -246,7 +268,8 @@ class MatchingView extends StatelessWidget {
                           8.width,
                           Text(
                             EnumLocale.txtSayHi.name.tr,
-                            style: AppFontStyle.styleW800(AppColors.whiteColor, 18),
+                            style: AppFontStyle.styleW800(
+                                AppColors.whiteColor, 18),
                           ),
                         ],
                       ),

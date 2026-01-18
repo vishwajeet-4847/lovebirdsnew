@@ -1,4 +1,4 @@
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
@@ -42,13 +42,17 @@ class BlockListShimmer extends StatelessWidget {
                     Container(
                       height: 12,
                       width: 120,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
                     ),
                     const SizedBox(height: 5),
                     Container(
                       height: 12,
                       width: 80,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
                     ),
                   ],
                 ),

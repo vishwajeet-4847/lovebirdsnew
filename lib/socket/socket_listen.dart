@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:figgy/pages/chat_page/controller/chat_controller.dart';
-import 'package:figgy/pages/video_call_page/controller/video_call_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/socket_params.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/chat_page/controller/chat_controller.dart';
+import 'package:LoveBirds/pages/video_call_page/controller/video_call_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/socket_params.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 
 class SocketListen {
@@ -53,7 +53,8 @@ class SocketListen {
       Map<String, dynamic> response = jsonDecode(data[SocketParams.data]);
       Utils.showLog("SocketListen response message Seen => $response");
 
-      if (Get.currentRoute == AppRoutes.chatPage && Get.isRegistered<ChatController>()) {
+      if (Get.currentRoute == AppRoutes.chatPage &&
+          Get.isRegistered<ChatController>()) {
         final controller = Get.find<ChatController>();
 
         controller.onMessageSeen(response);
@@ -73,9 +74,11 @@ class SocketListen {
       Map<String, dynamic> response = jsonDecode(data[SocketParams.data]);
       Utils.showLog("Gift Received => $response");
 
-      response.putIfAbsent(SocketParams.messageId, () => data[SocketParams.messageId] ?? "");
+      response.putIfAbsent(
+          SocketParams.messageId, () => data[SocketParams.messageId] ?? "");
 
-      if (Get.currentRoute == AppRoutes.chatPage && Get.isRegistered<ChatController>()) {
+      if (Get.currentRoute == AppRoutes.chatPage &&
+          Get.isRegistered<ChatController>()) {
         final controller = Get.find<ChatController>();
         Utils.showLog("response => $response");
         controller.onGiftReceive(response);
@@ -233,7 +236,8 @@ class SocketListen {
 
       controller.callDisconnected(response);
     } catch (e) {
-      Utils.showLog("Error in onCallDisconnected: $e"); // Log error for debugging
+      Utils.showLog(
+          "Error in onCallDisconnected: $e"); // Log error for debugging
     }
   }
 

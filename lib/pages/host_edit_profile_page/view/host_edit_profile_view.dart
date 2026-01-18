@@ -1,20 +1,20 @@
 import 'dart:io';
 
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/cupertino_date_picker/controller/date_picker_controller.dart';
-import 'package:figgy/custom/cupertino_date_picker/date_picker.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/text_field/custom_text_field.dart';
-import 'package:figgy/pages/host_edit_profile_page/controller/host_edit_profile_controller.dart';
-import 'package:figgy/pages/host_edit_profile_page/view/edit_call_rate.dart';
-import 'package:figgy/pages/host_edit_profile_page/widget/host_edit_view.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/controller/date_picker_controller.dart';
+import 'package:LoveBirds/custom/cupertino_date_picker/date_picker.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/text_field/custom_text_field.dart';
+import 'package:LoveBirds/pages/host_edit_profile_page/controller/host_edit_profile_controller.dart';
+import 'package:LoveBirds/pages/host_edit_profile_page/view/edit_call_rate.dart';
+import 'package:LoveBirds/pages/host_edit_profile_page/widget/host_edit_view.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -42,7 +42,8 @@ class HostEditProfileView extends StatelessWidget {
                   children: [
                     Container(
                       height: MediaQuery.of(context).viewPadding.top + 72,
-                      padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).viewPadding.top),
                       alignment: Alignment.center,
                       width: Get.width,
                       decoration: BoxDecoration(
@@ -69,12 +70,14 @@ class HostEditProfileView extends StatelessWidget {
                               height: 45,
                               width: 45,
                               alignment: Alignment.center,
-                              child: Image.asset(AppAsset.icLeftArrow, width: 10),
+                              child:
+                                  Image.asset(AppAsset.icLeftArrow, width: 10),
                             ),
                           ),
                           Text(
                             EnumLocale.txtEnterYourDetails.name.tr,
-                            style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                            style: AppFontStyle.styleW700(
+                                AppColors.whiteColor, 20),
                           ),
                           const SizedBox(width: 45),
                         ],
@@ -82,7 +85,8 @@ class HostEditProfileView extends StatelessWidget {
                     ),
                     Expanded(
                       child: SingleChildScrollView(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -102,7 +106,8 @@ class HostEditProfileView extends StatelessWidget {
                                       child: Stack(
                                         children: [
                                           ClipOval(
-                                            child: logic.pickImages.isEmpty == true
+                                            child: logic.pickImages.isEmpty ==
+                                                    true
                                                 ? SizedBox(
                                                     height: 140,
                                                     width: 140,
@@ -125,7 +130,10 @@ class HostEditProfileView extends StatelessWidget {
                                               width: 38,
                                               alignment: Alignment.center,
                                               decoration: BoxDecoration(
-                                                border: Border.all(color: AppColors.profileBorderColor, width: 2),
+                                                border: Border.all(
+                                                    color: AppColors
+                                                        .profileBorderColor,
+                                                    width: 2),
                                                 shape: BoxShape.circle,
                                                 // color: Colors.red,
                                                 gradient: const LinearGradient(
@@ -177,10 +185,12 @@ class HostEditProfileView extends StatelessWidget {
                                           enabled: false,
                                           filled: true,
                                           controller: logic.emailController,
-                                          keyboardType: TextInputType.emailAddress,
+                                          keyboardType:
+                                              TextInputType.emailAddress,
                                           fillColor: AppColors.settingColor,
                                           cursorColor: AppColors.whiteColor,
-                                          hintText: EnumLocale.txtEnterEmail.name.tr,
+                                          hintText:
+                                              EnumLocale.txtEnterEmail.name.tr,
                                           hintTextSize: 17,
                                           hintTextColor: AppColors.colorGry,
                                           fontColor: AppColors.whiteColor,
@@ -195,12 +205,14 @@ class HostEditProfileView extends StatelessWidget {
                               id: AppConstant.idUpdateDate,
                               builder: (logic) {
                                 return GestureDetector(
-                                  onTap: () => showCupertinoDatePicker(context: context),
+                                  onTap: () =>
+                                      showCupertinoDatePicker(context: context),
                                   child: Container(
                                     height: 55,
                                     width: Get.width,
                                     alignment: Alignment.centerLeft,
-                                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 15),
                                     decoration: BoxDecoration(
                                       color: AppColors.settingColor,
                                       borderRadius: BorderRadius.circular(12),
@@ -208,7 +220,8 @@ class HostEditProfileView extends StatelessWidget {
                                     child: Text(
                                       logic.selectedDateString,
                                       overflow: TextOverflow.ellipsis,
-                                      style: AppFontStyle.styleW700(AppColors.whiteColor, 17),
+                                      style: AppFontStyle.styleW700(
+                                          AppColors.whiteColor, 17),
                                     ),
                                   ),
                                 );
@@ -222,7 +235,8 @@ class HostEditProfileView extends StatelessWidget {
                                 controller: logic.bioDetailsController,
                                 fillColor: AppColors.settingColor,
                                 cursorColor: AppColors.whiteColor,
-                                hintText: EnumLocale.txtSelfIntroduction.name.tr,
+                                hintText:
+                                    EnumLocale.txtSelfIntroduction.name.tr,
                                 hintTextSize: 17,
                                 hintTextColor: AppColors.colorGry,
                                 fontColor: AppColors.whiteColor,
@@ -269,7 +283,8 @@ class HostEditProfileView extends StatelessWidget {
                                 child: Center(
                                   child: Text(
                                     EnumLocale.txtEditCallRate.name.tr,
-                                    style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                                    style: AppFontStyle.styleW700(
+                                        AppColors.whiteColor, 18),
                                   ),
                                 ),
                               ),
@@ -282,7 +297,8 @@ class HostEditProfileView extends StatelessWidget {
                                 child: GestureDetector(
                                   onTap: () {
                                     if (Database.isDemoLogin) {
-                                      Utils.showToast("Oops! you don't have permission.This is demo login");
+                                      Utils.showToast(
+                                          "Oops! you don't have permission.This is demo login");
                                     } else {
                                       logic.onSaveProfile();
                                     }
@@ -296,7 +312,8 @@ class HostEditProfileView extends StatelessWidget {
                                     child: Center(
                                       child: Text(
                                         EnumLocale.txtSaveChanges.name.tr,
-                                        style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                                        style: AppFontStyle.styleW700(
+                                            AppColors.whiteColor, 18),
                                       ),
                                     ),
                                   ),

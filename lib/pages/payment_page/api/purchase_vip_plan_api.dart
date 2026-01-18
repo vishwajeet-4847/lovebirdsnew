@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/pages/top_up_page/model/purchase_coin_plan_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/pages/top_up_page/model/purchase_coin_plan_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,7 +18,8 @@ class PurchaseVipPlanApi {
   }) async {
     Utils.showLog("Purchase Vip Plan Api Calling......");
 
-    final uri = Uri.parse("${Api.purchaseVipPlan}?vipPlanId=$vipPlanId&paymentGateway=$paymentGateway");
+    final uri = Uri.parse(
+        "${Api.purchaseVipPlan}?vipPlanId=$vipPlanId&paymentGateway=$paymentGateway");
     log("Purchase Vip Plan Api Uri => $uri");
 
     final headers = {
@@ -30,7 +31,8 @@ class PurchaseVipPlanApi {
 
     try {
       final response = await http.post(uri, headers: headers);
-      Utils.showLog("Purchase Vip Plan Api StatusCode => ${response.statusCode}");
+      Utils.showLog(
+          "Purchase Vip Plan Api StatusCode => ${response.statusCode}");
       Utils.showLog("Purchase Vip Plan Api Response => ${response.body}");
 
       final jsonResponse = json.decode(response.body);

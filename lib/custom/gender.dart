@@ -1,7 +1,7 @@
-import 'package:figgy/custom/radio_button/custom_radio_button.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/radio_button/custom_radio_button.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 
@@ -44,7 +44,8 @@ class GenderButtonWidget extends StatelessWidget {
               CustomRadioButtonWidget(
                 isSelected: isSelected,
                 size: 22,
-                borderColor: isSelected ? AppColors.selectGender : AppColors.colorGry1,
+                borderColor:
+                    isSelected ? AppColors.selectGender : AppColors.colorGry1,
                 activeColor: AppColors.transparent,
               )
             ],

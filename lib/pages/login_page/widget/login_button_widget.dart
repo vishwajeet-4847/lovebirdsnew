@@ -1,10 +1,10 @@
-import 'package:figgy/pages/login_page/controller/login_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/login_page/controller/login_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,7 +32,8 @@ class LoginButtonWidget extends StatelessWidget {
                 child: Container(
                   height: 55,
                   width: Get.width,
-                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   decoration: BoxDecoration(
                     gradient: AppColors.hostNextButton,
                     borderRadius: BorderRadius.circular(50),
@@ -60,11 +61,14 @@ class LoginButtonWidget extends StatelessWidget {
                 child: Container(
                   height: 55,
                   width: Get.width,
-                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [AppColors.transparent, AppColors.transparent]),
+                    gradient: LinearGradient(
+                        colors: [AppColors.transparent, AppColors.transparent]),
                     borderRadius: BorderRadius.circular(50),
-                    border: Border.all(color: AppColors.whiteColor.withValues(alpha: 0.1)),
+                    border: Border.all(
+                        color: AppColors.whiteColor.withValues(alpha: 0.1)),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -121,7 +125,8 @@ class LoginButtonWidget extends StatelessWidget {
                 child: Container(
                   height: 50,
                   width: Get.width,
-                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   decoration: BoxDecoration(
                     color: AppColors.loginButtonHost,
                     borderRadius: BorderRadius.circular(50),

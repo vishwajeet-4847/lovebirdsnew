@@ -1,7 +1,7 @@
-import 'package:figgy/pages/host_detail_page/widget/gift_widget.dart';
-import 'package:figgy/pages/host_detail_page/widget/user_information_widget.dart';
-import 'package:figgy/pages/host_detail_page/widget/user_photos_widget.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/gift_widget.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/user_information_widget.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/user_photos_widget.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class UserBottomViewWidget extends StatelessWidget {

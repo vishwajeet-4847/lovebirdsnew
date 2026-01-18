@@ -1,17 +1,17 @@
 import 'dart:developer';
 
-import 'package:figgy/common/gradiant_text.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/dialog/check_in_reward_dialog.dart';
-import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/shimmer/daily_check_in_dialog_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/gradiant_text.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/dialog/check_in_reward_dialog.dart';
+import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/shimmer/daily_check_in_dialog_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -63,7 +63,8 @@ class DailyCheckInDialog extends StatelessWidget {
                                   color: AppColors.whiteColor,
                                   shadows: [
                                     Shadow(
-                                      color: AppColors.blackColor.withValues(alpha: 0.38),
+                                      color: AppColors.blackColor
+                                          .withValues(alpha: 0.38),
                                       offset: const Offset(0, 1),
                                       blurRadius: 0,
                                     ),
@@ -77,7 +78,8 @@ class DailyCheckInDialog extends StatelessWidget {
                                   maxLines: 3,
                                   overflow: TextOverflow.visible,
                                   EnumLocale.txtDailyCheckInDescription.name.tr,
-                                  style: AppFontStyle.styleW600(AppColors.whiteColor, 14),
+                                  style: AppFontStyle.styleW600(
+                                      AppColors.whiteColor, 14),
                                 ).paddingOnly(left: 12),
                               ).paddingOnly(bottom: 10),
                             ],
@@ -102,7 +104,8 @@ class DailyCheckInDialog extends StatelessWidget {
                             : GridView.builder(
                                 shrinkWrap: true,
                                 padding: EdgeInsets.zero,
-                                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                gridDelegate:
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4,
                                   mainAxisSpacing: 5,
                                   crossAxisSpacing: 3,
@@ -126,11 +129,13 @@ class DailyCheckInDialog extends StatelessWidget {
                           onTap: () async {
                             if (logic.isTodayCheckIn) {
                               log("User has already checked in today.");
-                              Utils.showToast("You have already checked in today");
+                              Utils.showToast(
+                                  "You have already checked in today");
 
                               Get.back();
                             } else {
-                              Get.dialog(const LoadingWidget(), barrierDismissible: false);
+                              Get.dialog(const LoadingWidget(),
+                                  barrierDismissible: false);
                               await logic.earnCoinFromDailyCheckIn(context);
 
                               Get.close(2);
@@ -144,12 +149,15 @@ class DailyCheckInDialog extends StatelessWidget {
                               width: 342,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                gradient: logic.isTodayCheckIn ? AppColors.followGradient : AppColors.gradientButtonColor,
+                                gradient: logic.isTodayCheckIn
+                                    ? AppColors.followGradient
+                                    : AppColors.gradientButtonColor,
                                 borderRadius: BorderRadius.circular(50),
                               ),
                               child: Text(
                                 EnumLocale.txtCheckIn.name.tr,
-                                style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                                style: AppFontStyle.styleW700(
+                                    AppColors.whiteColor, 18),
                               ),
                             ),
                           ),
@@ -239,7 +247,8 @@ class DailyCheckInBottom extends StatelessWidget {
                             color: AppColors.whiteColor,
                             shadows: [
                               Shadow(
-                                color: AppColors.blackColor.withValues(alpha: 0.50),
+                                color: AppColors.blackColor
+                                    .withValues(alpha: 0.50),
                                 offset: const Offset(1, 1.2),
                                 blurRadius: 0,
                               ),
@@ -273,7 +282,8 @@ class DailyCheckInBottom extends StatelessWidget {
                             colors: [AppColors.pinkColor, AppColors.blueColor],
                           ),
                           text: EnumLocale.txtVIEWMORE.name.tr,
-                          style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 12),
                         ),
                       ),
                     ),
@@ -289,7 +299,8 @@ class DailyCheckInBottom extends StatelessWidget {
 }
 
 class DailyCheckInContainer extends StatelessWidget {
-  const DailyCheckInContainer({super.key, required this.day, required this.index});
+  const DailyCheckInContainer(
+      {super.key, required this.day, required this.index});
   final int index;
   final String day;
   @override
@@ -299,9 +310,11 @@ class DailyCheckInContainer extends StatelessWidget {
       builder: (logic) {
         final value = logic.coinData[index];
 
-        final isToday = (DateTime.now().day == logic.onGetCustomGetCurrentWeekDate()[index].day);
+        final isToday = (DateTime.now().day ==
+            logic.onGetCustomGetCurrentWeekDate()[index].day);
 
-        final today = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+        final today = DateTime(
+            DateTime.now().year, DateTime.now().month, DateTime.now().day);
 
         final customDate = logic.onGetCustomGetCurrentWeekDate()[index];
         final isPreviousDay = customDate.isBefore(today);
@@ -313,13 +326,25 @@ class DailyCheckInContainer extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 gradient: (isPreviousDay && value.isCheckIn == false)
-                    ? const LinearGradient(colors: [AppColors.disableColor, AppColors.disableColor])
+                    ? const LinearGradient(colors: [
+                        AppColors.disableColor,
+                        AppColors.disableColor
+                      ])
                     : (value.isCheckIn == true)
-                        ? LinearGradient(colors: [AppColors.transparent, AppColors.transparent])
+                        ? LinearGradient(colors: [
+                            AppColors.transparent,
+                            AppColors.transparent
+                          ])
                         : (isToday && value.isCheckIn == false)
-                            ? const LinearGradient(colors: [AppColors.pinkColor, AppColors.blueColor])
+                            ? const LinearGradient(colors: [
+                                AppColors.pinkColor,
+                                AppColors.blueColor
+                              ])
                             : const LinearGradient(
-                                colors: [AppColors.disableColor, AppColors.disableColor],
+                                colors: [
+                                  AppColors.disableColor,
+                                  AppColors.disableColor
+                                ],
                               ),
               ),
               child: Column(
@@ -343,7 +368,9 @@ class DailyCheckInContainer extends StatelessWidget {
                             Text(
                               EnumLocale.txtDay.name.tr,
                               style: AppFontStyle.styleW800(
-                                isPreviousDay && value.isCheckIn == false ? AppColors.dayColor : AppColors.whiteColor,
+                                isPreviousDay && value.isCheckIn == false
+                                    ? AppColors.dayColor
+                                    : AppColors.whiteColor,
                                 10,
                               ),
                             ),
@@ -351,7 +378,9 @@ class DailyCheckInContainer extends StatelessWidget {
                             Text(
                               day,
                               style: AppFontStyle.styleW800(
-                                isPreviousDay && value.isCheckIn == false ? AppColors.dayColor : AppColors.whiteColor,
+                                isPreviousDay && value.isCheckIn == false
+                                    ? AppColors.dayColor
+                                    : AppColors.whiteColor,
                                 10,
                               ),
                             ),
@@ -363,7 +392,8 @@ class DailyCheckInContainer extends StatelessWidget {
                   const Spacer(),
                   Container(
                     alignment: Alignment.center,
-                    child: isPreviousDay && value.isCheckIn == false || value.isCheckIn == true
+                    child: isPreviousDay && value.isCheckIn == false ||
+                            value.isCheckIn == true
                         ? Image.asset(
                             AppAsset.disableCoinCheckIn,
                             height: 35,
@@ -389,27 +419,34 @@ class DailyCheckInContainer extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     alignment: Alignment.center,
-                    child: isPreviousDay && value.isCheckIn == false || value.isCheckIn == true
+                    child: isPreviousDay && value.isCheckIn == false ||
+                            value.isCheckIn == true
                         ? Text(
                             "${logic.coinData[index].reward.toString()} Coin",
-                            style: AppFontStyle.styleW800(AppColors.whiteColor, 10),
+                            style: AppFontStyle.styleW800(
+                                AppColors.whiteColor, 10),
                           )
                         : Text(
                             "${logic.coinData[index].reward.toString()} Coin",
-                            style: AppFontStyle.styleW800(AppColors.whiteColor, 10),
+                            style: AppFontStyle.styleW800(
+                                AppColors.whiteColor, 10),
                           ),
                   ).paddingSymmetric(horizontal: 10),
                   8.height,
                 ],
               ),
             ),
-            (value.isCheckIn == true || (isPreviousDay && value.isCheckIn == false))
+            (value.isCheckIn == true ||
+                    (isPreviousDay && value.isCheckIn == false))
                 ? Positioned.fill(
                     child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 4.5, vertical: 3),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 4.5, vertical: 3),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: value.isCheckIn == true ? AppColors.checkInColor.withValues(alpha: 0.58) : AppColors.dailyCheckInPastBg,
+                        color: value.isCheckIn == true
+                            ? AppColors.checkInColor.withValues(alpha: 0.58)
+                            : AppColors.dailyCheckInPastBg,
                       ),
                       child: Center(
                         child: Container(
@@ -418,11 +455,17 @@ class DailyCheckInContainer extends StatelessWidget {
                             gradient: LinearGradient(
                               colors: value.isCheckIn == true
                                   ? [AppColors.pinkColor, AppColors.blueColor]
-                                  : [AppColors.dailyCheckInPastDay, AppColors.dailyCheckInPastDay],
+                                  : [
+                                      AppColors.dailyCheckInPastDay,
+                                      AppColors.dailyCheckInPastDay
+                                    ],
                             ),
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
-                              color: value.isCheckIn == true ? AppColors.whiteColor : AppColors.whiteColor.withValues(alpha: 0.40),
+                              color: value.isCheckIn == true
+                                  ? AppColors.whiteColor
+                                  : AppColors.whiteColor
+                                      .withValues(alpha: 0.40),
                               width: 0.5,
                             ),
                           ),
@@ -439,8 +482,11 @@ class DailyCheckInContainer extends StatelessWidget {
                                   : const SizedBox.shrink(),
                               2.width,
                               Text(
-                                value.isCheckIn == true ? EnumLocale.txtCheckedIn.name.tr : EnumLocale.txtLostThisDay.name.tr,
-                                style: AppFontStyle.styleW800(AppColors.whiteColor, 8),
+                                value.isCheckIn == true
+                                    ? EnumLocale.txtCheckedIn.name.tr
+                                    : EnumLocale.txtLostThisDay.name.tr,
+                                style: AppFontStyle.styleW800(
+                                    AppColors.whiteColor, 8),
                               ),
                             ],
                           ).paddingSymmetric(horizontal: 5),

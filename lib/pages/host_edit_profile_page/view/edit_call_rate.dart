@@ -1,9 +1,9 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +30,8 @@ class EditCallRate extends StatelessWidget {
             // Fixed Header
             Container(
               height: MediaQuery.of(context).viewPadding.top + 72,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -76,7 +77,8 @@ class EditCallRate extends StatelessWidget {
                   return SingleChildScrollView(
                     padding: const EdgeInsets.only(bottom: 24),
                     child: ConstrainedBox(
-                      constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                      constraints:
+                          BoxConstraints(minHeight: constraints.maxHeight),
                       child: IntrinsicHeight(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +86,8 @@ class EditCallRate extends StatelessWidget {
                             26.height,
                             Text(
                               EnumLocale.txtRandomCallRate.name.tr,
-                              style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                              style: AppFontStyle.styleW700(
+                                  AppColors.whiteColor, 18),
                             ).paddingSymmetric(horizontal: 16),
                             20.height,
 
@@ -94,17 +97,20 @@ class EditCallRate extends StatelessWidget {
                                 // Male
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         EnumLocale.txtMale.name.tr,
-                                        style: AppFontStyle.styleW500(AppColors.walletTxtColor, 14),
+                                        style: AppFontStyle.styleW500(
+                                            AppColors.walletTxtColor, 14),
                                       ),
                                       14.height,
                                       GetBuilder<HostEditProfileController>(
                                         builder: (logic) => CustomTextField(
                                           filled: true,
-                                          controller: logic.randomCallRateForMaleController,
+                                          controller: logic
+                                              .randomCallRateForMaleController,
                                           fillColor: AppColors.settingColor,
                                           cursorColor: AppColors.whiteColor,
                                           hintText: EnumLocale.txtMale.name.tr,
@@ -124,20 +130,24 @@ class EditCallRate extends StatelessWidget {
                                 // Female
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         EnumLocale.txtFemale.name.tr,
-                                        style: AppFontStyle.styleW500(AppColors.walletTxtColor, 14),
+                                        style: AppFontStyle.styleW500(
+                                            AppColors.walletTxtColor, 14),
                                       ),
                                       14.height,
                                       GetBuilder<HostEditProfileController>(
                                         builder: (logic) => CustomTextField(
                                           filled: true,
-                                          controller: logic.randomCallRateForFeMaleController,
+                                          controller: logic
+                                              .randomCallRateForFeMaleController,
                                           fillColor: AppColors.settingColor,
                                           cursorColor: AppColors.whiteColor,
-                                          hintText: EnumLocale.txtFemale.name.tr,
+                                          hintText:
+                                              EnumLocale.txtFemale.name.tr,
                                           hintTextSize: 17,
                                           hintTextColor: AppColors.colorGry,
                                           fontColor: AppColors.whiteColor,
@@ -154,17 +164,20 @@ class EditCallRate extends StatelessWidget {
                                 // Both
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         EnumLocale.txtBoth.name.tr,
-                                        style: AppFontStyle.styleW500(AppColors.walletTxtColor, 14),
+                                        style: AppFontStyle.styleW500(
+                                            AppColors.walletTxtColor, 14),
                                       ),
                                       14.height,
                                       GetBuilder<HostEditProfileController>(
                                         builder: (logic) => CustomTextField(
                                           filled: true,
-                                          controller: logic.randomCallRateForBothController,
+                                          controller: logic
+                                              .randomCallRateForBothController,
                                           fillColor: AppColors.settingColor,
                                           cursorColor: AppColors.whiteColor,
                                           hintText: EnumLocale.txtBoth.name.tr,
@@ -188,20 +201,24 @@ class EditCallRate extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         EnumLocale.txtPrivateCallRate.name.tr,
-                                        style: AppFontStyle.styleW400(AppColors.walletTxtColor, 14),
+                                        style: AppFontStyle.styleW400(
+                                            AppColors.walletTxtColor, 14),
                                       ),
                                       14.height,
                                       GetBuilder<HostEditProfileController>(
                                         builder: (logic) => CustomTextField(
                                           filled: true,
-                                          controller: logic.privetCallRateController,
+                                          controller:
+                                              logic.privetCallRateController,
                                           fillColor: AppColors.settingColor,
                                           cursorColor: AppColors.whiteColor,
-                                          hintText: EnumLocale.txtPrivateCallRate.name.tr,
+                                          hintText: EnumLocale
+                                              .txtPrivateCallRate.name.tr,
                                           hintTextSize: 17,
                                           hintTextColor: AppColors.colorGry,
                                           fontColor: AppColors.whiteColor,
@@ -216,20 +233,24 @@ class EditCallRate extends StatelessWidget {
                                 18.width,
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         EnumLocale.txtAudioCallRate.name.tr,
-                                        style: AppFontStyle.styleW400(AppColors.walletTxtColor, 14),
+                                        style: AppFontStyle.styleW400(
+                                            AppColors.walletTxtColor, 14),
                                       ),
                                       14.height,
                                       GetBuilder<HostEditProfileController>(
                                         builder: (logic) => CustomTextField(
                                           filled: true,
-                                          controller: logic.audioCallRateController,
+                                          controller:
+                                              logic.audioCallRateController,
                                           fillColor: AppColors.settingColor,
                                           cursorColor: AppColors.whiteColor,
-                                          hintText: EnumLocale.txtAudioCallRate.name.tr,
+                                          hintText: EnumLocale
+                                              .txtAudioCallRate.name.tr,
                                           hintTextSize: 17,
                                           hintTextColor: AppColors.colorGry,
                                           fontColor: AppColors.whiteColor,
@@ -246,7 +267,8 @@ class EditCallRate extends StatelessWidget {
                             24.height,
 
                             // Chat Rate
-                            buildLabel(EnumLocale.txtChatRate.name.tr).paddingSymmetric(horizontal: 16),
+                            buildLabel(EnumLocale.txtChatRate.name.tr)
+                                .paddingSymmetric(horizontal: 16),
                             GetBuilder<HostEditProfileController>(
                               builder: (logic) => CustomTextField(
                                 filled: true,
@@ -271,7 +293,8 @@ class EditCallRate extends StatelessWidget {
                                 return GestureDetector(
                                   onTap: () {
                                     if (Database.isDemoLogin) {
-                                      Utils.showToast("Oops! you don't have permission.This is demo login");
+                                      Utils.showToast(
+                                          "Oops! you don't have permission.This is demo login");
                                     } else {
                                       logic.onSaveProfileWhenCallRate();
                                     }
@@ -290,10 +313,12 @@ class EditCallRate extends StatelessWidget {
                                     child: Center(
                                       child: Text(
                                         EnumLocale.txtSaveCallRate.name.tr,
-                                        style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                                        style: AppFontStyle.styleW700(
+                                            AppColors.whiteColor, 20),
                                       ),
                                     ),
-                                  ).paddingOnly(right: 24, left: 24, bottom: 24, top: 15),
+                                  ).paddingOnly(
+                                      right: 24, left: 24, bottom: 24, top: 15),
                                 );
                               },
                             ),

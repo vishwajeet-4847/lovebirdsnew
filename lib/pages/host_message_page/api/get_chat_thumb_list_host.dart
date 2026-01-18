@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
-import 'package:figgy/utils/api.dart';
+import 'package:LoveBirds/pages/host_message_page/model/get_chat_thumb_list_host_model.dart';
+import 'package:LoveBirds/utils/api.dart';
 import 'package:http/http.dart' as http;
 
 class GetChatThumbListHostApi {
@@ -17,7 +17,8 @@ class GetChatThumbListHostApi {
   }) async {
     log("startPagination => $startPagination");
 
-    final uri = Uri.parse("${Api.getChatThumbListForHost}?start=$startPagination&limit=$limitPagination&hostId=$hostId");
+    final uri = Uri.parse(
+        "${Api.getChatThumbListForHost}?start=$startPagination&limit=$limitPagination&hostId=$hostId");
     final headers = {
       Api.key: Api.secretKey,
       Api.tokenKey: "Bearer $token",
@@ -30,7 +31,8 @@ class GetChatThumbListHostApi {
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
         log("Get Chat Thumb List Host Api Response => ${response.body}");
-        getChatThumbListHostModel = GetChatThumbListHostModel.fromJson(jsonResponse);
+        getChatThumbListHostModel =
+            GetChatThumbListHostModel.fromJson(jsonResponse);
 
         return getChatThumbListHostModel;
       } else {

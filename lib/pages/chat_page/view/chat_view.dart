@@ -1,11 +1,11 @@
-import 'package:figgy/custom/custom_format_audio_time.dart';
-import 'package:figgy/pages/chat_page/controller/chat_controller.dart';
-import 'package:figgy/pages/chat_page/widget/chat_bottom_widget.dart';
-import 'package:figgy/pages/chat_page/widget/chat_center_widget.dart';
-import 'package:figgy/pages/chat_page/widget/chat_top_widget.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
+import 'package:LoveBirds/custom/custom_format_audio_time.dart';
+import 'package:LoveBirds/pages/chat_page/controller/chat_controller.dart';
+import 'package:LoveBirds/pages/chat_page/widget/chat_bottom_widget.dart';
+import 'package:LoveBirds/pages/chat_page/widget/chat_center_widget.dart';
+import 'package:LoveBirds/pages/chat_page/widget/chat_top_widget.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -65,14 +65,17 @@ class ChatView extends GetView<ChatController> {
                                   child: Container(
                                     alignment: Alignment.center,
                                     decoration: BoxDecoration(
-                                      color: AppColors.redColor.withValues(alpha: 0.7),
+                                      color: AppColors.redColor
+                                          .withValues(alpha: 0.7),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     height: 20,
                                     width: 70,
                                     child: Text(
-                                      CustomFormatAudioTime.convert(controller.countTime),
-                                      style: TextStyle(color: AppColors.whiteColor),
+                                      CustomFormatAudioTime.convert(
+                                          controller.countTime),
+                                      style: TextStyle(
+                                          color: AppColors.whiteColor),
                                     ),
                                   ),
                                 );

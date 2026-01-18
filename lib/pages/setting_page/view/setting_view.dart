@@ -1,16 +1,16 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:figgy/custom/dialog/delete_account_dialog.dart';
-import 'package:figgy/custom/dialog/log_out_dialog.dart';
-import 'package:figgy/pages/profile_page/widget/setting_option_widget.dart';
-import 'package:figgy/pages/setting_page/controller/setting_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/dialog/delete_account_dialog.dart';
+import 'package:LoveBirds/custom/dialog/log_out_dialog.dart';
+import 'package:LoveBirds/pages/profile_page/widget/setting_option_widget.dart';
+import 'package:LoveBirds/pages/setting_page/controller/setting_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,7 +35,8 @@ class SettingView extends StatelessWidget {
             children: [
               Container(
                 height: MediaQuery.of(context).viewPadding.top + 72,
-                padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).viewPadding.top),
                 alignment: Alignment.center,
                 width: Get.width,
                 decoration: BoxDecoration(
@@ -107,7 +108,8 @@ class SettingView extends StatelessWidget {
                       return GestureDetector(
                         onTap: () {
                           Get.dialog(
-                            barrierColor: AppColors.blackColor.withValues(alpha: 0.8),
+                            barrierColor:
+                                AppColors.blackColor.withValues(alpha: 0.8),
                             Dialog(
                               backgroundColor: AppColors.transparent,
                               shadowColor: Colors.transparent,
@@ -115,8 +117,11 @@ class SettingView extends StatelessWidget {
                               elevation: 0,
                               child: DeleteAccountDialog(
                                 deleteAccountOnTap: () {
-                                  Utils.showLog('is host delete account  :: ${Database.isHost}');
-                                  Database.isHost == false ? controller.onDeleteAccount() : controller.onHostDeleteAccount();
+                                  Utils.showLog(
+                                      'is host delete account  :: ${Database.isHost}');
+                                  Database.isHost == false
+                                      ? controller.onDeleteAccount()
+                                      : controller.onHostDeleteAccount();
                                 },
                               ),
                             ),
@@ -145,7 +150,8 @@ class SettingView extends StatelessWidget {
                               12.width,
                               Text(
                                 EnumLocale.txtDeleteAccount.name.tr,
-                                style: AppFontStyle.styleW800(AppColors.whiteColor, 18),
+                                style: AppFontStyle.styleW800(
+                                    AppColors.whiteColor, 18),
                               ),
                             ],
                           ),

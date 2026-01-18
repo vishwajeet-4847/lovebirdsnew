@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/host_request_page/model/host_request_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_request_page/model/host_request_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class HostRequestApi {
@@ -34,7 +34,12 @@ class HostRequestApi {
         Uri.parse(Api.createHostRequest),
       );
 
-      final headers = {Api.key: Api.secretKey, "Content-Type": "application/json", Api.tokenKey: "Bearer $token", Api.uidKey: uid};
+      final headers = {
+        Api.key: Api.secretKey,
+        "Content-Type": "application/json",
+        Api.tokenKey: "Bearer $token",
+        Api.uidKey: uid
+      };
 
       request.fields.addAll({
         'fcmToken': fcmToken,
@@ -54,7 +59,8 @@ class HostRequestApi {
       for (int i = 0; i < photoGallery.length; i++) {
         final path = photoGallery[i];
         if (path != null && path.isNotEmpty) {
-          request.files.add(await http.MultipartFile.fromPath('photoGallery', path));
+          request.files
+              .add(await http.MultipartFile.fromPath('photoGallery', path));
         }
       }
 
@@ -77,7 +83,8 @@ class HostRequestApi {
         }
       }
 
-      request.files.add(await http.MultipartFile.fromPath('image', photoGallery[0] ?? ""));
+      request.files.add(
+          await http.MultipartFile.fromPath('image', photoGallery[0] ?? ""));
       request.headers.addAll(headers);
 
       var streamedResponse = await request.send();
@@ -87,7 +94,8 @@ class HostRequestApi {
       Utils.showLog("Host Request Api response => ${response.body}");
 
       if (response.statusCode == 200) {
-        final jsonResult = jsonDecode(response.body); // ✅ directly use response.body
+        final jsonResult =
+            jsonDecode(response.body); // ✅ directly use response.body
         Utils.showLog("Host Request Api Response => $jsonResult");
         return HostRequestModel.fromJson(jsonResult);
       } else {

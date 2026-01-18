@@ -1,10 +1,10 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +28,8 @@ class DemoBlockListView extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).viewPadding.top + 72,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+              padding:
+                  EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -137,7 +138,8 @@ class DemoUserBlockListView extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 11, vertical: 8),
                 width: Get.width,
                 decoration: BoxDecoration(
                   color: AppColors.settingColor,
@@ -159,12 +161,15 @@ class DemoUserBlockListView extends StatelessWidget {
                         width: 48,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                          color:
+                              AppColors.colorTextGrey.withValues(alpha: 0.22),
                         ),
                         clipBehavior: Clip.hardEdge,
                         child: CustomImage(
                           padding: 8,
-                          image: Database.isHost ? hostImage[index] : userImage[index],
+                          image: Database.isHost
+                              ? hostImage[index]
+                              : userImage[index],
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -176,19 +181,26 @@ class DemoUserBlockListView extends StatelessWidget {
                       children: [
                         Text(
                           Database.isHost ? hostName[index] : userName[index],
-                          style: AppFontStyle.styleW700(AppColors.whiteColor, 20),
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 20),
                         ),
                         1.height,
                         Row(
                           children: [
                             Text(
-                              Database.isHost ? hostCountryImage[index] : userCountryImage[index],
-                              style: AppFontStyle.styleW400(AppColors.colorGry, 19),
+                              Database.isHost
+                                  ? hostCountryImage[index]
+                                  : userCountryImage[index],
+                              style: AppFontStyle.styleW400(
+                                  AppColors.colorGry, 19),
                             ),
                             8.width,
                             Text(
-                              Database.isHost ? hostCountryName[index] : userCountryName[index],
-                              style: AppFontStyle.styleW400(AppColors.colorCountryTxt, 14),
+                              Database.isHost
+                                  ? hostCountryName[index]
+                                  : userCountryName[index],
+                              style: AppFontStyle.styleW400(
+                                  AppColors.colorCountryTxt, 14),
                             ),
                           ],
                         ),
@@ -197,11 +209,13 @@ class DemoUserBlockListView extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
-                        Utils.showToast("Oops! you don't have permission.This is demo login");
+                        Utils.showToast(
+                            "Oops! you don't have permission.This is demo login");
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 8),
                         decoration: const BoxDecoration(
                           color: AppColors.unBlockColor,
                           borderRadius: BorderRadius.all(
@@ -218,7 +232,8 @@ class DemoUserBlockListView extends StatelessWidget {
                             ),
                             Text(
                               EnumLocale.txtUnblock.name.tr,
-                              style: AppFontStyle.styleW700(AppColors.whiteColor, 15),
+                              style: AppFontStyle.styleW700(
+                                  AppColors.whiteColor, 15),
                             ),
                           ],
                         ),

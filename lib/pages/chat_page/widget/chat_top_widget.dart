@@ -1,15 +1,15 @@
 import 'dart:developer';
 
-import 'package:figgy/custom/bottom_sheet/report_bottom_sheet.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/chat_page/controller/chat_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/bottom_sheet/report_bottom_sheet.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/chat_page/controller/chat_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +20,8 @@ class ChatTopWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).viewPadding.top + 72,
-      padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top, left: 15, right: 15),
+      padding: EdgeInsets.only(
+          top: MediaQuery.of(context).viewPadding.top, left: 15, right: 15),
       alignment: Alignment.center,
       width: Get.width,
       decoration: BoxDecoration(
@@ -73,7 +74,9 @@ class ChatTopWidget extends StatelessWidget {
                           },
                     child: Container(
                       padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(border: Border.all(color: AppColors.borderColor), shape: BoxShape.circle),
+                      decoration: BoxDecoration(
+                          border: Border.all(color: AppColors.borderColor),
+                          shape: BoxShape.circle),
                       child: Container(
                         height: 42,
                         width: 42,
@@ -102,13 +105,17 @@ class ChatTopWidget extends StatelessWidget {
                       children: [
                         Text(
                           logic.hostName,
-                          style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                          style:
+                              AppFontStyle.styleW700(AppColors.whiteColor, 18),
                         ),
                         3.height,
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 2),
                           decoration: BoxDecoration(
-                              color: logic.isOnline == true ? AppColors.lightGreenColor : AppColors.offLineBgColor,
+                              color: logic.isOnline == true
+                                  ? AppColors.lightGreenColor
+                                  : AppColors.offLineBgColor,
                               borderRadius: BorderRadius.circular(60)),
                           child: Row(
                             children: [
@@ -117,13 +124,19 @@ class ChatTopWidget extends StatelessWidget {
                                 width: 7,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: logic.isOnline == true ? AppColors.greenColor : AppColors.offLineTxtColor,
+                                  color: logic.isOnline == true
+                                      ? AppColors.greenColor
+                                      : AppColors.offLineTxtColor,
                                 ),
                               ),
                               3.width,
                               Text(
                                 logic.isOnline == true ? "Online" : "Offline",
-                                style: AppFontStyle.styleW700(logic.isOnline == true ? AppColors.greenColor : AppColors.offLineTxtColor, 10),
+                                style: AppFontStyle.styleW700(
+                                    logic.isOnline == true
+                                        ? AppColors.greenColor
+                                        : AppColors.offLineTxtColor,
+                                    10),
                               ),
                             ],
                           ),
@@ -156,12 +169,10 @@ class ChatTopWidget extends StatelessWidget {
                 ),
                 onSelected: (value) {
                   if (value == EnumLocale.txtBlock.name.tr) {
-
                     logic.getBlock(context: context);
                     log("logic.hostDetailModel?.host?.id${logic.hostDetailModel?.host?.id}");
                     log("${Database.isHost}");
                     log("${Database.loginUserId}");
-
                   } else if (value == EnumLocale.txtReport.name.tr) {
                     ReportBottomSheetUi.show(
                       context: context,

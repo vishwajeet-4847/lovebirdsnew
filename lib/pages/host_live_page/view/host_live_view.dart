@@ -1,11 +1,11 @@
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/dialog/stop_live_dialog.dart';
-import 'package:figgy/pages/host_live_page/controller/host_live_controller.dart';
-import 'package:figgy/pages/host_live_page/widget/host_live_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/dialog/stop_live_dialog.dart';
+import 'package:LoveBirds/pages/host_live_page/controller/host_live_controller.dart';
+import 'package:LoveBirds/pages/host_live_page/widget/host_live_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -59,7 +59,8 @@ class _HostLiveViewState extends State<HostLiveView> {
                 return GestureDetector(
                   onTap: () {
                     FocusScopeNode currentFocus = FocusScope.of(context);
-                    if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+                    if (!currentFocus.hasPrimaryFocus &&
+                        currentFocus.focusedChild != null) {
                       currentFocus.focusedChild?.unfocus();
                     }
                   },
@@ -84,14 +85,21 @@ class _HostLiveViewState extends State<HostLiveView> {
                                 liveScreen: (controller.engine == null)
                                     ? const LoadingWidget()
                                     : (controller.remoteId == null)
-                                        ? (controller.liveStatus == false && Get.currentRoute == AppRoutes.hostLivePage)
-                                            ? LiveStreamEndUi(image: controller.image)
+                                        ? (controller.liveStatus == false &&
+                                                Get.currentRoute ==
+                                                    AppRoutes.hostLivePage)
+                                            ? LiveStreamEndUi(
+                                                image: controller.image)
                                             : const LoadingWidget()
                                         : AgoraVideoView(
-                                            controller: VideoViewController.remote(
+                                            controller:
+                                                VideoViewController.remote(
                                               rtcEngine: controller.engine!,
-                                              canvas: VideoCanvas(uid: controller.remoteId),
-                                              connection: RtcConnection(channelId: controller.channel),
+                                              canvas: VideoCanvas(
+                                                  uid: controller.remoteId),
+                                              connection: RtcConnection(
+                                                  channelId:
+                                                      controller.channel),
                                             ),
                                           ),
                                 liveStatus: controller.liveStatus,

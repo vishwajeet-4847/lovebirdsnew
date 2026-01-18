@@ -1,7 +1,7 @@
-import 'package:figgy/pages/host_live_streamers_page/view/host_live_streamers_view.dart';
-import 'package:figgy/pages/host_message_page/view/host_message_view.dart';
-import 'package:figgy/pages/profile_page/view/profile_view.dart';
-import 'package:figgy/socket/socket_services.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/view/host_live_streamers_view.dart';
+import 'package:LoveBirds/pages/host_message_page/view/host_message_view.dart';
+import 'package:LoveBirds/pages/profile_page/view/profile_view.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

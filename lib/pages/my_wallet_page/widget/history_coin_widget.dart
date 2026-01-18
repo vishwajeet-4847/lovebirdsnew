@@ -1,14 +1,14 @@
-import 'package:figgy/custom/no_data_found/no_data_found.dart';
-import 'package:figgy/pages/my_wallet_page/api/get_coin_history_api.dart';
-import 'package:figgy/pages/my_wallet_page/api/get_host_coin_history.dart';
-import 'package:figgy/pages/my_wallet_page/controller/my_wallet_controller.dart';
-import 'package:figgy/shimmer/block_list_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/no_data_found/no_data_found.dart';
+import 'package:LoveBirds/pages/my_wallet_page/api/get_coin_history_api.dart';
+import 'package:LoveBirds/pages/my_wallet_page/api/get_host_coin_history.dart';
+import 'package:LoveBirds/pages/my_wallet_page/controller/my_wallet_controller.dart';
+import 'package:LoveBirds/shimmer/block_list_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -45,7 +45,8 @@ class HistoryCoin extends StatelessWidget {
                                     child: RefreshIndicator(
                                       onRefresh: () async {
                                         logic.hostCoinHistory.clear();
-                                        GetHostCoinHistoryApi.startPagination = 1;
+                                        GetHostCoinHistoryApi.startPagination =
+                                            1;
 
                                         await logic.onGetHostCoinHistory();
                                       },
@@ -53,19 +54,27 @@ class HistoryCoin extends StatelessWidget {
                                         controller: logic.scrollController,
                                         child: ListView.builder(
                                           shrinkWrap: true,
-                                          physics: const NeverScrollableScrollPhysics(),
-                                          padding: const EdgeInsets.symmetric(horizontal: 15),
-                                          itemCount: logic.hostCoinHistory.length,
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 15),
+                                          itemCount:
+                                              logic.hostCoinHistory.length,
                                           itemBuilder: (context, index) {
-                                            final hostData = logic.hostCoinHistory[index];
+                                            final hostData =
+                                                logic.hostCoinHistory[index];
 
                                             return Container(
-                                              padding: const EdgeInsets.symmetric(vertical: 4),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 4),
                                               width: Get.width,
-                                              margin: const EdgeInsets.only(bottom: 10),
+                                              margin: const EdgeInsets.only(
+                                                  bottom: 10),
                                               decoration: BoxDecoration(
                                                 color: AppColors.settingColor,
-                                                borderRadius: BorderRadius.circular(14),
+                                                borderRadius:
+                                                    BorderRadius.circular(14),
                                               ),
                                               child: Row(
                                                 children: [
@@ -74,86 +83,174 @@ class HistoryCoin extends StatelessWidget {
                                                     height: 60,
                                                     width: 60,
                                                     decoration: BoxDecoration(
-                                                      color: AppColors.whiteColor.withValues(alpha: 0.05),
-                                                      border: Border.all(color: AppColors.whiteColor.withValues(alpha: 0.08)),
-                                                      borderRadius: BorderRadius.circular(10),
+                                                      color: AppColors
+                                                          .whiteColor
+                                                          .withValues(
+                                                              alpha: 0.05),
+                                                      border: Border.all(
+                                                          color: AppColors
+                                                              .whiteColor
+                                                              .withValues(
+                                                                  alpha: 0.08)),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
                                                     ),
-                                                    child: Image.asset(AppAsset.icCoin).paddingAll(10),
+                                                    child: Image.asset(
+                                                            AppAsset.icCoin)
+                                                        .paddingAll(10),
                                                   ),
                                                   10.width,
                                                   Column(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       Container(
                                                         width: Get.width * 0.53,
-                                                        color: Colors.transparent,
-                                                        child: SingleChildScrollView(
-                                                          scrollDirection: Axis.horizontal,
+                                                        color:
+                                                            Colors.transparent,
+                                                        child:
+                                                            SingleChildScrollView(
+                                                          scrollDirection:
+                                                              Axis.horizontal,
                                                           child: Text(
-                                                            logic.getHostTitleFromType(
-                                                              hostData.type?.toInt() ?? 0,
-                                                              hostData.senderName ?? "",
-                                                              hostData.typeDescription ?? "",
+                                                            logic
+                                                                .getHostTitleFromType(
+                                                              hostData.type
+                                                                      ?.toInt() ??
+                                                                  0,
+                                                              hostData.senderName ??
+                                                                  "",
+                                                              hostData.typeDescription ??
+                                                                  "",
                                                             ),
-                                                            style: AppFontStyle.styleW700(AppColors.whiteColor, 15),
-                                                            overflow: TextOverflow.visible,
+                                                            style: AppFontStyle
+                                                                .styleW700(
+                                                                    AppColors
+                                                                        .whiteColor,
+                                                                    15),
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .visible,
                                                             softWrap: false,
                                                           ),
                                                         ),
                                                       ),
                                                       Text(
-                                                        logic.dateFormat(hostData.createdAt ?? ""),
-                                                        style: AppFontStyle.styleW500(AppColors.historyTextColor, 11),
+                                                        logic.dateFormat(
+                                                            hostData.createdAt ??
+                                                                ""),
+                                                        style: AppFontStyle
+                                                            .styleW500(
+                                                                AppColors
+                                                                    .historyTextColor,
+                                                                11),
                                                       ),
                                                       2.height,
                                                       Text(
                                                         "ID : ${logic.getDisplayUniqueId(index, hostData.uniqueId)}",
-                                                        style: AppFontStyle.styleW700(AppColors.historyTextColor, 11),
+                                                        style: AppFontStyle
+                                                            .styleW700(
+                                                                AppColors
+                                                                    .historyTextColor,
+                                                                11),
                                                       ),
                                                     ],
                                                   ),
                                                   10.width,
                                                   Container(
                                                     height: 30,
-                                                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 12),
                                                     decoration: BoxDecoration(
                                                       color: hostData.type == 5
-                                                          ? hostData.payoutStatus == 1
-                                                              ? AppColors.colorLightYellow
-                                                              : hostData.payoutStatus == 2
-                                                                  ? AppColors.redColor2
-                                                                  : AppColors.colorOrangeWithdraw
-                                                          : hostData.payoutStatus == 1
-                                                              ? AppColors.redColor2
-                                                              : AppColors.darkGreenColor,
-                                                      borderRadius: BorderRadius.circular(60),
+                                                          ? hostData.payoutStatus ==
+                                                                  1
+                                                              ? AppColors
+                                                                  .colorLightYellow
+                                                              : hostData.payoutStatus ==
+                                                                      2
+                                                                  ? AppColors
+                                                                      .redColor2
+                                                                  : AppColors
+                                                                      .colorOrangeWithdraw
+                                                          : hostData.payoutStatus ==
+                                                                  1
+                                                              ? AppColors
+                                                                  .redColor2
+                                                              : AppColors
+                                                                  .darkGreenColor,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              60),
                                                     ),
                                                     child: Row(
                                                       children: [
                                                         Text(
                                                           hostData.type == 5
-                                                              ? hostData.payoutStatus == 1 || hostData.payoutStatus == 3
+                                                              ? hostData.payoutStatus ==
+                                                                          1 ||
+                                                                      hostData.payoutStatus ==
+                                                                          3
                                                                   ? ""
                                                                   : "-"
-                                                              : hostData.payoutStatus == 1
+                                                              : hostData.payoutStatus ==
+                                                                      1
                                                                   ? "-"
                                                                   : "+",
-                                                          style: hostData.payoutStatus == 1
-                                                              ? AppFontStyle.styleW700(AppColors.colorRedBg, 15)
-                                                              : AppFontStyle.styleW700(AppColors.whiteColor, 15),
+                                                          style: hostData
+                                                                      .payoutStatus ==
+                                                                  1
+                                                              ? AppFontStyle
+                                                                  .styleW700(
+                                                                      AppColors
+                                                                          .colorRedBg,
+                                                                      15)
+                                                              : AppFontStyle
+                                                                  .styleW700(
+                                                                      AppColors
+                                                                          .whiteColor,
+                                                                      15),
                                                         ),
                                                         Text(
                                                           "${hostData.hostCoin}",
-                                                          style: hostData.type == 5
-                                                              ? hostData.payoutStatus == 1
-                                                                  ? AppFontStyle.styleW700(AppColors.colorLightYellowBg, 15)
-                                                                  : hostData.payoutStatus == 2
-                                                                      ? AppFontStyle.styleW700(AppColors.colorRedBg, 15)
-                                                                      : AppFontStyle.styleW700(AppColors.colorOrangeWithdrawBg, 15)
-                                                              : hostData.payoutStatus == 1
-                                                                  ? AppFontStyle.styleW700(AppColors.colorRedBg, 15)
-                                                                  : AppFontStyle.styleW700(AppColors.whiteColor, 15),
+                                                          style: hostData
+                                                                      .type ==
+                                                                  5
+                                                              ? hostData.payoutStatus ==
+                                                                      1
+                                                                  ? AppFontStyle
+                                                                      .styleW700(
+                                                                          AppColors
+                                                                              .colorLightYellowBg,
+                                                                          15)
+                                                                  : hostData.payoutStatus ==
+                                                                          2
+                                                                      ? AppFontStyle.styleW700(
+                                                                          AppColors
+                                                                              .colorRedBg,
+                                                                          15)
+                                                                      : AppFontStyle.styleW700(
+                                                                          AppColors
+                                                                              .colorOrangeWithdrawBg,
+                                                                          15)
+                                                              : hostData.payoutStatus ==
+                                                                      1
+                                                                  ? AppFontStyle
+                                                                      .styleW700(
+                                                                          AppColors
+                                                                              .colorRedBg,
+                                                                          15)
+                                                                  : AppFontStyle
+                                                                      .styleW700(
+                                                                          AppColors
+                                                                              .whiteColor,
+                                                                          15),
                                                         ),
                                                       ],
                                                     ),
@@ -199,7 +296,8 @@ class HistoryCoin extends StatelessWidget {
                                     child: RefreshIndicator(
                                       onRefresh: () async {
                                         logic.userCoinHistory.clear();
-                                        GetUserCoinHistoryApi.startPagination = 1;
+                                        GetUserCoinHistoryApi.startPagination =
+                                            1;
 
                                         await logic.onGetUserCoinHistory();
                                       },
@@ -207,18 +305,24 @@ class HistoryCoin extends StatelessWidget {
                                         controller: logic.scrollController,
                                         child: ListView.builder(
                                           shrinkWrap: true,
-                                          physics: const NeverScrollableScrollPhysics(),
-                                          padding: const EdgeInsets.symmetric(horizontal: 15),
-                                          itemCount: logic.userCoinHistory.length,
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 15),
+                                          itemCount:
+                                              logic.userCoinHistory.length,
                                           itemBuilder: (context, index) {
-                                            final data = logic.userCoinHistory[index];
+                                            final data =
+                                                logic.userCoinHistory[index];
                                             return Container(
                                               height: 70,
                                               width: Get.width,
-                                              margin: const EdgeInsets.only(bottom: 10),
+                                              margin: const EdgeInsets.only(
+                                                  bottom: 10),
                                               decoration: BoxDecoration(
                                                 color: AppColors.settingColor,
-                                                borderRadius: BorderRadius.circular(14),
+                                                borderRadius:
+                                                    BorderRadius.circular(14),
                                               ),
                                               child: Row(
                                                 children: [
@@ -227,47 +331,86 @@ class HistoryCoin extends StatelessWidget {
                                                     height: 55,
                                                     width: 55,
                                                     decoration: BoxDecoration(
-                                                      color: AppColors.whiteColor.withValues(alpha: 0.05),
-                                                      borderRadius: BorderRadius.circular(16),
+                                                      color: AppColors
+                                                          .whiteColor
+                                                          .withValues(
+                                                              alpha: 0.05),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16),
                                                       border: Border.all(
-                                                        color: AppColors.whiteColor.withValues(alpha: 0.06),
+                                                        color: AppColors
+                                                            .whiteColor
+                                                            .withValues(
+                                                                alpha: 0.06),
                                                       ),
                                                     ),
                                                     child: Center(
-                                                      child: Image.asset(AppAsset.icCoin).paddingAll(10),
+                                                      child: Image.asset(
+                                                              AppAsset.icCoin)
+                                                          .paddingAll(10),
                                                     ),
                                                   ),
                                                   10.width,
                                                   Expanded(
                                                     child: Column(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Container(
-                                                          width: Get.width * 0.50,
-                                                          color: Colors.transparent,
-                                                          child: SingleChildScrollView(
-                                                            scrollDirection: Axis.horizontal,
+                                                          width:
+                                                              Get.width * 0.50,
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              SingleChildScrollView(
+                                                            scrollDirection:
+                                                                Axis.horizontal,
                                                             child: Text(
-                                                              logic.getTitleFromType(
-                                                                data.type?.toInt() ?? 0,
-                                                                data.receiverName ?? "",
-                                                                data.typeDescription ?? "",
+                                                              logic
+                                                                  .getTitleFromType(
+                                                                data.type
+                                                                        ?.toInt() ??
+                                                                    0,
+                                                                data.receiverName ??
+                                                                    "",
+                                                                data.typeDescription ??
+                                                                    "",
                                                               ),
-                                                              style: AppFontStyle.styleW700(AppColors.whiteColor, 15),
-                                                              overflow: TextOverflow.visible,
+                                                              style: AppFontStyle
+                                                                  .styleW700(
+                                                                      AppColors
+                                                                          .whiteColor,
+                                                                      15),
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .visible,
                                                               softWrap: false,
                                                             ),
                                                           ),
                                                         ),
                                                         Text(
-                                                          logic.dateFormat(data.createdAt ?? ""),
-                                                          style: AppFontStyle.styleW700(AppColors.historyTextColor, 11),
+                                                          logic.dateFormat(
+                                                              data.createdAt ??
+                                                                  ""),
+                                                          style: AppFontStyle
+                                                              .styleW700(
+                                                                  AppColors
+                                                                      .historyTextColor,
+                                                                  11),
                                                         ),
                                                         2.height,
                                                         Text(
                                                           "ID : ${logic.getDisplayUniqueId(index, data.uniqueId)}",
-                                                          style: AppFontStyle.styleW700(AppColors.historyTextColor, 11),
+                                                          style: AppFontStyle
+                                                              .styleW700(
+                                                                  AppColors
+                                                                      .historyTextColor,
+                                                                  11),
                                                         ),
                                                       ],
                                                     ),
@@ -275,20 +418,38 @@ class HistoryCoin extends StatelessWidget {
                                                   10.width,
                                                   Container(
                                                     height: 30,
-                                                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 12),
                                                     decoration: BoxDecoration(
-                                                      color: data.isIncome == false ? AppColors.redColor : AppColors.greenColor,
-                                                      borderRadius: BorderRadius.circular(60),
+                                                      color: data.isIncome ==
+                                                              false
+                                                          ? AppColors.redColor
+                                                          : AppColors
+                                                              .greenColor,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              60),
                                                     ),
                                                     child: Row(
                                                       children: [
                                                         Text(
-                                                          data.isIncome == false ? "-" : "+",
-                                                          style: AppFontStyle.styleW700(AppColors.whiteColor, 15),
+                                                          data.isIncome == false
+                                                              ? "-"
+                                                              : "+",
+                                                          style: AppFontStyle
+                                                              .styleW700(
+                                                                  AppColors
+                                                                      .whiteColor,
+                                                                  15),
                                                         ),
                                                         Text(
                                                           "${data.userCoin}",
-                                                          style: AppFontStyle.styleW800(AppColors.whiteColor, 17),
+                                                          style: AppFontStyle
+                                                              .styleW800(
+                                                                  AppColors
+                                                                      .whiteColor,
+                                                                  17),
                                                         ),
                                                       ],
                                                     ),

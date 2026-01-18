@@ -1,10 +1,10 @@
 // import 'dart:developer';
 //
-// import 'package:figgy/firebase/firebase_access_token.dart';
-// import 'package:figgy/firebase/firebase_uid.dart';
-// import 'package:figgy/pages/withdraw_page/api/get_payment_method_api.dart';
-// import 'package:figgy/pages/withdraw_page/model/get_paymet_model.dart';
-// import 'package:figgy/utils/constant.dart';
+// import 'package:LoveBirds/firebase/firebase_access_token.dart';
+// import 'package:LoveBirds/firebase/firebase_uid.dart';
+// import 'package:LoveBirds/pages/withdraw_page/api/get_payment_method_api.dart';
+// import 'package:LoveBirds/pages/withdraw_page/model/get_paymet_model.dart';
+// import 'package:LoveBirds/utils/constant.dart';
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
@@ -89,18 +89,18 @@
 // }
 import 'dart:developer';
 
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/my_wallet_page/model/fetch_coin_history_model.dart';
-import 'package:figgy/pages/my_wallet_page/model/fetch_host_coin_history_model.dart';
-import 'package:figgy/pages/splash_screen_page/model/get_setting_model.dart';
-import 'package:figgy/pages/withdraw_page/api/withdrawal_request_api.dart';
-import 'package:figgy/pages/withdraw_page/model/get_paymet_model.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/my_wallet_page/model/fetch_coin_history_model.dart';
+import 'package:LoveBirds/pages/my_wallet_page/model/fetch_host_coin_history_model.dart';
+import 'package:LoveBirds/pages/splash_screen_page/model/get_setting_model.dart';
+import 'package:LoveBirds/pages/withdraw_page/api/withdrawal_request_api.dart';
+import 'package:LoveBirds/pages/withdraw_page/model/get_paymet_model.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -139,7 +139,8 @@ class WithdrawController extends GetxController {
     final uid = FirebaseUid.onGet();
     final token = await FirebaseAccessToken.onGet();
 
-    getSettingModel = await GetSettingApi.getSettingApi(uid: uid ?? "", token: token ?? "");
+    getSettingModel =
+        await GetSettingApi.getSettingApi(uid: uid ?? "", token: token ?? "");
 
     currencySymbol = getSettingModel?.data?.currency?.symbol;
     log("currencySymbol => $currencySymbol");
@@ -160,30 +161,44 @@ class WithdrawController extends GetxController {
       autoCalculatedText = "0";
     } else {
       final minCoins = getSettingModel?.data?.minCoinsToConvert ?? 0;
-      autoCalculatedText = minCoins > 0 ? "${int.parse(input) / minCoins}" : "0";
+      autoCalculatedText =
+          minCoins > 0 ? "${int.parse(input) / minCoins}" : "0";
     }
 
     log("Calculated Text :: $autoCalculatedText");
 
-    update([AppConstant.onChangePaymentMethod, AppConstant.onSwitchWithdrawMethod, AppConstant.getPaymentMethod]);
+    update([
+      AppConstant.onChangePaymentMethod,
+      AppConstant.onSwitchWithdrawMethod,
+      AppConstant.getPaymentMethod
+    ]);
   }
 
   Future<void> onGetWithdrawMethods() async {
     isLoading = true;
     final uid = FirebaseUid.onGet();
     final token = await FirebaseAccessToken.onGet();
-    fetchWithdrawMethodModel = await GetPaymentMethodApi.callApi(token: token ?? "", uid: uid ?? "");
+    fetchWithdrawMethodModel =
+        await GetPaymentMethodApi.callApi(token: token ?? "", uid: uid ?? "");
     if (fetchWithdrawMethodModel?.data != null) {
       withdrawMethods.addAll(fetchWithdrawMethodModel?.data ?? []);
 
-      update([AppConstant.onChangePaymentMethod, AppConstant.onSwitchWithdrawMethod, AppConstant.getPaymentMethod]);
+      update([
+        AppConstant.onChangePaymentMethod,
+        AppConstant.onSwitchWithdrawMethod,
+        AppConstant.getPaymentMethod
+      ]);
     }
     isLoading = false;
   }
 
   Future<void> onSwitchWithdrawMethod() async {
     isShowPaymentMethod = !isShowPaymentMethod;
-    update([AppConstant.onChangePaymentMethod, AppConstant.onSwitchWithdrawMethod, AppConstant.getPaymentMethod]);
+    update([
+      AppConstant.onChangePaymentMethod,
+      AppConstant.onSwitchWithdrawMethod,
+      AppConstant.getPaymentMethod
+    ]);
   }
 
   Future<void> onChangePaymentMethod(int index) async {
@@ -192,7 +207,12 @@ class WithdrawController extends GetxController {
       onSwitchWithdrawMethod();
     }
 
-    details = withdrawMethods[index].details?.expand((detail) => detail.split(',')).map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
+    details = withdrawMethods[index]
+        .details
+        ?.expand((detail) => detail.split(','))
+        .map((e) => e.trim())
+        .where((e) => e.isNotEmpty)
+        .toList();
 
     // withdrawPaymentDetails = List<TextEditingController>.generate(
     //   details?.length ?? 0,
@@ -218,7 +238,11 @@ class WithdrawController extends GetxController {
         }).toList() ??
         [];
 
-    update([AppConstant.onChangePaymentMethod, AppConstant.onSwitchWithdrawMethod, AppConstant.getPaymentMethod]);
+    update([
+      AppConstant.onChangePaymentMethod,
+      AppConstant.onSwitchWithdrawMethod,
+      AppConstant.getPaymentMethod
+    ]);
   }
 
   Future<void> onClickWithdraw() async {
@@ -231,12 +255,19 @@ class WithdrawController extends GetxController {
       }
     }
 
-    if (autoCalculatedText == "0" || autoCalculatedText == "0.0" || autoCalculatedText.isEmpty) {
+    if (autoCalculatedText == "0" ||
+        autoCalculatedText == "0.0" ||
+        autoCalculatedText.isEmpty) {
       Utils.showToast(EnumLocale.txtPleaseEnterWithdrawCoin.name.tr);
-    } else if (num.parse(coinController.text) < (GetSettingApi.getSettingModel?.data?.minCoinsForHostPayout ?? 0)) {
-      Utils.showToast(EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name.tr);
+    } else if (num.parse(coinController.text) <
+        (GetSettingApi.getSettingModel?.data?.minCoinsForHostPayout ?? 0)) {
+      Utils.showToast(EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin
+          .name
+          .tr);
     } else if (int.parse(coinController.text) > Database.coin) {
-      Utils.showToast(EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name.tr);
+      Utils.showToast(EnumLocale
+          .txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name.tr);
     } else if (selectedPaymentMethod == null) {
       Utils.showToast(EnumLocale.txtPleaseSelectWithdrawMethod.name.tr);
     } else if (isWithdrawDetailsEmpty) {
@@ -249,7 +280,8 @@ class WithdrawController extends GetxController {
   Future<void> onWithdraw() async {
     final uid = FirebaseUid.onGet();
     final token = await FirebaseAccessToken.onGet();
-    Get.dialog(const LoadingWidget(), barrierDismissible: false); // Start Loading...
+    Get.dialog(const LoadingWidget(),
+        barrierDismissible: false); // Start Loading...
 
     // ✅ Build paymentDetails as Map<String, String>
     final Map<String, String> paymentDetailsMap = {};
@@ -271,12 +303,12 @@ class WithdrawController extends GetxController {
       token: token ?? '',
       uid: uid ?? '',
     );
-    
+
     // ✅ Handle result
     log("status=>${createWithdrawRequestModel?.status}");
     if (createWithdrawRequestModel?.status ?? false) {
       Utils.showToast(createWithdrawRequestModel?.message ?? "");
-      
+
       // ✅ Refresh coin balance after successful withdrawal
       await CustomFetchUserCoin.init();
       log("Coin refreshed after withdrawal: ${Database.coin}");

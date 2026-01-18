@@ -1,5 +1,5 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 

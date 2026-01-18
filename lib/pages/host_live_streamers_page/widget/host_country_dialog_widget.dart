@@ -1,10 +1,10 @@
-// import 'package:figgy/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
-// import 'package:figgy/pages/discover_host_for_user_page/model/live_streamers_dummy_model.dart';
-// import 'package:figgy/utils/colors_utils.dart';
-// import 'package:figgy/utils/constant.dart';
-// import 'package:figgy/utils/enum.dart';
-// import 'package:figgy/utils/font_style.dart';
-// import 'package:figgy/utils/utils.dart';
+// import 'package:LoveBirds/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
+// import 'package:LoveBirds/pages/discover_host_for_user_page/model/live_streamers_dummy_model.dart';
+// import 'package:LoveBirds/utils/colors_utils.dart';
+// import 'package:LoveBirds/utils/constant.dart';
+// import 'package:LoveBirds/utils/enum.dart';
+// import 'package:LoveBirds/utils/font_style.dart';
+// import 'package:LoveBirds/utils/utils.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 //

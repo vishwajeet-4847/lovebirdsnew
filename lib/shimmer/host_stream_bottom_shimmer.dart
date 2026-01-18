@@ -1,5 +1,5 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -39,7 +39,9 @@ class DiscoverHostForUserShimmer extends StatelessWidget {
                     Container(
                       height: 15,
                       width: 80,
-                      decoration: BoxDecoration(color: AppColors.shimmerHighlightColor, borderRadius: BorderRadius.circular(20)),
+                      decoration: BoxDecoration(
+                          color: AppColors.shimmerHighlightColor,
+                          borderRadius: BorderRadius.circular(20)),
                     ),
                     8.height,
                     Row(
@@ -47,13 +49,17 @@ class DiscoverHostForUserShimmer extends StatelessWidget {
                         Container(
                           height: 15,
                           width: 15,
-                          decoration: BoxDecoration(color: AppColors.shimmerHighlightColor, shape: BoxShape.circle),
+                          decoration: BoxDecoration(
+                              color: AppColors.shimmerHighlightColor,
+                              shape: BoxShape.circle),
                         ),
                         5.width,
                         Container(
                           height: 14,
                           width: 80,
-                          decoration: BoxDecoration(color: AppColors.shimmerHighlightColor, borderRadius: BorderRadius.circular(20)),
+                          decoration: BoxDecoration(
+                              color: AppColors.shimmerHighlightColor,
+                              borderRadius: BorderRadius.circular(20)),
                         ),
                       ],
                     )
@@ -63,7 +69,9 @@ class DiscoverHostForUserShimmer extends StatelessWidget {
                 Container(
                   height: 50,
                   width: 50,
-                  decoration: BoxDecoration(color: AppColors.shimmerHighlightColor, shape: BoxShape.circle),
+                  decoration: BoxDecoration(
+                      color: AppColors.shimmerHighlightColor,
+                      shape: BoxShape.circle),
                 ),
               ],
             ),

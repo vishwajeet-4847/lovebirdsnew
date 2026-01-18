@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/profile_page/model/earn_coin_from_daily_check_in_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/profile_page/model/earn_coin_from_daily_check_in_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class EarnCoinFromDailyCheckInApi {
@@ -16,7 +16,8 @@ class EarnCoinFromDailyCheckInApi {
   }) async {
     Utils.showLog("Earn Coin From Daily Check In Api Calling......");
 
-    final uri = Uri.parse("${Api.earnCoinFromDailyCheckIn}?dailyRewardCoin=$dailyRewardCoin");
+    final uri = Uri.parse(
+        "${Api.earnCoinFromDailyCheckIn}?dailyRewardCoin=$dailyRewardCoin");
     log("Earn Coin From Daily Check In Api Uri => $uri");
 
     final headers = {
@@ -28,11 +29,14 @@ class EarnCoinFromDailyCheckInApi {
 
     try {
       final response = await http.post(uri, headers: headers);
-      Utils.showLog("Earn Coin From Daily Check In Api Status Code :: ${response.statusCode}");
-      Utils.showLog("Earn Coin From Daily Check In Api Response :: ${response.body}");
+      Utils.showLog(
+          "Earn Coin From Daily Check In Api Status Code :: ${response.statusCode}");
+      Utils.showLog(
+          "Earn Coin From Daily Check In Api Response :: ${response.body}");
 
       final jsonResponse = json.decode(response.body);
-      earnCoinFromDailyCheckInModel = EarnCoinFromDailyCheckInModel.fromJson(jsonResponse);
+      earnCoinFromDailyCheckInModel =
+          EarnCoinFromDailyCheckInModel.fromJson(jsonResponse);
 
       Utils.showToast(earnCoinFromDailyCheckInModel?.message ?? "");
 

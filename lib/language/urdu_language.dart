@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> urPK = {
   EnumLocale.txtLetsStart.name: "آئیے شروع کریں۔",
   EnumLocale.txtGoogle.name: "گوگل",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "لاگ ان کرکے، آپ ہماری بات سے اتفاق کرتے ہیں۔",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "لاگ ان کرکے، آپ ہماری بات سے اتفاق کرتے ہیں۔",
   EnumLocale.txtPrivacyPolicy.name: "رازداری کی پالیسی",
   EnumLocale.txtAnd.name: "اور",
   EnumLocale.txtUseAgreement.name: "معاہدہ استعمال کریں۔",
   EnumLocale.txtCoinRechargeSuccess.name: "سکے ریچارج کی کامیابی",
   EnumLocale.txtSomeThingWentWrong.name: "کچھ غلط ہو گیا۔",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "آڈیو ریکارڈنگ کو فعال کرنے کے لیے دیر تک دبائیں۔",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "آڈیو ریکارڈنگ کو فعال کرنے کے لیے دیر تک دبائیں۔",
   EnumLocale.txtPleaseAllowPermission.name: "براہ کرم اجازت دیں۔",
   EnumLocale.txtTypeSomething.name: "کچھ بولو...",
   EnumLocale.txtRandomMatch.name: "بے ترتیب میچ",
@@ -17,11 +19,15 @@ final Map<String, String> urPK = {
   EnumLocale.txtContactus.name: "ہم سے رابطہ کریں۔",
   EnumLocale.txtRecharge.name: "ریچارج کریں۔",
   EnumLocale.txtMyGems.name: "میرے جواہرات",
-  EnumLocale.txtPleaseEnterWithdrawCoin.name: "برائے مہربانی ودہرو سکے درج کریں۔",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale.txtPleaseEnterWithdrawCoin.name:
+      "برائے مہربانی ودہرو سکے درج کریں۔",
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "واپس لینے کے لیے درخواست کردہ سکے کو ایڈمن کے ذریعہ بیان کردہ سے زیادہ ہونا چاہیے۔",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "براہ کرم واپسی کا طریقہ منتخب کریں۔",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "براہ کرم تمام ادائیگی کی تفصیلات درج کریں۔",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "براہ کرم واپسی کا طریقہ منتخب کریں۔",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "براہ کرم تمام ادائیگی کی تفصیلات درج کریں۔",
   EnumLocale.txtSelectPaymentGateway.name: "ادائیگی کے گیٹ وے کو منتخب کریں۔",
   EnumLocale.txtAvailableCoin.name: "دستیاب سکہ",
   EnumLocale.txtWithdraw.name: "واپس لینا",
@@ -55,7 +61,8 @@ final Map<String, String> urPK = {
   EnumLocale.txtBoth.name: "دونوں",
   EnumLocale.txtMale.name: "مرد",
   EnumLocale.txtFemale.name: "خاتون",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "VIP بنیں، استحقاق سے لطف اندوز ہوں۔",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "VIP بنیں، استحقاق سے لطف اندوز ہوں۔",
   EnumLocale.txtMore.name: "مزید",
   EnumLocale.txtGems.name: "جواہرات",
   EnumLocale.txtDailyCheckIn.name: "روزانہ چیک ان",
@@ -74,7 +81,8 @@ final Map<String, String> urPK = {
   EnumLocale.txtVerificationDetails.name: "تصدیقی تفصیلات",
   EnumLocale.txtVerificationRequestText.name:
       "آپ کی جمع کرائی گئی تمام تفصیلات ہمیں موصول ہو چکی ہیں۔ ہمارے پاس آپ کے لیے اپ ڈیٹ آنے کے بعد ہم آپ کو چیک کریں گے اور اپ ڈیٹ کریں گے۔\n\nآپ کے پروفائل کو چیک کرنے اور اس کی تصدیق کرنے میں تقریباً 3 سے 4 کاروباری دن لگیں گے۔",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "صارف کے پاس واپسی کے لیے کافی فنڈز نہیں ہیں۔",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "صارف کے پاس واپسی کے لیے کافی فنڈز نہیں ہیں۔",
   EnumLocale.txtIncomingVideoCall.name: "آنے والی ویڈیو کال...",
   EnumLocale.txtIncomingAudioCall.name: "آنے والی آڈیو کال...",
   EnumLocale.txtUploadYourImages.name: "اپنی تصاویر اپ لوڈ کریں۔",
@@ -122,8 +130,10 @@ final Map<String, String> urPK = {
   EnumLocale.txtConnecting.name: "منسلک ہو رہا ہے...",
   EnumLocale.txtVideoCall.name: "ویڈیو کال",
   EnumLocale.txtUnblock.name: "غیر مسدود کریں۔",
-  EnumLocale.txtApplealDetails.name: "آپ کی شکایت کو جلد از جلد قبول کیا جائے گا، براہ کرم اپنی شکایت کی تفصیلی وضاحت جمع کرائیں۔",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "براہ کرم اس وجہ کا انتخاب کریں جس کی آپ رپورٹ کرنا چاہتے ہیں۔",
+  EnumLocale.txtApplealDetails.name:
+      "آپ کی شکایت کو جلد از جلد قبول کیا جائے گا، براہ کرم اپنی شکایت کی تفصیلی وضاحت جمع کرائیں۔",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "براہ کرم اس وجہ کا انتخاب کریں جس کی آپ رپورٹ کرنا چاہتے ہیں۔",
   EnumLocale.txtCancel.name: "منسوخ کریں۔",
   EnumLocale.txtSave.name: "محفوظ کریں۔",
   EnumLocale.txtCheckIn.name: "چیک ان",
@@ -131,7 +141,8 @@ final Map<String, String> urPK = {
   EnumLocale.txtNoInternetConnection.name: "انٹرنیٹ کنکشن نہیں ہے۔",
   EnumLocale.txtGifts.name: "تحفے",
   EnumLocale.txtSend.name: "بھیجیں۔",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "کیا آپ یقینی طور پر اس ایپ سے باہر نکلنا چاہتے ہیں؟",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "کیا آپ یقینی طور پر اس ایپ سے باہر نکلنا چاہتے ہیں؟",
   EnumLocale.txtPay.name: "ادا کریں۔",
   EnumLocale.txtTotal.name: "کل",
   EnumLocale.txtPayNow.name: "ابھی ادائیگی کریں۔",
@@ -142,8 +153,10 @@ final Map<String, String> urPK = {
   EnumLocale.txtGallery.name: "گیلری",
   EnumLocale.txtTakePhoto.name: "تصویر کھینچو",
   EnumLocale.txtWaitingForRemoteUser.name: "ریموٹ صارف کا انتظار کر رہا ہے...",
-  EnumLocale.txtPleaseSelectADocumentType.name: "براہ کرم دستاویز کی قسم منتخب کریں۔",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "براہ کرم اپنا انٹرنیٹ کنکشن چیک کریں۔",
+  EnumLocale.txtPleaseSelectADocumentType.name:
+      "براہ کرم دستاویز کی قسم منتخب کریں۔",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "براہ کرم اپنا انٹرنیٹ کنکشن چیک کریں۔",
   EnumLocale.txtLiveHost.name: "لائیو میزبان",
   EnumLocale.txtEnterBio.name: "اپنا بائیو درج کریں۔",
   EnumLocale.txtUploadId.name: "اپنی تصاویر اپ لوڈ کریں۔",
@@ -158,8 +171,10 @@ final Map<String, String> urPK = {
   EnumLocale.txtMyLanguage.name: "میری زبان",
   EnumLocale.txtContinue.name: "جاری رکھیں",
   EnumLocale.txtYouHaveInsufficientCoins.name: "آپ کے پاس ناکافی سکے ہیں۔",
-  EnumLocale.txtPleaseSelectBackImages.name: "براہ کرم واپس امیجز کو منتخب کریں۔",
-  EnumLocale.txtPleaseSelectFontImages.name: "براہ کرم فونٹ امیجز کو منتخب کریں۔",
+  EnumLocale.txtPleaseSelectBackImages.name:
+      "براہ کرم واپس امیجز کو منتخب کریں۔",
+  EnumLocale.txtPleaseSelectFontImages.name:
+      "براہ کرم فونٹ امیجز کو منتخب کریں۔",
   EnumLocale.txtAudioCallDiscount.name: "آڈیو کال ڈسکاؤنٹ",
   EnumLocale.txtVideoCallDiscount.name: "ویڈیو کال ڈسکاؤنٹ",
   EnumLocale.txtRandomMatchCallDiscount.name: "رینڈم میچ کال ڈسکاؤنٹ",
@@ -194,7 +209,8 @@ final Map<String, String> urPK = {
   EnumLocale.txtVipDescription.name:
       "نوٹ: VIP ایک خودکار رکنیت کی ادائیگی نہیں ہے اور میعاد ختم ہونے کے بعد خود بخود تجدید نہیں ہوگی۔ VIP کو چالو کرنے کے بعد، آپ براہ راست انعامات وصول کر سکتے ہیں، اور دیگر مراعات سے VIP کی میعاد کے دوران لطف اٹھایا جا سکتا ہے۔",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP مراعات سے لطف اندوز ہوں۔",
-  EnumLocale.txtDailyCheckInDescription.name: "ہر ہفتے ہیرے حاصل کرنے کے لیے کسی بھی رقم کو ری چارج کرنے کے بعد چیک ان کریں۔",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "ہر ہفتے ہیرے حاصل کرنے کے لیے کسی بھی رقم کو ری چارج کرنے کے بعد چیک ان کریں۔",
   EnumLocale.txtDay.name: "دن",
   EnumLocale.txtSelectPaymentOption.name: "ادائیگی کا اختیار منتخب کریں۔",
   EnumLocale.txtVerificationText.name:
@@ -211,12 +227,16 @@ final Map<String, String> urPK = {
   EnumLocale.txtPayment.name: "ادائیگی",
   EnumLocale.txtBlockHost.name: "میزبان کو بلاک کریں۔",
   EnumLocale.txtBlockUser.name: "صارف کو مسدود کریں۔",
-  EnumLocale.txtBlockDetailsHost.name: "کیا آپ واقعی اس میزبان کو مسدود کرنا چاہتے ہیں؟",
-  EnumLocale.txtBlockDetailsUser.name: "کیا آپ واقعی اس صارف کو مسدود کرنا چاہتے ہیں؟",
+  EnumLocale.txtBlockDetailsHost.name:
+      "کیا آپ واقعی اس میزبان کو مسدود کرنا چاہتے ہیں؟",
+  EnumLocale.txtBlockDetailsUser.name:
+      "کیا آپ واقعی اس صارف کو مسدود کرنا چاہتے ہیں؟",
   EnumLocale.txtUnBlockHost.name: "میزبان کو غیر مسدود کریں۔",
   EnumLocale.txtUnBlockUser.name: "صارف کو غیر مسدود کریں۔",
-  EnumLocale.txtUnBlockDetailsHost.name: "کیا آپ واقعی اس میزبان کو غیر مسدود کرنا چاہتے ہیں؟",
-  EnumLocale.txtUnBlockDetailsUser.name: "کیا آپ واقعی اس صارف کو غیر مسدود کرنا چاہتے ہیں؟",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "کیا آپ واقعی اس میزبان کو غیر مسدود کرنا چاہتے ہیں؟",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "کیا آپ واقعی اس صارف کو غیر مسدود کرنا چاہتے ہیں؟",
   EnumLocale.txtWithdrawHistory.name: "تاریخ واپس لیں۔",
   EnumLocale.txtWalletHistory.name: "بٹوے کی تاریخ",
   EnumLocale.txtDeclineRequest.name:
@@ -244,7 +264,8 @@ final Map<String, String> urPK = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "براہ کرم پہلے تحفہ منتخب کریں۔",
   EnumLocale.txtTermsAndConditions.name: "شرائط و ضوابط",
   EnumLocale.txtUnderMaintenance.name: 'یہ ایپ دیکھ بھال کے تحت ہے۔',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'سسٹم کی دیکھ بھال جاری ہے: براہ کرم بعد میں دوبارہ کوشش کریں۔',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'سسٹم کی دیکھ بھال جاری ہے: براہ کرم بعد میں دوبارہ کوشش کریں۔',
   EnumLocale.txtCloseAPP.name: 'ایپ بند کریں۔',
   EnumLocale.txtSearchCountry.name: 'ملک تلاش کریں۔',
   EnumLocale.txtCoins.name: 'سکے',

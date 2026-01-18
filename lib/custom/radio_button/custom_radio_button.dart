@@ -1,8 +1,13 @@
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 
 class CustomRadioButtonWidget extends StatelessWidget {
-  const CustomRadioButtonWidget({super.key, required this.isSelected, required this.size, required this.borderColor, required this.activeColor});
+  const CustomRadioButtonWidget(
+      {super.key,
+      required this.isSelected,
+      required this.size,
+      required this.borderColor,
+      required this.activeColor});
 
   final bool isSelected;
   final double size;

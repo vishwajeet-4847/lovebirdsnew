@@ -1,13 +1,13 @@
 import 'dart:developer';
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/block_list_page/api/get_blocked_hosts_api.dart';
-import 'package:figgy/pages/block_list_page/api/get_blocked_user_api.dart';
-import 'package:figgy/pages/block_list_page/model/get_blocked_hosts_model.dart';
-import 'package:figgy/pages/block_list_page/model/get_blocked_user_model.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/block_list_page/api/get_blocked_hosts_api.dart';
+import 'package:LoveBirds/pages/block_list_page/api/get_blocked_user_api.dart';
+import 'package:LoveBirds/pages/block_list_page/model/get_blocked_hosts_model.dart';
+import 'package:LoveBirds/pages/block_list_page/model/get_blocked_user_model.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -44,7 +44,8 @@ class BlockController extends GetxController {
     isUserLoading = true;
     final uid = FirebaseUid.onGet();
     final token = await FirebaseAccessToken.onGet();
-    getHostBlockModel = await GetBlockedHostsApi.callApi(token: token ?? "", uid: uid ?? "");
+    getHostBlockModel =
+        await GetBlockedHostsApi.callApi(token: token ?? "", uid: uid ?? "");
     hostBlockList.addAll(getHostBlockModel?.blockedHosts ?? []);
     // hostBlockList = getHostBlockModel?.blockedHosts ?? <BlockedHost>[];
     isUserLoading = false;
@@ -66,7 +67,8 @@ class BlockController extends GetxController {
 
   Future<void> onPagination() async {
     log("position=>${scrollController.position.pixels}");
-    if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
+    if (scrollController.position.pixels ==
+        scrollController.position.maxScrollExtent) {
       log("Call");
       if (Database.isHost) {
         GetBlockedUserApi.startPagination++;

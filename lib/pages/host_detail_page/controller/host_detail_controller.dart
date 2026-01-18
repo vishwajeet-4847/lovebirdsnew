@@ -1,21 +1,21 @@
 import 'dart:developer';
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/chat_page/model/usre_block_host_api.dart';
-import 'package:figgy/pages/host_detail_page/api/follow_unfollow_api.dart';
-import 'package:figgy/pages/host_detail_page/api/host_detail_api.dart';
-import 'package:figgy/pages/host_detail_page/model/follow_unfollow_model.dart';
-import 'package:figgy/pages/host_detail_page/model/host_detail_model.dart';
-import 'package:figgy/pages/host_detail_page/widget/user_photos_widget.dart';
-import 'package:figgy/pages/vip_page/api/vip_plan_privilege_api.dart';
-import 'package:figgy/pages/vip_page/model/vip_plan_privilege_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/chat_page/model/usre_block_host_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/api/follow_unfollow_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/api/host_detail_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/model/follow_unfollow_model.dart';
+import 'package:LoveBirds/pages/host_detail_page/model/host_detail_model.dart';
+import 'package:LoveBirds/pages/host_detail_page/widget/user_photos_widget.dart';
+import 'package:LoveBirds/pages/vip_page/api/vip_plan_privilege_api.dart';
+import 'package:LoveBirds/pages/vip_page/model/vip_plan_privilege_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';
@@ -112,7 +112,10 @@ class HostDetailController extends GetxController {
     final token = await FirebaseAccessToken.onGet();
 
     if (argumentsList["hostId"]!.isNotEmpty) {
-      followFollowModel = await FollowUnfollowApi.callApi(followingId: argumentsList["hostId"] ?? "", token: token ?? "", uid: uid ?? "");
+      followFollowModel = await FollowUnfollowApi.callApi(
+          followingId: argumentsList["hostId"] ?? "",
+          token: token ?? "",
+          uid: uid ?? "");
       isFollow = followFollowModel?.isFollow ?? true;
     }
     update([AppConstant.idFollowToggle]);
@@ -133,9 +136,19 @@ class HostDetailController extends GetxController {
         );
         photoGallery = hostDetailModel?.host?.photoGallery ?? [];
         isFollow = hostDetailModel?.host?.isFollowing ?? false;
-        receivedGifts = (hostDetailModel?.receivedGifts ?? []).where((gift) => (gift.giftImage?.isNotEmpty ?? false)).toList();
-        impression = (hostDetailModel?.host?.impression ?? []).join(",").split(",").map((e) => e.trim()).toList();
-        language = (hostDetailModel?.host?.language ?? []).join(",").split(",").map((e) => e.trim()).toList();
+        receivedGifts = (hostDetailModel?.receivedGifts ?? [])
+            .where((gift) => (gift.giftImage?.isNotEmpty ?? false))
+            .toList();
+        impression = (hostDetailModel?.host?.impression ?? [])
+            .join(",")
+            .split(",")
+            .map((e) => e.trim())
+            .toList();
+        language = (hostDetailModel?.host?.language ?? [])
+            .join(",")
+            .split(",")
+            .map((e) => e.trim())
+            .toList();
         videoUrls = hostDetailModel?.host?.profileVideo ?? [];
 
         isLoading = false;
@@ -174,8 +187,10 @@ class HostDetailController extends GetxController {
     final photos = hostDetailModel?.host?.photoGallery ?? [];
     final videos = videoUrls;
 
-    final photoItems = photos.map((e) => MediaItem(url: e, isVideo: false)).toList();
-    final videoItems = videos.map((e) => MediaItem(url: e, isVideo: true)).toList();
+    final photoItems =
+        photos.map((e) => MediaItem(url: e, isVideo: false)).toList();
+    final videoItems =
+        videos.map((e) => MediaItem(url: e, isVideo: true)).toList();
 
     final allItems = [...photoItems, ...videoItems]..shuffle();
 

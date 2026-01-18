@@ -1,13 +1,13 @@
-import 'package:figgy/common/gradiant_text.dart';
-import 'package:figgy/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
-import 'package:figgy/pages/discover_host_for_user_page/widget/discover_host_for_user_following_tab.dart';
-import 'package:figgy/pages/discover_host_for_user_page/widget/discover_host_for_user_live_host_tab.dart';
-import 'package:figgy/pages/discover_host_for_user_page/widget/discover_host_for_user_tab.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/gradiant_text.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/widget/discover_host_for_user_following_tab.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/widget/discover_host_for_user_live_host_tab.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/widget/discover_host_for_user_tab.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +16,11 @@ class TabBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<dynamic> tabName = [EnumLocale.txtLiveHost.name.tr, EnumLocale.txtHost.name.tr, EnumLocale.txtFollowing.name.tr];
+    List<dynamic> tabName = [
+      EnumLocale.txtLiveHost.name.tr,
+      EnumLocale.txtHost.name.tr,
+      EnumLocale.txtFollowing.name.tr
+    ];
 
     return GetBuilder<DiscoverHostForUserController>(
       builder: (controller) {
@@ -55,7 +59,8 @@ class TabBarWidget extends StatelessWidget {
                               controller.selectedTabIndex == index
                                   ? GradientText(
                                       text: text,
-                                      style: AppFontStyle.styleW700(Colors.white, 20),
+                                      style: AppFontStyle.styleW700(
+                                          Colors.white, 20),
                                       gradient: const LinearGradient(
                                         colors: [
                                           AppColors.pinkColor,
@@ -67,11 +72,16 @@ class TabBarWidget extends StatelessWidget {
                                     )
                                   : Text(
                                       text,
-                                      style: AppFontStyle.styleW600(AppColors.whiteColor, 18),
+                                      style: AppFontStyle.styleW600(
+                                          AppColors.whiteColor, 18),
                                     ),
                               if (controller.selectedTabIndex == index)
                                 Positioned(
-                                  bottom: index == 0 ? -15 : (index == 1 ? -6 : (index == 2 ? -17 : -15)),
+                                  bottom: index == 0
+                                      ? -15
+                                      : (index == 1
+                                          ? -6
+                                          : (index == 2 ? -17 : -15)),
                                   right: 0,
                                   left: 0,
                                   child: SizedBox(
@@ -95,8 +105,10 @@ class TabBarWidget extends StatelessWidget {
                                     ),
                                     child: Text(
                                       "New",
-                                      style: AppFontStyle.styleW600(AppColors.whiteColor, 7),
-                                    ).paddingSymmetric(vertical: 0, horizontal: 4),
+                                      style: AppFontStyle.styleW600(
+                                          AppColors.whiteColor, 7),
+                                    ).paddingSymmetric(
+                                        vertical: 0, horizontal: 4),
                                   ),
                                 ),
                             ],

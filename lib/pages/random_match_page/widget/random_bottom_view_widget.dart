@@ -1,14 +1,14 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
-import 'package:figgy/custom/radio_button/custom_radio_button.dart';
-import 'package:figgy/pages/random_match_page/controller/random_match_controller.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/radio_button/custom_radio_button.dart';
+import 'package:LoveBirds/pages/random_match_page/controller/random_match_controller.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
@@ -86,7 +86,8 @@ class RandomBottomViewWidget extends StatelessWidget {
               child: Container(
                 // height: 50,
                 // alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 12),
                 decoration: BoxDecoration(
                   gradient: AppColors.randomButtonGradient,
                   borderRadius: BorderRadius.circular(50),

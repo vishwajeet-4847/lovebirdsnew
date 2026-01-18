@@ -1,10 +1,8 @@
-
-
 import 'dart:convert';
 
-import 'package:figgy/pages/splash_screen_page/model/get_policy_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/splash_screen_page/model/get_policy_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class GetPolicyApi {

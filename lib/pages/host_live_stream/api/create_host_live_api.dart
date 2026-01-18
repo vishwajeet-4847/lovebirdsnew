@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:figgy/pages/host_live_stream/model/create_host_live_model.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_live_stream/model/create_host_live_model.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:http/http.dart' as http;
 
 class CreateHostLiveApi {
@@ -13,7 +13,8 @@ class CreateHostLiveApi {
     required String channel,
     required String agoraUID,
   }) async {
-    final uri = Uri.parse("${Api.createHostLive}?hostId=$hostId&channel=$channel&agoraUID=$agoraUID");
+    final uri = Uri.parse(
+        "${Api.createHostLive}?hostId=$hostId&channel=$channel&agoraUID=$agoraUID");
 
     Utils.showLog("Create Host Live Response => $uri");
 

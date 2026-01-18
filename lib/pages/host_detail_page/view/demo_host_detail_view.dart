@@ -1,15 +1,15 @@
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:figgy/custom/app_background/custom_app_background.dart';
-import 'package:figgy/custom/app_title/custom_title.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_background/custom_app_background.dart';
+import 'package:LoveBirds/custom/app_title/custom_title.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:marquee/marquee.dart';
@@ -129,14 +129,16 @@ class DemoHostDetailView extends StatelessWidget {
                 children: [
                   Container(
                     color: AppColors.primaryColor1,
-                    padding: const EdgeInsets.only(bottom: 10, top: 10, left: 10),
+                    padding:
+                        const EdgeInsets.only(bottom: 10, top: 10, left: 10),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: AppColors.whiteColor.withValues(alpha: 0.50),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.50),
                             ),
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -148,7 +150,8 @@ class DemoHostDetailView extends StatelessWidget {
                               width: 78,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
-                                color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                color: AppColors.colorTextGrey
+                                    .withValues(alpha: 0.22),
                               ),
                               child: CustomImage(
                                 image: profileImage,
@@ -169,14 +172,18 @@ class DemoHostDetailView extends StatelessWidget {
                                       text: name,
                                       style: textStyle,
                                       scrollAxis: Axis.horizontal,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       blankSpace: 10.0,
                                       velocity: 30.0,
-                                      pauseAfterRound: const Duration(seconds: 1),
+                                      pauseAfterRound:
+                                          const Duration(seconds: 1),
                                       startPadding: 0.0,
-                                      accelerationDuration: const Duration(seconds: 1),
+                                      accelerationDuration:
+                                          const Duration(seconds: 1),
                                       accelerationCurve: Curves.linear,
-                                      decelerationDuration: const Duration(milliseconds: 500),
+                                      decelerationDuration:
+                                          const Duration(milliseconds: 500),
                                       decelerationCurve: Curves.easeOut,
                                     )
                                   : Text(
@@ -193,7 +200,8 @@ class DemoHostDetailView extends StatelessWidget {
                                 Text(
                                   generateRandom7DigitId(),
                                   maxLines: 1,
-                                  style: AppFontStyle.styleW500(AppColors.uniqueIdTxtColor, 14),
+                                  style: AppFontStyle.styleW500(
+                                      AppColors.uniqueIdTxtColor, 14),
                                 ),
                                 5.width,
                                 GestureDetector(
@@ -216,7 +224,9 @@ class DemoHostDetailView extends StatelessWidget {
                             Row(
                               children: [
                                 Container(
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(80), color: AppColors.colorPink1),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(80),
+                                      color: AppColors.colorPink1),
                                   child: Row(
                                     children: [
                                       Image.asset(
@@ -227,10 +237,12 @@ class DemoHostDetailView extends StatelessWidget {
                                       3.width,
                                       Text(
                                         "Female",
-                                        style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                                        style: AppFontStyle.styleW700(
+                                            AppColors.whiteColor, 12),
                                       ),
                                     ],
-                                  ).paddingSymmetric(vertical: 4, horizontal: 9),
+                                  ).paddingSymmetric(
+                                      vertical: 4, horizontal: 9),
                                 ),
                                 8.width,
                                 Container(
@@ -246,14 +258,17 @@ class DemoHostDetailView extends StatelessWidget {
                                     children: [
                                       Text(
                                         "Follower : ",
-                                        style: AppFontStyle.styleW600(AppColors.whiteColor, 12),
+                                        style: AppFontStyle.styleW600(
+                                            AppColors.whiteColor, 12),
                                       ),
                                       Text(
                                         follower,
-                                        style: AppFontStyle.styleW800(AppColors.whiteColor, 12),
+                                        style: AppFontStyle.styleW800(
+                                            AppColors.whiteColor, 12),
                                       ),
                                     ],
-                                  ).paddingOnly(top: 3, bottom: 3, left: 7, right: 7),
+                                  ).paddingOnly(
+                                      top: 3, bottom: 3, left: 7, right: 7),
                                 )
                               ],
                             ),
@@ -263,24 +278,41 @@ class DemoHostDetailView extends StatelessWidget {
                         Database.isHost
                             ? const Offstage()
                             : Padding(
-                                padding: const EdgeInsets.only(right: 8, top: 2),
+                                padding:
+                                    const EdgeInsets.only(right: 8, top: 2),
                                 child: Container(
                                   height: 26,
                                   decoration: BoxDecoration(
-                                    color: isFollow ? null : AppColors.followBgColor,
-                                    gradient: isFollow ? AppColors.gradientButtonColor : null,
-                                    border: isFollow ? null : Border.all(color: AppColors.whiteColor.withValues(alpha: 0.34)),
+                                    color: isFollow
+                                        ? null
+                                        : AppColors.followBgColor,
+                                    gradient: isFollow
+                                        ? AppColors.gradientButtonColor
+                                        : null,
+                                    border: isFollow
+                                        ? null
+                                        : Border.all(
+                                            color: AppColors.whiteColor
+                                                .withValues(alpha: 0.34)),
                                     borderRadius: BorderRadius.circular(30),
                                   ),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Image.asset(isFollow ? AppAsset.followingIcon2 : AppAsset.followIcon2, width: 14, height: 14),
+                                      Image.asset(
+                                          isFollow
+                                              ? AppAsset.followingIcon2
+                                              : AppAsset.followIcon2,
+                                          width: 14,
+                                          height: 14),
                                       const SizedBox(width: 7),
                                       Text(
-                                        isFollow ? EnumLocale.txtFollowing.name.tr : EnumLocale.txtFollow.name.tr,
-                                        style: AppFontStyle.styleW700(Colors.white, 13),
+                                        isFollow
+                                            ? EnumLocale.txtFollowing.name.tr
+                                            : EnumLocale.txtFollow.name.tr,
+                                        style: AppFontStyle.styleW700(
+                                            Colors.white, 13),
                                       ),
                                     ],
                                   ).paddingSymmetric(horizontal: 9),
@@ -290,18 +322,22 @@ class DemoHostDetailView extends StatelessWidget {
                     ),
                   ),
                   18.height,
-                  HostDetailTitle(title: EnumLocale.txtAboutMe.name.tr).paddingOnly(left: 14),
+                  HostDetailTitle(title: EnumLocale.txtAboutMe.name.tr)
+                      .paddingOnly(left: 14),
                   10.height,
                   Container(
                     width: Get.width,
-                    decoration: BoxDecoration(color: AppColors.secondaryColor1, borderRadius: BorderRadius.circular(14)),
+                    decoration: BoxDecoration(
+                        color: AppColors.secondaryColor1,
+                        borderRadius: BorderRadius.circular(14)),
                     child: Text(
                       aboutMe,
                       style: AppFontStyle.styleW500(AppColors.whiteColor, 12),
                     ).paddingAll(10),
                   ).paddingOnly(left: 14, right: 14),
                   19.height,
-                  HostDetailTitle(title: EnumLocale.txtLanguages.name.tr).paddingOnly(left: 14),
+                  HostDetailTitle(title: EnumLocale.txtLanguages.name.tr)
+                      .paddingOnly(left: 14),
                   10.height,
                   Wrap(
                     spacing: 12,
@@ -319,16 +355,21 @@ class DemoHostDetailView extends StatelessWidget {
                           backgroundColor: AppColors.languageBgColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
-                            side: BorderSide(color: AppColors.whiteColor.withValues(alpha: 0.20), width: 0.6),
+                            side: BorderSide(
+                                color: AppColors.whiteColor
+                                    .withValues(alpha: 0.20),
+                                width: 0.6),
                           ),
-                          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 7),
                           labelPadding: EdgeInsets.zero,
                         );
                       },
                     ).toList(),
                   ).paddingOnly(right: 14, left: 14),
                   16.height,
-                  HostDetailTitle(title: EnumLocale.txtImpression.name.tr).paddingOnly(left: 14),
+                  HostDetailTitle(title: EnumLocale.txtImpression.name.tr)
+                      .paddingOnly(left: 14),
                   10.height,
                   Wrap(
                     spacing: 12,
@@ -346,16 +387,21 @@ class DemoHostDetailView extends StatelessWidget {
                           backgroundColor: AppColors.impressionBgColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
-                            side: BorderSide(color: AppColors.whiteColor.withValues(alpha: 0.20), width: 0.6),
+                            side: BorderSide(
+                                color: AppColors.whiteColor
+                                    .withValues(alpha: 0.20),
+                                width: 0.6),
                           ),
-                          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 9),
                           labelPadding: EdgeInsets.zero,
                         );
                       },
                     ).toList(),
                   ).paddingOnly(right: 14, left: 14),
                   18.height,
-                  HostDetailTitle(title: EnumLocale.txtPhotos.name.tr).paddingOnly(left: 14),
+                  HostDetailTitle(title: EnumLocale.txtPhotos.name.tr)
+                      .paddingOnly(left: 14),
                   10.height,
                   SizedBox(
                     height: Get.height * 0.17,
@@ -369,7 +415,8 @@ class DemoHostDetailView extends StatelessWidget {
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                          color:
+                              AppColors.colorTextGrey.withValues(alpha: 0.22),
                         ),
                         child: GestureDetector(
                           onTap: () {
@@ -422,7 +469,8 @@ class DemoHostDetailView extends StatelessWidget {
                   initialScale: PhotoViewComputedScale.contained,
                   minScale: PhotoViewComputedScale.covered,
                   maxScale: PhotoViewComputedScale.covered * 2.5,
-                  heroAttributes: const PhotoViewHeroAttributes(tag: "zoomable_image"),
+                  heroAttributes:
+                      const PhotoViewHeroAttributes(tag: "zoomable_image"),
                 ),
               ),
             ),
@@ -432,7 +480,8 @@ class DemoHostDetailView extends StatelessWidget {
               top: 10,
               right: 10,
               child: GestureDetector(
-                onTap: () => Navigator.of(Get.overlayContext ?? Get.context!).pop(),
+                onTap: () =>
+                    Navigator.of(Get.overlayContext ?? Get.context!).pop(),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.7),

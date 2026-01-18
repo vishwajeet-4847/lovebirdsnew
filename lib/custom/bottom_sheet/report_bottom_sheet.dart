@@ -1,9 +1,9 @@
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
@@ -137,11 +137,13 @@ class ReportBottomSheetUi {
                         padding: const EdgeInsets.only(left: 15),
                         child: Row(
                           children: [
-                            Obx(() => ReportRadioButtonUi(isSelected: selectedReportType.value == index)),
+                            Obx(() => ReportRadioButtonUi(
+                                isSelected: selectedReportType.value == index)),
                             12.width,
                             Text(
                               reportTypes[index] ?? "",
-                              style: AppFontStyle.styleW500(AppColors.whiteColor, 16),
+                              style: AppFontStyle.styleW500(
+                                  AppColors.whiteColor, 16),
                             ),
                           ],
                         ),
@@ -162,14 +164,16 @@ class ReportBottomSheetUi {
                       GestureDetector(
                         onTap: () => Get.back(),
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 35, vertical: 12),
                           decoration: BoxDecoration(
                             color: AppColors.dayColor.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(25),
                           ),
                           child: Text(
                             EnumLocale.txtCancel.name.tr,
-                            style: AppFontStyle.styleW700(AppColors.blackColor, 16),
+                            style: AppFontStyle.styleW700(
+                                AppColors.blackColor, 16),
                           ),
                         ),
                       ),
@@ -179,14 +183,16 @@ class ReportBottomSheetUi {
                           await onSendReport();
                         },
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 35, vertical: 12),
                           decoration: BoxDecoration(
                             gradient: AppColors.hostLiveInnerButton,
                             borderRadius: BorderRadius.circular(25),
                           ),
                           child: Text(
                             EnumLocale.txtReport.name.tr,
-                            style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
+                            style: AppFontStyle.styleW700(
+                                AppColors.whiteColor, 16),
                           ),
                         ),
                       ),
@@ -227,7 +233,11 @@ class ReportRadioButtonUi extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: isSelected ? null : AppColors.colorGreyBg,
-                border: Border.all(color: isSelected ? AppColors.whiteColor : AppColors.primaryColor.withValues(alpha: 0.5), width: 1.5),
+                border: Border.all(
+                    color: isSelected
+                        ? AppColors.whiteColor
+                        : AppColors.primaryColor.withValues(alpha: 0.5),
+                    width: 1.5),
               ),
             ),
           ),

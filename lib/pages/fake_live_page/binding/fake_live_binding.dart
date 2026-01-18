@@ -1,4 +1,4 @@
-import 'package:figgy/pages/fake_live_page/controller/fake_live_controller.dart';
+import 'package:LoveBirds/pages/fake_live_page/controller/fake_live_controller.dart';
 import 'package:get/get.dart';
 
 class FakeLiveBinding extends Bindings {

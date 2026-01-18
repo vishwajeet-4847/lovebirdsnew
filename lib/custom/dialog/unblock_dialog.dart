@@ -1,17 +1,17 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/chat_page/api/host_blocking_user_api.dart';
-import 'package:figgy/pages/chat_page/api/user_blocking_host_api.dart';
-import 'package:figgy/pages/chat_page/model/host_block_user_model.dart';
-import 'package:figgy/pages/chat_page/model/usre_block_host_api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/chat_page/api/host_blocking_user_api.dart';
+import 'package:LoveBirds/pages/chat_page/api/user_blocking_host_api.dart';
+import 'package:LoveBirds/pages/chat_page/model/host_block_user_model.dart';
+import 'package:LoveBirds/pages/chat_page/model/usre_block_host_api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -53,13 +53,17 @@ class UnblockDialog extends StatelessWidget {
           ),
           10.height,
           Text(
-            isHost ? EnumLocale.txtUnBlockHost.name.tr : EnumLocale.txtUnBlockUser.name.tr,
+            isHost
+                ? EnumLocale.txtUnBlockHost.name.tr
+                : EnumLocale.txtUnBlockUser.name.tr,
             textAlign: TextAlign.center,
             style: AppFontStyle.styleW800(AppColors.blackColor, 30),
           ),
           4.height,
           Text(
-            isHost ? EnumLocale.txtUnBlockDetailsHost.name.tr : EnumLocale.txtUnBlockDetailsUser.name.tr,
+            isHost
+                ? EnumLocale.txtUnBlockDetailsHost.name.tr
+                : EnumLocale.txtUnBlockDetailsUser.name.tr,
             textAlign: TextAlign.center,
             style: AppFontStyle.styleW600(AppColors.colorGryTxt, 18),
           ).paddingOnly(left: 7, right: 7),

@@ -1,16 +1,16 @@
-import 'package:figgy/custom/app_background/custom_app_background.dart';
-import 'package:figgy/custom/custom_range_picker.dart';
-import 'package:figgy/pages/my_wallet_page/api/get_coin_history_api.dart';
-import 'package:figgy/pages/my_wallet_page/api/get_host_coin_history.dart';
-import 'package:figgy/pages/my_wallet_page/controller/my_wallet_controller.dart';
-import 'package:figgy/pages/my_wallet_page/widget/history_coin_widget.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_background/custom_app_background.dart';
+import 'package:LoveBirds/custom/custom_range_picker.dart';
+import 'package:LoveBirds/pages/my_wallet_page/api/get_coin_history_api.dart';
+import 'package:LoveBirds/pages/my_wallet_page/api/get_host_coin_history.dart';
+import 'package:LoveBirds/pages/my_wallet_page/controller/my_wallet_controller.dart';
+import 'package:LoveBirds/pages/my_wallet_page/widget/history_coin_widget.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -30,7 +30,10 @@ class HistoryView extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).viewPadding.top + 72,
-              padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top, left: 15, right: 15),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).viewPadding.top,
+                  left: 15,
+                  right: 15),
               alignment: Alignment.center,
               width: Get.width,
               decoration: BoxDecoration(
@@ -93,29 +96,41 @@ class HistoryView extends StatelessWidget {
                   GestureDetector(
                     onTap: () async {
                       DateTimeRange? initialRange;
-                      if (controller.startDate != "All" && controller.endDate != "All") {
+                      if (controller.startDate != "All" &&
+                          controller.endDate != "All") {
                         initialRange = DateTimeRange(
-                          start: DateFormat('yyyy-MM-dd').parse(controller.startDate),
-                          end: DateFormat('yyyy-MM-dd').parse(controller.endDate),
+                          start: DateFormat('yyyy-MM-dd')
+                              .parse(controller.startDate),
+                          end: DateFormat('yyyy-MM-dd')
+                              .parse(controller.endDate),
                         );
                       }
 
-                      DateTimeRange? dateTimeRange = await CustomRangePicker.onShow(
+                      DateTimeRange? dateTimeRange =
+                          await CustomRangePicker.onShow(
                         context,
                         initialRange,
                       );
 
                       if (dateTimeRange != null) {
-                        String startDate = DateFormat('yyyy-MM-dd').format(dateTimeRange.start);
-                        String endDate = DateFormat('yyyy-MM-dd').format(dateTimeRange.end);
+                        String startDate = DateFormat('yyyy-MM-dd')
+                            .format(dateTimeRange.start);
+                        String endDate =
+                            DateFormat('yyyy-MM-dd').format(dateTimeRange.end);
 
-                        final range = "${DateFormat('dd MMM').format(dateTimeRange.start)} - ${DateFormat('dd MMM').format(dateTimeRange.end)}";
+                        final range =
+                            "${DateFormat('dd MMM').format(dateTimeRange.start)} - ${DateFormat('dd MMM').format(dateTimeRange.end)}";
 
                         Utils.showLog("Selected Date Range => $range");
 
-                        controller.onChangeDate(startDate: startDate, endDate: endDate, rangeDate: range);
+                        controller.onChangeDate(
+                            startDate: startDate,
+                            endDate: endDate,
+                            rangeDate: range);
 
-                        Database.isHost ? await controller.onGetHostCoinHistory() : await controller.onGetUserCoinHistory();
+                        Database.isHost
+                            ? await controller.onGetHostCoinHistory()
+                            : await controller.onGetUserCoinHistory();
                       }
                     },
                     child: Container(
@@ -136,7 +151,8 @@ class HistoryView extends StatelessWidget {
                             id: AppConstant.idChangeDate,
                             builder: (logic) => Text(
                               logic.rangeDate,
-                              style: AppFontStyle.styleW500(AppColors.whiteColor, 12),
+                              style: AppFontStyle.styleW500(
+                                  AppColors.whiteColor, 12),
                             ),
                           ),
                           8.width,
@@ -146,8 +162,16 @@ class HistoryView extends StatelessWidget {
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
-                                Positioned(top: 12.5, child: Icon(Icons.keyboard_arrow_down_outlined, size: 19, color: Colors.white)),
-                                Positioned(top: 3.5, child: Icon(Icons.keyboard_arrow_up_rounded, size: 20, color: Colors.white)),
+                                Positioned(
+                                    top: 12.5,
+                                    child: Icon(
+                                        Icons.keyboard_arrow_down_outlined,
+                                        size: 19,
+                                        color: Colors.white)),
+                                Positioned(
+                                    top: 3.5,
+                                    child: Icon(Icons.keyboard_arrow_up_rounded,
+                                        size: 20, color: Colors.white)),
                               ],
                             ),
                           ),
@@ -187,7 +211,8 @@ class HistoryView extends StatelessWidget {
                                   color: AppColors.darkRedColor,
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                child: Image.asset(AppAsset.icClear).paddingAll(8),
+                                child:
+                                    Image.asset(AppAsset.icClear).paddingAll(8),
                               ),
                             );
                     },

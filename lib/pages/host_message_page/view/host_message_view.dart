@@ -1,9 +1,9 @@
-import 'package:figgy/pages/host_bottom_bar/controller/host_bottom_controller.dart';
-import 'package:figgy/pages/host_message_page/controller/host_message_controller.dart';
-import 'package:figgy/pages/host_message_page/widget/host_message_view_widget.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/pages/host_bottom_bar/controller/host_bottom_controller.dart';
+import 'package:LoveBirds/pages/host_message_page/controller/host_message_controller.dart';
+import 'package:LoveBirds/pages/host_message_page/widget/host_message_view_widget.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +16,8 @@ class HostMessageView extends StatelessWidget {
   Widget build(BuildContext context) {
     Database.isAutoRefreshEnabled == false
         ? Get.put(HostMessageController(), permanent: true)
-        : Get.lazyPut<HostMessageController>(() => HostMessageController(), fenix: true);
+        : Get.lazyPut<HostMessageController>(() => HostMessageController(),
+            fenix: true);
 
     return PopScope(
       canPop: false,

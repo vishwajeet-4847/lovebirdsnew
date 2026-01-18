@@ -1,23 +1,23 @@
 import 'dart:developer';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/chat_page/api/all_gift_categories_api.dart';
-import 'package:figgy/pages/chat_page/api/get_gift_api.dart';
-import 'package:figgy/pages/chat_page/model/get_gift_model.dart';
-import 'package:figgy/pages/chat_page/model/gift_category_model.dart';
-import 'package:figgy/pages/chat_page/widget/chat_center_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/chat_page/api/all_gift_categories_api.dart';
+import 'package:LoveBirds/pages/chat_page/api/get_gift_api.dart';
+import 'package:LoveBirds/pages/chat_page/model/get_gift_model.dart';
+import 'package:LoveBirds/pages/chat_page/model/gift_category_model.dart';
+import 'package:LoveBirds/pages/chat_page/widget/chat_center_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -67,7 +67,8 @@ class GiftBottomSheetWidget {
                       SizedBox(
                         height: 300,
                         width: 300,
-                        child: CachedNetworkImage(imageUrl: resolveUrl(giftUrl)),
+                        child:
+                            CachedNetworkImage(imageUrl: resolveUrl(giftUrl)),
                       ),
                       Text(
                         "Send by $senderName",
@@ -129,7 +130,8 @@ class GiftBottomSheetWidget {
       isLoadingCategory.value = true;
       final uid = FirebaseUid.onGet();
       final token = await FirebaseAccessToken.onGet();
-      giftCategoryModel = await AllGiftCategoriesApi.callApi(token: token ?? "", uid: uid ?? "");
+      giftCategoryModel = await AllGiftCategoriesApi.callApi(
+          token: token ?? "", uid: uid ?? "");
       giftCategoryList.value = giftCategoryModel?.data ?? [];
 
       if (giftCategoryList.isNotEmpty) {
@@ -191,7 +193,10 @@ class GiftBottomSheetWidget {
     }
   }
 
-  static Future<void> show({required BuildContext context, required Callback callback, required bool isChat}) async {
+  static Future<void> show(
+      {required BuildContext context,
+      required Callback callback,
+      required bool isChat}) async {
     // getGiftCategoryApi();
     CustomFetchUserCoin.init();
 
@@ -228,10 +233,13 @@ class GiftBottomSheetWidget {
                         isScrollable: true,
                         indicatorColor: AppColors.giftTabColor,
                         labelColor: AppColors.giftTabColor,
-                        labelStyle: AppFontStyle.styleW600(AppColors.giftTabColor, 14),
-                        unselectedLabelStyle: AppFontStyle.styleW600(AppColors.whiteColor, 14),
+                        labelStyle:
+                            AppFontStyle.styleW600(AppColors.giftTabColor, 14),
+                        unselectedLabelStyle:
+                            AppFontStyle.styleW600(AppColors.whiteColor, 14),
                         unselectedLabelColor: AppColors.whiteColor,
-                        dividerColor: AppColors.whiteColor.withValues(alpha: 0.06),
+                        dividerColor:
+                            AppColors.whiteColor.withValues(alpha: 0.06),
                         dividerHeight: 2,
                         padding: EdgeInsets.zero,
                         tabAlignment: TabAlignment.start,
@@ -239,11 +247,14 @@ class GiftBottomSheetWidget {
                           selectedGiftTabIndex.value = index;
                           final selectedCategoryId = giftCategoryList[index].id;
 
-                          if (!categoryWiseGiftMap.containsKey(selectedCategoryId)) {
+                          if (!categoryWiseGiftMap
+                              .containsKey(selectedCategoryId)) {
                             await getGiftApi(giftId: selectedCategoryId);
                           }
                         },
-                        tabs: giftCategoryList.map((e) => Tab(text: e.name ?? "")).toList(),
+                        tabs: giftCategoryList
+                            .map((e) => Tab(text: e.name ?? ""))
+                            .toList(),
                       ).paddingOnly(right: 40),
                       Positioned(
                         right: 10,
@@ -255,9 +266,11 @@ class GiftBottomSheetWidget {
                             child: Container(
                               height: 25,
                               width: 25,
-                              padding: const EdgeInsets.symmetric(horizontal: 5),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 5),
                               decoration: BoxDecoration(
-                                color: AppColors.whiteColor.withValues(alpha: 0.5),
+                                color:
+                                    AppColors.whiteColor.withValues(alpha: 0.5),
                                 shape: BoxShape.circle,
                               ),
                               child: Image.asset(
@@ -283,15 +296,25 @@ class GiftBottomSheetWidget {
                                 children: giftCategoryList.map(
                                   (category) {
                                     return Obx(() {
-                                      final giftsInCategory = categoryWiseGiftMap[category.id] ?? [];
+                                      final giftsInCategory =
+                                          categoryWiseGiftMap[category.id] ??
+                                              [];
                                       final isCurrentTabLoading =
-                                          selectedGiftTabIndex.value == giftCategoryList.indexOf(category) && isLoadingGift.value;
-                                      final hasDataLoaded = categoryWiseGiftMap.containsKey(category.id);
+                                          selectedGiftTabIndex.value ==
+                                                  giftCategoryList
+                                                      .indexOf(category) &&
+                                              isLoadingGift.value;
+                                      final hasDataLoaded = categoryWiseGiftMap
+                                          .containsKey(category.id);
 
                                       return isCurrentTabLoading
-                                          ? const Center(child: LoadingWidget(size: 35))
+                                          ? const Center(
+                                              child: LoadingWidget(size: 35))
                                           : !hasDataLoaded
-                                              ? const Center(child: LoadingWidget(size: 35)) // Show loader if data not loaded yet
+                                              ? const Center(
+                                                  child: LoadingWidget(
+                                                      size:
+                                                          35)) // Show loader if data not loaded yet
                                               : giftsInCategory.isEmpty
                                                   ? Center(
                                                       child: Image.asset(
@@ -301,31 +324,53 @@ class GiftBottomSheetWidget {
                                                       ),
                                                     )
                                                   : GridView.builder(
-                                                      padding: const EdgeInsets.all(12),
-                                                      itemCount: giftsInCategory.length,
-                                                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              12),
+                                                      itemCount: giftsInCategory
+                                                          .length,
+                                                      gridDelegate:
+                                                          const SliverGridDelegateWithFixedCrossAxisCount(
                                                         crossAxisCount: 4,
                                                         crossAxisSpacing: 8,
                                                         mainAxisSpacing: 8,
                                                         childAspectRatio: 0.88,
                                                       ),
-                                                      itemBuilder: (context, index) {
-                                                        final gift = giftsInCategory[index];
+                                                      itemBuilder:
+                                                          (context, index) {
+                                                        final gift =
+                                                            giftsInCategory[
+                                                                index];
                                                         return Obx(
                                                           () => GiftItemWidget(
-                                                            isSelected: selectedSendGift.value == index,
+                                                            isSelected:
+                                                                selectedSendGift
+                                                                        .value ==
+                                                                    index,
                                                             gifts: gift,
-                                                            onChangeTabCon: (int idx) {
+                                                            onChangeTabCon:
+                                                                (int idx) {
                                                               log("gift.svgaImage --------------------- ${gift.svgaImage}");
 
-                                                              onChangeTabCon(idx);
-                                                              giftUrl = gift.image ?? "";
-                                                              giftsvgaImage = gift.svgaImage ?? "";
-                                                              giftCoin = gift.coin ?? 0;
-                                                              selectedGiftId = gift.id ?? "";
-                                                              giftType = gift.type ?? 0;
+                                                              onChangeTabCon(
+                                                                  idx);
+                                                              giftUrl =
+                                                                  gift.image ??
+                                                                      "";
+                                                              giftsvgaImage =
+                                                                  gift.svgaImage ??
+                                                                      "";
+                                                              giftCoin =
+                                                                  gift.coin ??
+                                                                      0;
+                                                              selectedGiftId =
+                                                                  gift.id ?? "";
+                                                              giftType =
+                                                                  gift.type ??
+                                                                      0;
                                                             },
-                                                            giftList: giftsInCategory,
+                                                            giftList:
+                                                                giftsInCategory,
                                                           ),
                                                         );
                                                       },
@@ -398,28 +443,37 @@ class GiftBottomSheetWidget {
                           height: 40,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: AppColors.whiteColor.withValues(alpha: 0.16),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.16),
                             ),
-                            borderRadius: const BorderRadius.all(Radius.circular(50)),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(50)),
                             color: AppColors.giftBgColor,
                           ),
                           child: Row(
                             children: [
-                              const Image(image: AssetImage(AppAsset.icCoin), width: 24, height: 24),
+                              const Image(
+                                  image: AssetImage(AppAsset.icCoin),
+                                  width: 24,
+                                  height: 24),
                               6.width,
                               isLoadingCategory.value
                                   ? CupertinoActivityIndicator(
-                                      color: AppColors.whiteColor.withValues(alpha: 0.16),
+                                      color: AppColors.whiteColor
+                                          .withValues(alpha: 0.16),
                                       radius: 8,
                                     )
                                   : Obx(
                                       () => Text(
-                                        CustomFetchUserCoin.coin.value.toString(),
-                                        style: AppFontStyle.styleW6003(AppColors.whiteColor, 16),
+                                        CustomFetchUserCoin.coin.value
+                                            .toString(),
+                                        style: AppFontStyle.styleW6003(
+                                            AppColors.whiteColor, 16),
                                       ),
                                     ),
                               2.width,
-                              Image.asset(AppAsset.whiteForwardIcon, width: 16, height: 16),
+                              Image.asset(AppAsset.whiteForwardIcon,
+                                  width: 16, height: 16),
                             ],
                           ),
                         ),
@@ -427,7 +481,9 @@ class GiftBottomSheetWidget {
                       Container(
                         height: 40,
                         padding: const EdgeInsets.only(left: 4),
-                        decoration: BoxDecoration(color: AppColors.colorGiftGridView1, borderRadius: BorderRadius.circular(20)),
+                        decoration: BoxDecoration(
+                            color: AppColors.colorGiftGridView1,
+                            borderRadius: BorderRadius.circular(20)),
                         child: Row(
                           children: [
                             Obx(() {
@@ -436,18 +492,24 @@ class GiftBottomSheetWidget {
                                   giftCounts.length,
                                   (index) {
                                     return GestureDetector(
-                                      onTap: () => onChangeGiftCount(giftCounts[index]),
+                                      onTap: () =>
+                                          onChangeGiftCount(giftCounts[index]),
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          color: selectedSendGiftCount.value == giftCounts[index] ? AppColors.selectColor : AppColors.transparent,
-                                          borderRadius: BorderRadius.circular(20),
+                                          color: selectedSendGiftCount.value ==
+                                                  giftCounts[index]
+                                              ? AppColors.selectColor
+                                              : AppColors.transparent,
+                                          borderRadius:
+                                              BorderRadius.circular(20),
                                         ),
                                         height: 35,
                                         width: 40,
                                         child: Center(
                                           child: Text(
                                             giftCounts[index].toString(),
-                                            style: AppFontStyle.styleW6003(AppColors.whiteColor, 12),
+                                            style: AppFontStyle.styleW6003(
+                                                AppColors.whiteColor, 12),
                                           ),
                                         ),
                                       ),
@@ -459,7 +521,8 @@ class GiftBottomSheetWidget {
                             GestureDetector(
                               onTap: () {
                                 if (giftUrl.isEmpty || selectedGiftId.isEmpty) {
-                                  Utils.showToast(EnumLocale.txtPleaseSelectGiftFirst.name.tr);
+                                  Utils.showToast(EnumLocale
+                                      .txtPleaseSelectGiftFirst.name.tr);
                                 } else {
                                   callback();
 
@@ -477,7 +540,8 @@ class GiftBottomSheetWidget {
                                 ),
                                 child: Text(
                                   EnumLocale.txtSend.name.tr,
-                                  style: AppFontStyle.styleW600(AppColors.whiteColor, 15),
+                                  style: AppFontStyle.styleW600(
+                                      AppColors.whiteColor, 15),
                                 ),
                               ),
                             ),
@@ -574,7 +638,8 @@ class GiftItemWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(left: 6, right: 7, top: 2, bottom: 2),
+                        padding: const EdgeInsets.only(
+                            left: 6, right: 7, top: 2, bottom: 2),
                         decoration: BoxDecoration(
                           color: AppColors.whiteColor.withValues(alpha: 0.16),
                           borderRadius: BorderRadius.circular(58),
@@ -586,7 +651,8 @@ class GiftItemWidget extends StatelessWidget {
                             3.width,
                             Text(
                               gifts.coin!.toStringAsFixed(2),
-                              style: AppFontStyle.styleW7002(AppColors.yellowColor, 10),
+                              style: AppFontStyle.styleW7002(
+                                  AppColors.yellowColor, 10),
                             ),
                           ],
                         ),
@@ -604,7 +670,11 @@ class GiftItemWidget extends StatelessWidget {
 }
 
 class GiftCountItemWidget extends StatelessWidget {
-  const GiftCountItemWidget({super.key, required this.count, required this.isSelected, required this.callback});
+  const GiftCountItemWidget(
+      {super.key,
+      required this.count,
+      required this.isSelected,
+      required this.callback});
 
   final int count;
   final bool isSelected;
@@ -621,7 +691,8 @@ class GiftCountItemWidget extends StatelessWidget {
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           decoration: BoxDecoration(
-            color: isSelected ? AppColors.googleButtonColor : AppColors.colorGry,
+            color:
+                isSelected ? AppColors.googleButtonColor : AppColors.colorGry,
             borderRadius: const BorderRadius.all(Radius.circular(5)),
           ),
           child: Text(
@@ -644,8 +715,9 @@ String resolveUrl(String? url) {
   if (u.startsWith('http://') || u.startsWith('https://')) return u;
 
   // Join with base
-  final base =
-      Api.baseUrl.trimRight().endsWith('/') ? Api.baseUrl.trimRight().substring(0, Api.baseUrl.trimRight().length - 1) : Api.baseUrl.trimRight();
+  final base = Api.baseUrl.trimRight().endsWith('/')
+      ? Api.baseUrl.trimRight().substring(0, Api.baseUrl.trimRight().length - 1)
+      : Api.baseUrl.trimRight();
 
   final path = u.startsWith('/') ? u.substring(1) : u;
   return '$base/$path';

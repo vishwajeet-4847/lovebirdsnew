@@ -1,7 +1,7 @@
-import 'package:figgy/common/gradiant_text.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/gradiant_text.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,22 +44,26 @@ class VipCarouselWidget extends StatelessWidget {
               GradientText(
                   text: title,
                   style: AppFontStyle.styleW800(AppColors.whiteColor, 20),
-                  gradient: const LinearGradient(colors: [AppColors.pinkColor, AppColors.blueColor])),
+                  gradient: const LinearGradient(
+                      colors: [AppColors.pinkColor, AppColors.blueColor])),
               2.height,
               RichText(
                 text: TextSpan(
                   children: [
                     TextSpan(
                       text: textSpan1,
-                      style: AppFontStyle.styleW500(AppColors.whiteColor.withValues(alpha: 0.70), 14),
+                      style: AppFontStyle.styleW500(
+                          AppColors.whiteColor.withValues(alpha: 0.70), 14),
                     ),
                     TextSpan(
                       text: textSpan2,
-                      style: AppFontStyle.styleW500(AppColors.whiteColor.withValues(alpha: 0.70), 14),
+                      style: AppFontStyle.styleW500(
+                          AppColors.whiteColor.withValues(alpha: 0.70), 14),
                     ),
                     TextSpan(
                       text: textSpan3,
-                      style: AppFontStyle.styleW500(AppColors.whiteColor.withValues(alpha: 0.70), 14),
+                      style: AppFontStyle.styleW500(
+                          AppColors.whiteColor.withValues(alpha: 0.70), 14),
                     ),
                   ],
                 ),

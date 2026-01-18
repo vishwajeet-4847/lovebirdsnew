@@ -1,14 +1,14 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:figgy/pages/vip_page/controller/vip_controller.dart';
-import 'package:figgy/pages/vip_page/widget/carousel_slider.dart';
-import 'package:figgy/pages/vip_page/widget/vip_button_widget.dart';
-import 'package:figgy/shimmer/vip_view_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/vip_page/controller/vip_controller.dart';
+import 'package:LoveBirds/pages/vip_page/widget/carousel_slider.dart';
+import 'package:LoveBirds/pages/vip_page/widget/vip_button_widget.dart';
+import 'package:LoveBirds/shimmer/vip_view_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -53,7 +53,8 @@ class MainVIPViewWidget extends StatelessWidget {
           GetBuilder<VipController>(
             id: AppConstant.idOnCarouselTap1,
             builder: (logic) {
-              int itemCount = logic.vipPlanList.length > 3 ? 3 : logic.vipPlanList.length;
+              int itemCount =
+                  logic.vipPlanList.length > 3 ? 3 : logic.vipPlanList.length;
 
               if (logic.frameLoading || logic.isLoading) {
                 return const VipViewShimmer();
@@ -88,7 +89,9 @@ class MainVIPViewWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       axis: Axis.horizontal,
                       dotsCount: logic.vipPrivilegeList.length,
-                      position: logic.carouselIndex.clamp(0, logic.vipPrivilegeList.length - 1).toDouble(),
+                      position: logic.carouselIndex
+                          .clamp(0, logic.vipPrivilegeList.length - 1)
+                          .toDouble(),
                     ),
                     25.height,
                   ] else ...[
@@ -123,9 +126,11 @@ class MainVIPViewWidget extends StatelessWidget {
                                     color: AppColors.activeColor,
                                     borderRadius: BorderRadius.circular(16),
                                     border: logic.currentIndex == index
-                                        ? Border.all(color: AppColors.whiteColor)
+                                        ? Border.all(
+                                            color: AppColors.whiteColor)
                                         : Border.all(
-                                            color: AppColors.whiteColor.withValues(alpha: 0.16),
+                                            color: AppColors.whiteColor
+                                                .withValues(alpha: 0.16),
                                           ),
                                     image: const DecorationImage(
                                       image: AssetImage(AppAsset.vipBg),
@@ -135,8 +140,10 @@ class MainVIPViewWidget extends StatelessWidget {
                                   child: Stack(
                                     children: [
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Center(
                                             child: Image.asset(
@@ -145,33 +152,40 @@ class MainVIPViewWidget extends StatelessWidget {
                                             ),
                                           ),
                                           Row(
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text(
                                                 '+ ',
-                                                style: AppFontStyle.styleW900(AppColors.whiteColor, 16),
+                                                style: AppFontStyle.styleW900(
+                                                    AppColors.whiteColor, 16),
                                               ),
                                               Text(
                                                 data.coin.toString(),
-                                                style: AppFontStyle.styleW900(AppColors.whiteColor, 16),
+                                                style: AppFontStyle.styleW900(
+                                                    AppColors.whiteColor, 16),
                                               ),
                                             ],
                                           ),
                                           Text(
                                             "${data.validity}/${data.validityType}",
-                                            style: AppFontStyle.styleW600(AppColors.vipMonthColor, 12),
+                                            style: AppFontStyle.styleW600(
+                                                AppColors.vipMonthColor, 12),
                                           ),
                                           7.height,
                                           Container(
                                             width: 110,
                                             decoration: BoxDecoration(
                                               color: AppColors.whiteColor,
-                                              borderRadius: BorderRadius.circular(23),
+                                              borderRadius:
+                                                  BorderRadius.circular(23),
                                             ),
                                             child: Center(
                                               child: Text(
                                                 '${Utils.isShowCurrencySymbol} ${data.price?.toStringAsFixed(2) ?? '0.00'}',
-                                                style: AppFontStyle.styleW900(AppColors.orangeTxtColor2, 14),
+                                                style: AppFontStyle.styleW900(
+                                                    AppColors.orangeTxtColor2,
+                                                    14),
                                               ).paddingSymmetric(vertical: 2),
                                             ),
                                           ).paddingSymmetric(horizontal: 8),
@@ -185,7 +199,8 @@ class MainVIPViewWidget extends StatelessWidget {
                                             width: 26,
                                             decoration: BoxDecoration(
                                               color: AppColors.whiteColor,
-                                              borderRadius: const BorderRadius.only(
+                                              borderRadius:
+                                                  const BorderRadius.only(
                                                 topRight: Radius.circular(12),
                                                 bottomLeft: Radius.circular(12),
                                               ),

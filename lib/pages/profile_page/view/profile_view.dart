@@ -1,20 +1,20 @@
 import 'package:dotted_line/dotted_line.dart';
-import 'package:figgy/common/common_info_tile.dart';
-import 'package:figgy/custom/app_background/custom_app_image_background.dart';
-import 'package:figgy/pages/bottom_bar/controller/bottom_bar_controller.dart';
-import 'package:figgy/pages/host_bottom_bar/controller/host_bottom_controller.dart';
-import 'package:figgy/pages/profile_page/controller/profile_controller.dart';
-import 'package:figgy/pages/profile_page/widget/bottom_profile_widget.dart';
-import 'package:figgy/pages/profile_page/widget/more_container_widget.dart';
-import 'package:figgy/pages/profile_page/widget/profile_name_widget.dart';
-import 'package:figgy/pages/profile_page/widget/profile_picture_widget.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/common_info_tile.dart';
+import 'package:LoveBirds/custom/app_background/custom_app_image_background.dart';
+import 'package:LoveBirds/pages/bottom_bar/controller/bottom_bar_controller.dart';
+import 'package:LoveBirds/pages/host_bottom_bar/controller/host_bottom_controller.dart';
+import 'package:LoveBirds/pages/profile_page/controller/profile_controller.dart';
+import 'package:LoveBirds/pages/profile_page/widget/bottom_profile_widget.dart';
+import 'package:LoveBirds/pages/profile_page/widget/more_container_widget.dart';
+import 'package:LoveBirds/pages/profile_page/widget/profile_name_widget.dart';
+import 'package:LoveBirds/pages/profile_page/widget/profile_picture_widget.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +26,9 @@ class ProfileView extends StatelessWidget {
     return PopScope(
       canPop: false,
       onPopInvoked: (bool didPop) {
-        Database.isHost ? Get.find<HostBottomBarController>().changeTab(0) : Get.find<BottomBarController>().changeTab(0);
+        Database.isHost
+            ? Get.find<HostBottomBarController>().changeTab(0)
+            : Get.find<BottomBarController>().changeTab(0);
         if (didPop) {
           return;
         }
@@ -56,7 +58,9 @@ class ProfileView extends StatelessWidget {
                               height: 110,
                               width: Get.width,
                               decoration: const BoxDecoration(
-                                image: DecorationImage(image: AssetImage(AppAsset.hostCoinBg1), fit: BoxFit.cover),
+                                image: DecorationImage(
+                                    image: AssetImage(AppAsset.hostCoinBg1),
+                                    fit: BoxFit.cover),
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(20),
                                 ),
@@ -70,12 +74,14 @@ class ProfileView extends StatelessWidget {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
                                   child: SizedBox(
                                     height: 148,
                                     width: Get.width,
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Image.asset(
                                           AppAsset.coinStarImage,
@@ -83,22 +89,38 @@ class ProfileView extends StatelessWidget {
                                         ),
                                         10.width,
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             12.height,
                                             Container(
-                                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 10,
+                                                      vertical: 2),
                                               decoration: BoxDecoration(
-                                                  color: AppColors.blackColor.withValues(alpha: 0.28), borderRadius: BorderRadius.circular(20)),
+                                                  color: AppColors.blackColor
+                                                      .withValues(alpha: 0.28),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20)),
                                               child: Text(
-                                                EnumLocale.txtAvailableCoin.name.tr,
-                                                style: AppFontStyle.styleW600(AppColors.whiteColor.withValues(alpha: 0.80), 14),
+                                                EnumLocale
+                                                    .txtAvailableCoin.name.tr,
+                                                style: AppFontStyle.styleW600(
+                                                    AppColors.whiteColor
+                                                        .withValues(
+                                                            alpha: 0.80),
+                                                    14),
                                               ),
                                             ),
                                             4.height,
                                             Text(
-                                              Database.coin.toString().split('.')[0],
+                                              Database.coin
+                                                  .toString()
+                                                  .split('.')[0],
 
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w900,
@@ -106,8 +128,11 @@ class ProfileView extends StatelessWidget {
                                                 color: AppColors.whiteColor,
                                                 shadows: [
                                                   Shadow(
-                                                    color: AppColors.blackColor.withValues(alpha: 0.27),
-                                                    offset: const Offset(1, 1.2),
+                                                    color: AppColors.blackColor
+                                                        .withValues(
+                                                            alpha: 0.27),
+                                                    offset:
+                                                        const Offset(1, 1.2),
                                                     blurRadius: 0,
                                                   ),
                                                 ],
@@ -140,7 +165,8 @@ class ProfileView extends StatelessWidget {
                           lineLength: double.infinity,
                           lineThickness: 1.0,
                           dashLength: 4.0,
-                          dashColor: AppColors.whiteColor.withValues(alpha: 0.22),
+                          dashColor:
+                              AppColors.whiteColor.withValues(alpha: 0.22),
                           dashRadius: 0.0,
                           dashGapLength: 4.0,
                           dashGapColor: Colors.transparent,
@@ -156,7 +182,8 @@ class ProfileView extends StatelessWidget {
                             GetBuilder<ProfileViewController>(
                               builder: (controller) {
                                 return CommonInfoTile(
-                                  onTap: () => Get.toNamed(AppRoutes.withdrawPage)?.then(
+                                  onTap: () =>
+                                      Get.toNamed(AppRoutes.withdrawPage)?.then(
                                     (value) async {
                                       controller.onGetHostProfile();
                                     },
@@ -176,14 +203,16 @@ class ProfileView extends StatelessWidget {
                             ),
                             20.height,
                             CommonInfoTile(
-                              onTap: () => Get.toNamed(AppRoutes.appLanguagePage),
+                              onTap: () =>
+                                  Get.toNamed(AppRoutes.appLanguagePage),
                               text: EnumLocale.txtAppLanguage.name.tr,
                               imageAsset: AppAsset.hostLanguageIcon,
                               gradient: AppColors.language,
                             ),
                             20.height,
                             CommonInfoTile(
-                              onTap: () => Get.toNamed(AppRoutes.appSettingPage),
+                              onTap: () =>
+                                  Get.toNamed(AppRoutes.appSettingPage),
                               text: EnumLocale.txtSetting.name.tr,
                               imageAsset: AppAsset.hostSettingIcon,
                               gradient: AppColors.hostRequest,
@@ -218,7 +247,8 @@ class ProfileView extends StatelessWidget {
                           lineLength: double.infinity,
                           lineThickness: 1.0,
                           dashLength: 4.0,
-                          dashColor: AppColors.whiteColor.withValues(alpha: 0.22),
+                          dashColor:
+                              AppColors.whiteColor.withValues(alpha: 0.22),
                           dashRadius: 0.0,
                           dashGapLength: 4.0,
                           dashGapColor: Colors.transparent,
@@ -227,7 +257,9 @@ class ProfileView extends StatelessWidget {
                   22.height,
 
                   //************** Profile bottom view
-                  Database.isHost ? const Offstage() : const BottomProfileWidget(),
+                  Database.isHost
+                      ? const Offstage()
+                      : const BottomProfileWidget(),
                 ],
               ),
             ),

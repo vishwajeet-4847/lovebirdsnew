@@ -1,4 +1,4 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> jaJP = {
   EnumLocale.txtLetsStart.name: "始めましょう",
@@ -18,7 +18,8 @@ final Map<String, String> jaJP = {
   EnumLocale.txtRecharge.name: "充電",
   EnumLocale.txtMyGems.name: "私の宝石",
   EnumLocale.txtPleaseEnterWithdrawCoin.name: "コインを出金してください",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name: "出金要求コインは管理者が指定した金額以上である必要があります",
+  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin
+      .name: "出金要求コインは管理者が指定した金額以上である必要があります",
   EnumLocale.txtPleaseSelectWithdrawMethod.name: "出金方法を選択してください",
   EnumLocale.txtPleaseEnterAllPaymentDetails.name: "すべての支払い詳細を入力してください",
   EnumLocale.txtSelectPaymentGateway.name: "支払いゲートウェイを選択",
@@ -71,8 +72,10 @@ final Map<String, String> jaJP = {
   EnumLocale.txtCallMe.name: "電話してね",
   EnumLocale.txtVerificationStatus.name: "検証ステータス:",
   EnumLocale.txtVerificationDetails.name: "検証の詳細",
-  EnumLocale.txtVerificationRequestText.name: "ご提出いただいたすべての情報を受領いたしました。確認後、更新情報をご連絡いたします。\n\nプロフィールの確認と認証には3～4営業日ほどかかります。",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "ユーザーは引き出しを行うのに十分な資金を持っていません",
+  EnumLocale.txtVerificationRequestText.name:
+      "ご提出いただいたすべての情報を受領いたしました。確認後、更新情報をご連絡いたします。\n\nプロフィールの確認と認証には3～4営業日ほどかかります。",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "ユーザーは引き出しを行うのに十分な資金を持っていません",
   EnumLocale.txtIncomingVideoCall.name: "ビデオ通話の着信...",
   EnumLocale.txtIncomingAudioCall.name: "音声通話の着信...",
   EnumLocale.txtUploadYourImages.name: "画像をアップロードする",
@@ -189,12 +192,15 @@ final Map<String, String> jaJP = {
   EnumLocale.txtGender.name: "性別",
   EnumLocale.txtOptional.name: "オプション",
   EnumLocale.txtPleaseSelectDocument.name: "まずドキュメントを選択してください",
-  EnumLocale.txtVipDescription.name: "注：VIPは自動更新ではなく、有効期限が切れても自動更新されません。VIPを有効にすると、すぐに特典を受け取ることができ、VIPの有効期間中はその他の特典もご利用いただけます。",
+  EnumLocale.txtVipDescription.name:
+      "注：VIPは自動更新ではなく、有効期限が切れても自動更新されません。VIPを有効にすると、すぐに特典を受け取ることができ、VIPの有効期間中はその他の特典もご利用いただけます。",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP特典をお楽しみください",
-  EnumLocale.txtDailyCheckInDescription.name: "毎週ダイヤモンドを獲得するには、任意の金額をチャージしてチェックインしてください",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "毎週ダイヤモンドを獲得するには、任意の金額をチャージしてチェックインしてください",
   EnumLocale.txtDay.name: "日",
   EnumLocale.txtSelectPaymentOption.name: "支払い方法を選択",
-  EnumLocale.txtVerificationText.name: "ホストリクエストが承認されました！すべての機能にアクセスするには、app_profile_image を再起動してください。\n\nお待ちいただきありがとうございます。ご参加いただけることを楽しみにしています！",
+  EnumLocale.txtVerificationText.name:
+      "ホストリクエストが承認されました！すべての機能にアクセスするには、app_profile_image を再起動してください。\n\nお待ちいただきありがとうございます。ご参加いただけることを楽しみにしています！",
   EnumLocale.txtRandomCallRate.name: "ランダムコールレート",
   EnumLocale.txtCallRate.name: "通話料金",
   EnumLocale.txtPrivateCallRate.name: "プライベート通話料金",
@@ -218,7 +224,8 @@ final Map<String, String> jaJP = {
   EnumLocale.txtDeclineRequest.name:
       "あなたのホストリクエストは承認されませんでした。\n\n綿密な審査の結果、あなたのプロフィールは現時点でホストになるための条件を満たしていないことが判明しました。\n\nお時間を割いてご応募いただき、またご関心をお寄せいただき、ありがとうございます。",
   EnumLocale.txtStopLive.name: "ライブを停止",
-  EnumLocale.txtStopLiveText.name: "ライブ配信を停止しますか？この操作は元に戻すことができず、配信は直ちに終了します。「配信を停止」をクリックして確定してください。",
+  EnumLocale.txtStopLiveText.name:
+      "ライブ配信を停止しますか？この操作は元に戻すことができず、配信は直ちに終了します。「配信を停止」をクリックして確定してください。",
   EnumLocale.txtStop.name: "停止",
   EnumLocale.txtEditProfile.name: "プロフィールを編集",
   EnumLocale.txtEditProfileDetails.name: "プロフィール詳細を編集",
@@ -239,7 +246,8 @@ final Map<String, String> jaJP = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "まずギフトを選択してください",
   EnumLocale.txtTermsAndConditions.name: "利用規約",
   EnumLocale.txtUnderMaintenance.name: 'このアプリはメンテナンス中です',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'システムメンテナンス中です。しばらくしてからもう一度お試しください。',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'システムメンテナンス中です。しばらくしてからもう一度お試しください。',
   EnumLocale.txtCloseAPP.name: 'アプリを閉じる',
   EnumLocale.txtSearchCountry.name: '検索国',
   EnumLocale.txtCoins.name: 'コイン',

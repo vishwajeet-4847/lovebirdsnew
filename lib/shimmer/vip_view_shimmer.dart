@@ -1,5 +1,5 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
@@ -28,19 +28,25 @@ class VipViewShimmer extends StatelessWidget {
                 Container(
                   height: 80,
                   width: 80,
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.shimmerBaseColor),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.shimmerBaseColor),
                 ),
                 18.height,
                 Container(
                   height: 20,
                   width: 170,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: AppColors.shimmerBaseColor),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: AppColors.shimmerBaseColor),
                 ),
                 7.height,
                 Container(
                   height: 20,
                   width: 210,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: AppColors.shimmerBaseColor),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: AppColors.shimmerBaseColor),
                 ),
                 19.height,
               ],

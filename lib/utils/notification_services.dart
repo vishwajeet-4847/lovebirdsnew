@@ -1,12 +1,12 @@
 // import 'dart:math';
 //
 // import 'package:awesome_notifications/awesome_notifications.dart';
-// import 'package:figgy/main.dart';
-// import 'package:figgy/routes/app_routes.dart';
-// import 'package:figgy/socket/socket_emit.dart';
-// import 'package:figgy/utils/api_params.dart';
-// import 'package:figgy/utils/database.dart';
-// import 'package:figgy/utils/utils.dart';
+// import 'package:LoveBirds/main.dart';
+// import 'package:LoveBirds/routes/app_routes.dart';
+// import 'package:LoveBirds/socket/socket_emit.dart';
+// import 'package:LoveBirds/utils/api_params.dart';
+// import 'package:LoveBirds/utils/database.dart';
+// import 'package:LoveBirds/utils/utils.dart';
 // import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 // import 'package:flutter/material.dart';
@@ -292,21 +292,17 @@
 //   await NotificationServices.showAwesomeNotification(message);
 // }
 
-
 // notification_services.dart
-
-
-
 
 import 'dart:math';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:figgy/main.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/socket/socket_emit.dart';
-import 'package:figgy/utils/api_params.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/main.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/socket/socket_emit.dart';
+import 'package:LoveBirds/utils/api_params.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -370,7 +366,8 @@ class NotificationServices {
 
     final allowed = await AwesomeNotifications().isNotificationAllowed();
     if (!allowed) {
-      final granted = await AwesomeNotifications().requestPermissionToSendNotifications();
+      final granted =
+          await AwesomeNotifications().requestPermissionToSendNotifications();
       Utils.showLog('AwesomeNotification local permission granted: $granted');
     }
 
@@ -390,11 +387,14 @@ class NotificationServices {
       provisional: false,
       sound: true,
     );
-    final granted = settings.authorizationStatus == AuthorizationStatus.authorized || settings.authorizationStatus == AuthorizationStatus.provisional;
+    final granted =
+        settings.authorizationStatus == AuthorizationStatus.authorized ||
+            settings.authorizationStatus == AuthorizationStatus.provisional;
     if (!granted) {
       Utils.showLog("❌ Push permission not granted.");
     } else {
-      Utils.showLog("✅ Push permission granted: ${settings.authorizationStatus}");
+      Utils.showLog(
+          "✅ Push permission granted: ${settings.authorizationStatus}");
     }
   }
 
@@ -403,7 +403,8 @@ class NotificationServices {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       try {
         final data = _normalizeDataMap(message.data);
-        final dataTypeRaw = data['type'] ?? data['notificationType'] ?? data['category'];
+        final dataTypeRaw =
+            data['type'] ?? data['notificationType'] ?? data['category'];
         final dataType = (dataTypeRaw ?? '').toString();
 
         final bool noUsefulData = data.isEmpty && message.notification == null;
@@ -420,14 +421,16 @@ class NotificationServices {
         final isCall = upperType == 'CALL';
 
         if (isChatMessage && isOnChat) {
-          Utils.showLog("🔕 Chat screen visible; suppressing chat notification.");
+          Utils.showLog(
+              "🔕 Chat screen visible; suppressing chat notification.");
           return;
         }
 
         if (isCallIncoming || isCall) {
           if (currentAppLifecycleState == AppLifecycleState.paused ||
               currentAppLifecycleState == AppLifecycleState.inactive) {
-            Utils.showLog("Showing incoming call notification (foreground listener detected background state).");
+            Utils.showLog(
+                "Showing incoming call notification (foreground listener detected background state).");
             await showAwesomeNotification(message);
             return;
           } else {
@@ -462,9 +465,9 @@ class NotificationServices {
     }
   }
 
-
   /// Called by AwesomeNotifications when a button is pressed
-  static Future<void> onAwesomeNotificationActionReceived(ReceivedAction action) async {
+  static Future<void> onAwesomeNotificationActionReceived(
+      ReceivedAction action) async {
     Utils.showLog("🔔 Action: ${action.buttonKeyPressed}");
 
     final payload = action.payload ?? const {};
@@ -503,7 +506,8 @@ class NotificationServices {
   static Future<void> showAwesomeNotification(RemoteMessage message) async {
     final allowed = await AwesomeNotifications().isNotificationAllowed();
     if (!allowed) {
-      final granted = await AwesomeNotifications().requestPermissionToSendNotifications();
+      final granted =
+          await AwesomeNotifications().requestPermissionToSendNotifications();
       if (granted != true) {
         Utils.showLog("❌ Local notification permission denied.");
         return;
@@ -511,8 +515,13 @@ class NotificationServices {
     }
 
     final data = _normalizeDataMap(message.data);
-    final title = (data['title'] ?? message.notification?.title ?? 'New notification').toString();
-    final body = (data['body'] ?? message.notification?.body ?? defaultBodyForType(data['type']?.toString())).toString();
+    final title =
+        (data['title'] ?? message.notification?.title ?? 'New notification')
+            .toString();
+    final body = (data['body'] ??
+            message.notification?.body ??
+            defaultBodyForType(data['type']?.toString()))
+        .toString();
 
     final type = (data['type'] ?? '').toString();
     String channelKey = 'chat_channel';
@@ -534,7 +543,8 @@ class NotificationServices {
       category = NotificationCategory.Social;
     }
 
-    final stableId = stableIdFrom(data['callId'] ?? data['channel'] ?? data['id']);
+    final stableId =
+        stableIdFrom(data['callId'] ?? data['channel'] ?? data['id']);
 
     await AwesomeNotifications().createNotification(
       content: NotificationContent(
@@ -650,7 +660,6 @@ class NotificationServices {
 Future<void> backgroundNotification(RemoteMessage message) async {
   try {
     await Firebase.initializeApp();
-  } catch (e) {
-  }
+  } catch (e) {}
   await NotificationServices.showAwesomeNotification(message);
 }

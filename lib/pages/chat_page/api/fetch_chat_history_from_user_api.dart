@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:figgy/pages/chat_page/model/fetch_chat_history_from_user_model.dart';
-import 'package:figgy/utils/api.dart';
+import 'package:LoveBirds/pages/chat_page/model/fetch_chat_history_from_user_model.dart';
+import 'package:LoveBirds/utils/api.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../utils/utils.dart';
@@ -19,7 +19,8 @@ class FetchChatHistoryFromUserApi {
   }) async {
     Utils.showLog("Fetch Chat History FromUser Api Calling...");
     startUserPagination++;
-    final userUri = Uri.parse("${Api.getOldChatForUser}?receiverId=$receiverId&start=$startUserPagination&limit=$limitUserPagination");
+    final userUri = Uri.parse(
+        "${Api.getOldChatForUser}?receiverId=$receiverId&start=$startUserPagination&limit=$limitUserPagination");
 
     final userHeaders = {
       Api.key: Api.secretKey,
@@ -31,16 +32,20 @@ class FetchChatHistoryFromUserApi {
     log("Fetch Chat History FromUser Uri => $userUri");
     try {
       final response = await http.get(userUri, headers: userHeaders);
-      Utils.showLog("Fetch Chat History FromUser headers => ${response.headers}");
+      Utils.showLog(
+          "Fetch Chat History FromUser headers => ${response.headers}");
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body);
-        fetchChatHistoryFromUserModel = FetchChatHistoryFromUserModel.fromJson(jsonResponse);
+        fetchChatHistoryFromUserModel =
+            FetchChatHistoryFromUserModel.fromJson(jsonResponse);
 
-        Utils.showLog("Fetch Chat History FromUser Response => ${response.body}");
+        Utils.showLog(
+            "Fetch Chat History FromUser Response => ${response.body}");
         return fetchChatHistoryFromUserModel;
       } else {
         final jsonResponse = json.decode(response.body);
-        Utils.showLog("Fetch Chat History FromUser Response Error => $jsonResponse");
+        Utils.showLog(
+            "Fetch Chat History FromUser Response Error => $jsonResponse");
         return null;
       }
     } catch (e) {

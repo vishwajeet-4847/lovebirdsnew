@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> trTR = {
   EnumLocale.txtLetsStart.name: "Hadi Başlayalım",
   EnumLocale.txtGoogle.name: "Google",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "Giriş yaparak, bizimle aynı fikirde olursunuz",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "Giriş yaparak, bizimle aynı fikirde olursunuz",
   EnumLocale.txtPrivacyPolicy.name: "Gizlilik Politikası",
   EnumLocale.txtAnd.name: "Ve",
   EnumLocale.txtUseAgreement.name: "Kullanım Sözleşmesi",
   EnumLocale.txtCoinRechargeSuccess.name: "Coin Yeniden Yükleme Başarısı",
   EnumLocale.txtSomeThingWentWrong.name: "Bir şeyler ters gitti",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "Ses Kaydını Etkinleştirmek İçin Uzun Basma",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "Ses Kaydını Etkinleştirmek İçin Uzun Basma",
   EnumLocale.txtPleaseAllowPermission.name: "Lütfen İzin Verin",
   EnumLocale.txtTypeSomething.name: "Bir şey söylemek...",
   EnumLocale.txtRandomMatch.name: "Rastgele Eşleşme",
@@ -17,11 +19,15 @@ final Map<String, String> trTR = {
   EnumLocale.txtContactus.name: "Bize Ulaşın",
   EnumLocale.txtRecharge.name: "Yeniden şarj et",
   EnumLocale.txtMyGems.name: "Benim Mücevherlerim",
-  EnumLocale.txtPleaseEnterWithdrawCoin.name: "Lütfen Para Çekme İşlemini Girin",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale.txtPleaseEnterWithdrawCoin.name:
+      "Lütfen Para Çekme İşlemini Girin",
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "Talep Edilen Para Çekme Miktarı Yönetici Tarafından Belirtilen Miktardan Büyük Olmalıdır",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "Lütfen Para Çekme Yöntemini Seçin",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "Lütfen Tüm Ödeme Ayrıntılarını Girin",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "Lütfen Para Çekme Yöntemini Seçin",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "Lütfen Tüm Ödeme Ayrıntılarını Girin",
   EnumLocale.txtSelectPaymentGateway.name: "Ödeme Ağ Geçidini Seçin",
   EnumLocale.txtAvailableCoin.name: "Mevcut Madeni Para",
   EnumLocale.txtWithdraw.name: "Geri çekilmek",
@@ -55,7 +61,8 @@ final Map<String, String> trTR = {
   EnumLocale.txtBoth.name: "İkisi birden",
   EnumLocale.txtMale.name: "Erkek",
   EnumLocale.txtFemale.name: "Dişi",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "VIP olun, Ayrıcalığın tadını çıkarın",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "VIP olun, Ayrıcalığın tadını çıkarın",
   EnumLocale.txtMore.name: "Daha",
   EnumLocale.txtGems.name: "Mücevherler",
   EnumLocale.txtDailyCheckIn.name: "Günlük check-in",
@@ -74,7 +81,8 @@ final Map<String, String> trTR = {
   EnumLocale.txtVerificationDetails.name: "Doğrulama Ayrıntıları",
   EnumLocale.txtVerificationRequestText.name:
       "Gönderdiğiniz tüm bilgiler tarafımıza ulaştı. Sizin için bir güncellememiz olduğunda bunu kontrol edip sizi bilgilendireceğiz.\n\nProfilinizi kontrol edip doğrulamak yaklaşık 3 ila 4 iş günü sürecektir.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "Kullanıcının Para Çekme İşlemini Gerçekleştirmek İçin Yeterli Parası Yok",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "Kullanıcının Para Çekme İşlemini Gerçekleştirmek İçin Yeterli Parası Yok",
   EnumLocale.txtIncomingVideoCall.name: "Gelen görüntülü arama...",
   EnumLocale.txtIncomingAudioCall.name: "Gelen sesli arama...",
   EnumLocale.txtUploadYourImages.name: "Resimlerinizi Yükleyin",
@@ -100,7 +108,8 @@ final Map<String, String> trTR = {
   EnumLocale.txtEnterYourDOB.name: "Doğum tarihinizi girin",
   EnumLocale.txtSelfIntroduction.name: "Kendini Tanıtma",
   EnumLocale.txtAppleal.name: "Elma suyu",
-  EnumLocale.txtThankYouForYourFeedback.name: "Geri bildiriminiz için teşekkür ederiz",
+  EnumLocale.txtThankYouForYourFeedback.name:
+      "Geri bildiriminiz için teşekkür ederiz",
   EnumLocale.txtSubmit.name: "Göndermek",
   EnumLocale.txtSelectCountry.name: "Ülke Seçin",
   EnumLocale.txtSelectGender.name: "Cinsiyet Seçin",
@@ -124,15 +133,18 @@ final Map<String, String> trTR = {
   EnumLocale.txtUnblock.name: "Engellemeyi kaldır",
   EnumLocale.txtApplealDetails.name:
       "Şikayetiniz en kısa sürede kabul edilecektir, lütfen şikayetinizin mümkün olduğunca ayrıntılı bir açıklamasını gönderin.",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "Lütfen bildirmek istediğiniz sebebi seçiniz",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "Lütfen bildirmek istediğiniz sebebi seçiniz",
   EnumLocale.txtCancel.name: "İptal etmek",
   EnumLocale.txtSave.name: "Kaydetmek",
   EnumLocale.txtCheckIn.name: "Giriş",
-  EnumLocale.txtOpenVIPEnjoyPrivilege.name: "VIP'yi Açın Ayrıcalığın Tadını Çıkarın",
+  EnumLocale.txtOpenVIPEnjoyPrivilege.name:
+      "VIP'yi Açın Ayrıcalığın Tadını Çıkarın",
   EnumLocale.txtNoInternetConnection.name: "İnternet Bağlantısı Yok",
   EnumLocale.txtGifts.name: "Hediyeler",
   EnumLocale.txtSend.name: "Göndermek",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "Bu Uygulamadan çıkmak istiyor musunuz?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "Bu Uygulamadan çıkmak istiyor musunuz?",
   EnumLocale.txtPay.name: "Ödemek",
   EnumLocale.txtTotal.name: "Toplam",
   EnumLocale.txtPayNow.name: "Şimdi Öde",
@@ -144,7 +156,8 @@ final Map<String, String> trTR = {
   EnumLocale.txtTakePhoto.name: "Fotoğraf Çek",
   EnumLocale.txtWaitingForRemoteUser.name: "Uzak kullanıcı bekleniyor...",
   EnumLocale.txtPleaseSelectADocumentType.name: "Lütfen bir belge türü seçin.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "Lütfen internet bağlantınızı kontrol edin.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "Lütfen internet bağlantınızı kontrol edin.",
   EnumLocale.txtLiveHost.name: "Canlı Sunucu",
   EnumLocale.txtEnterBio.name: "Biyografinizi girin",
   EnumLocale.txtUploadId.name: "Resimlerinizi Yükleyin",
@@ -160,7 +173,8 @@ final Map<String, String> trTR = {
   EnumLocale.txtContinue.name: "Devam etmek",
   EnumLocale.txtYouHaveInsufficientCoins.name: "Yetersiz jetonunuz var",
   EnumLocale.txtPleaseSelectBackImages.name: "Lütfen Arka Resimleri Seçin",
-  EnumLocale.txtPleaseSelectFontImages.name: "Lütfen Yazı Tipi Görüntülerini Seçin",
+  EnumLocale.txtPleaseSelectFontImages.name:
+      "Lütfen Yazı Tipi Görüntülerini Seçin",
   EnumLocale.txtAudioCallDiscount.name: "Sesli Arama İndirimi",
   EnumLocale.txtVideoCallDiscount.name: "Görüntülü Arama İndirimi",
   EnumLocale.txtRandomMatchCallDiscount.name: "Rastgele Eşleşme Çağrı İndirimi",
@@ -195,7 +209,8 @@ final Map<String, String> trTR = {
   EnumLocale.txtVipDescription.name:
       "Not: VIP otomatik bir abonelik ödemesi değildir ve sona erdikten sonra otomatik olarak yenilenmeyecektir. VIP'yi etkinleştirdikten sonra doğrudan ödüller alabilir ve VIP geçerlilik süresi boyunca diğer ayrıcalıkların keyfini çıkarabilirsiniz.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP AYRICALIKLARIN TADINI ÇIKARIN",
-  EnumLocale.txtDailyCheckInDescription.name: "Her hafta elmas kazanmak için herhangi bir miktarda yükleme yaptıktan sonra giriş yapın",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "Her hafta elmas kazanmak için herhangi bir miktarda yükleme yaptıktan sonra giriş yapın",
   EnumLocale.txtDay.name: "Gün",
   EnumLocale.txtSelectPaymentOption.name: "Ödeme Seçeneğini Seçin",
   EnumLocale.txtVerificationText.name:
@@ -212,12 +227,16 @@ final Map<String, String> trTR = {
   EnumLocale.txtPayment.name: "Ödeme",
   EnumLocale.txtBlockHost.name: "Blok Sunucusu",
   EnumLocale.txtBlockUser.name: "Kullanıcıyı engelle",
-  EnumLocale.txtBlockDetailsHost.name: "Bu sunucuyu engellemek istediğinizden emin misiniz?",
-  EnumLocale.txtBlockDetailsUser.name: "Bu kullanıcıyı engellemek istediğinizden emin misiniz?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "Bu sunucuyu engellemek istediğinizden emin misiniz?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "Bu kullanıcıyı engellemek istediğinizden emin misiniz?",
   EnumLocale.txtUnBlockHost.name: "Ana Bilgisayarı Engellemeyi Kaldır",
   EnumLocale.txtUnBlockUser.name: "Kullanıcının Engellemesini Kaldır",
-  EnumLocale.txtUnBlockDetailsHost.name: "Bu sunucunun engellemesini kaldırmak istediğinizden emin misiniz?",
-  EnumLocale.txtUnBlockDetailsUser.name: "Bu kullanıcının engellemesini kaldırmak istediğinizden emin misiniz?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "Bu sunucunun engellemesini kaldırmak istediğinizden emin misiniz?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "Bu kullanıcının engellemesini kaldırmak istediğinizden emin misiniz?",
   EnumLocale.txtWithdrawHistory.name: "Geri Çekme Geçmişi",
   EnumLocale.txtWalletHistory.name: "Cüzdan Geçmişi",
   EnumLocale.txtDeclineRequest.name:
@@ -245,7 +264,8 @@ final Map<String, String> trTR = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "Lütfen önce hediyeyi seçin",
   EnumLocale.txtTermsAndConditions.name: "Şartlar ve koşullar",
   EnumLocale.txtUnderMaintenance.name: 'Bu Uygulama Bakımda',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'Sistem bakımı devam ediyor: lütfen daha sonra tekrar deneyin.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'Sistem bakımı devam ediyor: lütfen daha sonra tekrar deneyin.',
   EnumLocale.txtCloseAPP.name: 'Uygulamayı Kapat',
   EnumLocale.txtSearchCountry.name: 'Ülke Ara',
   EnumLocale.txtCoins.name: 'Madeni paralar',

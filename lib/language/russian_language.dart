@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> ruRU = {
   EnumLocale.txtLetsStart.name: "Давайте начнем",
   EnumLocale.txtGoogle.name: "Google",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "Входя в систему, вы соглашаетесь с нашими",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "Входя в систему, вы соглашаетесь с нашими",
   EnumLocale.txtPrivacyPolicy.name: "политика конфиденциальности",
   EnumLocale.txtAnd.name: "и",
   EnumLocale.txtUseAgreement.name: "Соглашение об использовании",
   EnumLocale.txtCoinRechargeSuccess.name: "Успешное пополнение монет",
   EnumLocale.txtSomeThingWentWrong.name: "Что-то пошло не так",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "Длительное нажатие для включения записи звука",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "Длительное нажатие для включения записи звука",
   EnumLocale.txtPleaseAllowPermission.name: "Пожалуйста, разрешите разрешение",
   EnumLocale.txtTypeSomething.name: "Скажите что-то...",
   EnumLocale.txtRandomMatch.name: "Случайное совпадение",
@@ -17,11 +19,15 @@ final Map<String, String> ruRU = {
   EnumLocale.txtContactus.name: "Связаться с нами",
   EnumLocale.txtRecharge.name: "Перезарядка",
   EnumLocale.txtMyGems.name: "Мои драгоценности",
-  EnumLocale.txtPleaseEnterWithdrawCoin.name: "Пожалуйста, введите Вывести монету",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale.txtPleaseEnterWithdrawCoin.name:
+      "Пожалуйста, введите Вывести монету",
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "Запрошенная для вывода монета должна быть больше, чем указано администратором",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "Пожалуйста, выберите способ вывода средств",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "Пожалуйста, введите все реквизиты платежа",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "Пожалуйста, выберите способ вывода средств",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "Пожалуйста, введите все реквизиты платежа",
   EnumLocale.txtSelectPaymentGateway.name: "Выберите платежный шлюз",
   EnumLocale.txtAvailableCoin.name: "Доступная монета",
   EnumLocale.txtWithdraw.name: "Отзывать",
@@ -55,7 +61,8 @@ final Map<String, String> ruRU = {
   EnumLocale.txtBoth.name: "Оба",
   EnumLocale.txtMale.name: "Мужской",
   EnumLocale.txtFemale.name: "Женский",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "Станьте VIP-персоной, наслаждайтесь привилегиями",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "Станьте VIP-персоной, наслаждайтесь привилегиями",
   EnumLocale.txtMore.name: "Более",
   EnumLocale.txtGems.name: "Драгоценные камни",
   EnumLocale.txtDailyCheckIn.name: "Ежедневная регистрация заезда",
@@ -74,7 +81,8 @@ final Map<String, String> ruRU = {
   EnumLocale.txtVerificationDetails.name: "Подробности проверки",
   EnumLocale.txtVerificationRequestText.name:
       "Все предоставленные вами данные были получены нами. Мы проверим и сообщим вам об этом, как только получим обновление.\n\nПроверка и подтверждение вашего профиля займет около 3–4 рабочих дней.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "У пользователя недостаточно средств для вывода средств",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "У пользователя недостаточно средств для вывода средств",
   EnumLocale.txtIncomingVideoCall.name: "Входящий видеозвонок...",
   EnumLocale.txtIncomingAudioCall.name: "Входящий аудиовызов...",
   EnumLocale.txtUploadYourImages.name: "Загрузите ваши изображения",
@@ -106,11 +114,14 @@ final Map<String, String> ruRU = {
   EnumLocale.txtSelectGender.name: "Выберите пол",
   EnumLocale.txtBio.name: "Био",
   EnumLocale.txtPleaseEnterYourName.name: "Пожалуйста, введите Ваше имя",
-  EnumLocale.txtPleaseEnterYourDOB.name: "Пожалуйста, введите дату вашего рождения",
+  EnumLocale.txtPleaseEnterYourDOB.name:
+      "Пожалуйста, введите дату вашего рождения",
   EnumLocale.txtPleaseEnterYourBio.name: "Пожалуйста, введите свою биографию",
-  EnumLocale.txtUploadFrontSideId.name: "Загрузить идентификатор лицевой стороны",
+  EnumLocale.txtUploadFrontSideId.name:
+      "Загрузить идентификатор лицевой стороны",
   EnumLocale.txtPersonalPhotos.name: "Личные фото",
-  EnumLocale.txtUploadBackSideId.name: "Загрузить идентификатор обратной стороны",
+  EnumLocale.txtUploadBackSideId.name:
+      "Загрузить идентификатор обратной стороны",
   EnumLocale.txtClearPhotos.name: "Очистить фотографии",
   EnumLocale.txtClearPhotos1.name: "(Чистые фотографии)",
   EnumLocale.txtSelectDocumentType.name: "Выберите тип документа",
@@ -124,15 +135,18 @@ final Map<String, String> ruRU = {
   EnumLocale.txtUnblock.name: "Разблокировать",
   EnumLocale.txtApplealDetails.name:
       "Ваша жалоба будет принята к рассмотрению в кратчайшие сроки. Пожалуйста, предоставьте как можно более подробное описание вашей жалобы.",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "Пожалуйста, выберите причину, по которой вы хотите сообщить",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "Пожалуйста, выберите причину, по которой вы хотите сообщить",
   EnumLocale.txtCancel.name: "Отмена",
   EnumLocale.txtSave.name: "Сохранять",
   EnumLocale.txtCheckIn.name: "Регистрироваться",
-  EnumLocale.txtOpenVIPEnjoyPrivilege.name: "Откройте VIP-статус и наслаждайтесь привилегиями",
+  EnumLocale.txtOpenVIPEnjoyPrivilege.name:
+      "Откройте VIP-статус и наслаждайтесь привилегиями",
   EnumLocale.txtNoInternetConnection.name: "Нет подключения к Интернету",
   EnumLocale.txtGifts.name: "Подарки",
   EnumLocale.txtSend.name: "Отправлять",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "Вы хотите наверняка выйти из этого приложения?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "Вы хотите наверняка выйти из этого приложения?",
   EnumLocale.txtPay.name: "Платить",
   EnumLocale.txtTotal.name: "Общий",
   EnumLocale.txtPayNow.name: "Оплатить сейчас",
@@ -142,9 +156,11 @@ final Map<String, String> ruRU = {
   EnumLocale.txtChooseImage.name: "Выбрать изображение",
   EnumLocale.txtGallery.name: "Галерея",
   EnumLocale.txtTakePhoto.name: "Сделать фото",
-  EnumLocale.txtWaitingForRemoteUser.name: "Ожидание удаленного пользователя...",
+  EnumLocale.txtWaitingForRemoteUser.name:
+      "Ожидание удаленного пользователя...",
   EnumLocale.txtPleaseSelectADocumentType.name: "Выберите тип документа.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "Проверьте подключение к Интернету.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "Проверьте подключение к Интернету.",
   EnumLocale.txtLiveHost.name: "Прямой эфир",
   EnumLocale.txtEnterBio.name: "Введите вашу биографию",
   EnumLocale.txtUploadId.name: "Загрузите ваши изображения",
@@ -159,8 +175,10 @@ final Map<String, String> ruRU = {
   EnumLocale.txtMyLanguage.name: "Мой язык",
   EnumLocale.txtContinue.name: "Продолжать",
   EnumLocale.txtYouHaveInsufficientCoins.name: "У вас недостаточно монет",
-  EnumLocale.txtPleaseSelectBackImages.name: "Пожалуйста, выберите Назад Изображения",
-  EnumLocale.txtPleaseSelectFontImages.name: "Пожалуйста, выберите изображения шрифтов",
+  EnumLocale.txtPleaseSelectBackImages.name:
+      "Пожалуйста, выберите Назад Изображения",
+  EnumLocale.txtPleaseSelectFontImages.name:
+      "Пожалуйста, выберите изображения шрифтов",
   EnumLocale.txtAudioCallDiscount.name: "Скидка на аудиозвонок",
   EnumLocale.txtVideoCallDiscount.name: "Скидка на видеозвонок",
   EnumLocale.txtRandomMatchCallDiscount.name: "Скидка на случайный вызов",
@@ -195,7 +213,8 @@ final Map<String, String> ruRU = {
   EnumLocale.txtVipDescription.name:
       "Примечание: VIP не является автоматической оплатой подписки и не будет автоматически продлен после истечения срока действия. После активации VIP вы можете напрямую получать вознаграждения, а другие привилегии могут быть доступны в течение всего срока действия VIP.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP-ПОЛЬЗУЙТЕСЬ ПРИВИЛЕГИЯМИ",
-  EnumLocale.txtDailyCheckInDescription.name: "Заходите после пополнения баланса на любую сумму, чтобы получать бриллианты каждую неделю",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "Заходите после пополнения баланса на любую сумму, чтобы получать бриллианты каждую неделю",
   EnumLocale.txtDay.name: "День",
   EnumLocale.txtSelectPaymentOption.name: "Выберите способ оплаты",
   EnumLocale.txtVerificationText.name:
@@ -212,12 +231,16 @@ final Map<String, String> ruRU = {
   EnumLocale.txtPayment.name: "Оплата",
   EnumLocale.txtBlockHost.name: "Блокировать хост",
   EnumLocale.txtBlockUser.name: "Заблокировать пользователя",
-  EnumLocale.txtBlockDetailsHost.name: "Вы уверены, что хотите заблокировать этот хост?",
-  EnumLocale.txtBlockDetailsUser.name: "Вы уверены, что хотите заблокировать этого пользователя?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "Вы уверены, что хотите заблокировать этот хост?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "Вы уверены, что хотите заблокировать этого пользователя?",
   EnumLocale.txtUnBlockHost.name: "Разблокировать хост",
   EnumLocale.txtUnBlockUser.name: "Разблокировать пользователя",
-  EnumLocale.txtUnBlockDetailsHost.name: "Вы уверены, что хотите разблокировать этот хост?",
-  EnumLocale.txtUnBlockDetailsUser.name: "Вы уверены, что хотите разблокировать этого пользователя?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "Вы уверены, что хотите разблокировать этот хост?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "Вы уверены, что хотите разблокировать этого пользователя?",
   EnumLocale.txtWithdrawHistory.name: "История вывода средств",
   EnumLocale.txtWalletHistory.name: "История кошелька",
   EnumLocale.txtDeclineRequest.name:
@@ -242,10 +265,13 @@ final Map<String, String> ruRU = {
   EnumLocale.txtPending.name: "В ожидании",
   EnumLocale.txtDecline.name: "Отклонить",
   EnumLocale.txtAccepted.name: "Принял",
-  EnumLocale.txtPleaseSelectGiftFirst.name: "Пожалуйста, сначала выберите подарок",
+  EnumLocale.txtPleaseSelectGiftFirst.name:
+      "Пожалуйста, сначала выберите подарок",
   EnumLocale.txtTermsAndConditions.name: "Условия и положения",
-  EnumLocale.txtUnderMaintenance.name: 'Это приложение находится на обслуживании',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'Проводится обслуживание системы: повторите попытку позже.',
+  EnumLocale.txtUnderMaintenance.name:
+      'Это приложение находится на обслуживании',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'Проводится обслуживание системы: повторите попытку позже.',
   EnumLocale.txtCloseAPP.name: 'Закрыть приложение',
   EnumLocale.txtSearchCountry.name: 'Поиск страны',
   EnumLocale.txtCoins.name: 'Монеты',

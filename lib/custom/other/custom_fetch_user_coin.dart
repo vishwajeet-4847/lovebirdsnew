@@ -1,12 +1,12 @@
 import 'dart:developer';
 
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/host_detail_page/api/get_host_profile_api.dart';
-import 'package:figgy/pages/host_detail_page/model/get_user_profile_model.dart';
-import 'package:figgy/pages/login_page/api/fetch_login_user_profile_api.dart';
-import 'package:figgy/pages/login_page/model/fetch_login_user_profile_model.dart';
-import 'package:figgy/utils/database.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/host_detail_page/api/get_host_profile_api.dart';
+import 'package:LoveBirds/pages/host_detail_page/model/get_user_profile_model.dart';
+import 'package:LoveBirds/pages/login_page/api/fetch_login_user_profile_api.dart';
+import 'package:LoveBirds/pages/login_page/model/fetch_login_user_profile_model.dart';
+import 'package:LoveBirds/utils/database.dart';
 import 'package:get/get.dart';
 
 class CustomFetchUserCoin {
@@ -21,7 +21,8 @@ class CustomFetchUserCoin {
     isLoading.value = true;
 
     if (Database.isHost) {
-      getHostProfileModel = await GetHostProfileApi.callApi(hostId: Database.hostId);
+      getHostProfileModel =
+          await GetHostProfileApi.callApi(hostId: Database.hostId);
 
       if (getHostProfileModel?.host != null) {
         coin.value = getHostProfileModel?.host?.coin?.toInt() ?? 0;

@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:clipboard/clipboard.dart';
-import 'package:figgy/pages/splash_screen_page/api/get_setting_api.dart';
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/pages/splash_screen_page/api/get_setting_api.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -21,39 +21,62 @@ abstract class Utils {
   }
 
   // >>>>> >>>>> RazorPay Payment Credential <<<<< <<<<<
-  static String razorpaySecretKey = GetSettingApi.getSettingModel?.data?.razorpaySecretKey ?? "";
-  static String currencyCode = GetSettingApi.getSettingModel?.data?.currency?.name ?? "";
+  static String razorpaySecretKey =
+      GetSettingApi.getSettingModel?.data?.razorpaySecretKey ?? "";
+  static String currencyCode =
+      GetSettingApi.getSettingModel?.data?.currency?.name ?? "";
 
   // >>>>> >>>>> Stripe Payment Credential <<<<< <<<<<
   static String stripeUrl = "https://api.stripe.com/v1/payment_intents";
-  static String stripeSecretKey = GetSettingApi.getSettingModel?.data?.stripeSecretKey ?? "";
-  static String stripeTestPublicKey = GetSettingApi.getSettingModel?.data?.stripePublishableKey ?? "";
+  static String stripeSecretKey =
+      GetSettingApi.getSettingModel?.data?.stripeSecretKey ?? "";
+  static String stripeTestPublicKey =
+      GetSettingApi.getSettingModel?.data?.stripePublishableKey ?? "";
 
   // >>>>> >>>>> Flutter Wave Credential <<<<< <<<<<
-  static String flutterWaveId = GetSettingApi.getSettingModel?.data?.flutterwaveId ?? "";
+  static String flutterWaveId =
+      GetSettingApi.getSettingModel?.data?.flutterwaveId ?? "";
 
   // >>>>> >>>>> Show Payment Method <<<<< <<<<<
-  static final bool isShowStripePaymentMethod = GetSettingApi.getSettingModel?.data?.stripeEnabled ?? false;
-  static final bool isShowRazorPayPaymentMethod = GetSettingApi.getSettingModel?.data?.razorpayEnabled ?? false;
-  static final bool isShowFlutterWavePaymentMethod = GetSettingApi.getSettingModel?.data?.flutterwaveEnabled ?? false;
-  static final bool isShowInAppPurchasePaymentMethod = GetSettingApi.getSettingModel?.data?.googlePlayEnabled ?? false;
-  static final bool isShowPayStackAndroid = GetSettingApi.getSettingModel?.data?.paystackAndroidEnabled ?? false;
-    static final bool isShowPayStackIos = GetSettingApi.getSettingModel?.data?.paystackIosEnabled ?? false;
-  static final bool isShowPayPalAndroid = GetSettingApi.getSettingModel?.data?.paypalAndroidEnabled ?? false;
-  static final bool isShowPayPalIos = GetSettingApi.getSettingModel?.data?.paypalIosEnabled ?? false;
-  static final bool isShowCashFreeAndroid = GetSettingApi.getSettingModel?.data?.cashfreeAndroidEnabled ?? false;
-  static final bool isShowCashFreeIos = GetSettingApi.getSettingModel?.data?.cashfreeIosEnabled ?? false;
-  static final bool isShowRazorPayIos = GetSettingApi.getSettingModel?.data?.razorpayIosEnabled ?? false;
-  static final bool isShowRazorPayAndroid = GetSettingApi.getSettingModel?.data?.razorpayEnabled ?? false;
-  static final bool isShowStripeIos = GetSettingApi.getSettingModel?.data?.stripeIosEnabled ?? false;
-  static final bool isShowStripeAndroid = GetSettingApi.getSettingModel?.data?.stripeEnabled ?? false;
-  static final bool isShowFlutterWaveIos = GetSettingApi.getSettingModel?.data?.flutterwaveIosEnabled ?? false;
-  static final bool isShowFlutterWaveAndroid = GetSettingApi.getSettingModel?.data?.flutterwaveEnabled ?? false;
-  static final bool isShowGooglePayIos = GetSettingApi.getSettingModel?.data?.googlePayIosEnabled ?? false;
-  static final bool isShowGooglePayAndroid = GetSettingApi.getSettingModel?.data?.googlePlayEnabled ?? false;
+  static final bool isShowStripePaymentMethod =
+      GetSettingApi.getSettingModel?.data?.stripeEnabled ?? false;
+  static final bool isShowRazorPayPaymentMethod =
+      GetSettingApi.getSettingModel?.data?.razorpayEnabled ?? false;
+  static final bool isShowFlutterWavePaymentMethod =
+      GetSettingApi.getSettingModel?.data?.flutterwaveEnabled ?? false;
+  static final bool isShowInAppPurchasePaymentMethod =
+      GetSettingApi.getSettingModel?.data?.googlePlayEnabled ?? false;
+  static final bool isShowPayStackAndroid =
+      GetSettingApi.getSettingModel?.data?.paystackAndroidEnabled ?? false;
+  static final bool isShowPayStackIos =
+      GetSettingApi.getSettingModel?.data?.paystackIosEnabled ?? false;
+  static final bool isShowPayPalAndroid =
+      GetSettingApi.getSettingModel?.data?.paypalAndroidEnabled ?? false;
+  static final bool isShowPayPalIos =
+      GetSettingApi.getSettingModel?.data?.paypalIosEnabled ?? false;
+  static final bool isShowCashFreeAndroid =
+      GetSettingApi.getSettingModel?.data?.cashfreeAndroidEnabled ?? false;
+  static final bool isShowCashFreeIos =
+      GetSettingApi.getSettingModel?.data?.cashfreeIosEnabled ?? false;
+  static final bool isShowRazorPayIos =
+      GetSettingApi.getSettingModel?.data?.razorpayIosEnabled ?? false;
+  static final bool isShowRazorPayAndroid =
+      GetSettingApi.getSettingModel?.data?.razorpayEnabled ?? false;
+  static final bool isShowStripeIos =
+      GetSettingApi.getSettingModel?.data?.stripeIosEnabled ?? false;
+  static final bool isShowStripeAndroid =
+      GetSettingApi.getSettingModel?.data?.stripeEnabled ?? false;
+  static final bool isShowFlutterWaveIos =
+      GetSettingApi.getSettingModel?.data?.flutterwaveIosEnabled ?? false;
+  static final bool isShowFlutterWaveAndroid =
+      GetSettingApi.getSettingModel?.data?.flutterwaveEnabled ?? false;
+  static final bool isShowGooglePayIos =
+      GetSettingApi.getSettingModel?.data?.googlePayIosEnabled ?? false;
+  static final bool isShowGooglePayAndroid =
+      GetSettingApi.getSettingModel?.data?.googlePlayEnabled ?? false;
 
-
-  static final String isShowCurrencySymbol = GetSettingApi.getSettingModel?.data?.currency?.symbol ?? "";
+  static final String isShowCurrencySymbol =
+      GetSettingApi.getSettingModel?.data?.currency?.symbol ?? "";
 
   /// =================== Clipboard (Copy Text) =================== ///
   static copyText(String text) {

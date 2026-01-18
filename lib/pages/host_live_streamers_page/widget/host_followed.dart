@@ -1,12 +1,12 @@
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
-import 'package:figgy/shimmer/host_stream_bottom_shimmer.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/pages/host_live_streamers_page/controller/host_live_streamers_controller.dart';
+import 'package:LoveBirds/shimmer/host_stream_bottom_shimmer.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +17,8 @@ class HostFollowed extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, box) {
-        Utils.showLog("******************${Get.height}***************** ${box.maxHeight}");
+        Utils.showLog(
+            "******************${Get.height}***************** ${box.maxHeight}");
 
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -28,7 +29,8 @@ class HostFollowed extends StatelessWidget {
                   ? const DiscoverHostForUserShimmer().paddingOnly(top: 15)
                   : RefreshIndicator(
                       onRefresh: () async {
-                        await logic.getCountryWishHost(country: logic.selectedCountry);
+                        await logic.getCountryWishHost(
+                            country: logic.selectedCountry);
                       },
                       child: logic.followedHost.isEmpty
                           ? SingleChildScrollView(
@@ -37,10 +39,14 @@ class HostFollowed extends StatelessWidget {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Center(child: Image.asset(AppAsset.imgEmptyData, height: 130)),
+                                    Center(
+                                        child: Image.asset(
+                                            AppAsset.imgEmptyData,
+                                            height: 130)),
                                     Text(
                                       EnumLocale.txtNoDataFound.name.tr,
-                                      style: AppFontStyle.styleW400(AppColors.whiteColor, 16),
+                                      style: AppFontStyle.styleW400(
+                                          AppColors.whiteColor, 16),
                                     ),
                                   ],
                                 ),
@@ -48,7 +54,8 @@ class HostFollowed extends StatelessWidget {
                             )
                           : SingleChildScrollView(
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
                                 child: SizedBox(
                                   height: box.maxHeight + 1,
                                   child: SingleChildScrollView(
@@ -57,29 +64,36 @@ class HostFollowed extends StatelessWidget {
                                       padding: const EdgeInsets.only(top: 15),
                                       itemCount: logic.followedHost.length,
                                       shrinkWrap: true,
-                                      physics: const NeverScrollableScrollPhysics(),
-                                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      gridDelegate:
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 2,
                                         mainAxisSpacing: 18,
                                         crossAxisSpacing: 18,
                                         childAspectRatio: 0.8,
                                       ),
                                       itemBuilder: (context, index) {
-                                        final hostList = logic.followedHost[index];
+                                        final hostList =
+                                            logic.followedHost[index];
                                         return Container(
                                           clipBehavior: Clip.antiAlias,
                                           alignment: Alignment.center,
                                           decoration: const BoxDecoration(
-                                            borderRadius: BorderRadius.all(Radius.circular(22)),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(22)),
                                           ),
                                           child: Stack(
                                             children: [
                                               Container(
-                                                color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                                color: AppColors.colorTextGrey
+                                                    .withValues(alpha: 0.22),
                                                 height: Get.height,
                                                 width: Get.width,
                                                 child: CustomImage(
-                                                  image: hostList?.followerId?.image ?? "",
+                                                  image: hostList
+                                                          ?.followerId?.image ??
+                                                      "",
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -93,12 +107,16 @@ class HostFollowed extends StatelessWidget {
                                                     gradient: LinearGradient(
                                                       colors: [
                                                         AppColors.transparent,
-                                                        AppColors.blackColor.withValues(alpha: 0.0),
+                                                        AppColors.blackColor
+                                                            .withValues(
+                                                                alpha: 0.0),
                                                         AppColors.blackColor,
                                                         // AppColors.colorBlack,
                                                       ],
-                                                      begin: Alignment.topCenter,
-                                                      end: Alignment.bottomCenter,
+                                                      begin:
+                                                          Alignment.topCenter,
+                                                      end: Alignment
+                                                          .bottomCenter,
                                                     ),
                                                   ),
                                                 ),
@@ -108,23 +126,37 @@ class HostFollowed extends StatelessWidget {
                                                 bottom: 0,
                                                 left: 5,
                                                 child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                   children: [
                                                     Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
-                                                          hostList?.followerId?.name ?? "",
-                                                          style: AppFontStyle.styleW700(AppColors.whiteColor, 16),
-                                                          overflow: TextOverflow.ellipsis,
+                                                          hostList?.followerId
+                                                                  ?.name ??
+                                                              "",
+                                                          style: AppFontStyle
+                                                              .styleW700(
+                                                                  AppColors
+                                                                      .whiteColor,
+                                                                  16),
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
                                                         ),
                                                         Text(
                                                           "ID: ${hostList?.followerId?.uniqueId ?? ""}",
-                                                          style: AppFontStyle.styleW500(
-                                                            AppColors.whiteColor,
+                                                          style: AppFontStyle
+                                                              .styleW500(
+                                                            AppColors
+                                                                .whiteColor,
                                                             13,
                                                           ),
-                                                          overflow: TextOverflow.ellipsis,
+                                                          overflow: TextOverflow
+                                                              .ellipsis,
                                                         ),
                                                       ],
                                                     ),
@@ -156,7 +188,10 @@ class HostFollowed extends StatelessWidget {
                                                     //         ),
                                                     // ),
                                                   ],
-                                                ).paddingOnly(left: 8, right: 8, bottom: 8),
+                                                ).paddingOnly(
+                                                    left: 8,
+                                                    right: 8,
+                                                    bottom: 8),
                                               ),
                                               Positioned(
                                                 bottom: 0,
@@ -164,14 +199,17 @@ class HostFollowed extends StatelessWidget {
                                                 child: GestureDetector(
                                                   onTap: () => logic.getBlock(
                                                     context: context,
-                                                    userId: hostList?.followerId?.id ?? "",
+                                                    userId: hostList
+                                                            ?.followerId?.id ??
+                                                        "",
                                                   ),
                                                   child: Image.asset(
                                                     AppAsset.circleMoreIcon,
                                                     height: 28,
                                                     width: 28,
                                                   ),
-                                                ).paddingOnly(right: 8, bottom: 15),
+                                                ).paddingOnly(
+                                                    right: 8, bottom: 15),
                                               ),
                                             ],
                                           ),

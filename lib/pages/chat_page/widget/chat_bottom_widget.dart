@@ -1,14 +1,14 @@
-import 'package:figgy/custom/bottom_sheet/video_bottom_sheet.dart';
-import 'package:figgy/custom/custom_format_audio_time.dart';
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/pages/chat_page/controller/chat_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/bottom_sheet/video_bottom_sheet.dart';
+import 'package:LoveBirds/custom/custom_format_audio_time.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/pages/chat_page/controller/chat_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vibration/vibration.dart';
@@ -91,7 +91,8 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                                     borderRadius: BorderRadius.circular(30),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: AppColors.blackColor.withValues(alpha: 0.40),
+                                        color: AppColors.blackColor
+                                            .withValues(alpha: 0.40),
                                         offset: const Offset(0, -6),
                                         blurRadius: 34,
                                         spreadRadius: 0,
@@ -107,7 +108,8 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           GestureDetector(
-                                            onTap: () => controller.onProfileImage(),
+                                            onTap: () =>
+                                                controller.onProfileImage(),
                                             child: Image.asset(
                                               AppAsset.icGallery,
                                               height: 22,
@@ -115,18 +117,31 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                                           ),
                                           GestureDetector(
                                             onTap: () {
-                                              Vibration.vibrate(duration: 50, amplitude: 128);
-                                              Utils.showToast(EnumLocale.txtLongPressToEnableAudioRecording.name.tr);
+                                              Vibration.vibrate(
+                                                  duration: 50, amplitude: 128);
+                                              Utils.showToast(EnumLocale
+                                                  .txtLongPressToEnableAudioRecording
+                                                  .name
+                                                  .tr);
                                             },
                                             onLongPressStart: (details) {
-                                              if (controller.isSendingAudioFile == false) {
-                                                Vibration.vibrate(duration: 50, amplitude: 128);
-                                                controller.onLongPressStartMic();
+                                              if (controller
+                                                      .isSendingAudioFile ==
+                                                  false) {
+                                                Vibration.vibrate(
+                                                    duration: 50,
+                                                    amplitude: 128);
+                                                controller
+                                                    .onLongPressStartMic();
                                               }
                                             },
                                             onLongPressEnd: (details) {
-                                              if (controller.isSendingAudioFile == false) {
-                                                Vibration.vibrate(duration: 50, amplitude: 128);
+                                              if (controller
+                                                      .isSendingAudioFile ==
+                                                  false) {
+                                                Vibration.vibrate(
+                                                    duration: 50,
+                                                    amplitude: 128);
                                                 controller.onLongPressEndMic();
                                               }
                                             },
@@ -140,9 +155,11 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                                         ],
                                       ),
                                       hintText: controller.isRecordingAudio
-                                          ? CustomFormatAudioTime.convert(controller.countTime)
+                                          ? CustomFormatAudioTime.convert(
+                                              controller.countTime)
                                           : EnumLocale.txtTypeSomething.name.tr,
-                                      hintStyle: AppFontStyle.styleW400(AppColors.textFieldTxtColor, 13),
+                                      hintStyle: AppFontStyle.styleW400(
+                                          AppColors.textFieldTxtColor, 13),
                                       filled: true,
                                       fillColor: AppColors.textFieldColor,
                                       border: InputBorder.none,
@@ -172,18 +189,26 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                                     decoration: InputDecoration(
                                       suffixIcon: GestureDetector(
                                         onTap: () {
-                                          Vibration.vibrate(duration: 50, amplitude: 128);
-                                          Utils.showToast(EnumLocale.txtLongPressToEnableAudioRecording.name.tr);
+                                          Vibration.vibrate(
+                                              duration: 50, amplitude: 128);
+                                          Utils.showToast(EnumLocale
+                                              .txtLongPressToEnableAudioRecording
+                                              .name
+                                              .tr);
                                         },
                                         onLongPressStart: (details) {
-                                          if (controller.isSendingAudioFile == false) {
-                                            Vibration.vibrate(duration: 50, amplitude: 128);
+                                          if (controller.isSendingAudioFile ==
+                                              false) {
+                                            Vibration.vibrate(
+                                                duration: 50, amplitude: 128);
                                             controller.onLongPressStartMic();
                                           }
                                         },
                                         onLongPressEnd: (details) {
-                                          if (controller.isSendingAudioFile == false) {
-                                            Vibration.vibrate(duration: 50, amplitude: 128);
+                                          if (controller.isSendingAudioFile ==
+                                              false) {
+                                            Vibration.vibrate(
+                                                duration: 50, amplitude: 128);
                                             controller.onLongPressEndMic();
                                           }
                                         },
@@ -195,9 +220,11 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                                         ),
                                       ),
                                       hintText: controller.isRecordingAudio
-                                          ? CustomFormatAudioTime.convert(controller.countTime)
+                                          ? CustomFormatAudioTime.convert(
+                                              controller.countTime)
                                           : EnumLocale.txtTypeSomething.name.tr,
-                                      hintStyle: AppFontStyle.styleW400(AppColors.textFieldTxtColor, 13),
+                                      hintStyle: AppFontStyle.styleW400(
+                                          AppColors.textFieldTxtColor, 13),
                                       filled: true,
                                       fillColor: AppColors.textFieldColor,
                                       border: InputBorder.none,
@@ -234,7 +261,8 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                 const Offstage()
               else
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -248,12 +276,25 @@ class ChatBottomViewWidget extends GetView<ChatController> {
                             onTap: () {
                               showVideoBottomSheet(
                                 context: context,
-                                receiverId: Database.isHost ? logic.receiverId : logic.hostId,
+                                receiverId: Database.isHost
+                                    ? logic.receiverId
+                                    : logic.hostId,
                                 receiverName: controller.hostName,
                                 receiverImage: controller.profileImage,
-                                audioCallCharge: logic.fetchChatHistoryFromUserModel?.callRate?.audioCallRate ?? 0,
-                                videoCallCharge: logic.fetchChatHistoryFromUserModel?.callRate?.privateCallRate ?? 0,
-                                isFake: logic.hostDetailModel?.host?.isFake == true ? true : false,
+                                audioCallCharge: logic
+                                        .fetchChatHistoryFromUserModel
+                                        ?.callRate
+                                        ?.audioCallRate ??
+                                    0,
+                                videoCallCharge: logic
+                                        .fetchChatHistoryFromUserModel
+                                        ?.callRate
+                                        ?.privateCallRate ??
+                                    0,
+                                isFake:
+                                    logic.hostDetailModel?.host?.isFake == true
+                                        ? true
+                                        : false,
                                 videoList: logic.hostDetailModel?.host?.video,
                               );
                             },

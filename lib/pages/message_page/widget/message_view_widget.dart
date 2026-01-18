@@ -1,9 +1,9 @@
-import 'package:figgy/custom/no_data_found/no_data_found.dart';
-import 'package:figgy/pages/message_page/api/get_chat_thumb_list_user.dart';
-import 'package:figgy/pages/message_page/controller/message_controller.dart';
-import 'package:figgy/pages/message_page/widget/message_container.dart';
-import 'package:figgy/shimmer/message_shimmer.dart';
-import 'package:figgy/utils/colors_utils.dart';
+import 'package:LoveBirds/custom/no_data_found/no_data_found.dart';
+import 'package:LoveBirds/pages/message_page/api/get_chat_thumb_list_user.dart';
+import 'package:LoveBirds/pages/message_page/controller/message_controller.dart';
+import 'package:LoveBirds/pages/message_page/widget/message_container.dart';
+import 'package:LoveBirds/shimmer/message_shimmer.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,8 @@ class MessageViewWidget extends StatelessWidget {
             ? ListView.builder(
                 shrinkWrap: true,
                 padding: const EdgeInsets.only(top: 5),
-                itemBuilder: (context, index) => const MessageContainerShimmer(),
+                itemBuilder: (context, index) =>
+                    const MessageContainerShimmer(),
                 itemCount: 6,
               )
             : LayoutBuilder(

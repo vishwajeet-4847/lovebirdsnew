@@ -1,12 +1,12 @@
 import 'package:camera/camera.dart';
-import 'package:figgy/common/loading_widget.dart';
-import 'package:figgy/pages/host_live_stream/controller/host_live_stream_controller.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/common/loading_widget.dart';
+import 'package:LoveBirds/pages/host_live_stream/controller/host_live_stream_controller.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
@@ -26,9 +26,13 @@ class HostLiveStreamView extends StatelessWidget {
             GetBuilder<HostLiveStreamController>(
                 id: AppConstant.onInitializeCamera,
                 builder: (controller) {
-                  if (controller.cameraController != null && (controller.cameraController?.value.isInitialized ?? false)) {
+                  if (controller.cameraController != null &&
+                      (controller.cameraController?.value.isInitialized ??
+                          false)) {
                     final mediaSize = MediaQuery.of(context).size;
-                    final scale = 1 / (controller.cameraController!.value.aspectRatio * mediaSize.aspectRatio);
+                    final scale = 1 /
+                        (controller.cameraController!.value.aspectRatio *
+                            mediaSize.aspectRatio);
 
                     return ClipRect(
                       clipper: _MediaSizeClipper(mediaSize),
@@ -62,10 +66,12 @@ class HostLiveStreamView extends StatelessWidget {
                               padding: const EdgeInsets.all(5),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: AppColors.whiteColor.withValues(alpha: 0.1),
+                                color:
+                                    AppColors.whiteColor.withValues(alpha: 0.1),
                                 border: Border.all(
                                   strokeAlign: 0.4,
-                                  color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                  color: AppColors.whiteColor
+                                      .withValues(alpha: 0.2),
                                 ),
                               ),
                               child: Image.asset(AppAsset.icClose),
@@ -85,13 +91,17 @@ class HostLiveStreamView extends StatelessWidget {
                                         padding: const EdgeInsets.all(5),
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: AppColors.whiteColor.withValues(alpha: 0.1),
+                                          color: AppColors.whiteColor
+                                              .withValues(alpha: 0.1),
                                           border: Border.all(
                                             strokeAlign: 0.4,
-                                            color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                            color: AppColors.whiteColor
+                                                .withValues(alpha: 0.2),
                                           ),
                                         ),
-                                        child: Image.asset(AppAsset.icCameraRoted).paddingAll(3),
+                                        child:
+                                            Image.asset(AppAsset.icCameraRoted)
+                                                .paddingAll(3),
                                       ),
                                     );
                             },
@@ -122,12 +132,16 @@ class HostLiveStreamView extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppColors.transparent,
-                                  border: GradientBoxBorder(gradient: AppColors.hostLiveButton, width: 4),
+                                  border: GradientBoxBorder(
+                                      gradient: AppColors.hostLiveButton,
+                                      width: 4),
                                 ),
                                 child: Container(
                                   width: 68,
                                   height: 68,
-                                  decoration: BoxDecoration(shape: BoxShape.circle, gradient: AppColors.hostLiveInnerButton),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      gradient: AppColors.hostLiveInnerButton),
                                 ),
                               ),
                             );
@@ -144,13 +158,17 @@ class HostLiveStreamView extends StatelessWidget {
                               width: 82,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                color: AppColors.blackColor.withValues(alpha: 0.5),
-                                border: Border.all(color: AppColors.borderColorLiveButton, strokeAlign: 0.5),
+                                color:
+                                    AppColors.blackColor.withValues(alpha: 0.5),
+                                border: Border.all(
+                                    color: AppColors.borderColorLiveButton,
+                                    strokeAlign: 0.5),
                                 borderRadius: BorderRadius.circular(50),
                               ),
                               child: Text(
                                 EnumLocale.txtGoLive.name.tr,
-                                style: AppFontStyle.styleW600(AppColors.whiteColor, 16),
+                                style: AppFontStyle.styleW600(
+                                    AppColors.whiteColor, 16),
                               ),
                             );
                     },
@@ -167,7 +185,8 @@ class HostLiveStreamView extends StatelessWidget {
                         alignment: Alignment.center,
                         child: AnimatedSwitcher(
                           duration: const Duration(milliseconds: 500),
-                          transitionBuilder: (Widget child, Animation<double> animation) {
+                          transitionBuilder:
+                              (Widget child, Animation<double> animation) {
                             return FadeTransition(
                               opacity: animation,
                               child: ScaleTransition(
@@ -180,12 +199,14 @@ class HostLiveStreamView extends StatelessWidget {
                               ? Text(
                                   '${logic.count}',
                                   key: ValueKey<int>(logic.count),
-                                  style: AppFontStyle.styleW900(Colors.white70, 175),
+                                  style: AppFontStyle.styleW900(
+                                      Colors.white70, 175),
                                 )
                               : Text(
                                   'Start',
                                   key: const ValueKey('Start'),
-                                  style: AppFontStyle.styleW900(Colors.white70, 100),
+                                  style: AppFontStyle.styleW900(
+                                      Colors.white70, 100),
                                 ),
                         ),
                       )

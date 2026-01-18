@@ -1,20 +1,20 @@
 import 'dart:developer';
 
-import 'package:figgy/custom/other/custom_fetch_user_coin.dart';
-import 'package:figgy/firebase/firebase_access_token.dart';
-import 'package:figgy/firebase/firebase_uid.dart';
-import 'package:figgy/pages/random_match_page/api/get_available_host_api.dart';
-import 'package:figgy/pages/random_match_page/model/get_available_host_model.dart';
-import 'package:figgy/pages/random_match_page/model/get_vip_plan.dart';
-import 'package:figgy/pages/random_match_page/widget/carousel_widget.dart';
-import 'package:figgy/pages/top_up_page/api/get_coin_plan_api.dart';
-import 'package:figgy/pages/top_up_page/model/get_coin_plan_model.dart';
-import 'package:figgy/pages/vip_page/model/vip_plan_privilege_model.dart';
-import 'package:figgy/routes/app_routes.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/internet_connection.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
+import 'package:LoveBirds/firebase/firebase_access_token.dart';
+import 'package:LoveBirds/firebase/firebase_uid.dart';
+import 'package:LoveBirds/pages/random_match_page/api/get_available_host_api.dart';
+import 'package:LoveBirds/pages/random_match_page/model/get_available_host_model.dart';
+import 'package:LoveBirds/pages/random_match_page/model/get_vip_plan.dart';
+import 'package:LoveBirds/pages/random_match_page/widget/carousel_widget.dart';
+import 'package:LoveBirds/pages/top_up_page/api/get_coin_plan_api.dart';
+import 'package:LoveBirds/pages/top_up_page/model/get_coin_plan_model.dart';
+import 'package:LoveBirds/pages/vip_page/model/vip_plan_privilege_model.dart';
+import 'package:LoveBirds/routes/app_routes.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/internet_connection.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:get/get.dart';
 
 class RandomMatchController extends GetxController {
@@ -76,7 +76,8 @@ class RandomMatchController extends GetxController {
       final uid = FirebaseUid.onGet();
       final token = await FirebaseAccessToken.onGet();
 
-      getCoinPlanModel = await GetCoinPlanApi.callApi(token: token ?? "", uid: uid ?? "");
+      getCoinPlanModel =
+          await GetCoinPlanApi.callApi(token: token ?? "", uid: uid ?? "");
       coinPlanList = getCoinPlanModel?.data ?? <CoinPlan>[];
 
       update([AppConstant.idGetCoin, AppConstant.idUpdateCoin]);
@@ -110,7 +111,8 @@ class RandomMatchController extends GetxController {
         Get.toNamed(
           AppRoutes.matchingPage,
           arguments: {
-            "getAvailableHost": getAvailableHostModel?.data ?? GetAvailableHost(),
+            "getAvailableHost":
+                getAvailableHostModel?.data ?? GetAvailableHost(),
             "gender": selectedGender.toString(),
           },
         )?.then((value) async {

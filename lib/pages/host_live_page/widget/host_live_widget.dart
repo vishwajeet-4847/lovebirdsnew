@@ -2,23 +2,23 @@ import 'dart:developer';
 
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:figgy/custom/app_title/custom_title.dart';
-import 'package:figgy/custom/bottom_sheet/report_bottom_sheet.dart';
-import 'package:figgy/custom/custom_image/custom_profile_image.dart';
-import 'package:figgy/custom/dialog/stop_live_dialog.dart';
-import 'package:figgy/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
-import 'package:figgy/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
-import 'package:figgy/pages/host_live_page/controller/host_live_controller.dart';
-import 'package:figgy/socket/socket_services.dart';
-import 'package:figgy/utils/api.dart';
-import 'package:figgy/utils/api_params.dart';
-import 'package:figgy/utils/asset.dart';
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/custom/app_title/custom_title.dart';
+import 'package:LoveBirds/custom/bottom_sheet/report_bottom_sheet.dart';
+import 'package:LoveBirds/custom/custom_image/custom_profile_image.dart';
+import 'package:LoveBirds/custom/dialog/stop_live_dialog.dart';
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
+import 'package:LoveBirds/pages/discover_host_for_user_page/controller/discover_host_for_user_controller.dart';
+import 'package:LoveBirds/pages/host_live_page/controller/host_live_controller.dart';
+import 'package:LoveBirds/socket/socket_services.dart';
+import 'package:LoveBirds/utils/api.dart';
+import 'package:LoveBirds/utils/api_params.dart';
+import 'package:LoveBirds/utils/asset.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svga/flutter_svga.dart';
 import 'package:get/get.dart';
@@ -48,7 +48,10 @@ class HostLiveUi extends StatelessWidget {
             width: Get.width,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.transparent, AppColors.blackColor.withValues(alpha: 0.7)],
+                colors: [
+                  AppColors.transparent,
+                  AppColors.blackColor.withValues(alpha: 0.7)
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -78,9 +81,11 @@ class HostLiveUi extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(56),
                                   border: Border.all(
-                                    color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                    color: AppColors.whiteColor
+                                        .withValues(alpha: 0.2),
                                   ),
-                                  color: AppColors.whiteColor.withValues(alpha: 0.12),
+                                  color: AppColors.whiteColor
+                                      .withValues(alpha: 0.12),
                                 ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,13 +97,15 @@ class HostLiveUi extends StatelessWidget {
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                        color: AppColors.colorTextGrey
+                                            .withValues(alpha: 0.22),
                                       ),
                                       child: Stack(
                                         children: [
                                           AspectRatio(
                                             aspectRatio: 1,
-                                            child: Image.asset(AppAsset.icProfilePlaceHolder),
+                                            child: Image.asset(
+                                                AppAsset.icProfilePlaceHolder),
                                           ),
                                           AspectRatio(
                                             aspectRatio: 1,
@@ -112,8 +119,10 @@ class HostLiveUi extends StatelessWidget {
                                     ),
                                     7.width,
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         SizedBox(
                                           width: 95,
@@ -121,18 +130,23 @@ class HostLiveUi extends StatelessWidget {
                                             controller.name,
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
-                                            style: AppFontStyle.styleW600(AppColors.whiteColor, 14),
+                                            style: AppFontStyle.styleW600(
+                                                AppColors.whiteColor, 14),
                                           ),
                                         ),
                                         Row(
                                           children: [
-                                            Image.asset(AppAsset.icEye, width: 18),
+                                            Image.asset(AppAsset.icEye,
+                                                width: 18),
                                             5.width,
                                             Obx(
                                               () => Text(
-                                                CustomFormatNumber.convert(SocketServices.userWatchCount.value),
+                                                CustomFormatNumber.convert(
+                                                    SocketServices
+                                                        .userWatchCount.value),
                                                 maxLines: 1,
-                                                style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                                                style: AppFontStyle.styleW700(
+                                                    AppColors.whiteColor, 12),
                                               ),
                                             ),
                                           ],
@@ -144,7 +158,6 @@ class HostLiveUi extends StatelessWidget {
                               ),
                             ),
                           ),
-
                         ],
                       ),
                       10.height,
@@ -168,8 +181,10 @@ class HostLiveUi extends StatelessWidget {
                               ),
                               8.width,
                               Text(
-                                controller.onConvertSecondToHMS(controller.countTime),
-                                style: AppFontStyle.styleW700(AppColors.whiteColor, 14),
+                                controller
+                                    .onConvertSecondToHMS(controller.countTime),
+                                style: AppFontStyle.styleW700(
+                                    AppColors.whiteColor, 14),
                               ),
                             ],
                           ),
@@ -182,7 +197,8 @@ class HostLiveUi extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           Get.dialog(
-                            barrierColor: AppColors.blackColor.withValues(alpha: 0.8),
+                            barrierColor:
+                                AppColors.blackColor.withValues(alpha: 0.8),
                             Dialog(
                               backgroundColor: AppColors.transparent,
                               shadowColor: Colors.transparent,
@@ -197,7 +213,8 @@ class HostLiveUi extends StatelessWidget {
                           width: 38,
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            border: Border.all(color: AppColors.whiteColor, strokeAlign: 0.15),
+                            border: Border.all(
+                                color: AppColors.whiteColor, strokeAlign: 0.15),
                             shape: BoxShape.circle,
                           ),
                           child: Image.asset(
@@ -215,11 +232,15 @@ class HostLiveUi extends StatelessWidget {
                             width: 38,
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.whiteColor, strokeAlign: 0.15),
+                              border: Border.all(
+                                  color: AppColors.whiteColor,
+                                  strokeAlign: 0.15),
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
-                              controller.isMicOn ? AppAsset.icMuteMic : AppAsset.icUnMuteMic,
+                              controller.isMicOn
+                                  ? AppAsset.icMuteMic
+                                  : AppAsset.icUnMuteMic,
                             ),
                           ),
                         ),
@@ -233,7 +254,9 @@ class HostLiveUi extends StatelessWidget {
                             width: 38,
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              border: Border.all(color: AppColors.whiteColor, strokeAlign: 0.15),
+                              border: Border.all(
+                                  color: AppColors.whiteColor,
+                                  strokeAlign: 0.15),
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(AppAsset.icHostCamera),
@@ -270,7 +293,12 @@ class HostLiveUi extends StatelessWidget {
               return const LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.black, Colors.transparent, Colors.transparent, Colors.transparent],
+                colors: [
+                  Colors.black,
+                  Colors.transparent,
+                  Colors.transparent,
+                  Colors.transparent
+                ],
                 stops: [0.0, 0.1, 0.8, 8.0],
               ).createShader(bounds);
             },
@@ -330,40 +358,38 @@ class UserLiveUi extends StatelessWidget {
         if (liveStatus) ...[
           Positioned(
             top: 51,
-left: 200,
-            child: GetBuilder<HostLiveController>(
-                builder: (logic) {
-                  return PopupMenuButton<String>(
-                    child: Container(
-                      width: 27,
-                      height: 27,
-                      color: AppColors.transparent,
-                      child: Image.asset(
-                        AppAsset.circleMoreIcon,
-                      ),
-                    ),
-                    onSelected: (value) {
-                      if (value == EnumLocale.txtBlock.name.tr) {
-                        logic.getBlock(context: context);
-                      } else if (value == EnumLocale.txtReport.name.tr) {
-                        ReportBottomSheetUi.show(
-                          context: context,
-                        );
-                      }
-                    },
-                    itemBuilder: (BuildContext context) => [
-                      PopupMenuItem(
-                        value: EnumLocale.txtBlock.name.tr,
-                        child: Text(EnumLocale.txtBlock.name.tr),
-                      ),
-                      PopupMenuItem(
-                        value: EnumLocale.txtReport.name.tr,
-                        child: Text(EnumLocale.txtReport.name.tr),
-                      ),
-                    ],
-                  );
-                }
-            ),
+            left: 200,
+            child: GetBuilder<HostLiveController>(builder: (logic) {
+              return PopupMenuButton<String>(
+                child: Container(
+                  width: 27,
+                  height: 27,
+                  color: AppColors.transparent,
+                  child: Image.asset(
+                    AppAsset.circleMoreIcon,
+                  ),
+                ),
+                onSelected: (value) {
+                  if (value == EnumLocale.txtBlock.name.tr) {
+                    logic.getBlock(context: context);
+                  } else if (value == EnumLocale.txtReport.name.tr) {
+                    ReportBottomSheetUi.show(
+                      context: context,
+                    );
+                  }
+                },
+                itemBuilder: (BuildContext context) => [
+                  PopupMenuItem(
+                    value: EnumLocale.txtBlock.name.tr,
+                    child: Text(EnumLocale.txtBlock.name.tr),
+                  ),
+                  PopupMenuItem(
+                    value: EnumLocale.txtReport.name.tr,
+                    child: Text(EnumLocale.txtReport.name.tr),
+                  ),
+                ],
+              );
+            }),
           ),
           Positioned(
             top: 40,
@@ -386,7 +412,8 @@ left: 200,
                       ),
                       child: GetBuilder<HostLiveController>(
                         builder: (logic) {
-                          double calculateTextWidth(String text, TextStyle style) {
+                          double calculateTextWidth(
+                              String text, TextStyle style) {
                             final TextPainter textPainter = TextPainter(
                               text: TextSpan(text: text, style: style),
                               maxLines: 1,
@@ -396,7 +423,8 @@ left: 200,
                           }
 
                           final name = logic.hostDetailModel?.host?.name ?? "";
-                          final textStyle = AppFontStyle.styleW800(AppColors.whiteColor, 20);
+                          final textStyle =
+                              AppFontStyle.styleW800(AppColors.whiteColor, 20);
                           final containerWidth = Get.width * 0.40;
                           final textWidth = calculateTextWidth(name, textStyle);
                           final isOverflow = textWidth > containerWidth;
@@ -405,31 +433,40 @@ left: 200,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: MediaQuery.of(context).viewPadding.top + 60,
-                                padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
+                                height:
+                                    MediaQuery.of(context).viewPadding.top + 60,
+                                padding: EdgeInsets.only(
+                                    top:
+                                        MediaQuery.of(context).viewPadding.top),
                                 alignment: Alignment.center,
                                 width: Get.width,
                                 decoration: BoxDecoration(
-                                  color: AppColors.whiteColor.withValues(alpha: 0.1),
+                                  color: AppColors.whiteColor
+                                      .withValues(alpha: 0.1),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       28.width,
                                       Text(
                                         "Host Detail",
-                                        style: AppFontStyle.styleW700(AppColors.whiteColor, 18),
+                                        style: AppFontStyle.styleW700(
+                                            AppColors.whiteColor, 18),
                                       ),
                                       GestureDetector(
                                         onTap: Get.back,
                                         child: Container(
                                           height: 25,
                                           width: 25,
-                                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 5),
                                           decoration: BoxDecoration(
-                                            color: AppColors.whiteColor.withValues(alpha: 0.5),
+                                            color: AppColors.whiteColor
+                                                .withValues(alpha: 0.5),
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.asset(
@@ -445,29 +482,38 @@ left: 200,
                               Expanded(
                                 child: SingleChildScrollView(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Container(
                                             decoration: BoxDecoration(
                                                 border: Border.all(
-                                                  color: AppColors.whiteColor.withValues(alpha: 0.50),
+                                                  color: AppColors.whiteColor
+                                                      .withValues(alpha: 0.50),
                                                 ),
-                                                borderRadius: BorderRadius.circular(15)),
+                                                borderRadius:
+                                                    BorderRadius.circular(15)),
                                             padding: const EdgeInsets.all(0.8),
                                             child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(14),
+                                              borderRadius:
+                                                  BorderRadius.circular(14),
                                               child: Container(
                                                 height: 78,
                                                 width: 78,
                                                 decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(16),
-                                                  color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                                  borderRadius:
+                                                      BorderRadius.circular(16),
+                                                  color: AppColors.colorTextGrey
+                                                      .withValues(alpha: 0.22),
                                                 ),
                                                 child: CustomImage(
-                                                  image: logic.hostDetailModel?.host?.image ?? "",
+                                                  image: logic.hostDetailModel
+                                                          ?.host?.image ??
+                                                      "",
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -475,7 +521,8 @@ left: 200,
                                           ),
                                           14.width,
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               SizedBox(
                                                 width: containerWidth,
@@ -484,37 +531,60 @@ left: 200,
                                                     ? Marquee(
                                                         text: name,
                                                         style: textStyle,
-                                                        scrollAxis: Axis.horizontal,
-                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        scrollAxis:
+                                                            Axis.horizontal,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
                                                         blankSpace: 10.0,
                                                         velocity: 30.0,
-                                                        pauseAfterRound: const Duration(seconds: 1),
+                                                        pauseAfterRound:
+                                                            const Duration(
+                                                                seconds: 1),
                                                         startPadding: 0.0,
-                                                        accelerationDuration: const Duration(seconds: 1),
-                                                        accelerationCurve: Curves.linear,
-                                                        decelerationDuration: const Duration(milliseconds: 500),
-                                                        decelerationCurve: Curves.easeOut,
+                                                        accelerationDuration:
+                                                            const Duration(
+                                                                seconds: 1),
+                                                        accelerationCurve:
+                                                            Curves.linear,
+                                                        decelerationDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        decelerationCurve:
+                                                            Curves.easeOut,
                                                       )
                                                     : Text(
                                                         name,
                                                         style: textStyle,
                                                         maxLines: 1,
-                                                        overflow: TextOverflow.ellipsis,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
                                                       ),
                                               ),
                                               4.height,
                                               Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    logic.hostDetailModel?.host?.uniqueId ?? "",
+                                                    logic.hostDetailModel?.host
+                                                            ?.uniqueId ??
+                                                        "",
                                                     maxLines: 1,
-                                                    style: AppFontStyle.styleW500(AppColors.uniqueIdTxtColor, 14),
+                                                    style: AppFontStyle.styleW500(
+                                                        AppColors
+                                                            .uniqueIdTxtColor,
+                                                        14),
                                                   ),
                                                   5.width,
                                                   GestureDetector(
                                                     onTap: () {
-                                                      Utils.copyText(logic.hostDetailModel?.host?.uniqueId ?? "");
+                                                      Utils.copyText(logic
+                                                              .hostDetailModel
+                                                              ?.host
+                                                              ?.uniqueId ??
+                                                          "");
                                                     },
                                                     child: Container(
                                                       color: Colors.transparent,
@@ -522,7 +592,8 @@ left: 200,
                                                         AppAsset.copy,
                                                         height: 17,
                                                         width: 17,
-                                                        color: AppColors.colorGry,
+                                                        color:
+                                                            AppColors.colorGry,
                                                       ),
                                                     ),
                                                   ),
@@ -532,7 +603,12 @@ left: 200,
                                               Row(
                                                 children: [
                                                   Container(
-                                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(80), color: AppColors.colorPink1),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(80),
+                                                        color: AppColors
+                                                            .colorPink1),
                                                     child: Row(
                                                       children: [
                                                         Image.asset(
@@ -542,34 +618,71 @@ left: 200,
                                                         ),
                                                         3.width,
                                                         Text(
-                                                          logic.hostDetailModel?.host?.gender ?? "",
-                                                          style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                                                          logic
+                                                                  .hostDetailModel
+                                                                  ?.host
+                                                                  ?.gender ??
+                                                              "",
+                                                          style: AppFontStyle
+                                                              .styleW700(
+                                                                  AppColors
+                                                                      .whiteColor,
+                                                                  12),
                                                         ),
                                                       ],
-                                                    ).paddingSymmetric(vertical: 4, horizontal: 9),
+                                                    ).paddingSymmetric(
+                                                        vertical: 4,
+                                                        horizontal: 9),
                                                   ),
                                                   8.width,
                                                   Container(
-                                                    decoration: const BoxDecoration(
-                                                      color: AppColors.followerBgColor,
-                                                      borderRadius: BorderRadius.only(
-                                                          topLeft: Radius.circular(16),
-                                                          bottomLeft: Radius.circular(16),
-                                                          bottomRight: Radius.circular(16),
-                                                          topRight: Radius.circular(16)),
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      color: AppColors
+                                                          .followerBgColor,
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                              topLeft: Radius
+                                                                  .circular(16),
+                                                              bottomLeft: Radius
+                                                                  .circular(16),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          16),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      16)),
                                                     ),
                                                     child: Row(
                                                       children: [
                                                         Text(
                                                           "Follower : ",
-                                                          style: AppFontStyle.styleW600(AppColors.whiteColor, 12),
+                                                          style: AppFontStyle
+                                                              .styleW600(
+                                                                  AppColors
+                                                                      .whiteColor,
+                                                                  12),
                                                         ),
                                                         Text(
-                                                          logic.hostDetailModel?.host?.totalFollower.toString() ?? "",
-                                                          style: AppFontStyle.styleW800(AppColors.whiteColor, 12),
+                                                          logic
+                                                                  .hostDetailModel
+                                                                  ?.host
+                                                                  ?.totalFollower
+                                                                  .toString() ??
+                                                              "",
+                                                          style: AppFontStyle
+                                                              .styleW800(
+                                                                  AppColors
+                                                                      .whiteColor,
+                                                                  12),
                                                         ),
                                                       ],
-                                                    ).paddingOnly(top: 3, bottom: 3, left: 7, right: 7),
+                                                    ).paddingOnly(
+                                                        top: 3,
+                                                        bottom: 3,
+                                                        left: 7,
+                                                        right: 7),
                                                   )
                                                 ],
                                               ),
@@ -577,51 +690,94 @@ left: 200,
                                           ),
                                           const Spacer(),
                                           Column(
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Database.isHost
                                                   ? const Offstage()
                                                   : Padding(
-                                                      padding: const EdgeInsets.only(right: 8, top: 2),
-                                                      child: GetBuilder<HostLiveController>(
-                                                        id: AppConstant.idFollowToggle,
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              right: 8, top: 2),
+                                                      child: GetBuilder<
+                                                          HostLiveController>(
+                                                        id: AppConstant
+                                                            .idFollowToggle,
                                                         builder: (controller) {
                                                           return GestureDetector(
                                                             onTap: () {
-                                                              logic.onFollowToggle();
+                                                              logic
+                                                                  .onFollowToggle();
                                                             },
                                                             child: Container(
                                                               height: 26,
-                                                              decoration: BoxDecoration(
-                                                                color: logic.isFollow ? null : AppColors.followBgColor,
-                                                                gradient: logic.isFollow ? AppColors.gradientButtonColor : null,
-                                                                border: logic.isFollow
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: logic
+                                                                        .isFollow
                                                                     ? null
-                                                                    : Border.all(color: AppColors.whiteColor.withValues(alpha: 0.34)),
-                                                                borderRadius: BorderRadius.circular(30),
+                                                                    : AppColors
+                                                                        .followBgColor,
+                                                                gradient: logic
+                                                                        .isFollow
+                                                                    ? AppColors
+                                                                        .gradientButtonColor
+                                                                    : null,
+                                                                border: logic
+                                                                        .isFollow
+                                                                    ? null
+                                                                    : Border.all(
+                                                                        color: AppColors
+                                                                            .whiteColor
+                                                                            .withValues(alpha: 0.34)),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            30),
                                                               ),
                                                               child: Row(
-                                                                mainAxisSize: MainAxisSize.min,
-                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
                                                                 children: [
-                                                                  Image.asset(logic.isFollow ? AppAsset.followingIcon2 : AppAsset.followIcon2,
-                                                                      width: 14, height: 14),
-                                                                  const SizedBox(width: 7),
+                                                                  Image.asset(
+                                                                      logic.isFollow
+                                                                          ? AppAsset
+                                                                              .followingIcon2
+                                                                          : AppAsset
+                                                                              .followIcon2,
+                                                                      width: 14,
+                                                                      height:
+                                                                          14),
+                                                                  const SizedBox(
+                                                                      width: 7),
                                                                   Column(
-                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                    mainAxisSize: MainAxisSize.min,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .min,
                                                                     children: [
                                                                       Text(
                                                                         logic.isFollow
                                                                             ? EnumLocale.txtFollowing.name.tr
                                                                             : EnumLocale.txtFollow.name.tr,
-                                                                        style: AppFontStyle.styleW700(Colors.white, 13),
+                                                                        style: AppFontStyle.styleW700(
+                                                                            Colors.white,
+                                                                            13),
                                                                       ),
                                                                     ],
                                                                   ),
                                                                 ],
-                                                              ).paddingSymmetric(horizontal: 9),
+                                                              ).paddingSymmetric(
+                                                                  horizontal:
+                                                                      9),
                                                             ),
                                                           );
                                                         },
@@ -631,17 +787,23 @@ left: 200,
                                           )
                                         ],
                                       ).paddingOnly(left: 10, bottom: 17),
-                                      HostDetailTitle(title: EnumLocale.txtAboutMe.name.tr).paddingOnly(left: 14),
+                                      HostDetailTitle(
+                                              title:
+                                                  EnumLocale.txtAboutMe.name.tr)
+                                          .paddingOnly(left: 14),
                                       10.height,
                                       Container(
                                         width: Get.width,
                                         decoration: BoxDecoration(
                                           color: AppColors.secondaryColor1,
-                                          borderRadius: BorderRadius.circular(14),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
                                         ),
                                         child: Text(
-                                          logic.hostDetailModel?.host?.bio ?? "",
-                                          style: AppFontStyle.styleW500(AppColors.whiteColor, 12),
+                                          logic.hostDetailModel?.host?.bio ??
+                                              "",
+                                          style: AppFontStyle.styleW500(
+                                              AppColors.whiteColor, 12),
                                         ).paddingAll(10),
                                       ).paddingOnly(left: 14, right: 14),
                                       const UserBottomView(),
@@ -673,9 +835,11 @@ left: 200,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(56),
                               border: Border.all(
-                                color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                color:
+                                    AppColors.whiteColor.withValues(alpha: 0.2),
                               ),
-                              color: AppColors.whiteColor.withValues(alpha: 0.12),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.12),
                             ),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -687,13 +851,15 @@ left: 200,
                                   clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                    color: AppColors.colorTextGrey
+                                        .withValues(alpha: 0.22),
                                   ),
                                   child: Stack(
                                     children: [
                                       AspectRatio(
                                         aspectRatio: 1,
-                                        child: Image.asset(AppAsset.icProfilePlaceHolder),
+                                        child: Image.asset(
+                                            AppAsset.icProfilePlaceHolder),
                                       ),
                                       AspectRatio(
                                         aspectRatio: 1,
@@ -716,7 +882,8 @@ left: 200,
                                         controller.name,
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
-                                        style: AppFontStyle.styleW600(AppColors.whiteColor, 14),
+                                        style: AppFontStyle.styleW600(
+                                            AppColors.whiteColor, 14),
                                       ),
                                     ),
                                     Row(
@@ -725,9 +892,12 @@ left: 200,
                                         5.width,
                                         Obx(
                                           () => Text(
-                                            CustomFormatNumber.convert(SocketServices.userWatchCount.value),
+                                            CustomFormatNumber.convert(
+                                                SocketServices
+                                                    .userWatchCount.value),
                                             maxLines: 1,
-                                            style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                                            style: AppFontStyle.styleW700(
+                                                AppColors.whiteColor, 12),
                                           ),
                                         ),
                                       ],
@@ -750,7 +920,8 @@ left: 200,
                             color: AppColors.whiteColor.withValues(alpha: 0.1),
                             border: Border.all(
                               strokeAlign: 0.4,
-                              color: AppColors.whiteColor.withValues(alpha: 0.2),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.2),
                             ),
                           ),
                           child: Image.asset(
@@ -771,7 +942,10 @@ left: 200,
               width: Get.width,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [AppColors.transparent, AppColors.blackColor.withValues(alpha: 0.7)],
+                  colors: [
+                    AppColors.transparent,
+                    AppColors.blackColor.withValues(alpha: 0.7)
+                  ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
@@ -799,8 +973,10 @@ left: 200,
                       builder: (controller) {
                         return GestureDetector(
                           onTap: () {
-                            FocusScopeNode currentFocus = FocusScope.of(context);
-                            if (!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null) {
+                            FocusScopeNode currentFocus =
+                                FocusScope.of(context);
+                            if (!currentFocus.hasPrimaryFocus &&
+                                currentFocus.focusedChild != null) {
                               currentFocus.focusedChild?.unfocus();
                             }
 
@@ -818,10 +994,12 @@ left: 200,
                             padding: const EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: AppColors.whiteColor.withValues(alpha: 0.12),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.12),
                               border: Border.all(
                                 strokeAlign: 0.4,
-                                color: AppColors.whiteColor.withValues(alpha: 0.2),
+                                color:
+                                    AppColors.whiteColor.withValues(alpha: 0.2),
                               ),
                             ),
                             child: Image.asset(
@@ -844,7 +1022,12 @@ left: 200,
                 return const LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.black, Colors.transparent, Colors.transparent, Colors.transparent],
+                  colors: [
+                    Colors.black,
+                    Colors.transparent,
+                    Colors.transparent,
+                    Colors.transparent
+                  ],
                   stops: [0.0, 0.1, 0.8, 8.0],
                 ).createShader(bounds);
               },
@@ -1025,7 +1208,8 @@ class CommentItemUi extends StatelessWidget {
                 ),
                 4.height,
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                   decoration: BoxDecoration(
                     color: AppColors.whiteColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(7),
@@ -1121,13 +1305,15 @@ class LiveStreamEndUi extends StatelessWidget {
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: AppColors.colorTextGrey.withValues(alpha: 0.22),
+                                color: AppColors.colorTextGrey
+                                    .withValues(alpha: 0.22),
                               ),
                               child: Stack(
                                 children: [
                                   AspectRatio(
                                     aspectRatio: 1,
-                                    child: Image.asset(AppAsset.icProfilePlaceHolder),
+                                    child: Image.asset(
+                                        AppAsset.icProfilePlaceHolder),
                                   ),
                                   AspectRatio(
                                     aspectRatio: 1,
@@ -1150,7 +1336,8 @@ class LiveStreamEndUi extends StatelessWidget {
                                     controller.name,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: AppFontStyle.styleW600(AppColors.whiteColor, 14),
+                                    style: AppFontStyle.styleW600(
+                                        AppColors.whiteColor, 14),
                                   ),
                                 ),
                                 Row(
@@ -1160,7 +1347,8 @@ class LiveStreamEndUi extends StatelessWidget {
                                     Text(
                                       "0",
                                       maxLines: 1,
-                                      style: AppFontStyle.styleW700(AppColors.whiteColor, 12),
+                                      style: AppFontStyle.styleW700(
+                                          AppColors.whiteColor, 12),
                                     ),
                                   ],
                                 ),
@@ -1175,7 +1363,8 @@ class LiveStreamEndUi extends StatelessWidget {
                     builder: (logic) {
                       return GestureDetector(
                         onTap: () async {
-                          await logic.discoverHostForUser(country: logic.selectedCountry);
+                          await logic.discoverHostForUser(
+                              country: logic.selectedCountry);
                           Get.back();
                         },
                         child: Container(
@@ -1187,7 +1376,8 @@ class LiveStreamEndUi extends StatelessWidget {
                             color: AppColors.whiteColor.withValues(alpha: 0.1),
                             border: Border.all(
                               strokeAlign: 0.4,
-                              color: AppColors.whiteColor.withValues(alpha: 0.2),
+                              color:
+                                  AppColors.whiteColor.withValues(alpha: 0.2),
                             ),
                           ),
                           child: Image.asset(
@@ -1255,20 +1445,24 @@ class HostDetailsGift extends StatelessWidget {
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  HostDetailTitle(title: EnumLocale.txtReceivedGifts.name.tr).paddingOnly(left: 14),
+                  HostDetailTitle(title: EnumLocale.txtReceivedGifts.name.tr)
+                      .paddingOnly(left: 14),
                   10.height,
                   SizedBox(
                     height: Get.height * 0.17,
                     child: ListView.builder(
                       padding: const EdgeInsets.only(left: 10, right: 10),
-                      itemCount: logic.hostDetailModel?.receivedGifts?.length ?? 0,
+                      itemCount:
+                          logic.hostDetailModel?.receivedGifts?.length ?? 0,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        final gift = logic.hostDetailModel?.receivedGifts?[index];
+                        final gift =
+                            logic.hostDetailModel?.receivedGifts?[index];
 
                         return Container(
                           width: 126,
-                          margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 5),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 6, vertical: 5),
                           decoration: BoxDecoration(
                             color: AppColors.receiveGiftBg,
                             borderRadius: BorderRadius.circular(16),
@@ -1286,12 +1480,14 @@ class HostDetailsGift extends StatelessWidget {
                                               height: 70,
                                               padding: const EdgeInsets.all(10),
                                               child: SVGAEasyPlayer(
-                                                resUrl: Api.baseUrl + (gift?.giftImage ?? ""),
+                                                resUrl: Api.baseUrl +
+                                                    (gift?.giftImage ?? ""),
                                                 fit: BoxFit.contain,
                                               ),
                                             )
                                           : CachedNetworkImage(
-                                              imageUrl: Api.baseUrl + (gift?.giftImage ?? ""),
+                                              imageUrl: Api.baseUrl +
+                                                  (gift?.giftImage ?? ""),
                                               width: 70,
                                               height: 70,
                                               fit: BoxFit.contain,
@@ -1344,7 +1540,8 @@ class HostDetailLanguage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HostDetailTitle(title: EnumLocale.txtLanguages.name.tr).paddingOnly(left: 14),
+        HostDetailTitle(title: EnumLocale.txtLanguages.name.tr)
+            .paddingOnly(left: 14),
         10.height,
         GetBuilder<HostLiveController>(
           builder: (logic) {
@@ -1364,9 +1561,12 @@ class HostDetailLanguage extends StatelessWidget {
                     backgroundColor: AppColors.languageBgColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: AppColors.whiteColor.withValues(alpha: 0.20), width: 0.6),
+                      side: BorderSide(
+                          color: AppColors.whiteColor.withValues(alpha: 0.20),
+                          width: 0.6),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
                     labelPadding: EdgeInsets.zero,
                   );
                 },
@@ -1375,7 +1575,8 @@ class HostDetailLanguage extends StatelessWidget {
           },
         ),
         16.height,
-        HostDetailTitle(title: EnumLocale.txtImpression.name.tr).paddingOnly(left: 14),
+        HostDetailTitle(title: EnumLocale.txtImpression.name.tr)
+            .paddingOnly(left: 14),
         10.height,
         GetBuilder<HostLiveController>(
           builder: (logic) {
@@ -1395,9 +1596,12 @@ class HostDetailLanguage extends StatelessWidget {
                     backgroundColor: AppColors.impressionBgColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: AppColors.whiteColor.withValues(alpha: 0.20), width: 0.6),
+                      side: BorderSide(
+                          color: AppColors.whiteColor.withValues(alpha: 0.20),
+                          width: 0.6),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
                     labelPadding: EdgeInsets.zero,
                   );
                 },
@@ -1442,7 +1646,8 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: bgColor,
           gradient: gradient,
-          border: Border.all(color: AppColors.whiteColor.withValues(alpha: 0.18)),
+          border:
+              Border.all(color: AppColors.whiteColor.withValues(alpha: 0.18)),
           borderRadius: BorderRadius.circular(30),
         ),
         child: Row(
@@ -1495,7 +1700,8 @@ class HostDetailPhoto extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HostDetailTitle(title: EnumLocale.txtPhotos.name.tr).paddingOnly(left: 14),
+        HostDetailTitle(title: EnumLocale.txtPhotos.name.tr)
+            .paddingOnly(left: 14),
         10.height,
         GetBuilder<HostLiveController>(
           builder: (logic) {
@@ -1503,7 +1709,8 @@ class HostDetailPhoto extends StatelessWidget {
               height: Get.height * 0.17,
               child: ListView.builder(
                 padding: const EdgeInsets.only(left: 10),
-                itemCount: logic.hostDetailModel?.host?.photoGallery?.length ?? 0,
+                itemCount:
+                    logic.hostDetailModel?.host?.photoGallery?.length ?? 0,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Container(
                   clipBehavior: Clip.antiAlias,
@@ -1518,11 +1725,16 @@ class HostDetailPhoto extends StatelessWidget {
                       log("image>>>>>>>>>>>>>>>>>>>>>>>>>>>>${Api.baseUrl + (logic.hostDetailModel?.host?.photoGallery?[index] ?? "")}");
                       showDialog(
                         context: context,
-                        builder: (_) => imageView(Api.baseUrl + (logic.hostDetailModel?.host?.photoGallery?[index] ?? "")),
+                        builder: (_) => imageView(Api.baseUrl +
+                            (logic.hostDetailModel?.host
+                                    ?.photoGallery?[index] ??
+                                "")),
                       );
                     },
                     child: CustomImage(
-                      image: logic.hostDetailModel?.host?.photoGallery?[index] ?? "",
+                      image:
+                          logic.hostDetailModel?.host?.photoGallery?[index] ??
+                              "",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -1561,7 +1773,8 @@ class HostDetailPhoto extends StatelessWidget {
                   initialScale: PhotoViewComputedScale.contained,
                   minScale: PhotoViewComputedScale.covered,
                   maxScale: PhotoViewComputedScale.covered * 2.5,
-                  heroAttributes: const PhotoViewHeroAttributes(tag: "zoomable_image"),
+                  heroAttributes:
+                      const PhotoViewHeroAttributes(tag: "zoomable_image"),
                 ),
               ),
             ),
@@ -1569,7 +1782,8 @@ class HostDetailPhoto extends StatelessWidget {
               top: 10,
               right: 10,
               child: GestureDetector(
-                onTap: () => Navigator.of(Get.overlayContext ?? Get.context!).pop(),
+                onTap: () =>
+                    Navigator.of(Get.overlayContext ?? Get.context!).pop(),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.7),

@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> arDZ = {
   EnumLocale.txtLetsStart.name: "لنبدأ",
   EnumLocale.txtGoogle.name: "جوجل",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "من خلال تسجيل الدخول، فإنك توافق على شروط الاستخدام الخاصة بنا",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "من خلال تسجيل الدخول، فإنك توافق على شروط الاستخدام الخاصة بنا",
   EnumLocale.txtPrivacyPolicy.name: "سياسة الخصوصية",
   EnumLocale.txtAnd.name: "و",
   EnumLocale.txtUseAgreement.name: "اتفاقية الاستخدام",
   EnumLocale.txtCoinRechargeSuccess.name: "نجاح إعادة شحن العملة",
   EnumLocale.txtSomeThingWentWrong.name: "لقد حدث خطأ ما",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "اضغط لفترة طويلة لتمكين تسجيل الصوت",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "اضغط لفترة طويلة لتمكين تسجيل الصوت",
   EnumLocale.txtPleaseAllowPermission.name: "يرجى السماح بالإذن",
   EnumLocale.txtTypeSomething.name: "قل شيئا...",
   EnumLocale.txtRandomMatch.name: "مباراة عشوائية",
@@ -18,10 +20,12 @@ final Map<String, String> arDZ = {
   EnumLocale.txtRecharge.name: "إعادة الشحن",
   EnumLocale.txtMyGems.name: "جواهري",
   EnumLocale.txtPleaseEnterWithdrawCoin.name: "الرجاء إدخال سحب العملة",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "يجب أن يكون مبلغ العملة المطلوبة للسحب أكبر من المبلغ المحدد من قبل المسؤول",
   EnumLocale.txtPleaseSelectWithdrawMethod.name: "الرجاء تحديد طريقة السحب",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "الرجاء إدخال كافة تفاصيل الدفع",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "الرجاء إدخال كافة تفاصيل الدفع",
   EnumLocale.txtSelectPaymentGateway.name: "اختر بوابة الدفع",
   EnumLocale.txtAvailableCoin.name: "العملة المتاحة",
   EnumLocale.txtWithdraw.name: "ينسحب",
@@ -55,7 +59,8 @@ final Map<String, String> arDZ = {
   EnumLocale.txtBoth.name: "كلاهما",
   EnumLocale.txtMale.name: "ذكر",
   EnumLocale.txtFemale.name: "أنثى",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "كن من كبار الشخصيات واستمتع بالامتيازات",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "كن من كبار الشخصيات واستمتع بالامتيازات",
   EnumLocale.txtMore.name: "أكثر",
   EnumLocale.txtGems.name: "الأحجار الكريمة",
   EnumLocale.txtDailyCheckIn.name: "تسجيل الوصول اليومي",
@@ -74,7 +79,8 @@ final Map<String, String> arDZ = {
   EnumLocale.txtVerificationDetails.name: "تفاصيل التحقق",
   EnumLocale.txtVerificationRequestText.name:
       "لقد استلمنا جميع التفاصيل التي أرسلتها. سنتحقق منها ونُبلغك بها فور توفر تحديث لها.\n\nسيستغرق التحقق من ملفك الشخصي والتحقق منه حوالي 3 إلى 4 أيام عمل.",
-  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name: "المستخدم ليس لديه أموال كافية لإجراء عملية السحب",
+  EnumLocale.txtTheUserDoesNotHaveSufficientFundsToMakeTheWithdrawal.name:
+      "المستخدم ليس لديه أموال كافية لإجراء عملية السحب",
   EnumLocale.txtIncomingVideoCall.name: "مكالمة فيديو واردة...",
   EnumLocale.txtIncomingAudioCall.name: "مكالمة صوتية واردة...",
   EnumLocale.txtUploadYourImages.name: "قم بتحميل صورك",
@@ -122,8 +128,10 @@ final Map<String, String> arDZ = {
   EnumLocale.txtConnecting.name: "جاري الاتصال...",
   EnumLocale.txtVideoCall.name: "مكالمة فيديو",
   EnumLocale.txtUnblock.name: "إلغاء الحظر",
-  EnumLocale.txtApplealDetails.name: "سيتم قبول شكواك في أقرب وقت ممكن، يرجى تقديم وصف تفصيلي لشكواك قدر الإمكان",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "الرجاء تحديد سبب رغبتك في الإبلاغ",
+  EnumLocale.txtApplealDetails.name:
+      "سيتم قبول شكواك في أقرب وقت ممكن، يرجى تقديم وصف تفصيلي لشكواك قدر الإمكان",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "الرجاء تحديد سبب رغبتك في الإبلاغ",
   EnumLocale.txtCancel.name: "يلغي",
   EnumLocale.txtSave.name: "يحفظ",
   EnumLocale.txtCheckIn.name: "تحقق في",
@@ -131,7 +139,8 @@ final Map<String, String> arDZ = {
   EnumLocale.txtNoInternetConnection.name: "لا يوجد اتصال بالإنترنت",
   EnumLocale.txtGifts.name: "الهدايا",
   EnumLocale.txtSend.name: "يرسل",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "هل تريد التأكد من الخروج من هذا التطبيق؟",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "هل تريد التأكد من الخروج من هذا التطبيق؟",
   EnumLocale.txtPay.name: "يدفع",
   EnumLocale.txtTotal.name: "المجموع",
   EnumLocale.txtPayNow.name: "ادفع الآن",
@@ -143,7 +152,8 @@ final Map<String, String> arDZ = {
   EnumLocale.txtTakePhoto.name: "التقط صورة",
   EnumLocale.txtWaitingForRemoteUser.name: "في انتظار المستخدم البعيد...",
   EnumLocale.txtPleaseSelectADocumentType.name: "الرجاء تحديد نوع المستند.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "يرجى التحقق من اتصالك بالإنترنت.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "يرجى التحقق من اتصالك بالإنترنت.",
   EnumLocale.txtLiveHost.name: "المضيف المباشر",
   EnumLocale.txtEnterBio.name: "أدخل سيرتك الذاتية",
   EnumLocale.txtUploadId.name: "قم بتحميل صورك",
@@ -162,7 +172,8 @@ final Map<String, String> arDZ = {
   EnumLocale.txtPleaseSelectFontImages.name: "الرجاء تحديد صور الخطوط",
   EnumLocale.txtAudioCallDiscount.name: "خصم على المكالمات الصوتية",
   EnumLocale.txtVideoCallDiscount.name: "خصم مكالمات الفيديو",
-  EnumLocale.txtRandomMatchCallDiscount.name: "خصم على مكالمات المطابقة العشوائية",
+  EnumLocale.txtRandomMatchCallDiscount.name:
+      "خصم على مكالمات المطابقة العشوائية",
   EnumLocale.txtTopUpCoinBonus.name: "مكافأة إعادة شحن العملة",
   EnumLocale.txtFreeMessages.name: "رسائل مجانية",
   EnumLocale.txtGemsGift.name: "هدية الأحجار الكريمة",
@@ -194,7 +205,8 @@ final Map<String, String> arDZ = {
   EnumLocale.txtVipDescription.name:
       "ملاحظة: عضوية VIP ليست اشتراكًا تلقائيًا، ولن تُجدد تلقائيًا بعد انتهاء صلاحيتها. بعد تفعيلها، يمكنك استلام المكافآت مباشرةً، والاستمتاع بمزايا أخرى طوال فترة صلاحيتها.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "استمتع بامتيازات كبار الشخصيات",
-  EnumLocale.txtDailyCheckInDescription.name: "قم بتسجيل الدخول بعد شحن أي مبلغ للحصول على الماس كل أسبوع",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "قم بتسجيل الدخول بعد شحن أي مبلغ للحصول على الماس كل أسبوع",
   EnumLocale.txtDay.name: "يوم",
   EnumLocale.txtSelectPaymentOption.name: "حدد خيار الدفع",
   EnumLocale.txtVerificationText.name:
@@ -212,17 +224,21 @@ final Map<String, String> arDZ = {
   EnumLocale.txtBlockHost.name: "كتلة المضيف",
   EnumLocale.txtBlockUser.name: "حظر المستخدم",
   EnumLocale.txtBlockDetailsHost.name: "هل أنت متأكد أنك تريد حظر هذا المضيف؟",
-  EnumLocale.txtBlockDetailsUser.name: "هل أنت متأكد أنك تريد حظر هذا المستخدم؟",
+  EnumLocale.txtBlockDetailsUser.name:
+      "هل أنت متأكد أنك تريد حظر هذا المستخدم؟",
   EnumLocale.txtUnBlockHost.name: "إلغاء حظر المضيف",
   EnumLocale.txtUnBlockUser.name: "إلغاء حظر المستخدم",
-  EnumLocale.txtUnBlockDetailsHost.name: "هل أنت متأكد أنك تريد إلغاء حظر هذا المضيف؟",
-  EnumLocale.txtUnBlockDetailsUser.name: "هل أنت متأكد أنك تريد إلغاء حظر هذا المستخدم؟",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "هل أنت متأكد أنك تريد إلغاء حظر هذا المضيف؟",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "هل أنت متأكد أنك تريد إلغاء حظر هذا المستخدم؟",
   EnumLocale.txtWithdrawHistory.name: "تاريخ السحب",
   EnumLocale.txtWalletHistory.name: "تاريخ المحفظة",
   EnumLocale.txtDeclineRequest.name:
       "لم تتم الموافقة على طلب الاستضافة الخاص بك.\n\nبعد مراجعة شاملة، وجدنا أن ملفك الشخصي لا يلبي المعايير المطلوبة لتصبح مضيفًا في هذا الوقت.\n\nنحن نقدر الوقت الذي استغرقته في التقديم ونشكرك على اهتمامك.",
   EnumLocale.txtStopLive.name: "توقف البث المباشر",
-  EnumLocale.txtStopLiveText.name: "هل تريد إيقاف البث المباشر؟ لا يمكن التراجع عن هذا الإجراء، وسيؤدي إلى إنهاء البث فورًا. انقر على  للتأكيد.",
+  EnumLocale.txtStopLiveText.name:
+      "هل تريد إيقاف البث المباشر؟ لا يمكن التراجع عن هذا الإجراء، وسيؤدي إلى إنهاء البث فورًا. انقر على  للتأكيد.",
   EnumLocale.txtStop.name: "قف",
   EnumLocale.txtEditProfile.name: "تعديل الملف الشخصي",
   EnumLocale.txtEditProfileDetails.name: "تعديل تفاصيل الملف الشخصي",
@@ -243,7 +259,8 @@ final Map<String, String> arDZ = {
   EnumLocale.txtPleaseSelectGiftFirst.name: "الرجاء اختيار الهدية أولا",
   EnumLocale.txtTermsAndConditions.name: "الشروط والأحكام",
   EnumLocale.txtUnderMaintenance.name: 'هذا التطبيق تحت الصيانة',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'جاري صيانة النظام: يرجى المحاولة مرة أخرى لاحقًا.',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'جاري صيانة النظام: يرجى المحاولة مرة أخرى لاحقًا.',
   EnumLocale.txtCloseAPP.name: 'إغلاق التطبيق',
   EnumLocale.txtSearchCountry.name: 'البحث عن البلد',
   EnumLocale.txtCoins.name: 'عملات معدنية',

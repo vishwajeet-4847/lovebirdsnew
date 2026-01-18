@@ -1,15 +1,17 @@
-import 'package:figgy/utils/enum.dart';
+import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> frFr = {
   EnumLocale.txtLetsStart.name: "Commençons",
   EnumLocale.txtGoogle.name: "Google",
-  EnumLocale.txtByLoggingInYouAgreeToOur.name: "En vous connectant, vous acceptez nos",
+  EnumLocale.txtByLoggingInYouAgreeToOur.name:
+      "En vous connectant, vous acceptez nos",
   EnumLocale.txtPrivacyPolicy.name: "politique de confidentialité",
   EnumLocale.txtAnd.name: "et",
   EnumLocale.txtUseAgreement.name: "Accord d'utilisation",
   EnumLocale.txtCoinRechargeSuccess.name: "Recharge de pièces réussie",
   EnumLocale.txtSomeThingWentWrong.name: "Quelque chose s'est mal passé",
-  EnumLocale.txtLongPressToEnableAudioRecording.name: "Appuyez longuement pour activer l'enregistrement audio",
+  EnumLocale.txtLongPressToEnableAudioRecording.name:
+      "Appuyez longuement pour activer l'enregistrement audio",
   EnumLocale.txtPleaseAllowPermission.name: "Veuillez autoriser la permission",
   EnumLocale.txtTypeSomething.name: "Dire quelque chose...",
   EnumLocale.txtRandomMatch.name: "Match aléatoire",
@@ -17,12 +19,17 @@ final Map<String, String> frFr = {
   EnumLocale.txtContactus.name: "Contactez-nous",
   EnumLocale.txtRecharge.name: "Recharger",
   EnumLocale.txtMyGems.name: "Mes joyaux",
-  EnumLocale.txtPleaseEnterWithdrawCoin.name: "Veuillez saisir Retirer des pièces",
-  EnumLocale.txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
+  EnumLocale.txtPleaseEnterWithdrawCoin.name:
+      "Veuillez saisir Retirer des pièces",
+  EnumLocale
+          .txtWithdrawalRequestedCoinMustBeGreaterThanSpecifiedByTheAdmin.name:
       "Le retrait de la pièce demandée doit être supérieur à celui spécifié par l'administrateur",
-  EnumLocale.txtPleaseSelectWithdrawMethod.name: "Veuillez sélectionner la méthode de retrait",
-  EnumLocale.txtPleaseEnterAllPaymentDetails.name: "Veuillez saisir tous les détails de paiement",
-  EnumLocale.txtSelectPaymentGateway.name: "Sélectionnez la passerelle de paiement",
+  EnumLocale.txtPleaseSelectWithdrawMethod.name:
+      "Veuillez sélectionner la méthode de retrait",
+  EnumLocale.txtPleaseEnterAllPaymentDetails.name:
+      "Veuillez saisir tous les détails de paiement",
+  EnumLocale.txtSelectPaymentGateway.name:
+      "Sélectionnez la passerelle de paiement",
   EnumLocale.txtAvailableCoin.name: "Pièce disponible",
   EnumLocale.txtWithdraw.name: "Retirer",
   EnumLocale.txtHistory.name: "Histoire",
@@ -55,7 +62,8 @@ final Map<String, String> frFr = {
   EnumLocale.txtBoth.name: "Les deux",
   EnumLocale.txtMale.name: "Mâle",
   EnumLocale.txtFemale.name: "Femelle",
-  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name: "Devenez VIP, profitez de privilèges",
+  EnumLocale.txtBecomeAVIPEnjoyPrivilege.name:
+      "Devenez VIP, profitez de privilèges",
   EnumLocale.txtMore.name: "Plus",
   EnumLocale.txtGems.name: "Gemmes",
   EnumLocale.txtDailyCheckIn.name: "Enregistrement quotidien",
@@ -107,9 +115,11 @@ final Map<String, String> frFr = {
   EnumLocale.txtSelectGender.name: "Sélectionnez le sexe",
   EnumLocale.txtBio.name: "Biographie",
   EnumLocale.txtPleaseEnterYourName.name: "Veuillez entrer votre nom",
-  EnumLocale.txtPleaseEnterYourDOB.name: "Veuillez entrer votre date de naissance",
+  EnumLocale.txtPleaseEnterYourDOB.name:
+      "Veuillez entrer votre date de naissance",
   EnumLocale.txtPleaseEnterYourBio.name: "Veuillez entrer votre biographie",
-  EnumLocale.txtUploadFrontSideId.name: "Télécharger l'identifiant de la face avant",
+  EnumLocale.txtUploadFrontSideId.name:
+      "Télécharger l'identifiant de la face avant",
   EnumLocale.txtPersonalPhotos.name: "Photos personnelles",
   EnumLocale.txtUploadBackSideId.name: "Télécharger l'identifiant du verso",
   EnumLocale.txtClearPhotos.name: "Photos claires",
@@ -125,7 +135,8 @@ final Map<String, String> frFr = {
   EnumLocale.txtUnblock.name: "Débloquer",
   EnumLocale.txtApplealDetails.name:
       "Votre réclamation sera acceptée dans les plus brefs délais, veuillez soumettre une description de votre réclamation aussi détaillée que possible.",
-  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name: "Veuillez sélectionner la raison pour laquelle vous souhaitez signaler",
+  EnumLocale.txtPleaseSelectTheReasonYourWishToReport.name:
+      "Veuillez sélectionner la raison pour laquelle vous souhaitez signaler",
   EnumLocale.txtCancel.name: "Annuler",
   EnumLocale.txtSave.name: "Sauvegarder",
   EnumLocale.txtCheckIn.name: "Enregistrement",
@@ -133,7 +144,8 @@ final Map<String, String> frFr = {
   EnumLocale.txtNoInternetConnection.name: "Pas de connexion Internet",
   EnumLocale.txtGifts.name: "Cadeaux",
   EnumLocale.txtSend.name: "Envoyer",
-  EnumLocale.txtDoYouWantToSureExitThisApp.name: "Voulez-vous vraiment quitter cette application ?",
+  EnumLocale.txtDoYouWantToSureExitThisApp.name:
+      "Voulez-vous vraiment quitter cette application ?",
   EnumLocale.txtPay.name: "Payer",
   EnumLocale.txtTotal.name: "Total",
   EnumLocale.txtPayNow.name: "Payer maintenant",
@@ -143,9 +155,12 @@ final Map<String, String> frFr = {
   EnumLocale.txtChooseImage.name: "Choisir une image",
   EnumLocale.txtGallery.name: "Galerie",
   EnumLocale.txtTakePhoto.name: "Prendre une photo",
-  EnumLocale.txtWaitingForRemoteUser.name: "En attente d'un utilisateur distant...",
-  EnumLocale.txtPleaseSelectADocumentType.name: "Veuillez sélectionner un type de document.",
-  EnumLocale.txtPleaseCheckYourInternetConnection.name: "Veuillez vérifier votre connexion Internet.",
+  EnumLocale.txtWaitingForRemoteUser.name:
+      "En attente d'un utilisateur distant...",
+  EnumLocale.txtPleaseSelectADocumentType.name:
+      "Veuillez sélectionner un type de document.",
+  EnumLocale.txtPleaseCheckYourInternetConnection.name:
+      "Veuillez vérifier votre connexion Internet.",
   EnumLocale.txtLiveHost.name: "Hôte en direct",
   EnumLocale.txtEnterBio.name: "Entrez votre biographie",
   EnumLocale.txtUploadId.name: "Téléchargez vos images",
@@ -159,12 +174,16 @@ final Map<String, String> frFr = {
   EnumLocale.txtSelectMultipleLanguage.name: "Sélectionnez plusieurs langues",
   EnumLocale.txtMyLanguage.name: "Ma langue",
   EnumLocale.txtContinue.name: "Continuer",
-  EnumLocale.txtYouHaveInsufficientCoins.name: "Vous n'avez pas suffisamment de pièces",
-  EnumLocale.txtPleaseSelectBackImages.name: "Veuillez sélectionner les images arrière",
-  EnumLocale.txtPleaseSelectFontImages.name: "Veuillez sélectionner les images de police",
+  EnumLocale.txtYouHaveInsufficientCoins.name:
+      "Vous n'avez pas suffisamment de pièces",
+  EnumLocale.txtPleaseSelectBackImages.name:
+      "Veuillez sélectionner les images arrière",
+  EnumLocale.txtPleaseSelectFontImages.name:
+      "Veuillez sélectionner les images de police",
   EnumLocale.txtAudioCallDiscount.name: "Remise sur les appels audio",
   EnumLocale.txtVideoCallDiscount.name: "Remise sur les appels vidéo",
-  EnumLocale.txtRandomMatchCallDiscount.name: "Remise sur les appels de correspondance aléatoires",
+  EnumLocale.txtRandomMatchCallDiscount.name:
+      "Remise sur les appels de correspondance aléatoires",
   EnumLocale.txtTopUpCoinBonus.name: "Bonus de recharge de pièces",
   EnumLocale.txtFreeMessages.name: "Messages gratuits",
   EnumLocale.txtGemsGift.name: "Cadeau de pierres précieuses",
@@ -176,7 +195,8 @@ final Map<String, String> frFr = {
   EnumLocale.txtEnjoySending.name: "Profitez de l'envoi",
   EnumLocale.txtOnAudioCalls.name: "sur les appels audio",
   EnumLocale.txtOnVideoCalls.name: "sur les appels vidéo",
-  EnumLocale.txtOnRandomMatchCalls.name: "sur les appels de correspondance aléatoires",
+  EnumLocale.txtOnRandomMatchCalls.name:
+      "sur les appels de correspondance aléatoires",
   EnumLocale.txtOnTopUp.name: "en haut",
   EnumLocale.txtForFree.name: "gratuitement",
   EnumLocale.txtLanguages.name: "Langue",
@@ -192,11 +212,13 @@ final Map<String, String> frFr = {
   EnumLocale.txtCountry.name: "Pays",
   EnumLocale.txtGender.name: "Genre",
   EnumLocale.txtOptional.name: "Facultatif",
-  EnumLocale.txtPleaseSelectDocument.name: "Veuillez d'abord sélectionner le document",
+  EnumLocale.txtPleaseSelectDocument.name:
+      "Veuillez d'abord sélectionner le document",
   EnumLocale.txtVipDescription.name:
       "Remarque : Le VIP n'est pas un abonnement à paiement automatique et ne sera pas renouvelé automatiquement après expiration. Après activation, vous pourrez recevoir directement des récompenses et profiter d'autres privilèges pendant toute la durée de validité du VIP.",
   EnumLocale.txtVIPEnjoyPrivileges.name: "VIP PROFITEZ DE PRIVILÈGES",
-  EnumLocale.txtDailyCheckInDescription.name: "Enregistrez-vous après avoir rechargé n'importe quel montant pour obtenir des diamants chaque semaine",
+  EnumLocale.txtDailyCheckInDescription.name:
+      "Enregistrez-vous après avoir rechargé n'importe quel montant pour obtenir des diamants chaque semaine",
   EnumLocale.txtDay.name: "Jour",
   EnumLocale.txtSelectPaymentOption.name: "Sélectionnez l'option de paiement",
   EnumLocale.txtVerificationText.name:
@@ -213,12 +235,16 @@ final Map<String, String> frFr = {
   EnumLocale.txtPayment.name: "Paiement",
   EnumLocale.txtBlockHost.name: "Bloquer l'hôte",
   EnumLocale.txtBlockUser.name: "Bloquer l'utilisateur",
-  EnumLocale.txtBlockDetailsHost.name: "Êtes-vous sûr de vouloir bloquer cet hôte ?",
-  EnumLocale.txtBlockDetailsUser.name: "Êtes-vous sûr de vouloir bloquer cet utilisateur ?",
+  EnumLocale.txtBlockDetailsHost.name:
+      "Êtes-vous sûr de vouloir bloquer cet hôte ?",
+  EnumLocale.txtBlockDetailsUser.name:
+      "Êtes-vous sûr de vouloir bloquer cet utilisateur ?",
   EnumLocale.txtUnBlockHost.name: "Débloquer l'hôte",
   EnumLocale.txtUnBlockUser.name: "Débloquer l'utilisateur",
-  EnumLocale.txtUnBlockDetailsHost.name: "Etes-vous sûr de vouloir débloquer cet hôte ?",
-  EnumLocale.txtUnBlockDetailsUser.name: "Êtes-vous sûr de vouloir débloquer cet utilisateur ?",
+  EnumLocale.txtUnBlockDetailsHost.name:
+      "Etes-vous sûr de vouloir débloquer cet hôte ?",
+  EnumLocale.txtUnBlockDetailsUser.name:
+      "Êtes-vous sûr de vouloir débloquer cet utilisateur ?",
   EnumLocale.txtWithdrawHistory.name: "Historique de retrait",
   EnumLocale.txtWalletHistory.name: "Historique du portefeuille",
   EnumLocale.txtDeclineRequest.name:
@@ -243,10 +269,13 @@ final Map<String, String> frFr = {
   EnumLocale.txtPending.name: "En attente",
   EnumLocale.txtDecline.name: "Déclin",
   EnumLocale.txtAccepted.name: "Accepté",
-  EnumLocale.txtPleaseSelectGiftFirst.name: "Veuillez d'abord sélectionner le cadeau",
+  EnumLocale.txtPleaseSelectGiftFirst.name:
+      "Veuillez d'abord sélectionner le cadeau",
   EnumLocale.txtTermsAndConditions.name: "Termes et conditions",
-  EnumLocale.txtUnderMaintenance.name: 'Cette application est en cours de maintenance',
-  EnumLocale.desEnterUnderAppMaintenance.name: 'Maintenance du système en cours : veuillez réessayer ultérieurement.',
+  EnumLocale.txtUnderMaintenance.name:
+      'Cette application est en cours de maintenance',
+  EnumLocale.desEnterUnderAppMaintenance.name:
+      'Maintenance du système en cours : veuillez réessayer ultérieurement.',
   EnumLocale.txtCloseAPP.name: "Fermer l'application",
   EnumLocale.txtSearchCountry.name: 'Rechercher un pays',
   EnumLocale.txtCoins.name: 'Pièces',

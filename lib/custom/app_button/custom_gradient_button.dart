@@ -1,8 +1,8 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/enum.dart';
-import 'package:figgy/utils/font_style.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/enum.dart';
+import 'package:LoveBirds/utils/font_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -48,7 +48,8 @@ class CustomGradientButton extends StatelessWidget {
           Container(
             height: height ?? 50,
             width: width ?? Get.width,
-            margin: EdgeInsets.symmetric(vertical: vertical ?? 10, horizontal: horizontal ?? 10),
+            margin: EdgeInsets.symmetric(
+                vertical: vertical ?? 10, horizontal: horizontal ?? 10),
             decoration: BoxDecoration(
               gradient: gradient ?? AppColors.hostNextButton,
               borderRadius: BorderRadius.circular(borderRadius ?? 50),
@@ -62,7 +63,9 @@ class CustomGradientButton extends StatelessWidget {
                   widget ?? const Offstage(),
                   Text(
                     text ?? EnumLocale.txtNext.name.tr,
-                    style: textStyle ?? AppFontStyle.styleW700(textColor ?? AppColors.whiteColor, textSize ?? 17),
+                    style: textStyle ??
+                        AppFontStyle.styleW700(
+                            textColor ?? AppColors.whiteColor, textSize ?? 17),
                   ),
                 ],
               ),

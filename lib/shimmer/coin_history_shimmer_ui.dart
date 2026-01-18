@@ -1,5 +1,5 @@
-import 'package:figgy/utils/colors_utils.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/utils/colors_utils.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -51,16 +51,22 @@ class CoinHistoryShimmerUi extends StatelessWidget {
                       Container(
                         height: 12,
                         margin: const EdgeInsets.only(bottom: 3),
-                        decoration: BoxDecoration(color: AppColors.blackColor, borderRadius: BorderRadius.circular(5)),
+                        decoration: BoxDecoration(
+                            color: AppColors.blackColor,
+                            borderRadius: BorderRadius.circular(5)),
                       ),
                       Container(
                         height: 12,
                         margin: const EdgeInsets.only(bottom: 3),
-                        decoration: BoxDecoration(color: AppColors.blackColor, borderRadius: BorderRadius.circular(5)),
+                        decoration: BoxDecoration(
+                            color: AppColors.blackColor,
+                            borderRadius: BorderRadius.circular(5)),
                       ),
                       Container(
                         height: 12,
-                        decoration: BoxDecoration(color: AppColors.blackColor, borderRadius: BorderRadius.circular(5)),
+                        decoration: BoxDecoration(
+                            color: AppColors.blackColor,
+                            borderRadius: BorderRadius.circular(5)),
                       ),
                     ],
                   ),

@@ -1,8 +1,8 @@
-import 'package:figgy/pages/host_withdraw_history_page/api/get_host_withdraw_history_api.dart';
-import 'package:figgy/pages/host_withdraw_history_page/model/get_host_withdraw_history_model.dart';
-import 'package:figgy/utils/constant.dart';
-import 'package:figgy/utils/database.dart';
-import 'package:figgy/utils/utils.dart';
+import 'package:LoveBirds/pages/host_withdraw_history_page/api/get_host_withdraw_history_api.dart';
+import 'package:LoveBirds/pages/host_withdraw_history_page/model/get_host_withdraw_history_model.dart';
+import 'package:LoveBirds/utils/constant.dart';
+import 'package:LoveBirds/utils/database.dart';
+import 'package:LoveBirds/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -52,12 +52,17 @@ class HostWithdrawHistoryController extends GetxController {
 
       isLoading = false;
       isPaginationLoading = false;
-      update([AppConstant.onGetWithdrawHistory, AppConstant.idWalletOnPagination, AppConstant.idOnChangeDate]);
+      update([
+        AppConstant.onGetWithdrawHistory,
+        AppConstant.idWalletOnPagination,
+        AppConstant.idOnChangeDate
+      ]);
     }
   }
 
   Future<void> onPagination() async {
-    if (scrollController.position.pixels == scrollController.position.maxScrollExtent - 100) {
+    if (scrollController.position.pixels ==
+        scrollController.position.maxScrollExtent - 100) {
       if (isPaginationLoading) return;
 
       isPaginationLoading = true;
@@ -69,7 +74,10 @@ class HostWithdrawHistoryController extends GetxController {
     }
   }
 
-  Future<void> onChangeDate({required String startDate, required String endDate, required String rangeDate}) async {
+  Future<void> onChangeDate(
+      {required String startDate,
+      required String endDate,
+      required String rangeDate}) async {
     this.startDate = startDate;
     this.endDate = endDate;
     this.rangeDate = rangeDate;
