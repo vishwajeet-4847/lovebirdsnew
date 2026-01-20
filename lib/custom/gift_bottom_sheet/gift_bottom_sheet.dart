@@ -463,14 +463,14 @@ class GiftBottomSheetWidget {
                                           .withValues(alpha: 0.16),
                                       radius: 8,
                                     )
-                                  : Obx(
-                                      () => Text(
-                                        CustomFetchUserCoin.coin.value
-                                            .toString(),
+                                  : Obx(() => Text(
+                                        CustomFetchUserCoin.coin.value > 10000
+                                            ? "10000+"
+                                            : CustomFetchUserCoin.coin.value
+                                                .toString(),
                                         style: AppFontStyle.styleW6003(
-                                            AppColors.whiteColor, 16),
-                                      ),
-                                    ),
+                                            AppColors.whiteColor, 12),
+                                      )),
                               2.width,
                               Image.asset(AppAsset.whiteForwardIcon,
                                   width: 16, height: 16),

@@ -1,3 +1,4 @@
+import 'package:LoveBirds/common/coin_badge.dart';
 import 'package:LoveBirds/pages/bottom_bar/controller/bottom_bar_controller.dart';
 import 'package:LoveBirds/pages/host_message_page/widget/host_chat_top_widget.dart';
 import 'package:LoveBirds/pages/message_page/controller/message_controller.dart';

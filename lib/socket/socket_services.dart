@@ -90,6 +90,13 @@ class SocketServices {
             Utils.showLog("Socket Listen  => Gift Sent : $data");
             SocketListen.onGiftSent(data);
           });
+          socket?.on(SocketEvents.videoGiftSent, (data) async {
+            Utils.showLog("Socket Listen  => Gift Sent : $data");
+
+            print("\n\n\n\n\nSocket Listen  => Gift Sent : $data\n\n\n");
+
+            onGetNewGift(gift: data);
+          });
 
           socket?.on(SocketEvents.callRinging, (data) async {
             Utils.showLog("Socket Listen  => Call ringing : $data");
@@ -436,9 +443,10 @@ class SocketServices {
     GiftBottomSheetWidget.giftUrl = Api.baseUrl + gift["giftUrl"];
     GiftBottomSheetWidget.giftType = gift["giftType"];
     GiftBottomSheetWidget.senderName = gift["callerName"];
-    GiftBottomSheetWidget.giftsvgaImage = gift["svgaThumbUrl"];
+    GiftBottomSheetWidget.giftsvgaImage = gift["svgaThumbUrl"] ?? "";
 
     GiftBottomSheetWidget.isShowGift.value = true;
+
     GiftBottomSheetWidget.giftType == 3
         ? await 10000.milliseconds.delay()
         : await 3000.milliseconds.delay();

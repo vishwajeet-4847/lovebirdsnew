@@ -46,6 +46,12 @@ class HostVideoCallController extends GetxController {
   ChewieController? chewieController;
   VideoPlayerController? videoPlayerController;
 
+  // Gift functionality variables
+  RxBool isShowGift = false.obs;
+  String? currentGiftUrl;
+  String? currentGiftType;
+  Timer? giftAnimationTimer;
+
   @override
   void onInit() {
     Map<String, dynamic> data = Get.arguments ?? {};

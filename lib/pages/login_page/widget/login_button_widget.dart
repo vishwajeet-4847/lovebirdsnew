@@ -119,26 +119,26 @@ class LoginButtonWidget extends StatelessWidget {
                   15.width,
                 ],
               ),
-              10.height,
-              GestureDetector(
-                onTap: () => logic.onDemoHostLogin(),
-                child: Container(
-                  height: 50,
-                  width: Get.width,
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  decoration: BoxDecoration(
-                    color: AppColors.loginButtonHost,
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: Center(
-                    child: Text(
-                      EnumLocale.txtDemoHost.name.tr,
-                      style: AppFontStyle.styleW700(AppColors.whiteColor, 17),
-                    ),
-                  ),
-                ),
-              ),
+              // 10.height,
+              // GestureDetector(
+              //   onTap: () => logic.onDemoHostLogin(),
+              //   child: Container(
+              //     height: 50,
+              //     width: Get.width,
+              //     margin:
+              //         const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              //     decoration: BoxDecoration(
+              //       color: AppColors.loginButtonHost,
+              //       borderRadius: BorderRadius.circular(50),
+              //     ),
+              //     child: Center(
+              //       child: Text(
+              //         EnumLocale.txtDemoHost.name.tr,
+              //         style: AppFontStyle.styleW700(AppColors.whiteColor, 17),
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
               ///===================== DEMO DATA REMOVE END =====================///
 

@@ -855,7 +855,7 @@ class VideoCallController extends GetxController {
     }
   }
 
-  onSendGift() async {
+  Future<void> onSendGift() async {
     if (GiftBottomSheetWidget.selectedGiftId.isEmpty ||
         GiftBottomSheetWidget.giftUrl.isEmpty ||
         GiftBottomSheetWidget.giftType == -1) {
@@ -873,6 +873,7 @@ class VideoCallController extends GetxController {
     }
 
     if (callId.isEmpty) {
+      print("Failed to send gift: callid is empty");
       Utils.showLog("Failed to send gift: callid is empty");
       return;
     }
@@ -888,12 +889,75 @@ class VideoCallController extends GetxController {
       giftUrl: GiftBottomSheetWidget.giftUrl,
       giftsvgaImage: GiftBottomSheetWidget.giftsvgaImage,
       giftImage: GiftBottomSheetWidget.giftsvgaImage,
-      receiverId: Database.isHost ? receiverId : callerId,
+      receiverId: receiverId,
       senderId: Database.isHost ? Database.hostId : Database.loginUserId,
       senderRole: Database.isHost ? "host" : "user",
       receiverRole: Database.isHost ? "user" : "host",
       giftType: GiftBottomSheetWidget.giftType,
     );
+
+    Get.back();
+  }
+
+  Future<void> onRequestGift() async {
+    if (!Database.isHost) {
+      Get.dialog(
+        AlertDialog(
+          title: const Text("Notice"),
+          content:
+              const Text("You are not the host, so you cannot request gifts."),
+          actions: [
+            TextButton(
+              onPressed: () => Get.back(),
+              child: const Text("OK"),
+            ),
+          ],
+        ),
+      );
+
+      return;
+    }
+    if (GiftBottomSheetWidget.selectedGiftId.isEmpty ||
+        GiftBottomSheetWidget.giftUrl.isEmpty ||
+        GiftBottomSheetWidget.giftType == -1) {
+      Utils.showToast("Please select a gift first");
+      return;
+    }
+
+    final totalCost = GiftBottomSheetWidget.giftCoin *
+        GiftBottomSheetWidget.giftCount.toInt();
+    if (totalCost > Database.coin) {
+      Utils.showToast(EnumLocale.txtYouHaveInsufficientCoins.name.tr);
+      await 600.milliseconds.delay();
+      Get.toNamed(AppRoutes.topUpPage)?.then((_) => update());
+      return;
+    }
+
+    if (callId.isEmpty) {
+      print("Failed to send gift: callid is empty");
+      Utils.showLog("Failed to send gift: callid is empty");
+      return;
+    }
+
+    // Log senderId, hostId, and giftId for debugging
+    print(
+        "Chat Gift - SenderID: ${Database.isHost ? Database.hostId : Database.loginUserId}, HostID: ${Database.isHost ? receiverId : callerId}, GiftID: ${GiftBottomSheetWidget.selectedGiftId}");
+
+    SocketEmit.onRequestGiftVideoCall(
+      callId: callId,
+      giftCount: GiftBottomSheetWidget.giftCount.toString(),
+      giftId: GiftBottomSheetWidget.selectedGiftId,
+      giftUrl: GiftBottomSheetWidget.giftUrl,
+      giftsvgaImage: GiftBottomSheetWidget.giftsvgaImage,
+      giftImage: GiftBottomSheetWidget.giftsvgaImage,
+      receiverId: receiverId,
+      senderId: Database.isHost ? Database.hostId : Database.loginUserId,
+      senderRole: Database.isHost ? "host" : "user",
+      receiverRole: Database.isHost ? "user" : "host",
+      giftType: GiftBottomSheetWidget.giftType,
+    );
+
+    Get.back();
   }
 
   void getBlock({required BuildContext context}) async {

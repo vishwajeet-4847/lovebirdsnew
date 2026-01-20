@@ -27,9 +27,9 @@ class RazorPayService {
     var options = {
       'key': Utils.razorpaySecretKey,
       'amount': amount,
-      'name': "Figgy",
+      'name': "Lovebirds",
       'theme.color': AppColors.primaryColor.value.toRadixString(16),
-      'description': "Figgy",
+      'description': "Love Birds",
       'currency': Utils.currencyCode,
       'prefill': {
         'contact': "",

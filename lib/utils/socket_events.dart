@@ -19,6 +19,8 @@ class SocketEvents {
   static const String callCancelled = "callCancelled";
   static const String callFinished = "callFinished";
   static const String videoGiftSent = "videoGiftSent";
+  static const String requestGiftVideoCall = "requestGiftVideoCall";
+  static const String callGiftSent = "callGiftSent";
   static const String callDisconnected = "callDisconnected";
   static const String callCoinCharged = "callCoinCharged";
   static const String insufficientCoins = "insufficientCoins";

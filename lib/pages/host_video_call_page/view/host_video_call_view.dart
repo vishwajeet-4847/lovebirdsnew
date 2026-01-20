@@ -1,3 +1,4 @@
+import 'package:LoveBirds/custom/gift_bottom_sheet/gift_bottom_sheet.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:camera/camera.dart';
 import 'package:chewie/chewie.dart';
@@ -206,6 +207,10 @@ class HostVideoCallView extends GetView<HostVideoCallController> {
                     );
                   }
                 },
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: GiftBottomSheetWidget.onShowGift(),
               ),
               Positioned(
                 top: 50,

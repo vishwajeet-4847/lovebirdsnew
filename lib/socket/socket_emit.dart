@@ -110,7 +110,42 @@ class SocketEmit {
     });
 
     if (socket != null && socket?.connected == true) {
-      socket?.emit(SocketEvents.chatGiftSent, data);
+      socket?.emit(SocketEvents.videoGiftSent, data);
+      Utils.showLog("Socket Emit => Gift Sent: $data");
+    } else {
+      Utils.showLog("Socket Not Connected!!");
+    }
+  }
+
+  static Future<void> onRequestGiftVideoCall({
+    required String callId,
+    required String senderId,
+    required String receiverId,
+    required String senderRole,
+    required String receiverRole,
+    required String giftId,
+    required String giftCount,
+    required String giftUrl,
+    required String giftsvgaImage,
+    required String giftImage,
+    required int giftType,
+  }) async {
+    final data = jsonEncode({
+      SocketParams.callId: callId,
+      SocketParams.senderId: senderId,
+      SocketParams.receiverId: receiverId,
+      SocketParams.senderRole: senderRole,
+      SocketParams.receiverRole: receiverRole,
+      SocketParams.giftId: giftId,
+      SocketParams.giftCount: giftCount,
+      SocketParams.giftUrl: giftUrl,
+      SocketParams.giftType: giftType,
+      SocketParams.giftsvgaImage: giftsvgaImage,
+      SocketParams.giftImage: giftsvgaImage
+    });
+
+    if (socket != null && socket?.connected == true) {
+      socket?.emit(SocketEvents.requestGiftVideoCall, data);
       Utils.showLog("Socket Emit => Gift Sent: $data");
     } else {
       Utils.showLog("Socket Not Connected!!");
