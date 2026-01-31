@@ -3,6 +3,7 @@ import 'package:LoveBirds/utils/enum.dart';
 final Map<String, String> esES = {
   EnumLocale.txtLetsStart.name: "Vamos a empezar",
   EnumLocale.txtGoogle.name: "Google",
+  EnumLocale.txtRequest.name: "Solicitud",
   EnumLocale.txtByLoggingInYouAgreeToOur.name:
       "Al iniciar sesión, aceptas nuestros términos y condiciones.",
   EnumLocale.txtPrivacyPolicy.name: "política de privacidad",

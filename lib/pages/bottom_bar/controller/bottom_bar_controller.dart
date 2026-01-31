@@ -26,6 +26,9 @@ class BottomBarController extends GetxController {
     const ProfileView(),
   ];
 
+
+  
+
   @override
   Future<void> onInit() async {
     await SocketServices.onConnect();

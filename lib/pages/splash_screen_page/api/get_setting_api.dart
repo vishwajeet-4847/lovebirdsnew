@@ -97,41 +97,33 @@ class GetSettingApi {
     required String token,
     required String uid,
   }) async {
-    print("🟢 [GetSettingApi] API call started...");
+  
     Utils.showLog("Get Setting Api Calling...");
 
     try {
       final uri = Uri.parse(Api.getSetting);
-      print("🔗 [GetSettingApi] Uri: $uri");
+      
 
       final headers = {
         Api.key: Api.secretKey,
         Api.tokenKey: "Bearer $token",
         Api.uidKey: uid,
       };
-      print("📝 [GetSettingApi] Headers: $headers");
+   
       Utils.showLog("Get Setting Api headers => $headers");
 
       final response = await http.get(uri, headers: headers);
 
-      print("📦 [GetSettingApi] HTTP Status Code: ${response.statusCode}");
-      print("📄 [GetSettingApi] Response Body: ${response.body}");
-
+     
       if (response.statusCode == 200) {
         try {
           final jsonResponse = json.decode(response.body);
 
-          print("✅ [GetSettingApi] JSON Decoded Successfully");
-          print("📄 JSON Content: $jsonResponse");
+
 
           getSettingModel = GetSettingModel.fromJson(jsonResponse);
 
-          print(
-              "======================[GetSettingApi] Full Data Object =====================");
-          print(getSettingModel?.data);
-
-          print(
-              "======================[GetSettingApi] Agora App ID: ${getSettingModel?.data?.agoraAppId}====================");
+       
         } catch (e, stack) {
           print("❌ [GetSettingApi] Exception during parsing: $e");
           print(stack);

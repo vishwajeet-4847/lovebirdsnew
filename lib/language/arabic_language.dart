@@ -2,6 +2,7 @@ import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> arDZ = {
   EnumLocale.txtLetsStart.name: "لنبدأ",
+  EnumLocale.txtRequest.name:"طلب",
   EnumLocale.txtGoogle.name: "جوجل",
   EnumLocale.txtByLoggingInYouAgreeToOur.name:
       "من خلال تسجيل الدخول، فإنك توافق على شروط الاستخدام الخاصة بنا",

@@ -128,6 +128,7 @@ enum EnumLocale {
   txtNoInternetConnection,
   txtGifts,
   txtSend,
+  txtRequest,
   txtDoYouWantToSureExitThisApp,
   txtPay,
   txtTotal,
@@ -276,7 +277,9 @@ enum EnumLocale {
   txtDoYouWantToSureDeleteAccountThisApp,
 
   txtAppName,
-  txtPaymentFailedPleaseTryAgain, txtReport,  txtItIsSpam,
+  txtPaymentFailedPleaseTryAgain,
+  txtReport,
+  txtItIsSpam,
   txtNudityOrSexualActivity,
   txtHateSpeechOrSymbols,
   txtViolenceOrDangerousOrganization,
@@ -289,5 +292,6 @@ enum EnumLocale {
   txtEatingDisorders,
   txtSomethingElse,
   txtChildAbuse,
-  txtOthers, txtReportSendSuccess,
+  txtOthers,
+  txtReportSendSuccess,
 }

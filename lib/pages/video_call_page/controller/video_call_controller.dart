@@ -539,6 +539,7 @@ class VideoCallController extends GetxController {
         });
       }
     }
+    GiftBottomSheetWidget.getGiftCategoryApi();
 
     super.onInit();
   }
@@ -856,6 +857,10 @@ class VideoCallController extends GetxController {
   }
 
   Future<void> onSendGift() async {
+    if (Database.isHost) {
+      Utils.showToast("Host cannot send gifts");
+      return;
+    }
     if (GiftBottomSheetWidget.selectedGiftId.isEmpty ||
         GiftBottomSheetWidget.giftUrl.isEmpty ||
         GiftBottomSheetWidget.giftType == -1) {
@@ -926,12 +931,12 @@ class VideoCallController extends GetxController {
 
     final totalCost = GiftBottomSheetWidget.giftCoin *
         GiftBottomSheetWidget.giftCount.toInt();
-    if (totalCost > Database.coin) {
-      Utils.showToast(EnumLocale.txtYouHaveInsufficientCoins.name.tr);
-      await 600.milliseconds.delay();
-      Get.toNamed(AppRoutes.topUpPage)?.then((_) => update());
-      return;
-    }
+    // if (totalCost > Database.coin) {
+    //   Utils.showToast(EnumLocale.txtYouHaveInsufficientCoins.name.tr);
+    //   await 600.milliseconds.delay();
+    //   Get.toNamed(AppRoutes.topUpPage)?.then((_) => update());
+    //   return;
+    // }
 
     if (callId.isEmpty) {
       print("Failed to send gift: callid is empty");

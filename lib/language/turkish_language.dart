@@ -3,6 +3,7 @@ import 'package:LoveBirds/utils/enum.dart';
 final Map<String, String> trTR = {
   EnumLocale.txtLetsStart.name: "Hadi Başlayalım",
   EnumLocale.txtGoogle.name: "Google",
+  EnumLocale.txtRequest.name: "Talep",
   EnumLocale.txtByLoggingInYouAgreeToOur.name:
       "Giriş yaparak, bizimle aynı fikirde olursunuz",
   EnumLocale.txtPrivacyPolicy.name: "Gizlilik Politikası",

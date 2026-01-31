@@ -3,8 +3,8 @@ class Api {
   static const String uidKey = "x-user-uid";
   static const String key = "key";
 
-  static const baseUrl = "https://backend.lovebirds.support/";
-  // static const baseUrl = "http://192.168.29.183:7003/";
+  // static const baseUrl = "https://backend.lovebirds.support/";
+  static const baseUrl = "http://192.168.29.183:7003/";
   static const secretKey = "YZrWhFrf3v";
 
   // ===================== USER ===================== //

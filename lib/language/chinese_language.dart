@@ -2,7 +2,8 @@ import 'package:LoveBirds/utils/enum.dart';
 
 final Map<String, String> zhCN = {
   EnumLocale.txtLetsStart.name: "让我们开始吧",
-  EnumLocale.txtGoogle.name: "谷歌",
+  EnumLocale.txtRequest.name: "অনুরোধ",
+  EnumLocale.txtRequest.name: "请求",
   EnumLocale.txtByLoggingInYouAgreeToOur.name: "登录即表示您同意我们的",
   EnumLocale.txtPrivacyPolicy.name: "隐私政策",
   EnumLocale.txtAnd.name: "和",

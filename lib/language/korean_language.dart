@@ -3,6 +3,7 @@ import 'package:LoveBirds/utils/enum.dart';
 final Map<String, String> koKR = {
   EnumLocale.txtLetsStart.name: "시작하자",
   EnumLocale.txtGoogle.name: "Google",
+  EnumLocale.txtRequest.name: "요청",
   EnumLocale.txtByLoggingInYouAgreeToOur.name: "로그인하면 귀하는 당사의",
   EnumLocale.txtPrivacyPolicy.name: "개인정보 보호정책",
   EnumLocale.txtAnd.name: "그리고",

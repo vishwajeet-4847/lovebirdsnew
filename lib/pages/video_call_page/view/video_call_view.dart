@@ -992,7 +992,61 @@ class VideoCallView extends StatelessWidget {
                                                   );
                                                 },
                                               )
-                                            : const SizedBox.shrink(),
+                                            : GetBuilder<VideoCallController>(
+                                                builder: (controller) {
+                                                  return GestureDetector(
+                                                    onTap: () {
+                                                      FocusScopeNode
+                                                          currentFocus =
+                                                          FocusScope.of(
+                                                              context);
+                                                      if (!currentFocus
+                                                              .hasPrimaryFocus &&
+                                                          currentFocus
+                                                                  .focusedChild !=
+                                                              null) {
+                                                        currentFocus
+                                                            .focusedChild
+                                                            ?.unfocus();
+                                                      }
+
+                                                      GiftBottomSheetWidget
+                                                          .show(
+                                                        context: context,
+                                                        callback: () {
+                                                          controller
+                                                              .onRequestGift();
+                                                        },
+                                                        isChat: false,
+                                                      );
+                                                    },
+                                                    child: Container(
+                                                      height: 45,
+                                                      width: 45,
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              5),
+                                                      decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: AppColors
+                                                            .whiteColor
+                                                            .withValues(
+                                                                alpha: 0.12),
+                                                        border: Border.all(
+                                                          strokeAlign: 0.4,
+                                                          color: AppColors
+                                                              .whiteColor
+                                                              .withValues(
+                                                                  alpha: 0.2),
+                                                        ),
+                                                      ),
+                                                      child: Image.asset(
+                                                        AppAsset.icGift,
+                                                      ).paddingAll(3),
+                                                    ),
+                                                  );
+                                                },
+                                              ),
                                         GetBuilder<VideoCallController>(
                                           id: AppConstant.idMuteMic,
                                           builder: (logic) {

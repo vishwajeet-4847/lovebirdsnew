@@ -35,6 +35,8 @@ class FetchLoginUserProfileApi {
 
         fetchLoginUserProfileModel =
             FetchLoginUserProfileModel.fromJson(jsonResponse);
+        Utils.showLog(
+            "User Object => ${jsonEncode(fetchLoginUserProfileModel?.user?.toJson())}");
 
         Database.onSetHost(fetchLoginUserProfileModel?.user?.isHost ?? false);
         Database.onSetHostId(fetchLoginUserProfileModel?.user?.hostId ?? "");

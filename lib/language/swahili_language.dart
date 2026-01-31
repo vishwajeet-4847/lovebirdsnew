@@ -3,6 +3,7 @@ import 'package:LoveBirds/utils/enum.dart';
 final Map<String, String> swKE = {
   EnumLocale.txtLetsStart.name: "Hebu Tuanze",
   EnumLocale.txtGoogle.name: "Google",
+  EnumLocale.txtRequest.name: "Ombi",
   EnumLocale.txtByLoggingInYouAgreeToOur.name: "Kwa kuingia, unakubali yetu",
   EnumLocale.txtPrivacyPolicy.name: "Sera ya Faragha",
   EnumLocale.txtAnd.name: "na",

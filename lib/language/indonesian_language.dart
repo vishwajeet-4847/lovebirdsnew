@@ -3,6 +3,7 @@ import 'package:LoveBirds/utils/enum.dart';
 final Map<String, String> idID = {
   EnumLocale.txtLetsStart.name: "Ayo Mulai",
   EnumLocale.txtGoogle.name: "Google",
+  EnumLocale.txtRequest.name: "Permintaan",
   EnumLocale.txtByLoggingInYouAgreeToOur.name:
       "Dengan masuk, Anda menyetujui ketentuan kami",
   EnumLocale.txtPrivacyPolicy.name: "Kebijakan Privasi",

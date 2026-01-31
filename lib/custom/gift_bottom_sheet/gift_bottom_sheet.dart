@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:LoveBirds/utils/database.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:LoveBirds/common/loading_widget.dart';
 import 'package:LoveBirds/custom/other/custom_fetch_user_coin.dart';
@@ -431,53 +432,58 @@ class GiftBottomSheetWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.topUpPage)?.then((_) {
-                            CustomFetchUserCoin.init();
-                          });
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 5),
-                          alignment: Alignment.center,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color:
-                                  AppColors.whiteColor.withValues(alpha: 0.16),
-                            ),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(50)),
-                            color: AppColors.giftBgColor,
-                          ),
-                          child: Row(
-                            children: [
-                              const Image(
-                                  image: AssetImage(AppAsset.icCoin),
-                                  width: 24,
-                                  height: 24),
-                              6.width,
-                              isLoadingCategory.value
-                                  ? CupertinoActivityIndicator(
-                                      color: AppColors.whiteColor
-                                          .withValues(alpha: 0.16),
-                                      radius: 8,
-                                    )
-                                  : Obx(() => Text(
-                                        CustomFetchUserCoin.coin.value > 10000
-                                            ? "10000+"
-                                            : CustomFetchUserCoin.coin.value
-                                                .toString(),
-                                        style: AppFontStyle.styleW6003(
-                                            AppColors.whiteColor, 12),
-                                      )),
-                              2.width,
-                              Image.asset(AppAsset.whiteForwardIcon,
-                                  width: 16, height: 16),
-                            ],
-                          ),
-                        ),
-                      ),
+                      !Database.isHost
+                          ? GestureDetector(
+                              onTap: () {
+                                Get.toNamed(AppRoutes.topUpPage)?.then((_) {
+                                  CustomFetchUserCoin.init();
+                                });
+                              },
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                alignment: Alignment.center,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: AppColors.whiteColor
+                                        .withValues(alpha: 0.16),
+                                  ),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(50)),
+                                  color: AppColors.giftBgColor,
+                                ),
+                                child: Row(
+                                  children: [
+                                    const Image(
+                                        image: AssetImage(AppAsset.icCoin),
+                                        width: 24,
+                                        height: 24),
+                                    6.width,
+                                    isLoadingCategory.value
+                                        ? CupertinoActivityIndicator(
+                                            color: AppColors.whiteColor
+                                                .withValues(alpha: 0.16),
+                                            radius: 8,
+                                          )
+                                        : Obx(() => Text(
+                                              CustomFetchUserCoin.coin.value >
+                                                      10000
+                                                  ? "10000+"
+                                                  : CustomFetchUserCoin
+                                                      .coin.value
+                                                      .toString(),
+                                              style: AppFontStyle.styleW6003(
+                                                  AppColors.whiteColor, 12),
+                                            )),
+                                    2.width,
+                                    Image.asset(AppAsset.whiteForwardIcon,
+                                        width: 16, height: 16),
+                                  ],
+                                ),
+                              ),
+                            )
+                          : 1.height,
                       Container(
                         height: 40,
                         padding: const EdgeInsets.only(left: 4),
@@ -539,7 +545,9 @@ class GiftBottomSheetWidget {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Text(
-                                  EnumLocale.txtSend.name.tr,
+                                  Database.isHost
+                                      ? EnumLocale.txtRequest.name.tr
+                                      : EnumLocale.txtSend.name.tr,
                                   style: AppFontStyle.styleW600(
                                       AppColors.whiteColor, 15),
                                 ),
